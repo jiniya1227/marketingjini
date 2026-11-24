@@ -1,0 +1,8 @@
+# 클로드 작업 규칙 — 컴퓨터에만 두고 GitHub(공개)에는 올리지 않음
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+# 비밀 정보가 담길 수 있는 파일
+.env
+.env.*
