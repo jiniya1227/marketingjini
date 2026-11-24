@@ -8,7 +8,7 @@
 <title>마케팅지니 | 수원·화성·용인 주야간보호센터 온라인 홍보</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="수원·화성·용인 주야간보호센터를 위한 온라인 홍보. 요양보호사로 일했고 지금도 가족을 돌보는 보호자인 마케터가 센터의 블로그·네이버 플레이스·당근·홈페이지를 함께 정리합니다.">
+<meta name="description" content="수원·화성·용인 주야간보호센터를 위한 온라인 홍보. 요양보호사로 일했고 지금도 가족을 돌보는 보호자인 마케터가 센터의 블로그·네이버 플레이스·홈페이지를 함께 정리합니다.">
 <!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marketingjini.com/">
@@ -171,41 +171,23 @@
     .btn { font-size: 15px; }
   }
 
-  /* 첫 화면 일러스트 — 그림 파일 없이 코드로 그립니다 */
-  .illus { margin: 0; container-type: inline-size; }
-  .stage { position: relative; width: 100%; aspect-ratio: 1 / 1.02; line-height: 1.5; }
-  .stage > * { position: absolute; }
-  .arch { inset: 6% 7% 4% 7%; background: color-mix(in srgb, var(--bg) 70%, transparent); border-radius: 46cqw 46cqw 4cqw 4cqw; }
-  .ring { left: 12%; top: 9%; width: 76%; aspect-ratio: 1; border: 1px solid var(--i-line); border-radius: 50%; }
-  .i-tag { top: 13%; left: 0; right: 0; text-align: center; font-size: 3.1cqw; color: var(--ink-soft); }
-  .post {
-    left: 15%; top: 22%; width: 60%; padding: 3.4cqw; transform: rotate(-4deg);
-    background: var(--bg); border: 1px solid var(--line); border-radius: 2.4cqw; box-shadow: 0 1.6cqw 4cqw rgba(20, 16, 40, .08);
-  }
-  .p-head { display: flex; align-items: center; gap: 1.8cqw; font-size: 2.4cqw; color: var(--ink-soft); margin-bottom: 2.6cqw; }
-  .p-avatar { width: 6.4cqw; height: 6.4cqw; border-radius: 1.6cqw; background: var(--violet); display: grid; place-items: center; flex: 0 0 auto; }
-  .p-avatar svg { width: 3.6cqw; fill: #fff; }
-  .p-dots { margin-left: auto; letter-spacing: -.2cqw; }
-  .p-pic { display: block; width: 100%; height: auto; margin-bottom: 3cqw; }
-  .p-title { font-family: "Noto Serif KR", serif; font-size: 4.2cqw; font-weight: 700; letter-spacing: -.2cqw; line-height: 1.35; margin-bottom: 2.4cqw; }
-  .p-line { display: block; height: 1.2cqw; border-radius: 1cqw; background: var(--i-bg); margin-bottom: 1.4cqw; }
-  .p-line.short { width: 62%; }
-  .p-chips { display: flex; gap: 1.4cqw; margin-top: 2.4cqw; }
-  .p-chips span { font-size: 2.1cqw; color: var(--violet); background: var(--i-bg); padding: .8cqw 1.8cqw; border-radius: .8cqw; white-space: nowrap; }
-  .place {
-    right: 2%; top: 70%; width: 50%; display: flex; align-items: center; gap: 2.6cqw; padding: 2.6cqw 3cqw;
-    transform: rotate(3deg); background: var(--bg); border: 1px solid var(--line); border-radius: 2.4cqw; box-shadow: 0 1.6cqw 4cqw rgba(20, 16, 40, .09);
-  }
-  .pl-icon { width: 9cqw; height: 9cqw; border-radius: 50%; background: var(--violet); display: grid; place-items: center; flex: 0 0 auto; }
-  .pl-icon svg { width: 4.4cqw; fill: none; stroke: #fff; stroke-width: 1.8; }
-  .pl-text b { display: block; font-size: 3.2cqw; letter-spacing: -.15cqw; line-height: 1.3; }
-  .pl-text small { display: block; font-size: 2.4cqw; color: var(--ink-soft); line-height: 1.4; }
-  .pl-check { margin-left: auto; font-size: 3.6cqw; color: var(--violet); }
-  .note { left: 1%; bottom: 3%; padding: 2.8cqw 3.6cqw; background: var(--i-note); border-radius: 1.6cqw; font-size: 2.7cqw; line-height: 1.6; color: var(--ink); }
-  .illus figcaption { text-align: right; font-size: 13px; color: var(--ink-faint); margin-top: 8px; padding-right: 6%; }
+  /* 휴대폰 틀 — 샘플 센터 홈페이지 화면을 담습니다 (첫 화면·Sample Work 공통, 2026-11-24) */
+  .phone { position: relative; display: block; width: 100%; aspect-ratio: 9 / 17; border: 7px solid #1d1b26; border-radius: 30px; overflow: hidden; background: #1d1b26; box-shadow: var(--ev-3); }
+  .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 23px; }
+
+  /* 첫 화면 그림: 휴대폰 두 대 (앞 = 첫 화면, 뒤 = 이용 비용) */
+  .hero-phones { margin: 0; position: relative; max-width: 440px; width: 100%; justify-self: center; padding: 12px 0 0; }
+  .hero-phones .stage { display: block; position: relative; height: 0; padding-bottom: 104%; text-decoration: none; }
+  .hero-phones .ph-front { position: absolute; left: 6%; top: 0; width: 50%; z-index: 2; }
+  .hero-phones .ph-back { position: absolute; right: 4%; top: 9%; width: 44%; transform: rotate(5deg); opacity: .97; }
+  .hero-phones .tag { position: absolute; z-index: 3; left: 0; bottom: 6%; display: inline-flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 9px 14px; box-shadow: var(--ev-2); font-size: 14.5px; font-weight: 700; color: var(--text-strong); line-height: 1.35; }
+  .hero-phones .tag i { font-style: normal; font-size: 12.5px; font-weight: 700; color: var(--orange-text); background: var(--orange-tint); border-radius: 6px; padding: 1px 7px; }
+  .hero-phones figcaption { text-align: center; font-size: 13px; color: var(--ink-faint); margin-top: 10px; }
+  @media (max-width: 900px) { .hero-phones { max-width: 380px; } }
+  @media (max-width: 560px) { .hero-phones { max-width: 330px; } .hero-phones .tag { font-size: 13.5px; padding: 8px 12px; } }
 
   /* 바로가기 아이콘 (지니맵과 같은 원형 아이콘) */
-  .quick { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 28px 0 8px; }
+  .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 0 8px; }
   .quick a { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; font-size: 17.5px; font-weight: 700; color: var(--ink); }
   .quick .ic { width: 76px; height: 76px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--bg); display: grid; place-items: center; }
   .quick .ic svg { width: 32px; height: 32px; fill: none; stroke: var(--violet); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -254,6 +236,70 @@
   .quote cite { font-style: normal; font-size: 14px; color: var(--ink-soft); }
   .quote .fine { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-faint); }
   @media (max-width: 860px) { .work { grid-template-columns: 1fr; } }
+  .work-head { margin: 56px 0 22px; }
+  .work-head h3 { font-size: clamp(21px, 2.6vw, 25px); margin-bottom: 6px; }
+  .work-head p { color: var(--ink-soft); font-size: 16px; }
+  #story .grid-2 .card h3 { font-size: 19px; }
+  #story .grid-2 .card p { font-size: 15.5px; }
+
+  /* Sample Work: 샘플 센터 홈페이지 화면 3장 + 기본으로 들어가는 것 (2026-11-24) */
+  .sample { display: grid; grid-template-columns: 1fr 1.15fr; grid-template-areas: "head shots" "body shots"; column-gap: 48px; align-items: start; }
+  .sample > .head { grid-area: head; margin-bottom: 26px; align-self: end; }
+  .sample-body { grid-area: body; }
+  .sample .shots { grid-area: shots; align-self: center; }
+  #work { scroll-margin-top: 80px; }
+  .incl-title { font-size: 14px; font-weight: 700; color: var(--ink-soft); margin-bottom: 10px; }
+  .incl { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+  .incl li { display: flex; align-items: center; gap: 10px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px; font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--text-strong); }
+  .incl li::before { content: "✓"; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--tint); color: var(--violet); font-size: 13px; font-weight: 700; display: grid; place-items: center; line-height: 1; }
+  .sample .fine { margin-top: 14px; font-size: 13.5px; color: var(--ink-faint); line-height: 1.6; }
+  .shots { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .shots li { margin: 0; text-align: center; }
+  .shots li:nth-child(2) { transform: translateY(26px); }
+  .shots b { display: block; margin-top: 12px; font-size: 15px; color: var(--text-strong); }
+  .shots small { display: block; font-size: 13px; color: var(--ink-faint); line-height: 1.4; }
+  .svc-more { display: inline-block; margin-top: 14px; font-size: 15px; font-weight: 700; color: var(--violet); text-decoration: none; }
+  .svc-more:hover { text-decoration: underline; }
+
+  /* 보호자가 찾아오는 길 4단계 (2026-11-24) */
+  .path-box { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px 20px; margin-bottom: 28px; }
+  .path-title { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 19px; color: var(--text-strong); margin-bottom: 16px; }
+  .path { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .path li { position: relative; display: flex; flex-direction: column; gap: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 16px 16px 14px; }
+  .path li + li::before { content: "→"; position: absolute; left: -22px; top: 50%; transform: translateY(-50%); color: var(--violet); font-weight: 700; font-size: 17px; }
+  .path .pn { font-size: 20px; color: var(--violet); line-height: 1.1; }
+  .path b { font-size: 17px; color: var(--text-strong); line-height: 1.4; }
+  .path .pd { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; flex: 1; }
+  .path .pj { margin-top: 8px; align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--violet); background: var(--tint); border-radius: 6px; padding: 2px 8px; line-height: 1.5; }
+  .path-note { margin-top: 16px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
+  @media (max-width: 900px) {
+    .path { grid-template-columns: 1fr; gap: 14px; }
+    .path li { display: grid; grid-template-columns: 34px 1fr; column-gap: 8px; row-gap: 2px; padding: 14px 16px; }
+    .path li > * { grid-column: 2; }
+    .path .pn { grid-column: 1; grid-row: 1 / span 3; font-size: 22px; }
+    .path li + li::before { content: "↓"; left: 24px; top: -15px; transform: none; font-size: 13px; line-height: 1; }
+  }
+  @media (max-width: 560px) { .path-box { padding: 20px 16px 16px; margin-bottom: 20px; } }
+
+  /* 색 조합 8가지 (제작기 테마 — 색 값은 센터웹페이지제작기_v2.html 의 테마 표와 같게) */
+  .themes { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .themes li { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; font-size: 13.5px; font-weight: 500; color: var(--text-strong); line-height: 1.3; }
+  .themes li.on { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet); }
+  .themes .sw { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(var(--a) 0 50%, var(--b) 50% 75%, var(--c) 75% 100%); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08); }
+  .themes small { display: block; font-size: 11.5px; font-weight: 700; color: var(--violet); }
+  @media (max-width: 1100px) and (min-width: 961px), (max-width: 560px) {
+    .themes { gap: 6px; }
+    .themes li { flex-direction: column; justify-content: center; text-align: center; padding: 9px 4px 8px; gap: 5px; font-size: 13px; }
+  }
+  @media (max-width: 960px) { .sample { grid-template-columns: 1fr; grid-template-areas: "head" "shots" "body"; } .sample .shots { margin-bottom: 30px; } .shots li:nth-child(2) { transform: none; } }
+  @media (max-width: 560px) {
+    .incl { gap: 6px; }
+    .incl li { padding: 9px 10px; font-size: 14px; gap: 8px; align-items: flex-start; }
+    .incl li::before { width: 20px; height: 20px; font-size: 12px; margin-top: 0; }
+    .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 -18px; padding: 4px 18px 10px; scrollbar-width: none; }
+    .shots::-webkit-scrollbar { display: none; }
+    .shots li { flex: 0 0 58%; scroll-snap-align: center; }
+  }
 
   /* AI 검색 */
   .ai-box { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
@@ -533,7 +579,7 @@
   .faq-list details[open] { border-color: var(--line); box-shadow: var(--ev-2); }
   .faq-list summary::after { content: ""; flex: none; align-self: center; width: 9px; height: 9px; margin: 0 4px 4px auto; border-right: 2px solid var(--ink-faint); border-bottom: 2px solid var(--ink-faint); transform: rotate(45deg); transition: transform .15s var(--ease); }
   .faq-list details[open] summary::after { content: ""; margin-bottom: -4px; transform: rotate(-135deg); }
-  /* 질문 더 보기: 나머지 6개는 접어 둡니다 (AI 검색용 정보에는 12개 모두 그대로) */
+  /* 질문 더 보기: 나머지 10개는 접어 둡니다 (AI 검색용 정보에는 16개 모두 그대로, 2026-11-24 13~16번 추가) */
   .faq-more { margin-top: 12px; }
   .faq-more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 12px; background: var(--fill); color: var(--text-strong); font-weight: 700; font-size: 15.5px; transition: background-color .15s var(--ease); }
   .faq-more > summary::-webkit-details-marker { display: none; }
@@ -563,6 +609,31 @@
   }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+  /* 휴대폰에서 덜 길게 (2026-11-24): 내용은 그대로, 칸 안 여백·아이콘 줄만 줄임 */
+  @media (max-width: 560px) {
+    section { padding: 52px 0; }
+    .head { margin-bottom: 26px; }
+    .card { padding: 20px; }
+    #story .grid-2 { gap: 10px; }
+    #story .grid-2 .chip-ic { display: none; }
+    #story .grid-2 .card .top-line { margin-bottom: 4px; }
+    .story-top { margin-bottom: 24px; }
+    .work-head { margin: 40px 0 16px; }
+    .tasks li { padding: 10px 16px; font-size: 15.5px; grid-template-columns: 38px 1fr; line-height: 1.6; }
+    .tasks li::before { font-size: 18px; }
+    .svc-grid { gap: 10px; }
+    .svc-grid .no { display: inline-block; font-size: 26px; margin: 0 10px 0 0; vertical-align: -2px; }
+    .svc-grid .label { display: inline-block; }
+    .fit { gap: 10px; }
+    .fit li { padding: 18px 20px; gap: 8px; }
+    .steps { gap: 10px; }
+    .steps li { padding: 18px 20px; }
+    .steps .n { display: inline-block; font-size: 22px; margin: 0 8px 0 0; }
+    .steps li h3 { display: inline; }
+    .steps li p { margin-top: 6px; }
+    .hero-phones { max-width: 290px; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -575,7 +646,7 @@
       "url": "https://marketingjini.com/",
       "logo": "https://marketingjini.com/logo.png",
       "image": "https://marketingjini.com/og.png",
-      "description": "수원·화성·용인 주야간보호센터의 네이버 블로그·플레이스·당근·홈페이지를 정리하는 온라인 홍보 서비스",
+      "description": "수원·화성·용인 주야간보호센터의 네이버 블로그·플레이스·홈페이지를 정리하는 온라인 홍보 서비스",
       "telephone": "+82-10-5904-5300",
       "address": {"@type": "PostalAddress", "addressRegion": "경기도", "addressLocality": "수원시 권선구", "addressCountry": "KR"},
       "areaServed": ["수원시", "화성시", "용인시"],
@@ -584,18 +655,22 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-      {"@type": "Question", "name": "어떤 홍보를 도와주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스·당근 소식도 작성해 드립니다."}},
+      {"@type": "Question", "name": "어떤 홍보를 도와주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스 소식도 작성해 드립니다."}},
       {"@type": "Question", "name": "수원·화성·용인 외 지역도 상담할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요."}},
-      {"@type": "Question", "name": "홍보 비용은 얼마이고, 견적은 어떻게 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그·플레이스 정비는 30만 원, 센터 홈페이지 제작은 30만 원, 두 가지를 함께 진행하면 50만 원입니다. 부가세와 홈페이지 도메인 비용은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다."}},
+      {"@type": "Question", "name": "홍보 비용은 얼마이고, 견적은 어떻게 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다."}},
       {"@type": "Question", "name": "블로그나 네이버 플레이스가 없어도 시작할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요."}},
       {"@type": "Question", "name": "기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다."}},
-      {"@type": "Question", "name": "당근 홍보나 홈페이지 제작만 따로 맡길 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 홈페이지는 단독으로 제작할 수 있어요. 당근 소식은 월간 관리에 포함돼요. 당근만 원하시면 상담할 때 필요한 작업을 알려 주세요."}},
+      {"@type": "Question", "name": "홈페이지 제작만 따로 맡길 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요."}},
       {"@type": "Question", "name": "센터에서 준비해야 할 사진이나 자료가 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요."}},
       {"@type": "Question", "name": "어르신 얼굴이 나온 사진은 어떻게 처리하나요?", "acceptedAnswer": {"@type": "Answer", "text": "사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다."}},
-      {"@type": "Question", "name": "한 번만 맡길 수 있나요, 매달 관리도 가능한가요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그·플레이스 정비나 홈페이지 제작은 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월 4건·8건·12건 중에서 고르시면 됩니다. 1건은 블로그 글 1편과 플레이스·당근 소식으로 구성돼요."}},
+      {"@type": "Question", "name": "한 번만 맡길 수 있나요, 매달 관리도 가능한가요?", "acceptedAnswer": {"@type": "Answer", "text": "홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요."}},
       {"@type": "Question", "name": "무료 AI 검색 진단에서는 무엇을 확인해 주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다."}},
       {"@type": "Question", "name": "블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?", "acceptedAnswer": {"@type": "Answer", "text": "센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요."}},
-      {"@type": "Question", "name": "리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?", "acceptedAnswer": {"@type": "Answer", "text": "글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요."}}
+      {"@type": "Question", "name": "리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?", "acceptedAnswer": {"@type": "Answer", "text": "글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요."}},
+      {"@type": "Question", "name": "성과를 보장하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다."}},
+      {"@type": "Question", "name": "도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다."}},
+      {"@type": "Question", "name": "홍보 글 문구가 법에 걸리지는 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요."}},
+      {"@type": "Question", "name": "도메인이 뭔가요? 꼭 사야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요."}}
       ]
     }
   ]
@@ -612,7 +687,8 @@
     </a>
     <nav>
       <a href="#story">소개</a>
-      <a href="#work">해본 일</a>
+      <a href="#services">서비스</a>
+      <a href="#sample">샘플</a>
       <a href="#ai">AI 검색</a>
       <a href="#faq">자주 묻는 질문</a>
       <a href="service/">상품·가격</a>
@@ -628,7 +704,7 @@
       <div>
         <span class="eyebrow en"><span class="pc">Marketing Jini · </span><span class="nw">Suwon · Hwaseong · Yongin</span></span>
         <h1>수원·화성·용인<br>주야간보호센터를<br class="mo"> 위한<br class="pc"> <em>온라인 홍보.</em></h1>
-        <p class="strong"><span class="nw">센터를 직접 찾아가 돕는,</span> <span class="nw">보호자인 마케터.</span><br><span class="nw">블로그·네이버 플레이스·당근·</span><wbr><span class="nw">홈페이지를</span> <span class="nw">함께 정리합니다.</span></p>
+        <p class="strong"><span class="nw">센터를 직접 찾아가 돕는,</span> <span class="nw">보호자인 마케터.</span><br><span class="nw">블로그·네이버 플레이스·</span><wbr><span class="nw">홈페이지를</span> <span class="nw">함께 정리합니다.</span></p>
         <p class="soft"><span class="nw">보호자가 무엇을</span> <span class="nw">궁금해하는지 알기에,</span> <span class="nw">그 답을</span> <span class="nw">센터의 온라인에 담습니다.</span></p>
         <div class="btns">
           <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
@@ -637,44 +713,20 @@
         <span class="area"><span class="nw">주야간보호센터 중심</span> · <span class="nw">방문요양·요양원도 상담 가능</span></span>
       </div>
 
-      <figure class="illus" aria-label="마케팅지니가 만드는 센터 블로그 글과 지역 정보를 표현한 그림">
-        <div class="stage">
-          <div class="arch"></div>
-          <div class="ring"></div>
-          <p class="i-tag">좋은 이야기가, 필요한 곳에.</p>
-          <div class="post">
-            <div class="p-head">
-              <span class="p-avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.5 4.6 2 6.3 7.5 9-5.5 2.7-7 4.4-7.5 9-.5-4.6-2-6.3-7.5-9C10 9.3 11.5 7.6 12 3Z"/></svg></span>
-              <span>마케팅지니의 작업 노트</span>
-              <span class="p-dots">•••</span>
-            </div>
-            <svg class="p-pic" viewBox="0 0 300 130" aria-hidden="true">
-              <rect width="300" height="130" rx="8" style="fill:var(--i-beige)"/>
-              <circle cx="252" cy="30" r="17" style="fill:var(--i-sun)"/>
-              <path d="M44 130c-14-26-12-62 12-84 16 26 16 60 2 84Z" style="fill:var(--i-leaf)"/>
-              <path d="M232 130c6-30 26-50 50-54-4 28-22 48-46 54Z" style="fill:var(--i-leaf2)"/>
-              <path d="M112 130V78a38 38 0 0 1 76 0v52Z" style="fill:var(--i-house)"/>
-              <path d="M134 82l16-13 16 13v24h-32Z" style="fill:none;stroke:var(--violet);stroke-width:4;stroke-linejoin:round"/>
-            </svg>
-            <p class="p-title">보호자가 궁금한 것을<br>차근차근 담은 이야기</p>
-            <span class="p-line"></span><span class="p-line short"></span>
-            <div class="p-chips"><span>현장을 아는 콘텐츠</span><span>꾸준한 관리</span></div>
-          </div>
-          <div class="place">
-            <span class="pl-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-            <span class="pl-text"><b>우리 동네, 우리 센터</b><small>보호자가 찾는 정보를 한눈에</small></span>
-            <span class="pl-check">✓</span>
-          </div>
-          <p class="note">센터는 돌봄에 집중하세요.<br><b>온라인은 함께 정리할게요.</b></p>
-        </div>
-        <figcaption class="en">Homepage · Blog · Place</figcaption>
+      <!-- 첫 화면 그림: 마케팅지니가 만드는 센터 홈페이지(가상의 샘플 센터) 휴대폰 화면 -->
+      <figure class="hero-phones">
+        <a class="stage" href="#sample" aria-label="샘플 센터 홈페이지 화면 보기">
+          <span class="phone ph-back"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지의 이용 비용 안내 화면" width="780" height="1688" loading="lazy"></span>
+          <span class="phone ph-front"><img src="img/sample-home.jpg" alt="샘플 센터 홈페이지의 첫 화면" width="780" height="1688"></span>
+          <span class="tag"><i>샘플</i>센터 홈페이지, 이렇게 만들어요</span>
+        </a>
+        <figcaption>가상의 샘플 센터 화면이에요 · 실제 센터가 아닙니다</figcaption>
       </figure>
     </div>
 
     <nav class="quick" aria-label="함께 정리하는 곳">
       <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><rect x="7" y="5" width="18" height="22" rx="3"/><path d="M11 12h10M11 17h10M11 22h6"/></svg></span>블로그</a>
       <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><path d="M16 28s-8.5-7.8-8.5-14.3a8.5 8.5 0 0 1 17 0C24.5 20.2 16 28 16 28Z"/><circle cx="16" cy="13.5" r="3.2"/></svg></span>플레이스</a>
-      <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><path d="M16 5c5.5 0 9.5 4 9.5 9.5 0 6.5-6 10.5-9.5 12.5-3.5-2-9.5-6-9.5-12.5C6.5 9 10.5 5 16 5Z"/><path d="M12.5 15.5 15 18l4.5-5"/></svg></span>당근</a>
       <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><rect x="10" y="4" width="12" height="24" rx="3"/><path d="M14.5 24h3"/></svg></span>홈페이지</a>
       <a href="#ai"><span class="ic"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/><path d="M14 10.5c.3 2 1.2 3 3.2 3.5-2 .5-2.9 1.5-3.2 3.5-.3-2-1.2-3-3.2-3.5 2-.5 2.9-1.5 3.2-3.5Z"/></svg></span>AI 검색</a>
     </nav>
@@ -688,7 +740,7 @@
       <li><span class="num">약 1<small>년</small></span><b>요양보호사 경력</b><span>주야간보호센터 현장</span></li>
       <li><span class="num">1<small>년+</small></span><b>블로그·플레이스 운영</b><span>센터 채널을 처음부터</span></li>
       <li><span class="num">3<small>개 시</small></span><b>직접 찾아가는 지역</b><span>수원·화성·용인</span></li>
-      <li><span class="num">4<small>가지</small></span><b>함께 정리하는 채널</b><span><span class="nw">블로그·플레이스·</span><wbr><span class="nw">당근·홈페이지</span></span></li>
+      <li><span class="num">3<small>가지</small></span><b>함께 정리하는 채널</b><span><span class="nw">블로그·플레이스·</span><wbr><span class="nw">홈페이지</span></span></li>
     </ul>
   </div>
 </section>
@@ -716,32 +768,28 @@
       <div class="card">
         <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><path d="M16 27s-10-6.2-10-13.2A5.6 5.6 0 0 1 16 10a5.6 5.6 0 0 1 10 3.8C26 20.8 16 27 16 27Z"/></svg></span><span class="label en">Family caregiver</span></div>
         <h3>처음 겪는 돌봄의 막막함을 압니다</h3>
-        <p>가족이 다닐 센터를 알아볼 때 “센터에서 하루를 어떻게 보낼까?”, “처음 가는 날에도 잘 적응할 수 있을까?”가 가장 궁금했습니다. 낯선 제도와 용어 앞에서 막막했던 그 경험이, 제가 정보를 쉽게 정리하려는 이유입니다.</p>
+        <p>가족이 다닐 센터를 알아볼 때의 막막함을 압니다. 그래서 보호자가 찾는 정보를 쉽게 정리합니다.</p>
       </div>
       <div class="card">
         <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><path d="M5 15 16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M14 26v-6h4v6"/></svg></span><span class="label en">Care center</span></div>
         <h3>센터 안의 하루를 직접 겪었습니다</h3>
-        <p>요양보호사로 일하며 알게 됐습니다. 센터에서는 익숙한 하루가, 처음 센터를 알아보는 보호자에게는 꼭 듣고 싶은 이야기라는 것을요.</p>
+        <p>센터에서 익숙한 하루가, 보호자에게는 꼭 듣고 싶은 이야기라는 걸 현장에서 배웠습니다.</p>
       </div>
       <div class="card">
         <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="16" rx="2"/><path d="M11 27h10M16 22v5"/><path d="M10 17l4-4 3 3 5-5"/></svg></span><span class="label en">Online manager</span></div>
         <h3>블로그와 플레이스를 직접 키워봤습니다</h3>
-        <p>센터의 온라인 채널을 처음부터 맡아 꾸준히 운영했고, 직원분께 운영 방법도 알려드렸습니다.</p>
+        <p>센터 블로그와 플레이스를 처음부터 맡아 1년 넘게 운영하고, 직원분께 운영 방법도 알려 드렸습니다.</p>
       </div>
       <div class="card">
         <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><path d="M16 9c-3-2.2-7-2.6-11-1.5v17c4-1.1 8-.7 11 1.5 3-2.2 7-2.6 11-1.5v-17C23 6.4 19 6.8 16 9Z"/><path d="M16 9v17"/></svg></span><span class="label en">Keep learning</span></div>
-        <h3>AI를 꾸준히 공부합니다</h3>
-        <p>AI로 홈페이지와 콘텐츠를 만드는 방법을 계속 익히고, 배운 것은 바로 실제 작업에 적용합니다.</p>
+        <h3>AI로 홈페이지를 직접 만듭니다</h3>
+        <p>AI로 센터 홈페이지를 직접 만들고, 배운 것은 바로 작업에 씁니다.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="work">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">Experience</span>
-      <h2>블로그와 플레이스 운영,<br>처음부터 끝까지 <span class="nw">직접 해봤습니다.</span></h2>
+    <!-- 해본 일 (2026-11-24 소개 칸으로 합침) -->
+    <div class="work-head" id="work">
+      <h3>블로그와 플레이스 운영, <span class="nw">처음부터 끝까지 직접 해봤습니다.</span></h3>
       <p>주야간보호센터의 블로그와 네이버 플레이스를 처음부터 맡아, 1년 넘게 직접 운영했습니다.</p>
     </div>
     <div class="work">
@@ -758,13 +806,131 @@
         <div class="mark-q">“</div>
         <blockquote>블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.</blockquote>
         <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
-        <p class="fine">운영 기간 동안 방문자·상담 문의·입소자가 늘어난 것을 경험했습니다. 다만 정확한 수치는 기록하지 못했고, 모두 블로그 덕분이라고 단정하지 않습니다.</p>
+        <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="soft" id="ai">
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow en">Services</span>
+      <h2><span class="nw">센터는 사진만</span> <span class="nw">보내 주세요.</span><br>보호자가 찾는 길은 <span class="nw">함께 정리합니다.</span></h2>
+      <p>주야간보호센터 중심으로, 방문요양·요양원도 상담 가능합니다.</p>
+    </div>
+
+    <!-- 보호자가 센터를 찾아오는 길 (2026-11-24 추가) -->
+    <div class="path-box">
+      <p class="path-title">보호자가 우리 센터를 찾아오는 길</p>
+      <ol class="path">
+        <li>
+          <span class="pn en">01</span>
+          <b>검색</b>
+          <span class="pd">“수원 권선구 주간보호센터”처럼 동네와 센터 종류로 찾습니다</span>
+          <span class="pj">블로그 글 주제 · 동네 이름</span>
+        </li>
+        <li>
+          <span class="pn en">02</span>
+          <b>플레이스 · 블로그</b>
+          <span class="pd">사진·소개글·소식을 보며 센터 분위기를 살핍니다</span>
+          <span class="pj">플레이스 정보 · 사진 순서</span>
+        </li>
+        <li>
+          <span class="pn en">03</span>
+          <b>홈페이지</b>
+          <span class="pd">이용 비용·송영 지역·하루 일과를 확인합니다</span>
+          <span class="pj">센터 홈페이지</span>
+        </li>
+        <li>
+          <span class="pn en">04</span>
+          <b>전화 · 카톡</b>
+          <span class="pd">화면의 전화 버튼을 눌러 상담을 합니다</span>
+          <span class="pj">전화 연결 점검</span>
+        </li>
+      </ol>
+      <p class="path-note">중간에 정보가 빠져 있거나 전화가 잘 이어지지 않으면 보호자는 다른 센터로 넘어가기 쉽습니다. 마케팅지니는 이 길 전체를 함께 정리합니다. <span class="nw">(각 칸 아래 보라 글씨 = 마케팅지니가 정리하는 것)</span></p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="card">
+        <span class="no">01</span><span class="label en">Blog &amp; place</span>
+        <h3>블로그·플레이스 정리</h3>
+        <p>블로그 메뉴·카테고리·소개글과 플레이스 소개 문구·사진 순서·기본 정보를 보호자가 보는 순서에 맞춰 정리하고, 블로그와 플레이스를 연결합니다. 블로그 글 15편도 함께 써 드립니다. 홈페이지와 묶은 시작 패키지로 진행해요.</p>
+      </div>
+      <div class="card">
+        <span class="no">02</span><span class="label en">Homepage</span>
+        <h3>홈페이지 제작</h3>
+        <p>프로그램·하루 일과·이용 비용·송영·오시는 길·전화 연결을 한 장에 담은 휴대폰용 페이지를 만들어, 플레이스 ‘홈페이지’ 칸에 연결합니다. AI 검색에서도 센터 정보를 읽을 수 있게 정리합니다.</p>
+        <a class="svc-more" href="#sample">샘플 화면 보기 ↓</a>
+      </div>
+      <div class="card">
+        <span class="no">03</span><span class="label en">Monthly</span>
+        <h3>월간 관리</h3>
+        <p>밴드나 카톡방에 평소처럼 올린 사진과 한 줄 설명을 받아, 블로그 글과 플레이스 소식으로 정리해 올립니다. 어르신 얼굴은 모자이크하고, 센터가 확인한 뒤에 올립니다.</p>
+      </div>
+    </div>
+
+    <!-- 상황별 안내: 센터장님이 맡길 일을 스스로 고를 수 있게 -->
+    <div class="fit-head">
+      <span class="eyebrow en">My Center</span>
+      <h3>우리 센터는 어떤 상황인가요?</h3>
+      <p>문의가 끊기는 자리에 따라 먼저 할 일이 다릅니다. 잘 모르겠다면 무료 진단에서 함께 찾아 드려요.</p>
+    </div>
+    <ul class="fit">
+      <li><span class="sit">검색해도 우리 센터가 잘 안 보여요</span><span class="todo"><b>먼저</b>보호자가 검색할 동네 이름과 글 주제 점검</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
+      <li><span class="sit">블로그는 읽히는데 전화가 없어요</span><span class="todo"><b>먼저</b>이용 비용·송영 지역처럼 빠진 정보 채우기</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
+      <li><span class="sit">플레이스는 조회되는데 연락이 없어요</span><span class="todo"><b>먼저</b>전화 연결과 플레이스 기본 정보 확인</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
+      <li><span class="sit">문의는 잘 오는데 글 쓸 시간이 없어요</span><span class="todo"><b>먼저</b>지금 방식은 그대로 두고 소식만 꾸준히</span><span class="pick">월간 관리</span></li>
+    </ul>
+
+    <p class="svc-note"><a href="service/">상품 구성과 가격 보기 ↗</a> · 범위와 비용은 시작 전에 문서로 안내해 드립니다.</p>
+  </div>
+</section>
+
+<!-- Sample Work: 가상의 '샘플주야간보호센터'로 만든 화면입니다. 일월센터 등 실제 센터는 동의를 받은 뒤에만 사례로 올립니다. -->
+<section class="soft" id="sample">
+  <div class="wrap sample">
+    <div class="head">
+      <span class="eyebrow en">Sample Work</span>
+      <h2>센터 홈페이지,<br><span class="nw">이렇게 만들어 드립니다.</span></h2>
+      <p>보호자가 휴대폰으로 가장 먼저 찾는 이용 비용·송영 지역·전화를 한 장에 담습니다. 화면은 가상의 샘플 센터로 만든 예시예요.</p>
+    </div>
+    <div class="sample-body">
+      <p class="incl-title">기본으로 들어가는 것</p>
+      <ul class="incl">
+        <li>등급별 이용 비용과 계산기</li>
+        <li>누르면 바로 거는 전화 버튼</li>
+        <li>송영 지역 · 오시는 길</li>
+        <li>보호자가 묻는 질문과 답</li>
+        <li>AI·검색이 읽는 센터 정보 정리</li>
+        <li>카톡 미리보기 그림</li>
+      </ul>
+      <p class="incl-title">색 조합은 8가지 중에서 센터 분위기에 맞게 고릅니다</p>
+      <ul class="themes" aria-label="홈페이지 색 조합 8가지">
+        <li><span class="sw" style="--a:#82663f;--b:#3e5638;--c:#f4ede1"></span><span>햇살마루</span></li>
+        <li class="on"><span class="sw" style="--a:#365B49;--b:#896b3e;--c:#EBF0E6"></span><span>편백정원<small>샘플 색</small></span></li>
+        <li><span class="sw" style="--a:#235A5C;--b:#8d6a3d;--c:#E3F0EE"></span><span>맑은활력</span></li>
+        <li><span class="sw" style="--a:#5E4973;--b:#8b6a4c;--c:#EFE8F4"></span><span>고운선율</span></li>
+        <li><span class="sw" style="--a:#8e6221;--b:#3B573A;--c:#F7EED8"></span><span>웃음가득</span></li>
+        <li><span class="sw" style="--a:#96462E;--b:#3D5A47;--c:#F7E7DD"></span><span>정성한끼</span></li>
+        <li><span class="sw" style="--a:#A64424;--b:#2E5848;--c:#FCECD8"></span><span>감귤햇살</span></li>
+        <li><span class="sw" style="--a:#1F3A68;--b:#8e6b38;--c:#EFECE2"></span><span>단청품격</span></li>
+      </ul>
+      <div class="btns">
+        <a class="btn" href="sample/" target="_blank" rel="noopener">샘플 홈페이지 직접 보기 <span>↗</span></a>
+      </div>
+      <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
+    </div>
+    <ul class="shots" aria-label="샘플 센터 홈페이지 휴대폰 화면">
+      <li><span class="phone"><img src="img/sample-home.jpg" alt="샘플 센터 홈페이지 첫 화면: 센터 소개, 본인부담금 계산 버튼, 전화번호" width="780" height="1688" loading="lazy"></span><b>첫 화면</b><small>센터 한 줄 소개와 전화</small></li>
+      <li><span class="phone"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지 이용 비용 화면: 4등급 기준 월 예상 금액 예시" width="780" height="1688" loading="lazy"></span><b>이용 비용</b><small>등급별 월 예상 금액</small></li>
+      <li><span class="phone"><img src="img/sample-contact.jpg" alt="샘플 센터 홈페이지 오시는 길 화면: 주소, 지도 길찾기 버튼" width="780" height="1688" loading="lazy"></span><b>오시는 길</b><small>지도 길찾기와 주소 복사</small></li>
+    </ul>
+  </div>
+</section>
+
+<section id="ai">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow en">AI search</span>
@@ -872,48 +1038,6 @@
   </div>
 </section>
 
-<section id="services">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">Services</span>
-      <h2><span class="nw">센터는 사진만</span> <span class="nw">보내 주세요.</span><br>보호자가 찾는 길은 <span class="nw">함께 정리합니다.</span></h2>
-      <p>주야간보호센터 중심으로, 방문요양·요양원도 상담 가능합니다.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="card">
-        <span class="no">01</span><span class="label en">Blog &amp; place</span>
-        <h3>블로그·플레이스 정비</h3>
-        <p>블로그 메뉴·카테고리·소개글과 플레이스 소개 문구·사진 순서·기본 정보를 보호자가 보는 순서에 맞춰 정리하고, 블로그와 플레이스를 연결합니다.</p>
-      </div>
-      <div class="card">
-        <span class="no">02</span><span class="label en">Homepage</span>
-        <h3>홈페이지 제작</h3>
-        <p>프로그램·하루 일과·이용 비용·송영·오시는 길·전화 연결을 한 장에 담은 휴대폰용 페이지를 만들어, 플레이스 ‘홈페이지’ 칸에 연결합니다. AI 검색에서도 센터 정보를 읽을 수 있게 정리합니다.</p>
-      </div>
-      <div class="card">
-        <span class="no">03</span><span class="label en">Monthly</span>
-        <h3>월간 관리</h3>
-        <p>밴드나 카톡방에 평소처럼 올린 사진과 한 줄 설명을 받아, 블로그 글·플레이스 소식·당근 소식으로 정리해 올립니다. 어르신 얼굴은 모자이크하고, 센터가 확인한 뒤에 올립니다.</p>
-      </div>
-    </div>
-
-    <!-- 상황별 안내: 센터장님이 맡길 일을 스스로 고를 수 있게 -->
-    <div class="fit-head">
-      <span class="eyebrow en">My Center</span>
-      <h3>우리 센터는 어떤 상황인가요?</h3>
-      <p>문의가 끊기는 자리에 따라 먼저 할 일이 다릅니다. 잘 모르겠다면 무료 진단에서 함께 찾아 드려요.</p>
-    </div>
-    <ul class="fit">
-      <li><span class="sit">검색해도 우리 센터가 잘 안 보여요</span><span class="todo"><b>먼저</b>보호자가 검색할 동네 이름과 글 주제 점검</span><span class="pick">블로그·플레이스 정비</span></li>
-      <li><span class="sit">블로그는 읽히는데 전화가 없어요</span><span class="todo"><b>먼저</b>이용 비용·송영 지역처럼 빠진 정보 채우기</span><span class="pick">시작 패키지 (정비 + 홈페이지)</span></li>
-      <li><span class="sit">플레이스는 조회되는데 연락이 없어요</span><span class="todo"><b>먼저</b>전화 연결과 플레이스 기본 정보 확인</span><span class="pick">블로그·플레이스 정비</span></li>
-      <li><span class="sit">문의는 잘 오는데 글 쓸 시간이 없어요</span><span class="todo"><b>먼저</b>지금 방식은 그대로 두고 소식만 꾸준히</span><span class="pick">월간 관리</span></li>
-    </ul>
-
-    <p class="svc-note"><a href="service/">상품 구성과 가격 보기 ↗</a> · 범위와 비용은 시작 전에 문서로 안내해 드립니다.</p>
-  </div>
-</section>
-
 <section class="principles" id="principles">
   <div class="wrap">
     <div class="head">
@@ -941,11 +1065,11 @@
     <div class="faq-list">
       <details>
         <summary><span class="n en">01</span><span class="q">홍보 비용은 얼마이고, 견적은 어떻게 받나요?</span></summary>
-        <p>블로그·플레이스 정비는 30만 원, 센터 홈페이지 제작은 30만 원, 두 가지를 함께 진행하면 50만 원입니다. 부가세와 홈페이지 도메인 비용은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다.</p>
+        <p>센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다.</p>
       </details>
       <details>
         <summary><span class="n en">02</span><span class="q">한 번만 맡길 수 있나요, 매달 관리도 가능한가요?</span></summary>
-        <p>블로그·플레이스 정비나 홈페이지 제작은 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월 4건·8건·12건 중에서 고르시면 됩니다. 1건은 블로그 글 1편과 플레이스·당근 소식으로 구성돼요.</p>
+        <p>홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요.</p>
       </details>
       <details>
         <summary><span class="n en">03</span><span class="q">무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</span></summary>
@@ -960,16 +1084,16 @@
         <p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p>
       </details>
       <details>
-        <summary><span class="n en">06</span><span class="q">당근 홍보나 홈페이지 제작만 따로 맡길 수 있나요?</span></summary>
-        <p>센터 홈페이지는 단독으로 제작할 수 있어요. 당근 소식은 월간 관리에 포함돼요. 당근만 원하시면 상담할 때 필요한 작업을 알려 주세요.</p>
+        <summary><span class="n en">06</span><span class="q">홈페이지 제작만 따로 맡길 수 있나요?</span></summary>
+        <p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p>
       </details>
     </div>
     <details class="faq-more">
-      <summary>질문 더 보기 <span>6개</span></summary>
+      <summary>질문 더 보기 <span>10개</span></summary>
       <div class="faq-list">
         <details>
           <summary><span class="n en">07</span><span class="q">어떤 홍보를 도와주시나요?</span></summary>
-          <p>주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스·당근 소식도 작성해 드립니다.</p>
+          <p>주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스 소식도 작성해 드립니다.</p>
         </details>
         <details>
           <summary><span class="n en">08</span><span class="q">수원·화성·용인 외 지역도 상담할 수 있나요?</span></summary>
@@ -990,6 +1114,22 @@
         <details>
           <summary><span class="n en">12</span><span class="q">리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?</span></summary>
           <p>글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요.</p>
+        </details>
+        <details>
+          <summary><span class="n en">13</span><span class="q">성과를 보장하나요?</span></summary>
+          <p>아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다.</p>
+        </details>
+        <details>
+          <summary><span class="n en">14</span><span class="q">도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</span></summary>
+          <p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p>
+        </details>
+        <details>
+          <summary><span class="n en">15</span><span class="q">홍보 글 문구가 법에 걸리지는 않나요?</span></summary>
+          <p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p>
+        </details>
+        <details>
+          <summary><span class="n en">16</span><span class="q">도메인이 뭔가요? 꼭 사야 하나요?</span></summary>
+          <p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p>
         </details>
       </div>
     </details>
