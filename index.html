@@ -634,6 +634,55 @@
     .steps li p { margin-top: 6px; }
     .hero-phones { max-width: 290px; }
   }
+
+  /* ───── 2026-11-24 GPTO 참고 뒤 추가: 미색 바탕·편지·1분 점검·색 화면 8장·카톡 복사 ───── */
+  :root { --cream: #fbf7ef; --cream-line: #ece3d2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cream: #25221c; --cream-line: #3a352b; } }
+  :root[data-theme="dark"] { --cream: #25221c; --cream-line: #3a352b; }
+  section.cream { background: var(--cream); }
+
+  .letter { margin: 0 0 22px; background: var(--bg); border: 1px solid var(--cream-line); border-left: 4px solid var(--gold); border-radius: 20px; padding: 30px 32px 26px; }
+  .letter p { font-family: "Noto Serif KR", serif; font-weight: 600; font-size: 17px; line-height: 1.85; color: var(--ink); }
+  .letter p + p { margin-top: 12px; }
+  .letter .l-to { font-size: 19px; font-weight: 700; color: var(--text-strong); margin-bottom: 14px; }
+  .letter figcaption { margin-top: 20px; text-align: right; font-size: 15px; color: var(--ink-soft); }
+  .letter figcaption .en { font-size: 26px; color: var(--violet); margin-right: 10px; vertical-align: -3px; }
+  @media (max-width: 560px) { .letter { padding: 22px 20px 20px; } .letter p { font-size: 16px; line-height: 1.8; } }
+
+  .selfcheck { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: stretch; }
+  .sc-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .sc-list label { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 12px 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; cursor: pointer; font-size: 16px; line-height: 1.45; color: var(--text-strong); transition: border-color .15s var(--ease), background-color .15s var(--ease); }
+  .sc-list input { flex: 0 0 auto; width: 22px; height: 22px; accent-color: var(--violet); margin: 0; }
+  .sc-list label:has(input:checked) { border-color: var(--violet); background: var(--tint); }
+  .sc-result { display: flex; flex-direction: column; justify-content: center; gap: 12px; background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+  .sc-count { font-family: "Noto Serif KR", serif; font-size: 18px; color: var(--ink-soft); }
+  .sc-count b { font-size: 40px; color: var(--violet); margin-right: 4px; }
+  .sc-msg { font-size: 16px; line-height: 1.65; color: var(--ink); min-height: 3.3em; }
+  .sc-result .btn { align-self: flex-start; }
+  @media (max-width: 860px) { .selfcheck { grid-template-columns: 1fr; } .sc-result .btn { align-self: stretch; justify-content: center; } }
+
+  .theme-row { margin-top: 40px; }
+  .theme-row .incl-title span { font-weight: 400; color: var(--ink-faint); margin-left: 6px; }
+  .theme-shots { list-style: none; margin: 0; padding: 4px 2px 10px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; }
+  .theme-shots li { text-align: center; }
+  .theme-shots .phone { border-width: 5px; border-radius: 20px; box-shadow: var(--ev-2); }
+  .theme-shots .phone img { border-radius: 15px; }
+  .theme-shots li.on .phone { outline: 2px solid var(--violet); outline-offset: 3px; }
+  .theme-shots b { display: block; margin-top: 10px; font-size: 14px; color: var(--text-strong); }
+  .theme-shots small { display: block; font-size: 12px; font-weight: 700; color: var(--violet); }
+  @media (max-width: 960px) {
+    .theme-shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -18px; padding: 6px 18px 12px; }
+    .theme-shots::-webkit-scrollbar { display: none; }
+    .theme-shots li { flex: 0 0 34%; scroll-snap-align: start; }
+  }
+  @media (min-width: 961px) { .theme-row .incl-title span { display: none; } }
+
+  .kt-copy { margin-top: 22px; max-width: 420px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .22); border-radius: 16px; padding: 16px 18px; }
+  .kt-title { font-size: 15px !important; font-weight: 700; color: #fff !important; margin: 0 0 8px !important; }
+  .kt-msg { margin: 0 0 12px; white-space: pre-wrap; font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, .92); }
+  .kt-btn { height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: #fff; color: #3d2c8f; font: 700 15px "Noto Sans KR", system-ui, sans-serif; cursor: pointer; }
+  .kt-btn:hover { background: #f1eefc; }
+  @media (max-width: 860px) { .kt-copy { max-width: none; } }
 </style>
 <script type="application/ld+json">
 {
@@ -745,7 +794,7 @@
   </div>
 </section>
 
-<section class="soft" id="story">
+<section class="cream" id="story">
   <div class="wrap">
     <div class="story-top">
       <div class="head">
@@ -764,17 +813,15 @@
         </ul>
       </aside>
     </div>
+    <!-- 센터장님께 드리는 편지 (2026-11-24 사용자 확인, 서명은 지니 드림) — 확인된 사실로만 씀 -->
+    <figure class="letter">
+      <p class="l-to">센터장님께</p>
+      <p>저는 주야간보호센터에서 요양보호사로 일했고, 지금은 치매가 있는 어머니를 함께 사는 집에서 돌보는 보호자입니다.</p>
+      <p>가족이 다닐 센터를 알아볼 때 “센터에서 하루를 어떻게 보낼까?”, “처음 가는 날에도 잘 적응할 수 있을까?”가 가장 궁금했어요. 낯선 제도와 용어 앞에서 막막했던 그때를 기억합니다.</p>
+      <p>센터 안에서는 익숙한 하루가, 처음 센터를 알아보는 보호자에게는 꼭 듣고 싶은 이야기라는 걸 두 자리에서 모두 겪으며 알게 됐습니다. 센터장님이 돌봄에 집중하시는 동안, 그 이야기를 센터의 온라인에 차근차근 담아 드리겠습니다.</p>
+      <figcaption><span class="en">Jini</span>마케팅지니 지니 드림</figcaption>
+    </figure>
     <div class="grid-2">
-      <div class="card">
-        <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><path d="M16 27s-10-6.2-10-13.2A5.6 5.6 0 0 1 16 10a5.6 5.6 0 0 1 10 3.8C26 20.8 16 27 16 27Z"/></svg></span><span class="label en">Family caregiver</span></div>
-        <h3>처음 겪는 돌봄의 막막함을 압니다</h3>
-        <p>가족이 다닐 센터를 알아볼 때의 막막함을 압니다. 그래서 보호자가 찾는 정보를 쉽게 정리합니다.</p>
-      </div>
-      <div class="card">
-        <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><path d="M5 15 16 6l11 9"/><path d="M8 13v13h16V13"/><path d="M14 26v-6h4v6"/></svg></span><span class="label en">Care center</span></div>
-        <h3>센터 안의 하루를 직접 겪었습니다</h3>
-        <p>센터에서 익숙한 하루가, 보호자에게는 꼭 듣고 싶은 이야기라는 걸 현장에서 배웠습니다.</p>
-      </div>
       <div class="card">
         <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="16" rx="2"/><path d="M11 27h10M16 22v5"/><path d="M10 17l4-4 3 3 5-5"/></svg></span><span class="label en">Online manager</span></div>
         <h3>블로그와 플레이스를 직접 키워봤습니다</h3>
@@ -871,18 +918,26 @@
       </div>
     </div>
 
-    <!-- 상황별 안내: 센터장님이 맡길 일을 스스로 고를 수 있게 -->
-    <div class="fit-head">
-      <span class="eyebrow en">My Center</span>
-      <h3>우리 센터는 어떤 상황인가요?</h3>
-      <p>문의가 끊기는 자리에 따라 먼저 할 일이 다릅니다. 잘 모르겠다면 무료 진단에서 함께 찾아 드려요.</p>
+    <!-- 보호자처럼 1분 점검 (2026-11-24, '우리 센터는 어떤 상황인가요?' 자리) — 체크 내용은 저장하지 않습니다 -->
+    <div class="fit-head" id="check">
+      <span class="eyebrow en">Self Check</span>
+      <h3>보호자처럼 1분 점검</h3>
+      <p>보호자가 휴대폰으로 우리 센터를 찾는다고 생각하고, 해당하는 것을 눌러 보세요. 누른 내용은 어디에도 저장되지 않아요.</p>
     </div>
-    <ul class="fit">
-      <li><span class="sit">검색해도 우리 센터가 잘 안 보여요</span><span class="todo"><b>먼저</b>보호자가 검색할 동네 이름과 글 주제 점검</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
-      <li><span class="sit">블로그는 읽히는데 전화가 없어요</span><span class="todo"><b>먼저</b>이용 비용·송영 지역처럼 빠진 정보 채우기</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
-      <li><span class="sit">플레이스는 조회되는데 연락이 없어요</span><span class="todo"><b>먼저</b>전화 연결과 플레이스 기본 정보 확인</span><span class="pick">시작 패키지 (홈페이지 + 블로그·플레이스)</span></li>
-      <li><span class="sit">문의는 잘 오는데 글 쓸 시간이 없어요</span><span class="todo"><b>먼저</b>지금 방식은 그대로 두고 소식만 꾸준히</span><span class="pick">월간 관리</span></li>
-    </ul>
+    <div class="selfcheck">
+      <ol class="sc-list">
+        <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
+        <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
+        <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
+        <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
+        <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
+      </ol>
+      <div class="sc-result" aria-live="polite">
+        <p class="sc-count"><b id="scN">0</b> / 5</p>
+        <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
+        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
+      </div>
+    </div>
 
     <p class="svc-note"><a href="service/">상품 구성과 가격 보기 ↗</a> · 범위와 비용은 시작 전에 문서로 안내해 드립니다.</p>
   </div>
@@ -906,17 +961,6 @@
         <li>AI·검색이 읽는 센터 정보 정리</li>
         <li>카톡 미리보기 그림</li>
       </ul>
-      <p class="incl-title">색 조합은 8가지 중에서 센터 분위기에 맞게 고릅니다</p>
-      <ul class="themes" aria-label="홈페이지 색 조합 8가지">
-        <li><span class="sw" style="--a:#82663f;--b:#3e5638;--c:#f4ede1"></span><span>햇살마루</span></li>
-        <li class="on"><span class="sw" style="--a:#365B49;--b:#896b3e;--c:#EBF0E6"></span><span>편백정원<small>샘플 색</small></span></li>
-        <li><span class="sw" style="--a:#235A5C;--b:#8d6a3d;--c:#E3F0EE"></span><span>맑은활력</span></li>
-        <li><span class="sw" style="--a:#5E4973;--b:#8b6a4c;--c:#EFE8F4"></span><span>고운선율</span></li>
-        <li><span class="sw" style="--a:#8e6221;--b:#3B573A;--c:#F7EED8"></span><span>웃음가득</span></li>
-        <li><span class="sw" style="--a:#96462E;--b:#3D5A47;--c:#F7E7DD"></span><span>정성한끼</span></li>
-        <li><span class="sw" style="--a:#A64424;--b:#2E5848;--c:#FCECD8"></span><span>감귤햇살</span></li>
-        <li><span class="sw" style="--a:#1F3A68;--b:#8e6b38;--c:#EFECE2"></span><span>단청품격</span></li>
-      </ul>
       <div class="btns">
         <a class="btn" href="sample/" target="_blank" rel="noopener">샘플 홈페이지 직접 보기 <span>↗</span></a>
       </div>
@@ -927,6 +971,21 @@
       <li><span class="phone"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지 이용 비용 화면: 4등급 기준 월 예상 금액 예시" width="780" height="1688" loading="lazy"></span><b>이용 비용</b><small>등급별 월 예상 금액</small></li>
       <li><span class="phone"><img src="img/sample-contact.jpg" alt="샘플 센터 홈페이지 오시는 길 화면: 주소, 지도 길찾기 버튼" width="780" height="1688" loading="lazy"></span><b>오시는 길</b><small>지도 길찾기와 주소 복사</small></li>
     </ul>
+  </div>
+  <div class="wrap">
+    <div class="theme-row">
+      <p class="incl-title">색 조합은 8가지 중에서 센터 분위기에 맞게 고릅니다 <span>옆으로 넘겨 보세요</span></p>
+      <ul class="theme-shots" aria-label="같은 샘플 센터를 8가지 색으로 만든 휴대폰 첫 화면">
+        <li><span class="phone"><img src="img/theme-warm.jpg" alt="햇살마루 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>햇살마루</b></li>
+        <li class="on"><span class="phone"><img src="img/theme-sage.jpg" alt="편백정원 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>편백정원</b><small>위 샘플 색</small></li>
+        <li><span class="phone"><img src="img/theme-teal.jpg" alt="맑은활력 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>맑은활력</b></li>
+        <li><span class="phone"><img src="img/theme-lavender.jpg" alt="고운선율 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>고운선율</b></li>
+        <li><span class="phone"><img src="img/theme-honey.jpg" alt="웃음가득 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>웃음가득</b></li>
+        <li><span class="phone"><img src="img/theme-terracotta.jpg" alt="정성한끼 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>정성한끼</b></li>
+        <li><span class="phone"><img src="img/theme-citrus.jpg" alt="감귤햇살 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>감귤햇살</b></li>
+        <li><span class="phone"><img src="img/theme-royal.jpg" alt="단청품격 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>단청품격</b></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1038,7 +1097,7 @@
   </div>
 </section>
 
-<section class="principles" id="principles">
+<section class="principles cream" id="principles">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow en">Promise</span>
@@ -1173,6 +1232,14 @@
         <span class="en">Free check</span>
         <h2>우리 센터,<br><em>AI에 물어보면</em> <span class="nw">나올까요?</span></h2>
         <p>무료 진단으로 지금 모습부터 함께 확인해 보세요.<br>전화가 편하시면 <a class="tel" href="tel:010-5904-5300">010-5904-5300</a></p>
+        <div class="kt-copy">
+          <p class="kt-title">카톡에 이렇게 보내 주세요</p>
+          <pre class="kt-msg" id="ktMsg">무료 진단 신청합니다.
+센터 이름: ○○주간보호센터
+지역: 수원시 ○○구
+블로그나 플레이스 주소: (있으면)</pre>
+          <button type="button" class="kt-btn" id="ktCopy">복사하기</button>
+        </div>
       </div>
       <div class="btns">
         <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
@@ -1207,10 +1274,37 @@
     var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     var n;
     while ((n = w.nextNode())) {
-      if (n.nodeValue.indexOf('·') > -1 && !n.parentNode.closest('script,style')) {
+      if (n.nodeValue.indexOf('·') > -1 && !n.parentNode.closest('script,style,pre')) {
         n.nodeValue = n.nodeValue.replace(/ ·/g, ' ·').replace(/([^\s])·/g, '$1⁠·');
       }
     }
+  })();
+</script>
+
+<!-- 보호자처럼 1분 점검 · 카톡에 보낼 말 복사 -->
+<script>
+  (function () {
+    var boxes = document.querySelectorAll('.sc'), n = document.getElementById('scN'), msg = document.getElementById('scMsg');
+    var text = [
+      '보호자가 전화하기 전에 찾는 정보가 많이 비어 있어요. 홈페이지와 블로그·플레이스를 함께 정리하는 시작 패키지가 맞을 수 있어요. 먼저 무료 진단으로 확인해 보세요.',
+      '기본은 갖춰져 있어요. 비어 있는 곳만 채우면 됩니다. 무료 진단에서 빠진 곳과 고칠 순서를 정리해 드려요.',
+      '보호자가 찾는 기본 정보가 잘 갖춰져 있어요. 지금 방식을 그대로 두셔도 괜찮아요. 글 쓸 시간이 부족하시면 월간 관리를 살펴보세요.'
+    ];
+    function update() {
+      var c = 0; for (var i = 0; i < boxes.length; i++) if (boxes[i].checked) c++;
+      n.textContent = c;
+      msg.textContent = c <= 2 ? text[0] : (c <= 4 ? text[1] : text[2]);
+    }
+    for (var i = 0; i < boxes.length; i++) boxes[i].addEventListener('change', update);
+
+    var btn = document.getElementById('ktCopy'), pre = document.getElementById('ktMsg');
+    if (btn && pre) btn.addEventListener('click', function () {
+      var t = pre.textContent;
+      function done() { btn.textContent = '복사했어요 ✓'; setTimeout(function () { btn.textContent = '복사하기'; }, 2000); }
+      if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(t).then(done); return; }
+      var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {} document.body.removeChild(ta);
+    });
   })();
 </script>
 
