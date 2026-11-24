@@ -579,7 +579,7 @@
   .faq-list details[open] { border-color: var(--line); box-shadow: var(--ev-2); }
   .faq-list summary::after { content: ""; flex: none; align-self: center; width: 9px; height: 9px; margin: 0 4px 4px auto; border-right: 2px solid var(--ink-faint); border-bottom: 2px solid var(--ink-faint); transform: rotate(45deg); transition: transform .15s var(--ease); }
   .faq-list details[open] summary::after { content: ""; margin-bottom: -4px; transform: rotate(-135deg); }
-  /* 질문 더 보기: 나머지 10개는 접어 둡니다 (AI 검색용 정보에는 16개 모두 그대로, 2026-11-24 13~16번 추가) */
+  /* 질문 더 보기: 3개만 보이고 나머지 13개는 접어 둡니다 (AI 검색용 정보에는 16개 모두 그대로, 2026-11-24 13~16번 추가) */
   .faq-more { margin-top: 12px; }
   .faq-more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 12px; background: var(--fill); color: var(--text-strong); font-weight: 700; font-size: 15.5px; transition: background-color .15s var(--ease); }
   .faq-more > summary::-webkit-details-marker { display: none; }
@@ -741,6 +741,8 @@
   .work .more-box { justify-self: start; }
   .more-steps { margin-top: 12px; }
   @media (max-width: 860px) { .work .more-box { margin-top: 4px; } }
+
+  .more-check[open] > summary { margin-bottom: 14px; }
 </style>
 <script type="application/ld+json">
 {
@@ -963,22 +965,25 @@
     <div class="fit-head" id="check">
       <span class="eyebrow en">Self Check</span>
       <h3>보호자처럼 1분 점검</h3>
-      <p>해당하는 것을 눌러 보세요. 누른 내용은 저장되지 않아요.</p>
+      <p>보호자 눈으로 우리 센터를 점검해 보세요. 누른 내용은 저장되지 않아요.</p>
     </div>
-    <div class="selfcheck">
-      <ol class="sc-list">
-        <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
-        <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
-        <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
-        <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
-        <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
-      </ol>
-      <div class="sc-result" aria-live="polite">
-        <p class="sc-count"><b id="scN">0</b> / 5</p>
-        <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
-        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
+    <details class="faq-more more-box more-check">
+      <summary>5가지 점검해 보기 <span>1분</span></summary>
+      <div class="selfcheck">
+        <ol class="sc-list">
+          <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
+          <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
+          <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
+          <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
+          <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
+        </ol>
+        <div class="sc-result" aria-live="polite">
+          <p class="sc-count"><b id="scN">0</b> / 5</p>
+          <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
+          <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
+        </div>
       </div>
-    </div>
+    </details>
 
     <p class="svc-note"><a href="service/">상품 구성과 가격 보기 ↗</a> · 범위와 비용은 시작 전에 문서로 안내해 드립니다.</p>
   </div>
@@ -1141,11 +1146,11 @@
     <ol class="steps">
       <li><span class="n">01</span><div><h3>확인된 것만 말합니다</h3><p>순위·문의 증가를 약속하지 않아요.</p></div></li>
       <li><span class="n">02</span><div><h3>범위와 비용을 먼저 정합니다</h3><p>할 일·수정 횟수·금액을 시작 전에 문서로.</p></div></li>
-      <li><span class="n">03</span><div><h3>사진·정보는 동의한 것만 씁니다</h3><p>동의받은 것만, 얼굴은 모자이크해요.</p></div></li>
     </ol>
     <details class="faq-more more-box more-steps">
-      <summary>원칙 더 보기 <span>3개</span></summary>
+      <summary>원칙 더 보기 <span>4개</span></summary>
       <ol class="steps">
+        <li><span class="n">03</span><div><h3>사진·정보는 동의한 것만 씁니다</h3><p>동의받은 것만, 얼굴은 모자이크해요.</p></div></li>
         <li><span class="n">04</span><div><h3>필요 없는 일은 권하지 않습니다</h3><p>직접 고칠 수 있는 건 먼저 알려 드려요.</p></div></li>
         <li><span class="n">05</span><div><h3>순서대로 고치고, 바꾼 것을 기록합니다</h3><p>연결 오류부터 고치고, 바꾼 날을 기록해요.</p></div></li>
         <li><span class="n">06</span><div><h3>글은 사람이 확인하고 올립니다</h3><p>AI는 초안까지, 센터장님 확인 뒤 게시해요.</p></div></li>
@@ -1174,22 +1179,22 @@
         <summary><span class="n en">03</span><span class="q">무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</span></summary>
         <p>ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다.</p>
       </details>
-      <details>
-        <summary><span class="n en">04</span><span class="q">센터에서 준비해야 할 사진이나 자료가 있나요?</span></summary>
-        <p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p>
-      </details>
-      <details>
-        <summary><span class="n en">05</span><span class="q">어르신 얼굴이 나온 사진은 어떻게 처리하나요?</span></summary>
-        <p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p>
-      </details>
-      <details>
-        <summary><span class="n en">06</span><span class="q">홈페이지 제작만 따로 맡길 수 있나요?</span></summary>
-        <p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p>
-      </details>
     </div>
     <details class="faq-more">
-      <summary>질문 더 보기 <span>10개</span></summary>
+      <summary>질문 더 보기 <span>13개</span></summary>
       <div class="faq-list">
+        <details>
+          <summary><span class="n en">04</span><span class="q">센터에서 준비해야 할 사진이나 자료가 있나요?</span></summary>
+          <p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p>
+        </details>
+        <details>
+          <summary><span class="n en">05</span><span class="q">어르신 얼굴이 나온 사진은 어떻게 처리하나요?</span></summary>
+          <p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p>
+        </details>
+        <details>
+          <summary><span class="n en">06</span><span class="q">홈페이지 제작만 따로 맡길 수 있나요?</span></summary>
+          <p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p>
+        </details>
         <details>
           <summary><span class="n en">07</span><span class="q">어떤 홍보를 도와주시나요?</span></summary>
           <p>주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스 소식도 작성해 드립니다.</p>
