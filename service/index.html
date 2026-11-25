@@ -7,11 +7,11 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta name="description" content="주야간보호센터·요양기관을 위한 블로그·네이버 플레이스·홈페이지. 상품 구성과 가격을 한 장에 정리했습니다.">
-<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 -->
+<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 (2026-11-25 새 디자인: 먹색 바탕 og.png — 그림을 바꾸면 ?v= 날짜도 바꿉니다) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marketingjini.com/service/">
-<meta property="og:image" content="https://marketingjini.com/service/og.png?v=20261124">
-<meta property="og:image:secure_url" content="https://marketingjini.com/service/og.png?v=20261124">
+<meta property="og:image" content="https://marketingjini.com/service/og.png?v=20261125">
+<meta property="og:image:secure_url" content="https://marketingjini.com/service/og.png?v=20261125">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,523 +20,306 @@
 <meta property="og:description" content="&#8203;">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    /* 마케팅지니 디자인 시스템 (2026-11-06 적용) — 인쇄(A4)는 아래 @media print 색을 그대로 씁니다 */
-    --bg: #ffffff;
-    --cream: #f4f4f6;                    /* 종이 바깥 바탕 */
-    --text-strong: #111111;
-    --ink: rgba(0, 0, 0, .85);
-    --ink-soft: rgba(0, 0, 0, .62);
-    --ink-faint: rgba(0, 0, 0, .55);
-    --line: rgba(0, 0, 0, .08);
-    --line-heavy: rgba(0, 0, 0, .15);
-    --fill: rgba(0, 0, 0, .05);
-    --accent: #6a4be3;
-    --accent-deep: #3d2c8f;
-    --accent-ink: #ffffff;
-    --btn: #6a4be3; --btn-hover: #5a3ad4;
-    --tint: rgba(106, 75, 227, .10);
-    --gold: #f0b44c;
-    --head: linear-gradient(135deg, #4a33b4 0%, #3b47c4 100%);   /* 사용자가 마음에 들어 한 머리 색 — 그대로 */
-    --on-deep-soft: rgba(255, 255, 255, .82);
-    --on-deep-line: rgba(255, 255, 255, .22);
-    --ev-1: 0 0 2px 1px rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08);
-    --ev-2: 0 0 2px 1px rgba(0, 0, 0, .05), 0 2px 8px 0 rgba(0, 0, 0, .08);
-    --ev-3: 0 0 2px 1px rgba(0, 0, 0, .05), 0 4px 12px 0 rgba(0, 0, 0, .15);
-    --ease: cubic-bezier(.3, 0, 0, 1);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #1f1f24; --cream: #18181c; --text-strong: #ffffff; --ink: rgba(255, 255, 255, .82); --ink-soft: rgba(255, 255, 255, .64); --ink-faint: rgba(255, 255, 255, .56);
-      --line: rgba(255, 255, 255, .12); --line-heavy: rgba(255, 255, 255, .2); --fill: rgba(255, 255, 255, .08);
-      --accent: #9b86f5; --accent-ink: #16141f; --tint: rgba(143, 120, 240, .18);
-      --head: linear-gradient(135deg, #2f2470 0%, #263080 100%);
-      --ev-1: 0 0 0 1px rgba(255, 255, 255, .06), 0 1px 4px rgba(0, 0, 0, .3); --ev-2: 0 0 0 1px rgba(255, 255, 255, .06), 0 2px 8px rgba(0, 0, 0, .35); --ev-3: 0 0 0 1px rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .45);
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #1f1f24; --cream: #18181c; --text-strong: #ffffff; --ink: rgba(255, 255, 255, .82); --ink-soft: rgba(255, 255, 255, .64); --ink-faint: rgba(255, 255, 255, .56);
-    --line: rgba(255, 255, 255, .12); --line-heavy: rgba(255, 255, 255, .2); --fill: rgba(255, 255, 255, .08);
-    --accent: #9b86f5; --accent-ink: #16141f; --tint: rgba(143, 120, 240, .18);
-    --head: linear-gradient(135deg, #2f2470 0%, #263080 100%);
-    --ev-1: 0 0 0 1px rgba(255, 255, 255, .06), 0 1px 4px rgba(0, 0, 0, .3); --ev-2: 0 0 0 1px rgba(255, 255, 255, .06), 0 2px 8px rgba(0, 0, 0, .35); --ev-3: 0 0 0 1px rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .45);
-  }
+/* 마케팅지니 상품 안내지 — 새 디자인 (2026-11-25, 메인 홈페이지와 같은 규칙)
+   색 3개(버터 노랑·먹색·보라 — 보라는 버튼에만) + 흰 종이, 명조 제목, 상품 번호 01 02 03 + 가는 선
+   화면에서는 노란 바탕 위 흰 종이, 인쇄하면 A4 한 장. 꾸밈 코드는 모두 #jini로 시작 */
+#jini {
+  --yellow: #FFE066;
+  --ink: #1F1A33;
+  --violet: #6A4BE3;
+  --white: #FFFFFF;
+  min-height: 100vh;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+#jini *, #jini *::before, #jini *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#jini img { display: block; max-width: 100%; height: auto; }
+#jini a { color: inherit; }
+#jini :focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+#jini .nw { white-space: nowrap; }
+#jini .tl { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--cream); color: var(--ink);
-    font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 15.5px; line-height: 1.7;
-    word-break: keep-all; -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3 { margin: 0; font-family: "Noto Serif KR", serif; font-weight: 700; line-height: 1.35; }
-  p, ul, ol { margin: 0; }
-  a { color: inherit; }
-  .en { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; }
+/* 화면 맨 위 줄 (인쇄하지 않음) */
+#jini .tb { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 880px; margin: 0 auto; padding: 16px 20px; }
+#jini .tb-logo { display: inline-flex; align-items: center; gap: 8px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 18px; text-decoration: none; }
+#jini .tb-logo img { width: 32px; height: 32px; border-radius: 8px; }
+#jini .tb nav { display: flex; align-items: center; gap: 16px; font-size: 15px; }
+#jini .tb-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 10px; background: var(--violet); color: var(--white); font-weight: 700; text-decoration: none; }
+#jini .tb-cta:focus-visible { outline-color: var(--ink); }
 
-  /* 종이 한 장 */
-  .sheet {
-    max-width: 880px; margin: 32px auto; background: var(--bg);
-    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
-  }
-  .pad { padding: 0 44px; }
+/* 종이 */
+#jini .sheet { max-width: 880px; margin: 0 auto; background: var(--white); border: 2px solid var(--ink); }
+#jini .pad { padding: 28px 22px; }
+#jini .sec { padding: 26px 22px; border-top: 1px solid var(--ink); }
+#jini .sec-t { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.35; letter-spacing: -.02em; margin-bottom: 14px; }
 
-  /* 머리 */
-  .head { background: var(--head); color: #fff; padding: 34px 44px 32px; }
-  .brand { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-bottom: 22px; }
-  .brand img { width: 30px; height: 30px; border-radius: 8px; flex: 0 0 auto; box-shadow: 0 0 0 2px rgba(255,255,255,.85); }
-  .brand b { font-family: "Noto Serif KR", serif; font-size: 19px; letter-spacing: -.5px; }
-  .brand .en { margin-left: auto; font-size: 16px; color: var(--on-deep-soft); letter-spacing: .5px; }
-  .head h1 { font-size: clamp(25px, 4.4vw, 34px); letter-spacing: -1.2px; margin-bottom: 12px; color: #fff; }
-  .head p { color: var(--on-deep-soft); font-size: 15.5px; max-width: 620px; }
+/* 머리: 흰 바탕 + 아래 굵은 먹색 선 (2026-11-25 인쇄 부담을 줄이려고 노란 칸에서 바꿈) */
+#jini .head { background: var(--white); padding: 26px 22px 28px; border-bottom: 3px solid var(--ink); }
+#jini .brand { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+#jini .brand img { width: 28px; height: 28px; border-radius: 7px; }
+#jini .head h1 { margin-top: 18px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(30px, 8.4vw, 46px); line-height: 1.2; letter-spacing: -.04em; }
+#jini .head-sub { margin-top: 8px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(19px, 5vw, 25px); line-height: 1.4; letter-spacing: -.02em; }
+#jini .head-lead { margin-top: 14px; font-size: 16px; line-height: 1.7; max-width: 40em; }
 
-  /* 소제목 */
-  .sec { padding-top: 30px; }
-  .sec-title { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
-  .sec-title .en { font-size: 22px; color: var(--accent); }
-  .sec-title h2 { font-size: 20px; letter-spacing: -.6px; }
+/* 고민 */
+#jini .worries { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+#jini .worries li { padding: 11px 0; border-bottom: 1px solid var(--ink); font-size: 17px; line-height: 1.55; }
+#jini .worries li::before { content: "“"; font-family: 'Noto Serif KR', serif; font-weight: 700; margin-right: 4px; }
 
-  /* 고민 */
-  .worries { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; padding: 0; }
-  .worries li { background: var(--tint); border-radius: 10px; padding: 12px 16px; font-size: 14.5px; }
-  .worries li::before { content: "“"; color: var(--accent); font-weight: 700; margin-right: 4px; }
+/* 상품과 가격 */
+#jini .free { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: baseline; padding: 14px 16px; border: 2px solid var(--ink); border-radius: 8px; background: var(--yellow); }
+#jini .free-name { font-size: 19px; font-weight: 700; }
+#jini .free-price { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 30px; line-height: 1; }
+#jini .free p { grid-column: 1 / -1; margin-top: 6px; font-size: 16px; line-height: 1.6; }
+/* 상품 01 02 03: 굵은 위 선 + 큰 번호 + 큰 가격 (2026-11-25 가시성) */
+#jini .plans { list-style: none; margin-top: 22px; border-bottom: 1px solid var(--ink); }
+#jini .plan { display: grid; grid-template-columns: 92px 1fr; column-gap: 12px; padding: 20px 0; border-top: 3px solid var(--ink); }
+#jini .plan-no { grid-row: span 3; white-space: nowrap; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 66px; line-height: .85; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+#jini .plan-name { font-size: 21px; font-weight: 700; line-height: 1.4; }
+#jini .rec { margin-left: 8px; padding-bottom: 1px; border-bottom: 4px solid var(--yellow); font-size: 15px; }
+#jini .plan-price { margin-top: 4px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 38px; line-height: 1.15; letter-spacing: -.03em; }
+#jini .plan-desc { margin-top: 8px; font-size: 16.5px; line-height: 1.65; }
+#jini .month { list-style: none; margin-top: 6px; }
+#jini .month li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 4px 0; font-size: 16px; }
+#jini .month b { font-family: 'Noto Serif KR', serif; font-size: 32px; letter-spacing: -.03em; }
+#jini .fine { margin-top: 14px; font-size: 15px; line-height: 1.65; }
 
-  /* 상품 */
-  .items { list-style: none; padding: 0; border-top: 1px solid var(--line); }
-  .item { display: grid; grid-template-columns: 44px 1fr auto; gap: 4px 14px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: start; }
-  .item .no { font-size: 24px; color: var(--accent); line-height: 1.2; }
-  .item h3 { font-size: 17.5px; letter-spacing: -.5px; }
-  .item h3 small { font-family: "Noto Sans KR", sans-serif; font-weight: 500; font-size: 12.5px; color: var(--ink-faint); margin-left: 6px; letter-spacing: 0; }
-  .item p { color: var(--ink-soft); font-size: 14.5px; grid-column: 2; }
-  .item p .dom { display: block; margin-top: 6px; padding: 6px 10px; border-radius: 8px; background: var(--fill, rgba(0,0,0,.04)); font-size: .88em; color: var(--ink-soft); line-height: 1.55; }
-  .item p .dom b { color: var(--ink); }
-  .item .price { grid-column: 3; grid-row: 1 / span 2; text-align: right; font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 21px; letter-spacing: -.5px; white-space: nowrap; }
-  .item .price small { display: block; font-family: "Noto Sans KR", sans-serif; font-weight: 400; font-size: 12px; color: var(--ink-faint); letter-spacing: 0; }
-  .item.best { background: var(--tint); border-radius: 10px; border-bottom-color: transparent; padding: 16px 16px; margin: 6px -16px; }
-  .badge { display: inline-block; font-family: "Noto Sans KR", sans-serif; font-size: 11.5px; font-weight: 700; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 1px 9px; margin-left: 6px; vertical-align: 2px; letter-spacing: 0; }
+/* 진행 순서 · 약속 */
+#jini .two { display: grid; gap: 26px; }
+#jini .flow { list-style: none; counter-reset: f; border-top: 1px solid var(--ink); }
+#jini .flow li { counter-increment: f; display: grid; grid-template-columns: 30px 1fr; column-gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--ink); font-size: 16.5px; line-height: 1.55; }
+#jini .flow li::before { content: counter(f); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1.05; }
+#jini .promise { list-style: none; border-top: 1px solid var(--ink); }
+#jini .promise li { padding: 10px 0; border-bottom: 1px solid var(--ink); font-size: 16.5px; line-height: 1.55; }
 
-  .m-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 18px; }
-  .m-head h3 { font-size: 17.5px; letter-spacing: -.5px; }
-  .m-head span { font-size: 13.5px; color: var(--ink-soft); }
-  .monthly { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
-  .monthly .vat { display: block; clear: both; font-size: 12px; color: var(--ink-faint); }
+/* 자주 묻는 질문 */
+#jini .faq { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+#jini .faq div { padding: 10px 0; border-bottom: 1px solid var(--ink); }
+#jini .faq dt { font-size: 17px; font-weight: 700; line-height: 1.5; }
+#jini .faq dd { margin-top: 2px; font-size: 16px; line-height: 1.6; }
 
-  /* 자주 묻는 질문 */
-  .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
-  .faq dt { font-weight: 700; font-size: 14.5px; }
-  .faq dt::before { content: "Q. "; color: var(--accent); }
-  .faq dd { margin: 2px 0 0; color: var(--ink-soft); font-size: 14px; }
-  .monthly div { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
-  .monthly b { font-family: "Noto Serif KR", serif; font-size: 16px; }
-  .monthly .m-price { float: right; font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 17px; }
-  .monthly p { color: var(--ink-soft); font-size: 14px; clear: both; }
-  .fine { margin-top: 10px; font-size: 12.5px; color: var(--ink-faint); }
+/* 마케팅지니는 */
+#jini .who { display: grid; gap: 10px; padding: 20px 22px; border-top: 2px solid var(--ink); background: var(--yellow); }
+#jini .who-big { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+#jini .who-n { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 48px; line-height: .95; letter-spacing: -.05em; }
+#jini .who-t { font-size: 18px; font-weight: 700; }
+#jini .who ul { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 16px; font-weight: 500; }
+#jini .who li::before { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 8px 2px 0; background: var(--ink); transform: rotate(45deg); }
 
-  /* 진행 순서 + 약속 */
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  .flow { list-style: none; padding: 0; counter-reset: f; }
-  .flow li { counter-increment: f; display: grid; grid-template-columns: 30px 1fr; padding: 7px 0; font-size: 14.5px; border-bottom: 1px dashed var(--line); }
-  .flow li::before { content: counter(f); font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 19px; color: var(--accent); line-height: 1.3; }
-  .flow b { font-weight: 700; }
-  .promise { list-style: none; padding: 0; }
-  .promise li { position: relative; padding: 7px 0 7px 22px; font-size: 14.5px; border-bottom: 1px dashed var(--line); }
-  .promise li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+/* 상담 · 견적 문의: 흰 바탕 + 위쪽 굵은 먹색 선 (2026-11-25 인쇄하면 너무 어두워서 먹색 칸에서 바꿈) */
+#jini .foot { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 22px; background: var(--white); color: var(--ink); border-top: 3px solid var(--ink); }
+#jini .foot-t { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; }
+#jini .foot-cta { display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 20px; border-radius: 10px; background: var(--violet); color: var(--white); font-size: 17px; font-weight: 700; text-decoration: none; }
+#jini .foot-cta:focus-visible { outline-color: var(--ink); }
+#jini .foot-tel { font-size: 16px; }
+#jini .foot-tel a { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; text-decoration: none; }
+#jini .qr { display: none; }
+#jini .biz { font-size: 14px; line-height: 1.7; }
 
-  /* 누가 */
-  .who { margin-top: 30px; background: var(--cream); padding: 22px 44px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
-  .who .en { font-size: 15px; color: var(--accent); display: block; }
-  .who h3 { font-size: 18px; }
-  .who ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; font-size: 14px; color: var(--ink-soft); }
-  .who li::before { content: "· "; color: var(--accent); font-weight: 700; }
+/* 화면 아래 도구 (인쇄하지 않음) */
+#jini .tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; align-items: center; max-width: 880px; margin: 0 auto; padding: 22px 20px 40px; font-size: 16px; }
+#jini .tools button { min-height: 50px; padding: 0 22px; border: 2px solid var(--ink); border-radius: 10px; background: var(--white); color: var(--ink); font: inherit; font-weight: 700; cursor: pointer; }
 
-  /* 연락 */
-  .foot { background: var(--head); color: #fff; padding: 20px 44px; display: grid; grid-template-columns: 1fr auto; gap: 12px 24px; align-items: center; }
-  .foot-main { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
-  .qr { display: block; background: #fff; border-radius: 12px; padding: 7px 7px 5px; text-align: center; }
-  .qr img { display: block; width: 96px; height: 96px; }
-  .foot .qr span { display: block; color: #3d2c8f; font-size: 11.5px; font-weight: 700; margin-top: 2px; }
-  .foot b { font-family: "Noto Serif KR", serif; font-size: 18px; }
-  .foot span { color: var(--on-deep-soft); font-size: 14px; }
-  .foot a { color: #fff; font-weight: 700; text-decoration: none; }
-  .call { display: inline-block; background: #fff; color: #4b3bb5 !important; border-radius: 999px; padding: 8px 20px; font-family: "Noto Serif KR", serif; }
-  .call.kakao { background: #fee500; color: #191600 !important; box-shadow: 0 6px 16px rgba(0,0,0,.2); }
-  .foot .biz { grid-column: 1 / -1; font-size: 12.5px; padding-top: 8px; border-top: 1px solid var(--on-deep-line); }
-  .foot .biz .bi { white-space: nowrap; }
+/* PC 화면 */
+@media (min-width: 760px) {
+  #jini .tb { padding: 20px 0; }
+  #jini .sheet { margin-bottom: 0; }
+  #jini .head { padding: 34px 40px 36px; }
+  #jini .sec { padding: 28px 40px; }
+  #jini .worries { grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  #jini .two { grid-template-columns: 1fr 1fr; gap: 36px; }
+  #jini .faq { grid-template-columns: 1fr 1fr; column-gap: 28px; }
+  #jini .who { grid-template-columns: auto 1fr; align-items: center; column-gap: 28px; padding: 22px 40px; }
+  #jini .foot { grid-template-columns: 1fr auto; align-items: center; column-gap: 28px; padding: 24px 40px; }
+  #jini .foot-main { display: grid; gap: 12px; }
+  #jini .foot-cta { justify-self: start; }
+  #jini .qr { display: grid; justify-items: center; gap: 4px; padding: 8px; border: 2px solid var(--ink); border-radius: 8px; background: var(--white); color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
+  #jini .qr img { width: 96px; height: 96px; }
+  #jini .biz { grid-column: 1 / -1; }
+}
 
-  .tools { max-width: 880px; margin: -16px auto 32px; padding: 0 4px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-  .tools a { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 15px; }
-  .tools button { font: inherit; font-size: 14px; color: var(--accent); background: none; border: 1px solid var(--accent); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
-
-  /* 위쪽 메뉴 (화면에서만, 인쇄할 때는 숨김) */
-  .topbar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .tb-in { max-width: 1040px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .tb-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-  .tb-logo img { width: 38px; height: 38px; border-radius: 11px; }
-  .tb-logo .en { font-size: 23px; line-height: 1; }
-  .tb-logo b { font-family: "Noto Serif KR", serif; font-size: 16px; color: var(--accent); }
-  .topbar nav { display: flex; align-items: center; gap: 22px; font-size: 15px; }
-  .topbar nav a { text-decoration: none; color: var(--ink-soft); font-weight: 500; }
-  .topbar nav a:hover { color: var(--accent); }
-  .topbar nav .tb-cta { color: #fff; background: linear-gradient(135deg, #7b5cf0, #5566e8); border-radius: 10px; padding: 8px 16px; font-weight: 700; }
-  .topbar nav .tb-cta:hover { color: #fff; }
-
-  /* 컴퓨터 화면: 글자를 키우고 여백을 넉넉하게 */
-  @media screen and (min-width: 681px) {
-    body { font-size: 17px; line-height: 1.8; }
-    .sheet { max-width: 1040px; margin: 40px auto 48px; border-radius: 20px; }
-    .pad { padding: 0 64px; }
-    .head { padding: 56px 64px 52px; }
-    .brand { margin-bottom: 30px; }
-    .brand img { width: 36px; height: 36px; border-radius: 10px; }
-    .brand b { font-size: 21px; }
-    .brand .en { font-size: 18px; }
-    .head h1 { font-size: 40px; margin-bottom: 18px; }
-    .head p { font-size: 18px; max-width: 760px; }
-    .sec { padding-top: 64px; }
-    .sec-title { gap: 14px; margin-bottom: 24px; }
-    .sec-title .en { font-size: 28px; }
-    .sec-title h2 { font-size: 27px; }
-    .worries { gap: 14px; }
-    .worries li { padding: 20px 24px; font-size: 16.5px; border-radius: 14px; }
-    .item { grid-template-columns: 64px 1fr auto; gap: 8px 28px; padding: 30px 0; }
-    .item .no { font-size: 30px; }
-    .item h3 { font-size: 22px; }
-    .item h3 small { font-size: 14px; }
-    .item p { font-size: 16.5px; }
-    .item .price { font-size: 27px; }
-    .item .price small { font-size: 13.5px; margin-top: 4px; }
-    .item.best { padding: 30px 24px; margin: 12px -24px; border-radius: 16px; }
-    .badge { font-size: 12.5px; padding: 2px 11px; }
-    .m-head { margin-top: 44px; gap: 6px 14px; }
-    .m-head h3 { font-size: 22px; }
-    .m-head span { font-size: 15.5px; }
-    .monthly { gap: 16px; margin-top: 18px; }
-    .monthly div { padding: 24px 26px; border-radius: 14px; }
-    .monthly b { font-size: 19px; }
-    .monthly .m-price { font-size: 22px; }
-    .monthly p { font-size: 16px; margin-top: 6px; }
-    .monthly .vat { font-size: 14px; margin-top: 2px; }
-    .fine { font-size: 14px; margin-top: 18px; }
-    .two { gap: 56px; }
-    .flow li { grid-template-columns: 40px 1fr; padding: 15px 0; font-size: 16.5px; }
-    .flow li::before { font-size: 23px; }
-    .promise li { padding: 15px 0 15px 30px; font-size: 16.5px; }
-    .faq { gap: 28px 56px; }
-    .faq dt { font-size: 17.5px; }
-    .faq dd { font-size: 16px; margin-top: 6px; }
-    .who { margin-top: 72px; padding: 44px 64px; gap: 32px; }
-    .who .en { font-size: 19px; }
-    .who h3 { font-size: 23px; }
-    .who ul { font-size: 16px; gap: 8px 32px; }
-    .foot { padding: 40px 64px; gap: 18px 32px; }
-    .foot-main { gap: 12px 26px; }
-    .foot b { font-size: 22px; }
-    .foot span { font-size: 15.5px; }
-    .call { padding: 10px 24px; font-size: 16px; }
-    .qr img { width: 112px; height: 112px; }
-    .foot .qr span { font-size: 13px; }
-    .foot .biz { font-size: 13.5px; padding-top: 14px; }
-    .tools { max-width: 1040px; margin: 0 auto 56px; padding: 0 8px; }
-  }
-
-  @media (max-width: 680px) {
-    body { font-size: 16px; line-height: 1.75; }
-    .tb-in { padding: 0 16px; height: 60px; }
-    .tb-logo img { width: 34px; height: 34px; }
-    .tb-logo .en { font-size: 20px; }
-    .tb-logo b, .topbar nav .tb-home-full { display: none; }
-    .topbar nav { gap: 14px; font-size: 14.5px; }
-    .sheet { margin: 0; border: 0; border-radius: 0; }
-    .pad, .head, .who, .foot { padding-left: 20px; padding-right: 20px; }
-    .head { padding-top: 36px; padding-bottom: 34px; }
-    .head h1 { font-size: 27px; }
-    .head p { font-size: 16px; }
-    .sec { padding-top: 46px; }
-    .sec-title { margin-bottom: 18px; }
-    .sec-title .en { font-size: 25px; }
-    .sec-title h2 { font-size: 22px; }
-    .worries, .monthly, .two, .who ul, .faq { grid-template-columns: 1fr; }
-    .worries { gap: 10px; }
-    .worries li { padding: 15px 18px; font-size: 15.5px; border-radius: 12px; }
-    .two { gap: 40px; }
-    .faq { gap: 20px; }
-    .faq dt { font-size: 16px; }
-    .faq dd { font-size: 15.5px; margin-top: 4px; }
-    .who { grid-template-columns: 1fr; gap: 10px; margin-top: 50px; padding-top: 32px; padding-bottom: 32px; }
-    .item { grid-template-columns: 36px 1fr; padding: 24px 0; gap: 6px 14px; }
-    .item h3 { font-size: 19px; }
-    .item p { font-size: 15.5px; }
-    .item .price { grid-column: 2; grid-row: auto; text-align: left; font-size: 22px; margin-top: 4px; }
-    .item .price small { display: inline; margin-left: 6px; }
-    .item.best { margin: 8px -10px; padding: 22px 10px; }
-    .m-head { margin-top: 34px; }
-    .monthly { gap: 12px; margin-top: 14px; }
-    .monthly div { padding: 18px 20px; border-radius: 12px; }
-    .monthly b { font-size: 18px; }
-    .monthly .m-price { font-size: 20px; }
-    .monthly p { font-size: 15.5px; margin-top: 4px; }
-    .flow li, .promise li { font-size: 15.5px; padding-top: 12px; padding-bottom: 12px; }
-    .foot { grid-template-columns: 1fr; padding-top: 32px; padding-bottom: 32px; }
-    .qr { justify-self: start; }
-    .tools { margin: 18px auto 28px; padding: 0 20px; }
-  }
-  /* 휴대폰 화면에서는 QR 숨김 (같은 휴대폰으로는 찍을 수 없으니) — PC·인쇄에는 그대로 */
-  @media screen and (max-width: 680px) { .qr { display: none; } }
-
-  /* 화면에서 '월간 관리'와 '마케팅지니는' 칸을 눈에 띄게 (2026-11-06) — 인쇄 모양은 그대로 */
-  @media screen {
-    .m-wrap { margin-top: 40px; background: var(--tint); border-radius: 18px; padding: 26px 26px 22px; }
-    .m-wrap .m-head { margin-top: 0; }
-    .m-wrap .m-head h3 { font-size: clamp(22px, 3vw, 26px); }
-    .m-wrap .m-head span.m-one { display: inline-block; background: var(--bg); color: var(--ink); border-radius: 999px; padding: 4px 14px; font-weight: 500; }
-    .m-wrap .monthly div { background: var(--bg); border: 1px solid var(--line); border-top: 4px solid var(--accent); box-shadow: 0 10px 22px rgba(61, 44, 143, .08); }
-    .m-wrap .monthly .m-price { color: var(--accent); }
-    .m-wrap .fine { margin-top: 14px; }
-
-    .who { background: var(--tint); border-top: 4px solid var(--gold); }
-    .who h3 { font-size: clamp(24px, 3.4vw, 30px); }
-    .who ul { gap: 10px 14px; }
-    .who li { position: relative; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: 13px 16px 13px 44px; font-weight: 500; box-shadow: 0 6px 14px rgba(61, 44, 143, .06); }
-    .who li::before { content: "✓"; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: var(--tint); color: var(--accent); font-size: 13px; font-weight: 700; line-height: 1; }
-    .who li b { color: var(--accent); font-weight: 700; }
-  }
-  @media screen and (max-width: 680px) {
-    .m-wrap { margin: 34px -6px 0; padding: 22px 16px 18px; }
-    .who li { font-size: 16px; }
-  }
-
-  /* ───────── 디자인 시스템 부품 (화면에서만 — 인쇄 A4 모양은 그대로) ───────── */
-  @media screen {
-    body { font-family: "Inter", "Noto Sans KR", system-ui, sans-serif; letter-spacing: -.01em; }
-    h1, h2, h3 { color: var(--text-strong); }
-    .head h1 { color: #fff; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
-    .sheet { border-radius: 20px; }
-
-    /* Header */
-    .topbar { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: saturate(1.6) blur(16px); -webkit-backdrop-filter: saturate(1.6) blur(16px); }
-    .tb-in { height: 64px; }
-    .topbar nav { gap: 2px; }
-    .topbar nav a:not(.tb-cta) { padding: 8px 12px; border-radius: 8px; transition: background-color .15s var(--ease), color .15s var(--ease); }
-    .topbar nav a:not(.tb-cta):hover { background: var(--fill); color: var(--text-strong); }
-    .topbar nav .tb-cta { margin-left: 8px; height: 40px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 12px; background: var(--btn); box-shadow: var(--ev-2); transition: background-color .15s var(--ease); }
-    .topbar nav .tb-cta:hover { background: var(--btn-hover); }
-
-    /* 고민: 연보라 칸, 따옴표는 골드 */
-    .worries li { border-radius: 12px; }
-    .worries li::before { color: var(--gold); }
-
-    /* Plan: 글자 칩 + 추천은 2px 보라 테두리 */
-    .item .no { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 8px; background: var(--tint); font-size: 22px; line-height: 1; }
-    .item.best { background: var(--bg); border: 2px solid var(--accent); border-radius: 20px; box-shadow: var(--ev-3); }
-    .badge { border-radius: 6px; padding: 2px 8px; font-size: 13px; background: var(--btn); color: #fff; }
-
-    /* 월간 관리 */
-    .m-wrap { border-radius: 20px; }
-    .m-wrap .m-head span.m-one { border-radius: 6px; padding: 2px 10px; font-size: 14px; }
-    .m-wrap .monthly div { border-top: 1px solid var(--line); border-radius: 16px; box-shadow: none; transition: box-shadow .15s var(--ease); }
-    .m-wrap .monthly div:hover { box-shadow: var(--ev-2); }
-
-    /* 진행 순서·약속: 실선 */
-    .flow li, .promise li { border-bottom: 1px solid var(--line); }
-
-    /* 마케팅지니는 */
-    .who { border-top: 0; }
-    .who li { box-shadow: none; border-radius: 16px; }
-
-    /* 연락 */
-    .call { border-radius: 12px; font-family: "Inter", "Noto Sans KR", sans-serif; font-weight: 700; transition: transform .15s var(--ease); }
-    .call:active { transform: scale(.98); }
-    .call.kakao { box-shadow: none; }
-    .qr { border-radius: 16px; }
-
-    /* 아래 도구 */
-    .tools button { border: 0; border-radius: 12px; background: var(--fill); color: var(--text-strong); padding: 8px 16px; font-weight: 700; transition: background-color .15s var(--ease); }
-    .tools button:hover { background: var(--line-heavy); }
-  }
-  @media screen and (min-width: 681px) { .item .no { width: 44px; height: 44px; font-size: 26px; } .call { padding: 12px 24px; } }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-
-  /* A4 한 장으로 인쇄 */
-  @page { size: A4; margin: 9mm; }
-  @media print {
-    :root { --bg: #fff; --cream: #f6f4fd; --ink: #1f1a33; --ink-soft: #4f4968; --ink-faint: #7a7590; --line: #e2dcf2; --accent: #6a4be3; --accent-deep: #3d2c8f; --accent-ink: #fff; --tint: #efeafd; --head: linear-gradient(135deg, #4a33b4 0%, #3b47c4 100%); }
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff; font-size: 12.5px; line-height: 1.55; }
-    .sheet { margin: 0; max-width: none; border: 0; border-radius: 0; zoom: .81; }
-    .tools, .topbar { display: none; }
-    .pad { padding: 0 26px; }
-    .head { padding: 20px 26px 18px; }
-    .brand { margin-bottom: 12px; }
-    .head h1 { font-size: 23px; margin-bottom: 6px; }
-    .head p { font-size: 12.5px; max-width: none; }
-    .sec { padding-top: 14px; }
-    .sec-title { margin-bottom: 8px; }
-    .sec-title h2 { font-size: 15.5px; }
-    .sec-title .en { font-size: 17px; }
-    .worries { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
-    .worries li { font-size: 11.5px; padding: 7px 10px; line-height: 1.45; }
-    .item { padding: 8px 0; grid-template-columns: 34px 1fr auto; }
-    .item .no { font-size: 19px; }
-    .item h3 { font-size: 14px; }
-    .item p { font-size: 11.5px; }
-    .item .price { font-size: 16px; }
-    .item .price small { font-size: 10.5px; }
-    .item.best { padding: 8px 12px; margin: 4px -12px; }
-    .monthly { margin-top: 8px; gap: 8px; }
-    .monthly div { padding: 7px 12px; }
-    .monthly b, .monthly .m-price { font-size: 13.5px; }
-    .monthly p { font-size: 11.5px; }
-    .m-head { margin-top: 10px; }
-    .m-head h3 { font-size: 14px; }
-    .m-head span { font-size: 11.5px; }
-    .monthly .vat { font-size: 10.5px; }
-    .faq { gap: 6px 22px; }
-    .faq dt { font-size: 11.5px; }
-    .faq dd { font-size: 11px; }
-    .fine { font-size: 10.5px; margin-top: 6px; }
-    .two { gap: 22px; }
-    .flow li, .promise li { font-size: 11.5px; padding: 4px 0; }
-    .promise li { padding-left: 18px; }
-    .flow li::before { font-size: 15px; }
-    .who { margin-top: 14px; padding: 12px 26px; }
-    .who h3 { font-size: 14.5px; }
-    .who ul { font-size: 11.5px; }
-    .foot { padding: 12px 26px; }
-    .qr { padding: 5px 5px 3px; }
-    .qr img { width: 78px; height: 78px; }
-    .foot .qr span { font-size: 10px; margin-top: 0; }
-    .foot-main { gap: 4px 18px; }
-    .foot b { font-size: 15px; }
-    .foot span { font-size: 12px; }
-    .sec, .who, .foot { break-inside: avoid; }
-  }
+/* 인쇄: A4 한 장 (2026-11-25 가독성: 본문 12px 이상, 상품은 굵은 위 선 + 번호 38px + 가격 26px) */
+@page { size: A4; margin: 9mm; }
+@media print {
+  #jini { min-height: 0; background: var(--white); }
+  #jini .tb, #jini .tools { display: none; }
+  #jini .sheet { max-width: none; border: 1.5px solid var(--ink); }
+  #jini .head { padding: 12px 20px; }
+  #jini .brand { font-size: 11.5px; }
+  #jini .brand img { width: 22px; height: 22px; }
+  #jini .head h1 { margin-top: 7px; font-size: 28px; }
+  #jini .head-sub { margin-top: 2px; font-size: 16px; }
+  #jini .head-lead { margin-top: 5px; font-size: 12px; line-height: 1.5; }
+  #jini .sec { padding: 9px 20px; }
+  #jini .sec-t { font-size: 16px; margin-bottom: 6px; }
+  #jini .worries { grid-template-columns: 1fr 1fr; column-gap: 20px; }
+  #jini .worries li { padding: 3px 0; font-size: 12px; line-height: 1.45; }
+  #jini .free { padding: 6px 12px; }
+  #jini .free-name { font-size: 14px; }
+  #jini .free-price { font-size: 20px; }
+  #jini .free p { margin-top: 2px; font-size: 11.5px; line-height: 1.45; }
+  #jini .plans { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; margin-top: 9px; border-bottom: 0; }
+  #jini .plan { grid-template-columns: 1fr; padding: 6px 0 2px; border-top: 3px solid var(--ink); }
+  #jini .plan-no { grid-row: auto; font-size: 38px; line-height: .9; }
+  #jini .plan-name { margin-top: 2px; font-size: 16px; }
+  #jini .rec { font-size: 12px; border-bottom-width: 3px; }
+  #jini .plan-price { margin-top: 1px; font-size: 26px; }
+  #jini .plan-desc { margin-top: 3px; font-size: 11.5px; line-height: 1.45; }
+  #jini .month { margin-top: 1px; }
+  #jini .month li { padding: 0; gap: 0 8px; font-size: 11.5px; }
+  #jini .month b { font-size: 20px; }
+  #jini .fine { margin-top: 7px; font-size: 11px; line-height: 1.45; }
+  #jini .two { grid-template-columns: 1fr 1fr; gap: 20px; }
+  #jini .flow li, #jini .promise li { padding: 2.5px 0; font-size: 12px; line-height: 1.45; }
+  #jini .flow li { grid-template-columns: 20px 1fr; }
+  #jini .flow li::before { font-size: 15px; }
+  #jini .faq { grid-template-columns: 1fr 1fr; column-gap: 20px; }
+  #jini .faq div { padding: 3px 0; }
+  #jini .faq dt { font-size: 12px; }
+  #jini .faq dd { font-size: 11.5px; line-height: 1.45; }
+  #jini .who { grid-template-columns: auto 1fr; align-items: center; gap: 2px 20px; padding: 7px 20px; }
+  #jini .who-n { font-size: 28px; }
+  #jini .who-t { font-size: 13px; }
+  #jini .who ul { font-size: 12px; }
+  #jini .foot { grid-template-columns: 1fr auto; align-items: center; gap: 4px 20px; padding: 9px 20px; }
+  #jini .foot-main { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; }
+  #jini .foot-t { font-size: 15px; }
+  #jini .foot-cta { min-height: 32px; padding: 0 12px; font-size: 13px; }
+  #jini .foot-tel { font-size: 12.5px; }
+  #jini .foot-tel a { font-size: 16px; }
+  #jini .qr { display: grid; justify-items: center; gap: 2px; padding: 4px; border: 1.5px solid var(--ink); border-radius: 6px; background: var(--white); color: var(--ink); font-size: 9.5px; font-weight: 700; text-decoration: none; }
+  #jini .qr img { width: 62px; height: 62px; }
+  #jini .biz { grid-column: 1 / -1; font-size: 10.5px; line-height: 1.45; }
+  #jini .sec, #jini .who, #jini .foot { break-inside: avoid; }
+}
 </style>
 </head>
-<body>
+<body style="margin:0">
+<div id="jini">
 
-<header class="topbar">
-  <div class="tb-in">
-    <a class="tb-logo" href="/" aria-label="마케팅지니 홈으로">
-      <img src="logo.png" alt="" width="38" height="38">
-      <span class="en">Marketing Jini</span><b>마케팅지니</b>
-    </a>
-    <nav>
-      <a href="/">← <span class="tb-home-full">마케팅지니 </span>홈</a>
-      <a class="tb-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡 상담 ↗</a>
-    </nav>
-  </div>
+<header class="tb">
+  <a class="tb-logo" href="https://marketingjini.com/"><img src="logo.png" alt="" width="32" height="32">마케팅지니</a>
+  <nav aria-label="바로가기">
+    <a class="tl" href="https://marketingjini.com/">홈으로</a>
+    <a class="tb-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡 상담</a>
+  </nav>
 </header>
 
 <article class="sheet">
   <header class="head">
-    <div class="brand">
-      <img src="logo.png" alt="" width="30" height="30">
-      <b>마케팅지니</b>
-      <span class="en">Marketing Jini · 수원·화성·용인</span>
-    </div>
-    <h1>센터는 사진만 보내 주세요.<br>보호자가 찾는 길은 마케팅지니가 정리합니다.</h1>
-    <p>주야간보호센터 현장 근무와 가족 돌봄 경험으로, 보호자가 궁금해하는 정보를 센터의 블로그·네이버 플레이스·홈페이지에 담습니다.</p>
+    <p class="brand"><img src="logo.png" alt="" width="28" height="28">마케팅지니 · 수원·화성·용인 주야간보호센터·요양기관 온라인 홍보</p>
+    <h1>센터는 사진만 보내 주세요.</h1>
+    <p class="head-sub">보호자가 찾는 길은 마케팅지니가 정리합니다.</p>
+    <p class="head-lead">보호자가 궁금해하는 정보를 센터의 블로그·네이버 플레이스·홈페이지에 담습니다.</p>
   </header>
 
-  <section class="sec pad">
-    <div class="sec-title"><span class="en">01</span><h2>이런 고민, 있으신가요?</h2></div>
+  <section class="sec">
+    <h2 class="sec-t">이런 고민, 있으신가요?</h2>
     <ul class="worries">
       <li>블로그를 해야 하는 건 아는데, 무엇을 써야 할지 모르겠어요.</li>
-      <li>플레이스에 사진은 있는데, 비용·송영·하루 일과 안내가 빠져 있어요.</li>
+      <li>플레이스에 비용·송영·하루 일과 안내가 빠져 있어요.</li>
       <li>홈페이지는 비싸고, 만들어도 고치기가 어려워요.</li>
       <li>직원에게 맡겼는데 그만두면 다시 처음부터예요.</li>
     </ul>
   </section>
 
-  <section class="sec pad">
-    <div class="sec-title"><span class="en">02</span><h2>상품과 가격</h2></div>
-    <ol class="items">
-      <li class="item">
-        <span class="no en">A</span>
-        <h3>온라인 진단<small>처음 한 번</small></h3>
-        <span class="price">무료</span>
-        <p>센터의 플레이스·블로그를 보호자 눈으로 살펴보고, 빠진 정보와 고칠 순서를 정리해 드립니다. <b>ChatGPT·제미나이·네이버 AI에 “우리 동네 주간보호센터”를 물어보면 우리 센터가 나오는지</b>도 화면으로 확인해 드립니다.</p>
+  <section class="sec">
+    <h2 class="sec-t">상품과 가격</h2>
+    <div class="free">
+      <b class="free-name">무료 진단 · 처음 한 번</b>
+      <span class="free-price">무료</span>
+      <p>보호자 눈으로 플레이스·블로그를 살펴보고, AI 검색에 우리 센터가 나오는지 화면으로 확인해 드려요.</p>
+    </div>
+    <ol class="plans">
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">01</span>
+        <h3 class="plan-name">센터 홈페이지</h3>
+        <p class="plan-price">25만 원</p>
+        <p class="plan-desc">본인부담금 계산기·송영·오시는 길·전화를 한 페이지에 담아 플레이스에 연결해요. 수가·식비 변경은 관리하는 동안 무료. 도메인 별도(1년 2~3만 원 안팎).</p>
       </li>
-      <li class="item">
-        <span class="no en">B</span>
-        <h3>센터 홈페이지</h3>
-        <span class="price">25만 원<small>도메인 비용 별도 · 1년 2~3만 원</small></span>
-        <p>본인부담금 계산기·송영·오시는 길·전화를 한 페이지에 담아 플레이스에 연결. <b>수가·식비 변경은 관리하는 동안 무료 반영.</b><span class="dom"><b>도메인이란?</b> 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 사 두면 업체를 바꿔도 주소가 센터에 남아요.</span></p>
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">02</span>
+        <h3 class="plan-name">시작 패키지<span class="rec">추천</span></h3>
+        <p class="plan-price">50만 원</p>
+        <p class="plan-desc">홈페이지 + 블로그 세팅 또는 정비 + 블로그 글 15편 + 플레이스 정리를 한 번에 해요.</p>
       </li>
-      <li class="item best">
-        <span class="no en">C</span>
-        <h3>시작 패키지 <span class="badge">추천</span></h3>
-        <span class="price">50만 원</span>
-        <p>B 홈페이지 + 블로그 세팅 또는 정비 + <b>블로그 글 15편</b> + 플레이스 정리를 한 번에. 보호자가 플레이스에서 홈페이지·블로그를 거쳐 전화까지 오는 길을 함께 정리합니다.</p>
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">03</span>
+        <h3 class="plan-name">월간 관리</h3>
+        <ul class="month">
+          <li><b>월 18만 원</b><span>블로그 글 8편 + 플레이스 소식 4건</span></li>
+          <li><b>월 25만 원</b><span>블로그 글 12편 + 플레이스 소식 6건</span></li>
+        </ul>
+        <p class="plan-desc">사진과 한 줄 설명만 주시면 글로 올리고, 매달 보고해 드려요.</p>
       </li>
     </ol>
-    <div class="m-wrap">
-    <div class="m-head"><h3>월간 관리</h3><span class="m-one">블로그 글 + 플레이스 소식 · 매달 보고</span></div>
-    <div class="monthly">
-      <div><b>기본</b><span class="m-price">월 18만 원</span><p>블로그 8편 + 플레이스 소식 4건</p></div>
-      <div><b>꾸준히</b><span class="m-price">월 25만 원</span><p>블로그 12편 + 플레이스 소식 6건</p></div>
-    </div>
     <p class="fine">모든 가격은 부가세 10% 별도입니다. 작업 범위·수정 횟수·일정과 최종 금액은 상담 후 견적서로 먼저 안내해 드립니다.</p>
-    </div>
   </section>
 
-  <section class="sec pad two">
+  <section class="sec two">
     <div>
-      <div class="sec-title"><span class="en">03</span><h2>진행 순서</h2></div>
+      <h2 class="sec-t">진행 순서</h2>
       <ol class="flow">
-        <li><span><b>상담·무료 진단</b> — 센터 상황 듣기, AI 추천 확인 화면 전달</span></li>
-        <li><span><b>견적서</b> — 할 일·수정 횟수·일정·금액을 문서로</span></li>
-        <li><span><b>사진 보내기</b> — 밴드·카톡방에 평소처럼 사진과 한 줄 설명</span></li>
-        <li><span><b>작성·확인</b> — 사진 고르기·모자이크·글 작성 후 센터 확인</span></li>
-        <li><span><b>게시·보고</b> — 블로그·플레이스에 올리고 매달 보고</span></li>
+        <li><span><b>상담·무료 진단</b> 센터 상황 듣기, AI 추천 확인 화면 전달</span></li>
+        <li><span><b>견적서</b> 할 일·수정 횟수·일정·금액을 문서로</span></li>
+        <li><span><b>사진 보내기</b> 밴드·카톡방에 평소처럼 사진과 한 줄 설명</span></li>
+        <li><span><b>작성·확인</b> 사진 고르기·모자이크·글 작성 뒤 센터 확인</span></li>
+        <li><span><b>게시·보고</b> 블로그·플레이스에 올리고 매달 보고</span></li>
       </ol>
     </div>
     <div>
-      <div class="sec-title"><span class="en">04</span><h2>약속드립니다</h2></div>
+      <h2 class="sec-t">약속드립니다</h2>
       <ul class="promise">
         <li>검색 상위 노출이나 문의 증가를 약속하지 않습니다.</li>
         <li>범위와 비용은 시작 전에 문서로 정합니다.</li>
         <li>사진은 동의받은 것만, 어르신 얼굴은 모자이크합니다.</li>
-        <li>계정은 센터 이름 그대로 두고, 작업 방법은 시작 전에 함께 정합니다.</li>
-        <li>홍보 상담에서 다른 상품을 권하지 않습니다.</li>
+        <li>계정은 센터 이름 그대로, 작업 방법은 시작 전에 함께 정합니다.</li>
+        <li>글은 사람이 확인하고 올립니다. AI는 초안까지만 씁니다.</li>
       </ul>
     </div>
   </section>
 
-  <section class="sec pad">
-    <div class="sec-title"><span class="en">05</span><h2>자주 묻는 질문</h2></div>
+  <section class="sec">
+    <h2 class="sec-t">자주 묻는 질문</h2>
     <dl class="faq">
-      <div><dt>매번 원고를 써서 보내야 하나요?</dt><dd>아니요. 사진과 활동 이름, 한 줄 설명이면 됩니다. 모자라는 내용은 제가 여쭤봅니다.</dd></div>
-      <div><dt>AI로 쓴 글을 그대로 올리나요?</dt><dd>AI는 초안까지만 씁니다. 센터 자료와 맞는지 사람이 확인하고, 센터가 본 뒤에 올립니다.</dd></div>
-      <div><dt>지금 쓰는 블로그도 맡길 수 있나요?</dt><dd>네. 기존 글과 구성을 살펴보고 이어 갈 부분과 정리할 부분을 함께 정합니다.</dd></div>
-      <div><dt>검색 상위 노출을 보장하나요?</dt><dd>순위나 문의 건수는 약속하지 않습니다. 보호자가 센터를 이해하는 데 필요한 정보를 꾸준히 쌓습니다.</dd></div>
+      <div><dt>매번 원고를 써서 보내야 하나요?</dt><dd>아니요. 사진과 활동 이름, 한 줄 설명이면 됩니다. 모자라는 내용은 제가 여쭤봐요.</dd></div>
+      <div><dt>지금 쓰는 블로그도 맡길 수 있나요?</dt><dd>네. 기존 글과 구성을 살펴보고 이어 갈 부분과 정리할 부분을 함께 정해요.</dd></div>
     </dl>
   </section>
 
-  <section class="who">
-    <div><span class="en">Who we are</span><h3>마케팅지니는</h3></div>
+  <section class="who" aria-label="마케팅지니는">
+    <p class="who-big"><span class="who-n">8년차</span><span class="who-t">치매 어머니를 돌보는 가족 보호자</span></p>
     <ul>
-      <li>치매 어머니를 돌보는 <b>가족 보호자</b></li>
-      <li>주야간보호센터 <b>요양보호사 약 1년</b></li>
-      <li><b>AI로</b> 센터 홈페이지 제작</li>
+      <li>주야간보호센터 요양보호사 출신</li>
+      <li>센터 블로그와 플레이스 직접 운영</li>
+      <li>AI로 센터 홈페이지 제작</li>
     </ul>
   </section>
 
   <footer class="foot">
     <div class="foot-main">
-      <b>상담 · 견적 문의</b>
-      <a class="call kakao" href="https://pf.kakao.com/_rxeExeX/chat">카톡으로 무료 진단 신청</a>
-      <a class="call" href="tel:010-5904-5300">☎ 010-5904-5300</a>
+      <p class="foot-t">상담 · 견적 문의</p>
+      <a class="foot-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청</a>
+      <p class="foot-tel">전화 <a href="tel:010-5904-5300">010-5904-5300</a></p>
     </div>
-    <a class="qr" href="https://pf.kakao.com/_rxeExeX"><img src="kakao-qr.png" alt="카카오톡 채널 마케팅지니 QR코드" width="96" height="96"><span>카톡 채널</span></a>
-    <span class="biz"><span class="bi">상호 마케팅지니</span> · <span class="bi">대표 허효진</span> · <span class="bi">사업자등록번호 529-30-02199</span> · <span class="bi">경기도 수원시 권선구</span></span>
+    <a class="qr" href="https://pf.kakao.com/_rxeExeX" target="_blank" rel="noopener"><img src="kakao-qr.png" alt="카카오톡 채널 마케팅지니 QR코드" width="96" height="96"><span>카톡 채널</span></a>
+    <p class="biz"><span class="nw">상호 마케팅지니</span> · <span class="nw">대표 허효진</span> · <span class="nw">사업자등록번호 529-30-02199</span> · <span class="nw">경기도 수원시 권선구</span></p>
   </footer>
-
 </article>
 
-<div class="tools"><a href="/">← 마케팅지니 홈으로</a><button type="button" onclick="window.print()">인쇄 · PDF로 저장</button></div>
+<div class="tools">
+  <a class="tl" href="https://marketingjini.com/">마케팅지니 홈으로</a>
+  <button type="button" onclick="window.print()">인쇄 · PDF로 저장</button>
+</div>
 
+</div>
 </body>
 </html>
