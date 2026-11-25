@@ -8,749 +8,554 @@
 <title>마케팅지니 | 수원·화성·용인 주야간보호센터·요양기관 온라인 홍보</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<meta name="description" content="수원·화성·용인 주야간보호센터·요양기관 온라인 홍보. 요양보호사로 일했고 지금도 가족을 돌보는 보호자인 마케터가 센터의 블로그·네이버 플레이스·홈페이지를 함께 정리합니다.">
-<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 -->
+<meta name="description" content="수원·화성·용인 주야간보호센터·요양기관 온라인 홍보. 요양보호사 출신이자 치매 어머니를 8년째 돌보는 보호자인 마케터가 센터의 블로그·네이버 플레이스·홈페이지를 함께 정리합니다.">
+<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 (2026-11-25 새 디자인: 보라 단색 og.png — 그림을 바꾸면 ?v= 날짜도 바꿉니다) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marketingjini.com/">
-<meta property="og:image" content="https://marketingjini.com/og.png?v=20261124b">
-<meta property="og:image:secure_url" content="https://marketingjini.com/og.png?v=20261124b">
+<meta property="og:image" content="https://marketingjini.com/og.png?v=20261125">
+<meta property="og:image:secure_url" content="https://marketingjini.com/og.png?v=20261125">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<!-- 카톡 미리보기: 제목은 짧게(마케팅지니), 설명 한 줄은 누가 하는지 (2026-11-24 사용자 결정) -->
 <meta property="og:title" content="마케팅지니">
-<meta property="og:description" content="요양보호사였고 치매 어머니를 돌보는 보호자가 만듭니다">
+<meta property="og:description" content="치매 어머니를 8년째 돌보는 보호자가 만듭니다">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  /* 마케팅지니 디자인 시스템 (2026-11-05, Bezier 시각 언어 + 로고 보라·골드) — 2026-11-06 홈페이지에 적용
-     지킨 것: 제목 명조·영문 Cormorant 기울임, 그라데이션은 첫 화면 버튼 1곳, 금빛 별은 로고에만 */
-  :root {
-    --bg: #ffffff;                       /* surface */
-    --soft: #fafafa;                     /* surface-low: 교차 섹션 바탕 */
-    --lav: rgba(106, 75, 227, .10);      /* brand-purple-tint */
-    --tint: rgba(106, 75, 227, .10);
-    --tint-heavy: rgba(106, 75, 227, .20);
-    --text-strong: #111111;              /* 제목 */
-    --ink: rgba(0, 0, 0, .85);           /* 본문 */
-    --ink-soft: rgba(0, 0, 0, .62);      /* 설명 */
-    --ink-faint: rgba(0, 0, 0, .55);     /* 각주 (4.5:1 이상) */
-    --line: rgba(0, 0, 0, .08);          /* border */
-    --line-heavy: rgba(0, 0, 0, .15);
-    --fill: rgba(0, 0, 0, .05);          /* 보조 버튼·탭 트랙 */
-    --fill-lighter: rgba(0, 0, 0, .03);
-    --violet: #6a4be3;                   /* brand-purple */
-    --violet-hover: #5a3ad4;
-    --btn: #6a4be3; --btn-hover: #5a3ad4;   /* 버튼 바탕: 어두운 화면에서도 흰 글자 4.5:1 이상 */
-    --violet-deep: #3d2c8f;
-    --gold: #f0b44c;
-    --green-text: #1d7a48; --green-tint: rgba(34, 160, 90, .12);
-    --orange-text: #a35400; --orange-tint: rgba(230, 130, 30, .14);
-    --red-text: #c02f3a; --red-tint: rgba(220, 60, 70, .10);
-    --on-dark-soft: rgba(255, 255, 255, .8);
-    --on-dark-line: rgba(255, 255, 255, .2);
-    --grad: linear-gradient(135deg, #7b5cf0 0%, #5566e8 100%);
-    --grad-deep: linear-gradient(135deg, #3d2c8f 0%, #2f3a9e 100%);
-    --hero: #f7f5fe;
-    --ev-1: 0 0 2px 1px rgba(0, 0, 0, .05), 0 1px 4px 0 rgba(0, 0, 0, .08);
-    --ev-2: 0 0 2px 1px rgba(0, 0, 0, .05), 0 2px 8px 0 rgba(0, 0, 0, .08);
-    --ev-3: 0 0 2px 1px rgba(0, 0, 0, .05), 0 4px 12px 0 rgba(0, 0, 0, .15);
-    --ev-4: 0 0 2px 1px rgba(0, 0, 0, .05), 0 6px 20px 0 rgba(0, 0, 0, .22);
-    --shadow: var(--ev-2);
-    --ease: cubic-bezier(.3, 0, 0, 1);
-    --i-bg: #ece7fc; --i-line: #d9d0f5; --i-note: #e6defb; --i-beige: #efe9df;
-    --i-leaf: #9da58e; --i-leaf2: #c4c7b0; --i-sun: #f3cf8a; --i-house: #fdfcf8;
+/* 마케팅지니 새 디자인 (2026-11-25) — 에디토리얼형 · 색 3개(버터 노랑·먹색·보라) + 흰 바탕
+   지킬 것: 그라데이션·알약 표시·이모지·영어 장식 문구·카드 나열 없음, 보라는 버튼에만, 꾸밈 코드는 모두 #jini로 시작 */
+#jini {
+  --yellow: #FFE066;
+  --ink: #1F1A33;
+  --violet: #6A4BE3;
+  --white: #FFFFFF;
+  --main: var(--yellow);
+  --paper: var(--ink);
+  --point: var(--violet);
+  --point-ink: var(--white);
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+#jini *, #jini *::before, #jini *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#jini img { display: block; max-width: 100%; height: auto; }
+#jini a { color: inherit; }
+#jini :focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+#jini .nw { white-space: nowrap; }
+
+/* ---------- ① 첫 화면 ---------- */
+#jini .hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas: "bar" "w1" "copy" "w2" "band";
+  background: var(--main);
+  color: var(--paper);
+}
+#jini .jini-bar { grid-area: bar; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px 0; }
+/* 바로가기 메뉴 (휴대폰은 가격·무료 진단·질문 3개, PC는 6개) */
+#jini .jini-nav { display: flex; gap: 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
+#jini .jini-nav a { padding: 12px 0; text-decoration: none; }
+#jini .jini-nav a:hover, #jini .jini-nav a:focus-visible { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+#jini .jini-nav .pc-only { display: none; }
+#jini .jini-brand {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--paper); text-decoration: none;
+  font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 17px; letter-spacing: -.01em;
+}
+#jini .jini-brand img { width: 30px; height: 30px; border-radius: 8px; }
+#jini .jini-word {
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: 33.5vw; line-height: .9; letter-spacing: -.06em; white-space: nowrap;
+  color: var(--paper);
+}
+#jini .jini-word--top { grid-area: w1; padding: 12px 0 0 3vw; }
+#jini .jini-word--bottom { grid-area: w2; justify-self: end; padding: 0 2vw 26px 0; }
+#jini .jini-copy { grid-area: copy; align-self: center; padding: 28px 20px; max-width: 36rem; }
+#jini .jini-copy h1 {
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: clamp(24px, 6.4vw, 34px); line-height: 1.38; letter-spacing: -.025em;
+}
+#jini .jini-sub { margin-top: 14px; font-size: 16px; line-height: 1.65; opacity: .86; }
+#jini .jini-band {
+  grid-area: band; overflow: hidden;
+  background: var(--paper); color: var(--main);
+  padding: 13px 0; font-size: 15px; font-weight: 500; white-space: nowrap;
+}
+#jini .jini-track { display: flex; width: max-content; animation: jini-flow 45s linear infinite; }
+#jini .jini-track ul { display: flex; list-style: none; }
+#jini .jini-track li { display: flex; align-items: center; padding-right: 30px; }
+#jini .jini-track li::before {
+  content: ""; width: 6px; height: 6px; margin-right: 30px;
+  background: var(--main); transform: rotate(45deg);
+}
+@keyframes jini-flow { to { transform: translateX(-50%); } }
+
+/* ---------- 버튼과 글자 링크 (모든 칸 공통) ---------- */
+#jini .jini-cta, #jini .btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; min-height: 58px; margin-top: 26px; padding: 0 28px;
+  border-radius: 10px; background: var(--point); color: var(--point-ink);
+  font-size: 17px; font-weight: 700; letter-spacing: -.01em; text-decoration: none;
+  transition: filter .15s;
+}
+#jini .jini-cta:hover, #jini .btn:hover { filter: brightness(.94); }
+#jini .jini-cta:focus-visible, #jini .btn:focus-visible { outline-color: var(--ink); }
+#jini .tl {
+  font-weight: 700; text-decoration: underline;
+  text-decoration-thickness: 2px; text-underline-offset: 5px;
+}
+
+/* ---------- 칸 공통 ---------- */
+#jini .sec { padding: 84px 20px; overflow: hidden; }
+#jini .sec-white { background: var(--white); color: var(--ink); }
+#jini .sec-yellow { background: var(--yellow); color: var(--ink); }
+#jini .sec-ink { background: var(--ink); color: var(--white); }
+#jini .sec-ink :focus-visible { outline-color: var(--yellow); }
+#jini .wrap { max-width: 1040px; margin: 0 auto; }
+#jini .big {
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  line-height: .95; letter-spacing: -.06em; white-space: nowrap;
+  margin: 0 0 36px -.04em;
+}
+#jini .big--2 { font-size: 44vw; }
+#jini .big--4 { font-size: 21vw; }
+#jini .big--7 { font-size: 14vw; }
+#jini .sec-ink .big { color: var(--yellow); }
+#jini .h2 {
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: clamp(27px, 7.4vw, 46px); line-height: 1.32; letter-spacing: -.03em;
+}
+#jini .sec-ink .h2 { color: var(--yellow); }
+#jini .lead { margin-top: 16px; font-size: 17px; line-height: 1.75; max-width: 36em; opacity: .86; }
+#jini .h3 {
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: 23px; line-height: 1.4; letter-spacing: -.02em;
+}
+#jini .fine { font-size: 14px; line-height: 1.65; opacity: .72; }
+#jini .rows { list-style: none; border-top: 3px solid currentColor; }
+#jini .rows > li { padding: 20px 0; border-bottom: 1px solid currentColor; }
+#jini .more { margin-top: 4px; }
+#jini .more > summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 18px 0; border-bottom: 1px solid currentColor;
+  font-weight: 700; font-size: 16px; cursor: pointer; list-style: none;
+}
+#jini .more > summary::-webkit-details-marker { display: none; }
+#jini .more > summary::after { content: "+"; font-family: 'Noto Serif KR', serif; font-size: 26px; line-height: 1; }
+#jini .more[open] > summary::after { content: "−"; }
+
+/* 칸별 꾸밈은 이 아래에 이어 붙입니다 */
+
+/* ---------- ② 보호자가 센터를 찾아오는 길 ---------- */
+/* ---------- ①-1 이런 센터장님께 ---------- */
+#jini .who-sec .big { margin-bottom: 28px; }
+#jini .who-sec .big--7 { font-size: clamp(34px, 9.4vw, 46px); line-height: 1.1; } /* 2026-11-25 너무 크다는 의견으로 줄임 */
+#jini .worries { list-style: none; border-top: 3px solid var(--ink); }
+#jini .worry { position: relative; padding: 20px 0 20px 30px; border-bottom: 1px solid var(--ink); font-size: 19px; font-weight: 700; line-height: 1.55; }
+#jini .worry::before { content: "“"; position: absolute; left: 0; top: 14px; font-family: 'Noto Serif KR', serif; font-size: 34px; line-height: 1; }
+/* 마무리 문장: 노란 단색 띠로 부각 (2026-11-25) */
+#jini .who-end { margin-top: 32px; padding: 22px 22px 24px; border-radius: 10px; background: var(--yellow); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 19px; line-height: 1.5; }
+#jini .who-end strong { display: inline-block; margin-top: 4px; font-size: 25px; line-height: 1.35; letter-spacing: -.02em; }
+/* 바로 다음 칸(찾아오는 길)도 흰 바탕이라 굵은 선으로 나눔 */
+#jini .who-sec + #path { padding-top: 0; }
+#jini .who-sec + #path .path-head { border-top: 3px solid var(--ink); padding-top: 72px; }
+#jini #path { overflow: visible; } /* 넘침 숨기기가 있으면 화면에 머무는 패널(sticky)이 동작하지 않음 */
+#jini .path-head { margin-bottom: 44px; }
+#jini .scene-label { font-size: 17px; font-weight: 700; margin-bottom: 14px; }
+#jini .steps { list-style: none; border-top: 3px solid var(--ink); }
+#jini .step {
+  display: grid; grid-template-columns: 58px 1fr; column-gap: 14px;
+  padding: 22px 0; border-bottom: 1px solid var(--ink);
+}
+#jini .step-n {
+  grid-row: span 3; font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: 54px; line-height: .9; letter-spacing: -.04em;
+}
+#jini .step-t { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.3; }
+#jini .step-d { margin-top: 8px; font-size: 18px; line-height: 1.6; }
+/* '마케팅지니가 정리하는 것'은 노란 칸으로 눈에 띄게 (2026-11-25 가독성) */
+#jini .step-j { justify-self: start; margin-top: 14px; padding: 12px 16px; border-radius: 8px; background: var(--yellow); font-size: 18px; font-weight: 700; line-height: 1.45; }
+#jini .step-j small { display: block; margin-bottom: 2px; font-size: 14px; font-weight: 700; }
+#jini .scene-foot { display: none; }
+/* 단계별 휴대폰 예시 화면 (2026-11-25): 코드로 그린 가벼운 화면, 3단계만 실제 샘플 홈페이지 캡처. 스크롤 장면일 때만 보임 */
+#jini .phone { display: none; }
+#jini .is-scene .phone {
+  display: block; grid-area: ph; align-self: start; position: relative; overflow: hidden;
+  width: 128px; aspect-ratio: 9 / 18; padding: 8px 7px; border: 3px solid var(--ink); border-radius: 20px; background: var(--white);
+  font-size: 9px; line-height: 1.4;
+}
+#jini .phone p, #jini .phone ul { margin: 0; }
+#jini .ph-top { text-align: center; font-size: .85em; font-weight: 700; opacity: .6; margin-bottom: .6em !important; }
+#jini .ph-bar { padding: .6em .7em; border: .15em solid var(--ink); border-radius: .6em; font-weight: 700; }
+#jini .ph-res { list-style: none; margin-top: .6em !important; }
+#jini .ph-res li { padding: .6em .5em; border-bottom: 1px solid #1F1A3333; }
+#jini .ph-res li.on { border-radius: .5em; border-bottom: 0; background: var(--yellow); }
+#jini .ph-res b, #jini .ph-place b { display: block; font-weight: 700; }
+#jini .ph-res span, #jini .ph-place span { display: block; font-size: .9em; opacity: .7; }
+#jini .ph-place b { font-size: 1.15em; }
+#jini .ph-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: .3em; margin: .7em 0 !important; }
+#jini .ph-photos i { aspect-ratio: 1; border-radius: .3em; background: #1F1A3326; }
+#jini .ph-photos i.y { background: var(--yellow); }
+#jini .ph-line { padding: .6em 0; border-bottom: 1px solid #1F1A3333; }
+#jini .ph-line b { margin-right: .5em; }
+#jini .phone--img img { width: 100%; border-radius: .8em; }
+#jini .ph-call { display: flex; flex-direction: column; align-items: stretch; gap: .6em; padding-top: 2.4em; text-align: center; }
+#jini .ph-call b { font-weight: 700; font-size: 1.05em; }
+#jini .ph-call span { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 1.35em; margin-bottom: 1.2em; }
+#jini .ph-btn { display: block; padding: .8em; border-radius: .6em; background: var(--violet); color: var(--white); font-style: normal; font-weight: 700; }
+#jini .ph-btn--line { border: .15em solid var(--ink); background: var(--white); color: var(--ink); }
+/* 스크롤 장면: 자바스크립트가 .is-scene을 붙였을 때만 (움직임 줄이기 설정이면 목록 그대로) */
+#jini .scene.is-scene { position: relative; height: 270vh; height: 270svh; }
+#jini .is-scene .scene-stick { position: sticky; top: max(16px, calc(50vh - 250px)); }
+#jini .is-scene .steps { position: relative; min-height: 500px; }
+#jini .is-scene .step {
+  position: absolute; left: 0; right: 0; top: 0;
+  grid-template-columns: 1fr; border-bottom: 0; padding-top: 18px;
+  opacity: 0; transition: opacity .35s;
+}
+#jini .is-scene .step.is-on { opacity: 1; }
+#jini .is-scene .step-n { grid-area: n; grid-row: auto; font-size: 36vw; line-height: .85; margin-bottom: 14px; }
+#jini .is-scene .step { grid-template-columns: 1fr auto; grid-template-areas: 'n ph' 't t' 'd d' 'j j'; column-gap: 16px; }
+#jini .is-scene .step-t { grid-area: t; margin-top: 14px; }
+#jini .is-scene .step-d { grid-area: d; }
+#jini .is-scene .step-j { grid-area: j; }
+#jini .is-scene .step-t { font-size: 32px; }
+#jini .is-scene .step-d { font-size: 20px; }
+#jini .is-scene .scene-foot { display: flex; align-items: center; gap: 14px; margin-top: 18px; font-size: 14px; font-weight: 700; }
+#jini .scene-dots { display: flex; gap: 6px; }
+#jini .scene-dots i { width: 26px; height: 4px; background: var(--ink); opacity: .2; }
+#jini .scene-dots i.is-on { opacity: 1; }
+/* 센터는 사진만 보내 주세요 (2026-11-25 가독성: 제목·이름·설명 한 단계씩 키움, 설명은 진하게) */
+#jini .svc { margin-top: 80px; }
+#jini .svc > .h3 { font-size: 28px; }
+#jini .svc > .lead { font-size: 18px; opacity: 1; }
+#jini .svc .rows { margin-top: 30px; }
+#jini .svc .rows > li { padding: 24px 0; }
+#jini .svc-name { display: block; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 25px; margin-bottom: 10px; }
+#jini .svc .rows p { font-size: 18px; line-height: 1.75; }
+
+/* ---------- ③ 이렇게 만들어 드려요 ---------- */
+#jini .sec-rule { padding-top: 0; }
+#jini .sec-rule > .wrap { border-top: 3px solid var(--ink); padding-top: 72px; }
+#jini .shots {
+  display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
+  margin: 32px -20px 0; padding: 0 20px 10px; scroll-padding-inline: 20px;
+}
+#jini .shot { flex: 0 0 74%; scroll-snap-align: start; }
+#jini .shot img { border: 2px solid var(--ink); border-radius: 22px; }
+#jini .shot figcaption { margin-top: 12px; font-size: 14px; line-height: 1.55; }
+#jini .shot figcaption b { display: block; font-size: 15px; }
+#jini .swipe { margin-top: 8px; font-size: 13px; opacity: .7; }
+/* 기본으로 들어가는 것 (2026-11-25 가독성: 굵은 큰 글씨 + 먹색 마름모 표시, 무료 수정 약속은 형광펜 강조) */
+#jini .basics { margin-top: 64px; }
+#jini .basics .h3 { font-size: 26px; }
+#jini .basics .rows { margin-top: 22px; }
+#jini .basics .rows li { position: relative; padding: 20px 0 20px 26px; font-size: 19px; font-weight: 700; line-height: 1.5; }
+#jini .basics .rows li::before { content: ""; position: absolute; left: 2px; top: 31px; width: 9px; height: 9px; background: var(--ink); transform: rotate(45deg); }
+#jini .sample-notes { margin-top: 32px; display: grid; gap: 16px; font-size: 18px; line-height: 1.7; }
+#jini .sample-notes .hl { font-weight: 700; box-shadow: inset 0 -.5em 0 var(--yellow); }
+#jini .sample-notes .tl { font-size: 19px; }
+#jini .sample-notes .fine { font-size: 15px; }
+/* ---------- ④ 가격 ---------- */
+#jini .plans { list-style: none; margin-top: 40px; border-top: 1px solid var(--ink); }
+#jini .plan { padding: 28px 0 32px; border-bottom: 1px solid var(--ink); }
+#jini .plan-no { display: block; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 64px; line-height: .9; letter-spacing: -.02em; margin-bottom: 10px; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+#jini .plan-name { font-size: 20px; font-weight: 700; line-height: 1.4; }
+#jini .plan-desc { margin-top: 8px; font-size: 16px; line-height: 1.7; }
+#jini .plan-price {
+  display: block; margin-top: 20px;
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: clamp(44px, 13vw, 64px); line-height: 1; letter-spacing: -.035em;
+}
+#jini .plan-two { margin-top: 20px; display: grid; gap: 16px; }
+#jini .plan-two p { display: grid; gap: 6px; font-size: 15px; }
+#jini .plan-two .plan-price { margin-top: 0; font-size: clamp(34px, 10vw, 48px); }
+#jini .plan .tl { display: inline-block; margin-top: 20px; font-size: 16px; }
+#jini .price-note { margin-top: 28px; font-size: 15px; line-height: 1.8; }
+
+/* ---------- ⑤ 만드는 사람 ---------- */
+#jini .maker-grid { display: grid; gap: 56px; margin-top: 44px; }
+#jini .letter { position: relative; padding-top: 56px; }
+#jini .letter::before {
+  content: "“"; position: absolute; top: -14px; left: -6px;
+  font-family: 'Noto Serif KR', serif; font-size: 120px; line-height: 1; color: var(--yellow);
+}
+#jini .letter-to { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 21px; color: var(--yellow); margin-bottom: 16px; }
+#jini .letter p:not(.letter-to) { font-size: 17px; line-height: 1.9; }
+#jini .letter p + p { margin-top: 14px; }
+#jini .letter figcaption { margin-top: 24px; text-align: right; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 18px; }
+#jini .heard { border-top: 3px solid var(--white); padding-top: 26px; }
+#jini .heard blockquote { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 25px; line-height: 1.5; letter-spacing: -.02em; }
+#jini .heard cite { display: block; margin-top: 14px; font-style: normal; font-size: 15px; font-weight: 700; color: var(--yellow); }
+#jini .heard .fine { margin-top: 10px; }
+#jini .years { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px 18px; padding-bottom: 28px; border-bottom: 3px solid var(--white); }
+#jini .years-n { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(84px, 28vw, 168px); line-height: .9; letter-spacing: -.05em; color: var(--yellow); }
+#jini .years-t { font-size: 18px; font-weight: 700; line-height: 1.5; }
+/* 글자·사진 겹침 ① (2026-11-25): 사진 가장자리는 먹색 → 투명 그라데이션으로 칸 바탕과 이어지게 (큰 사진 덮개에 한해 그라데이션 허용) */
+#jini .photo-desk { display: grid; margin: 36px -20px 0; }
+#jini .photo-desk > * { grid-area: 1 / 1; }
+#jini .photo-frame { position: relative; }
+#jini .photo-frame img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: 78% 50%; }
+#jini .photo-desk .photo-frame::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, #1F1A33 0%, #1F1A33D9 22%, #1F1A3300 58%),
+    linear-gradient(180deg, #1F1A33 0%, #1F1A3300 22%, #1F1A3300 78%, #1F1A33 100%),
+    linear-gradient(#1F1A3326, #1F1A3326);
+}
+#jini .photo-over { position: relative; z-index: 1; align-self: start; flex-direction: column; align-items: flex-start; gap: 10px; margin: 0; padding: 6% 20px 0; border-bottom: 0; }
+#jini .done { margin-top: 48px; }
+#jini .done .h3 { color: var(--yellow); }
+#jini .done .rows { margin-top: 16px; }
+#jini .done .rows b { display: block; font-size: 14px; color: var(--yellow); margin-bottom: 2px; }
+#jini .done .rows span { font-size: 16px; line-height: 1.6; }
+#jini .more-list { list-style: none; }
+#jini .more-list li { padding: 12px 0; border-bottom: 1px solid currentColor; font-size: 15px; }
+
+/* ---------- ⑥ 무료 진단 ---------- */
+/* 2026-11-25 가독성 높임: 글자 한 단계씩 키우고, 점선 대신 실선, 테두리 굵게 */
+#jini .why-fine { margin-top: 12px; font-size: 15px; }
+#jini .check-grid { display: grid; gap: 56px; margin-top: 44px; }
+#jini .ai { border: 3px solid var(--ink); border-radius: 16px; padding: 22px 20px; }
+#jini .ai-top { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+#jini .ask { margin-left: 8%; padding: 16px 18px; border-radius: 14px 14px 4px 14px; background: var(--yellow); font-size: 18px; font-weight: 700; line-height: 1.5; }
+#jini .ans { list-style: none; margin-top: 18px; display: grid; gap: 12px; font-size: 17px; line-height: 1.6; }
+#jini .miss { margin-top: 18px; padding-top: 16px; border-top: 2px solid var(--ink); font-size: 18px; font-weight: 700; }
+#jini .miss::before { content: "× "; }
+#jini .ai-more + .ai-more, #jini .ai .more .ai-more { margin-top: 22px; }
+#jini .ai .more > summary { font-size: 17px; }
+#jini .ai-note { margin-top: 14px; font-size: 15px; }
+#jini .steps3 { margin-top: 52px; }
+#jini .flow { list-style: none; margin-top: 22px; border-top: 3px solid var(--ink); }
+#jini .flow li { display: grid; grid-template-columns: 52px 1fr; column-gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--ink); }
+#jini .flow .n { grid-row: span 2; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 48px; line-height: .95; }
+#jini .flow b { font-size: 19px; line-height: 1.45; }
+#jini .flow li > span:last-child { margin-top: 6px; font-size: 17px; line-height: 1.65; }
+#jini .flow-note { margin-top: 16px; font-size: 17px; font-weight: 700; }
+#jini .report { position: relative; border: 3px solid var(--ink); border-radius: 8px; padding: 34px 22px 24px; background: var(--white); }
+#jini .stamp { position: absolute; top: -17px; left: 20px; padding: 3px 12px; border: 3px solid var(--ink); border-radius: 4px; background: var(--yellow); font-size: 15px; font-weight: 700; }
+#jini .r-title { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.4; }
+#jini .r-date { margin-top: 4px; font-size: 15px; opacity: .75; }
+#jini .report h4 { margin-top: 26px; padding-bottom: 10px; border-bottom: 3px solid var(--ink); font-size: 17px; font-weight: 700; }
+#jini .r-rows { list-style: none; }
+#jini .r-rows li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--ink); font-size: 17px; line-height: 1.45; }
+#jini .st { flex: none; font-weight: 700; font-size: 17px; }
+#jini .st-no::before { content: "× "; }
+#jini .st-mid::before { content: "△ "; }
+#jini .st-ok::before { content: "○ "; }
+#jini .r-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+#jini .r-shots span { display: grid; place-items: center; height: 64px; border: 2px dashed var(--ink); border-radius: 6px; font-size: 14px; }
+#jini .r-legend { margin-top: 18px; font-size: 15px; font-weight: 700; }
+#jini .r-note { margin-top: 8px; font-size: 15px; }
+#jini .sc-box { margin-top: 32px; }
+#jini .sc-intro { padding-top: 14px; font-size: 15px; line-height: 1.7; }
+#jini .sc-list { list-style: none; margin-top: 6px; }
+#jini .sc-list li { border-bottom: 1px solid var(--ink); }
+#jini .sc-list label { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; font-size: 16px; line-height: 1.55; cursor: pointer; }
+#jini .sc-list input { flex: none; width: 22px; height: 22px; margin-top: 2px; accent-color: var(--violet); }
+#jini .sc-result { margin-top: 16px; padding-bottom: 8px; }
+#jini .sc-count { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 34px; }
+#jini .sc-msg { margin-top: 6px; font-size: 15px; line-height: 1.7; }
+#jini .check .btn { margin-top: 44px; }
+
+/* ---------- ⑦ 약속과 자주 묻는 질문 ---------- */
+#jini .promise { margin-top: 32px; }
+#jini .promise-t { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 20px; line-height: 1.45; }
+#jini .promise p { margin-top: 4px; font-size: 15px; line-height: 1.7; opacity: .82; }
+#jini .more .promise { margin-top: 0; border-top: 0; }
+#jini .faq-block { margin-top: 112px; }
+#jini .faq-title { color: var(--white); }
+#jini .faq-block > .fine { margin-top: 6px; }
+#jini .faq-list { margin-top: 24px; border-top: 3px solid currentColor; }
+#jini .faq-more .faq-list { margin-top: 0; border-top: 0; }
+#jini .qa { border-bottom: 1px solid currentColor; }
+#jini .qa > summary {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  padding: 20px 0; font-size: 17px; font-weight: 700; line-height: 1.5; cursor: pointer; list-style: none;
+}
+#jini .qa > summary::-webkit-details-marker { display: none; }
+#jini .qa > summary::after { content: "+"; flex: none; font-family: 'Noto Serif KR', serif; font-size: 28px; line-height: .9; color: var(--yellow); }
+#jini .qa[open] > summary::after { content: "−"; }
+#jini .qa p { padding: 0 0 22px; font-size: 16px; line-height: 1.8; opacity: .85; }
+#jini .sec-ink .more > summary::after { color: var(--yellow); }
+#jini .ask-link { margin-top: 28px; font-size: 15px; }
+/* ---------- ⑦-1 작업 노트 (자주 묻는 질문과 따로 둔 칸) ---------- */
+#jini .notes-list { list-style: none; margin-top: 40px; border-top: 3px solid var(--ink); }
+#jini .note { border-bottom: 1px solid var(--ink); }
+#jini .note a { display: block; padding: 28px 0 30px; text-decoration: none; }
+#jini .note-meta { display: block; font-size: 14px; font-weight: 700; }
+#jini .note-title {
+  display: block; margin-top: 10px;
+  font-family: 'Noto Serif KR', serif; font-weight: 700;
+  font-size: clamp(22px, 6vw, 30px); line-height: 1.45; letter-spacing: -.02em;
+}
+#jini .note a:hover .note-title, #jini .note a:focus-visible .note-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+#jini .note-sum { display: block; margin-top: 10px; font-size: 16px; line-height: 1.75; opacity: .85; }
+#jini .note-go { display: inline-block; margin-top: 16px; font-size: 15px; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+#jini .notes-foot { margin-top: 26px; font-size: 15px; line-height: 1.8; }
+
+/* ---------- ⑧ 마지막 상담 ---------- */
+#jini .contact .wrap { max-width: 720px; }
+/* 글자·사진 겹침 ② (2026-11-25 레퍼런스 방식으로 바꿈): 사진은 그라데이션 없이 또렷한 네모, 큰 제목의 아랫줄이 사진 위쪽 가장자리에 걸침 */
+#jini .photo-window { max-width: 1040px; margin: 0 auto 8px; }
+#jini .photo-title { position: relative; z-index: 1; margin-bottom: -.6em; font-size: clamp(36px, 10.5vw, 56px); line-height: 1.2; letter-spacing: -.04em; }
+#jini .photo-frame--light { margin: 0 -20px; }
+#jini .photo-frame--light img { object-position: 80% 50%; }
+#jini .photo-panel { padding-top: 12px; }
+#jini .photo-panel .lead { font-weight: 700; }
+#jini .photo-panel .btn { margin-top: 24px; }
+#jini .kt { margin-top: 32px; padding: 20px; border: 2px solid var(--ink); border-radius: 14px; background: var(--white); }
+#jini .kt-title { font-size: 15px; font-weight: 700; }
+#jini .kt pre { margin-top: 10px; font-family: 'Noto Sans KR', system-ui, sans-serif; font-size: 16px; line-height: 1.75; white-space: pre-wrap; }
+#jini .kt-btn {
+  margin-top: 14px; min-height: 48px; padding: 0 20px;
+  border: 2px solid var(--ink); border-radius: 10px; background: transparent; color: var(--ink);
+  font: inherit; font-size: 15px; font-weight: 700; cursor: pointer;
+}
+#jini .contact .btn { margin-top: 28px; }
+#jini .contact-links { margin-top: 24px; display: grid; gap: 12px; font-size: 16px; line-height: 1.7; }
+
+@media (min-width: 900px) and (orientation: landscape) {
+  #jini .check-grid { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  #jini .worries { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; border-top: 0; }
+  #jini .worry { border-top: 3px solid var(--ink); border-bottom: 0; padding: 24px 0 24px 34px; font-size: 21px; }
+  #jini .worry::before { top: 18px; }
+  #jini .who-end { margin-top: 40px; padding: 30px 40px 32px; font-size: 22px; }
+  #jini .who-end strong { font-size: 36px; }
+  #jini .who-sec .big--7 { font-size: 72px; }
+  #jini .notes-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; border-top: 0; }
+  #jini .note { border-top: 3px solid var(--ink); border-bottom: 0; }
+  #jini .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; border-top: 0; }
+  #jini .plan { border-top: 1px solid var(--ink); border-bottom: 0; }
+  #jini .plan-no { font-size: 80px; }
+  #jini .maker-grid { grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: start; }
+  #jini .photo-desk { margin: 48px 0 0; }
+  #jini .photo-window { margin: 0 auto 32px; }
+  #jini .photo-title { font-size: 80px; }
+  #jini .photo-frame--light { margin: 0; }
+  /* 사진 위에 안내 올리기: 사진은 16:9로 조금 높게, 안내는 왼쪽 빈 벽(폭 46%)에 */
+  #jini .photo-stage { display: grid; }
+  #jini .photo-stage > * { grid-area: 1 / 1; }
+  #jini .photo-frame--light img { aspect-ratio: 16 / 9; }
+  #jini .photo-panel { position: relative; z-index: 1; align-self: start; width: 46%; padding: 92px 0 0 4%; }
+  #jini .photo-panel .lead { margin-top: 0; font-size: 18px; }
+  #jini .photo-panel .kt { margin-top: 18px; padding: 20px 22px; }
+  #jini .contact .wrap { max-width: 1040px; }
+  #jini .contact .kt, #jini .contact .contact-links { max-width: 640px; }
+  #jini .photo-frame img { aspect-ratio: 16 / 8; }
+  #jini .photo-desk .photo-frame::after {
+    background:
+      linear-gradient(90deg, #1F1A33 0%, #1F1A33D9 22%, #1F1A3300 58%),
+      linear-gradient(270deg, #1F1A33 0%, #1F1A3300 7%),
+      linear-gradient(180deg, #1F1A33 0%, #1F1A3300 22%, #1F1A3300 78%, #1F1A33 100%),
+      linear-gradient(#1F1A3326, #1F1A3326);
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #1f1f24; --soft: #1b1b1f; --lav: rgba(143, 120, 240, .18); --tint: rgba(143, 120, 240, .18); --tint-heavy: rgba(143, 120, 240, .30);
-      --text-strong: #ffffff; --ink: rgba(255, 255, 255, .82); --ink-soft: rgba(255, 255, 255, .64); --ink-faint: rgba(255, 255, 255, .56);
-      --line: rgba(255, 255, 255, .12); --line-heavy: rgba(255, 255, 255, .2); --fill: rgba(255, 255, 255, .08); --fill-lighter: rgba(255, 255, 255, .05);
-      --violet: #9b86f5; --violet-hover: #b0a0f8;
-      --green-text: #5fd39a; --green-tint: rgba(76, 195, 138, .18); --orange-text: #f5b26b; --orange-tint: rgba(240, 160, 80, .18); --red-text: #ff8a90; --red-tint: rgba(255, 110, 120, .18);
-      --hero: #25232e;
-      --ev-1: 0 0 0 1px rgba(255, 255, 255, .06), 0 1px 4px rgba(0, 0, 0, .3); --ev-2: 0 0 0 1px rgba(255, 255, 255, .06), 0 2px 8px rgba(0, 0, 0, .35);
-      --ev-3: 0 0 0 1px rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .45); --ev-4: 0 0 0 1px rgba(255, 255, 255, .06), 0 6px 20px rgba(0, 0, 0, .55);
-      --i-bg: #2a2540; --i-line: #3d3657; --i-note: #352d52; --i-beige: #34312c;
-      --i-leaf: #7b8270; --i-leaf2: #5f6454; --i-sun: #8a7240; --i-house: #4a4741;
-    }
+  #jini .photo-over { padding: 9% 0 0 5%; flex-direction: row; align-items: baseline; gap: 18px; }
+  #jini .is-scene .steps { min-height: 480px; }
+  #jini .is-scene .step { grid-template-columns: auto 1fr auto; grid-template-areas: 'n t ph' 'n d ph' 'n j ph'; column-gap: 56px; align-items: center; }
+  #jini .is-scene .step-n { grid-row: auto; font-size: min(22vw, 300px); margin: 0; }
+  #jini .is-scene .step-t { margin-top: 0; align-self: end; }
+  #jini .is-scene .step-j { align-self: start; }
+  #jini .is-scene .phone { width: 220px; align-self: center; padding: 14px 12px; border-radius: 32px; font-size: 14px; }
+  #jini .is-scene .step-t { font-size: 44px; }
+  #jini .is-scene .step-d { font-size: 24px; }
+  #jini .is-scene .step-j { font-size: 22px; padding: 14px 20px; }
+  #jini .is-scene .step-j small { font-size: 15px; }
+  #jini .is-scene .scene-foot { font-size: 16px; }
+  #jini .svc .rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; border-top: 0; }
+  #jini .svc .rows > li { border-top: 3px solid var(--ink); border-bottom: 0; }
+  #jini .svc > .h3 { font-size: 36px; }
+  #jini .svc > .lead { font-size: 19px; }
+  #jini .svc-name { font-size: 28px; }
+  #jini .svc .rows p { font-size: 19px; }
+  #jini .shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; overflow: visible; margin: 48px 0 0; padding: 0; }
+  #jini .swipe { display: none; }
+  #jini .basics .rows { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  #jini .basics .rows li { font-size: 21px; }
+  #jini .basics .rows li::before { top: 33px; }
+  #jini .basics .h3 { font-size: 30px; }
+}
+
+/* ---------- 맨 아래 사업자 정보 ---------- */
+#jini .foot { background: var(--ink); color: var(--white); padding: 48px 20px 56px; font-size: 14px; line-height: 1.8; }
+#jini .foot-brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 18px; margin-bottom: 16px; }
+#jini .foot-brand img { width: 34px; height: 34px; border-radius: 8px; }
+#jini .foot p + p { margin-top: 8px; }
+#jini .foot-nav { display: flex; flex-wrap: wrap; gap: 0 18px; font-size: 15px; font-weight: 700; }
+#jini .foot-nav a { padding: 8px 0; text-decoration: none; }
+#jini .foot-nav a:hover, #jini .foot-nav a:focus-visible { text-decoration: underline; text-underline-offset: 5px; }
+#jini .foot-sub { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--white); font-weight: 500; }
+#jini .foot .fine { margin-top: 18px; }
+
+/* ---------- 떠 있는 바: 휴대폰은 아래 카톡 바, PC는 오른쪽 위 바로가기 묶음 (소이정 참고, 2026-11-25) ---------- */
+#jini .dock {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20;
+  transform: translateY(160%); transition: transform .25s;
+}
+#jini .dock.is-on { transform: translateY(0); }
+#jini .dock-nav, #jini .dock-brand { display: none; }
+#jini .dock-cta {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 56px; border-radius: 12px;
+  background: var(--violet); color: var(--white);
+  font-size: 17px; font-weight: 700; text-decoration: none;
+}
+#jini .dock-cta:focus-visible { outline-color: var(--ink); }
+
+/* ---------- PC ---------- */
+@media (min-width: 900px) and (orientation: landscape) {
+  #jini .hero {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: "bar bar bar" "w1 w1 copy" ". w2 w2" "band band band";
   }
-  :root[data-theme="dark"] {
-    --bg: #1f1f24; --soft: #1b1b1f; --lav: rgba(143, 120, 240, .18); --tint: rgba(143, 120, 240, .18); --tint-heavy: rgba(143, 120, 240, .30);
-    --text-strong: #ffffff; --ink: rgba(255, 255, 255, .82); --ink-soft: rgba(255, 255, 255, .64); --ink-faint: rgba(255, 255, 255, .56);
-    --line: rgba(255, 255, 255, .12); --line-heavy: rgba(255, 255, 255, .2); --fill: rgba(255, 255, 255, .08); --fill-lighter: rgba(255, 255, 255, .05);
-    --violet: #9b86f5; --violet-hover: #b0a0f8;
-    --green-text: #5fd39a; --green-tint: rgba(76, 195, 138, .18); --orange-text: #f5b26b; --orange-tint: rgba(240, 160, 80, .18); --red-text: #ff8a90; --red-tint: rgba(255, 110, 120, .18);
-    --hero: #25232e;
-    --ev-1: 0 0 0 1px rgba(255, 255, 255, .06), 0 1px 4px rgba(0, 0, 0, .3); --ev-2: 0 0 0 1px rgba(255, 255, 255, .06), 0 2px 8px rgba(0, 0, 0, .35);
-    --ev-3: 0 0 0 1px rgba(255, 255, 255, .06), 0 4px 12px rgba(0, 0, 0, .45); --ev-4: 0 0 0 1px rgba(255, 255, 255, .06), 0 6px 20px rgba(0, 0, 0, .55);
-    --i-bg: #2a2540; --i-line: #3d3657; --i-note: #352d52; --i-beige: #34312c;
-    --i-leaf: #7b8270; --i-leaf2: #5f6454; --i-sun: #8a7240; --i-house: #4a4741;
+  #jini .jini-bar { padding: 28px 48px 0; }
+  #jini .jini-nav { gap: 30px; font-size: 16px; }
+  #jini .jini-nav .pc-only { display: inline; }
+  #jini .jini-brand { font-size: 19px; }
+  #jini .jini-brand img { width: 34px; height: 34px; }
+  #jini .jini-word { font-size: min(21.5vw, 33vh); }
+  #jini .jini-word--top { align-self: start; padding: 2vh 0 0 40px; }
+  #jini .jini-word--bottom { align-self: end; padding: 0 40px 5vh 0; }
+  #jini .jini-copy { align-self: end; padding: 0 48px 0 8px; }
+  #jini .jini-copy h1 { font-size: clamp(26px, 2.2vw, 34px); }
+  #jini .jini-sub { font-size: 17px; }
+  #jini .jini-cta, #jini .btn { width: auto; display: inline-flex; }
+  #jini .jini-band { padding: 16px 0; font-size: 16px; }
+  #jini .sec { padding: 128px 48px; }
+  #jini .big--2, #jini .big--4, #jini .big--7 { font-size: min(160px, 14vw); } /* PC에서는 칸 이름 크기를 160px로 통일 (2026-11-25 '무료 진단'이 너무 크다는 의견) */
+  #jini .foot { padding: 56px 48px; }
+  #jini .dock {
+    left: 0; right: 0; top: 0; bottom: auto;
+    display: flex; align-items: center; gap: 6px; padding: 10px 48px;
+    border-bottom: 2px solid var(--ink); background: var(--white);
+    transform: translateY(-110%);
   }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 17px; line-height: 1.75;
-    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  #jini .dock-brand {
+    display: inline-flex; align-items: center; gap: 8px; margin-right: auto;
+    font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 17px; text-decoration: none;
   }
-  h1, h2, h3 { margin: 0; font-family: "Noto Serif KR", serif; font-weight: 700; line-height: 1.35; letter-spacing: -.02em; }
-  p, ul, ol { margin: 0; }
-  a { color: inherit; }
-  .en { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; letter-spacing: .01em; }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  #jini .dock-brand img { width: 28px; height: 28px; border-radius: 7px; }
+  #jini .dock.is-on { transform: translateY(0); }
+  #jini .dock-nav { display: flex; gap: 20px; margin-right: 12px; font-size: 15px; font-weight: 700; }
+  #jini .dock-nav a { padding: 10px 0; text-decoration: none; }
+  #jini .dock-nav a:hover, #jini .dock-nav a:focus-visible { text-decoration: underline; text-underline-offset: 5px; }
+  #jini .dock-cta { min-height: 44px; padding: 0 18px; border-radius: 10px; font-size: 15px; }
+}
 
-  .eyebrow { display: block; font-size: 19px; color: var(--violet); margin-bottom: 14px; }
-  .label { font-size: 17px; color: var(--violet); }
-  .meta { display: block; font-size: 13px; color: var(--ink-faint); }
-
-  /* 버튼 */
-  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
-    background: var(--violet-deep); color: #fff; font-weight: 700; font-size: 15.5px;
-    padding: 16px 24px; border-radius: 12px; transition: background-color .15s, transform .15s;
-  }
-  .btn:active { transform: scale(.98); }
-  .hero .btn:not(.ghost) { background: var(--grad); box-shadow: 0 1px 2px rgba(20, 16, 40, .08), 0 8px 20px rgba(20, 16, 40, .10); }
-  .btn.ghost { background: var(--bg); color: var(--violet); border: 1.5px solid var(--violet); box-shadow: none; }
-  .btn span { font-size: 17px; }
-
-  /* 상단 */
-  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .mark { width: 42px; height: 42px; border-radius: 12px; display: block; flex: 0 0 auto; }
-  .logo .en { font-size: 28px; color: var(--ink); line-height: 1; }
-  .logo b { font-family: "Noto Serif KR", serif; font-size: 21px; color: var(--violet); margin-left: 8px; }
-  .top nav { display: flex; align-items: center; gap: 26px; font-size: 17px; }
-  .top nav a { text-decoration: none; color: var(--ink); font-weight: 500; }
-  .top nav a:hover { color: var(--violet); }
-  .top nav .cta { color: #fff; background: var(--violet-deep); border-radius: 10px; padding: 10px 18px; font-weight: 700; font-size: 16.5px; }
-  @media (max-width: 1060px) { .top nav a:not(.cta) { display: none; } }
-  @media (max-width: 760px) { .logo .en { font-size: 22px; } .logo b { display: none; } }
-
-  /* 첫 화면 */
-  .hero { padding: 28px 0 8px; }
-  .hero-panel { background: var(--hero); border-radius: 24px; padding: 56px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-  .hero h1 { font-size: clamp(30px, 4.4vw, 46px); margin-bottom: 22px; }
-  .hero h1 em { font-style: normal; color: var(--violet); }
-  .hero .strong { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-  .hero .soft { color: var(--ink-soft); font-size: 16px; margin-bottom: 30px; }
-  .hero .area { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 16px; }
-  @media (max-width: 900px) { .hero-panel { grid-template-columns: 1fr; padding: 40px 24px; } }
-  @media (max-width: 560px) {
-    .wrap { padding: 0 18px; }
-    .hero-panel { padding: 34px 22px; border-radius: 24px; }
-    .hero h1 { font-size: 29px; }
-    .hero .eyebrow { font-size: 17px; }
-    .hero .strong { font-size: 17px; }
-  }
-
-  /* 줄바꿈: 휴대폰과 PC에서 따로 쓰는 줄바꿈, 한 덩어리로 붙여 둘 말 */
-  .nw { white-space: nowrap; }
-  br.mo { display: none; }
-  @media (max-width: 560px) { br.mo { display: inline; } br.pc, span.pc { display: none; } }
-  h1, h2, h3, .sit, .ask, .r-title { text-wrap: balance; }
-  p, li, summary .q { text-wrap: pretty; }
-
-  /* 글자를 크게 키운 휴대폰에서도 넘치지 않게 */
-  .logo .en, .top nav .cta, .quick a { white-space: nowrap; }
-  @media (max-width: 560px) {
-    .steps li { grid-template-columns: 44px 1fr; }
-    .btns .btn, .card > .btn { width: 100%; justify-content: center; padding: 15px 16px; }
-  }
-  @media (max-width: 400px) {
-    .top .wrap { height: 64px; }
-    .mark { width: 36px; height: 36px; border-radius: 10px; }
-    .logo { gap: 9px; }
-    .logo .en { font-size: 19px; }
-    .top nav .cta { padding: 7px 12px; font-size: 14px; }
-    nav.quick { gap: 2px; }
-    nav.quick a { font-size: 13.5px; gap: 8px; min-width: 0; }
-    nav.quick a .ic { width: 50px; height: 50px; }
-    nav.quick a .ic svg { width: 23px; height: 23px; }
-    .btn { font-size: 15px; }
-  }
-
-  /* 휴대폰 틀 — 샘플 센터 홈페이지 화면을 담습니다 (첫 화면·Sample Work 공통, 2026-11-24) */
-  .phone { position: relative; display: block; width: 100%; aspect-ratio: 9 / 17; border: 7px solid #1d1b26; border-radius: 30px; overflow: hidden; background: #1d1b26; box-shadow: var(--ev-3); }
-  .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 23px; }
-
-  /* 첫 화면 그림: 휴대폰 두 대 (앞 = 첫 화면, 뒤 = 이용 비용) */
-  .hero-phones { margin: 0; position: relative; max-width: 440px; width: 100%; justify-self: center; padding: 12px 0 0; }
-  .hero-phones .stage { display: block; position: relative; height: 0; padding-bottom: 104%; text-decoration: none; }
-  .hero-phones .ph-front { position: absolute; left: 6%; top: 0; width: 50%; z-index: 2; }
-  .hero-phones .ph-back { position: absolute; right: 4%; top: 9%; width: 44%; transform: rotate(5deg); opacity: .97; }
-  .hero-phones .tag { position: absolute; z-index: 3; left: 0; bottom: 6%; display: inline-flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 9px 14px; box-shadow: var(--ev-2); font-size: 14.5px; font-weight: 700; color: var(--text-strong); line-height: 1.35; }
-  .hero-phones .tag i { font-style: normal; font-size: 12.5px; font-weight: 700; color: var(--orange-text); background: var(--orange-tint); border-radius: 6px; padding: 1px 7px; }
-  .hero-phones figcaption { text-align: center; font-size: 13px; color: var(--ink-faint); margin-top: 10px; }
-  @media (max-width: 900px) { .hero-phones { max-width: 380px; } }
-  @media (max-width: 560px) { .hero-phones { max-width: 330px; } .hero-phones .tag { font-size: 13.5px; padding: 8px 12px; } }
-
-  /* 바로가기 아이콘 (지니맵과 같은 원형 아이콘) */
-  .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 28px 0 8px; }
-  .quick a { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; font-size: 17.5px; font-weight: 700; color: var(--ink); }
-  .quick .ic { width: 76px; height: 76px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--bg); display: grid; place-items: center; }
-  .quick .ic svg { width: 32px; height: 32px; fill: none; stroke: var(--violet); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-  .quick .ic { transition: border-color .15s, background-color .15s; }
-  .quick a:hover .ic { border-color: var(--violet); background: var(--soft); }
-  @media (max-width: 560px) { .quick { gap: 6px; } .quick .ic { width: 58px; height: 58px; } .quick .ic svg { width: 26px; height: 26px; } .quick a { font-size: 14.5px; } }
-
-  /* 섹션 공통 */
-  section { padding: 88px 0; scroll-margin-top: 72px; }
-  section.soft { background: var(--soft); }
-  .head { margin-bottom: 40px; max-width: 680px; }
-  .head h2 { font-size: clamp(26px, 3.6vw, 34px); margin-bottom: 14px; }
-  .head p { color: var(--ink-soft); }
-  @media (max-width: 720px) { section { padding: 64px 0; } }
-
-  /* 카드 */
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .card { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 30px 28px; box-shadow: var(--shadow); }
-  .card .top-line { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-  .chip-ic { width: 44px; height: 44px; border-radius: 10px; background: transparent; border: 1px solid var(--line); display: grid; place-items: center; flex: 0 0 auto; }
-  .chip-ic svg { width: 24px; height: 24px; stroke: var(--violet); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-  .card h3 { font-size: 20px; margin-bottom: 8px; }
-  .card p { color: var(--ink-soft); font-size: 16px; }
-  @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
-
-  .story-top { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: 40px; }
-  .story-top .head { margin-bottom: 0; }
-  .profile .who { display: flex; align-items: baseline; gap: 10px; margin-bottom: 2px; }
-  .profile .who strong { font-family: "Noto Serif KR", serif; font-size: 25px; }
-  .profile .who .en { font-size: 18px; color: var(--violet); }
-  .profile .tagline { font-size: 14px; color: var(--violet); font-weight: 700; margin-bottom: 14px; }
-  .rows { list-style: none; padding: 0; }
-  .rows li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 15.5px; }
-  .rows li b { font-weight: 700; }
-  .rows li span { color: var(--ink-soft); }
-  @media (max-width: 860px) { .story-top { grid-template-columns: 1fr; gap: 24px; } }
-
-  /* 해본 일 */
-  .work { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .tasks { list-style: none; padding: 0; counter-reset: t; }
-  .tasks li { counter-increment: t; display: grid; grid-template-columns: 44px 1fr; padding: 15px 0; border-top: 1px solid var(--line); font-size: 16.5px; }
-  .tasks li:last-child { border-bottom: 1px solid var(--line); }
-  .tasks li::before { content: counter(t, decimal-leading-zero); font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 20px; color: var(--violet); line-height: 1.4; }
-  .quote .mark-q { font-family: "Cormorant Garamond", serif; font-size: 64px; line-height: .8; color: var(--violet); }
-  .quote blockquote { margin: 0 0 16px; font-family: "Noto Serif KR", serif; font-size: 21px; font-weight: 700; line-height: 1.55; }
-  .quote cite { font-style: normal; font-size: 14px; color: var(--ink-soft); }
-  .quote .fine { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-faint); }
-  @media (max-width: 860px) { .work { grid-template-columns: 1fr; } }
-  .work-head { margin: 56px 0 22px; }
-  .work-head h3 { font-size: clamp(21px, 2.6vw, 25px); margin-bottom: 6px; }
-  .work-head p { color: var(--ink-soft); font-size: 16px; }
-  #story .grid-2 .card h3 { font-size: 19px; }
-  #story .grid-2 .card p { font-size: 15.5px; }
-
-  /* Sample Work: 샘플 센터 홈페이지 화면 3장 + 기본으로 들어가는 것 (2026-11-24) */
-  .sample { display: grid; grid-template-columns: 1fr 1.15fr; grid-template-areas: "head shots" "body shots"; column-gap: 48px; align-items: start; }
-  .sample > .head { grid-area: head; margin-bottom: 26px; align-self: end; }
-  .sample-body { grid-area: body; }
-  .sample .shots { grid-area: shots; align-self: center; }
-  #work { scroll-margin-top: 80px; }
-  .incl-title { font-size: 14px; font-weight: 700; color: var(--ink-soft); margin-bottom: 10px; }
-  .incl { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
-  .incl li { display: flex; align-items: center; gap: 10px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px; font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--text-strong); }
-  .incl li::before { content: "✓"; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: var(--tint); color: var(--violet); font-size: 13px; font-weight: 700; display: grid; place-items: center; line-height: 1; }
-  .sample .fine { margin-top: 14px; font-size: 13.5px; color: var(--ink-faint); line-height: 1.6; }
-  .shots { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .shots li { margin: 0; text-align: center; }
-  .shots li:nth-child(2) { transform: translateY(26px); }
-  .shots b { display: block; margin-top: 12px; font-size: 15px; color: var(--text-strong); }
-  .shots small { display: block; font-size: 13px; color: var(--ink-faint); line-height: 1.4; }
-  .svc-more { display: inline-block; margin-top: 14px; font-size: 15px; font-weight: 700; color: var(--violet); text-decoration: none; }
-  .svc-more:hover { text-decoration: underline; }
-
-  /* 보호자가 찾아오는 길 4단계 (2026-11-24) */
-  .path-box { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px 20px; margin-bottom: 28px; }
-  .path-title { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 19px; color: var(--text-strong); margin-bottom: 16px; }
-  .path { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-  .path li { position: relative; display: flex; flex-direction: column; gap: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 16px 16px 14px; }
-  .path li + li::before { content: "→"; position: absolute; left: -22px; top: 50%; transform: translateY(-50%); color: var(--violet); font-weight: 700; font-size: 17px; }
-  .path .pn { font-size: 20px; color: var(--violet); line-height: 1.1; }
-  .path b { font-size: 17px; color: var(--text-strong); line-height: 1.4; }
-  .path .pd { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; flex: 1; }
-  .path .pj { margin-top: 8px; align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--violet); background: var(--tint); border-radius: 6px; padding: 2px 8px; line-height: 1.5; }
-  .path-note { margin-top: 16px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; }
-  @media (max-width: 900px) {
-    .path { grid-template-columns: 1fr; gap: 14px; }
-    .path li { display: grid; grid-template-columns: 34px 1fr; column-gap: 8px; row-gap: 2px; padding: 14px 16px; }
-    .path li > * { grid-column: 2; }
-    .path .pn { grid-column: 1; grid-row: 1 / span 3; font-size: 22px; }
-    .path li + li::before { content: "↓"; left: 24px; top: -15px; transform: none; font-size: 13px; line-height: 1; }
-  }
-  @media (max-width: 560px) { .path-box { padding: 20px 16px 16px; margin-bottom: 20px; } }
-
-  /* 색 조합 8가지 (제작기 테마 — 색 값은 센터웹페이지제작기_v2.html 의 테마 표와 같게) */
-  .themes { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .themes li { display: flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 8px 10px; font-size: 13.5px; font-weight: 500; color: var(--text-strong); line-height: 1.3; }
-  .themes li.on { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet); }
-  .themes .sw { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: conic-gradient(var(--a) 0 50%, var(--b) 50% 75%, var(--c) 75% 100%); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08); }
-  .themes small { display: block; font-size: 11.5px; font-weight: 700; color: var(--violet); }
-  @media (max-width: 1100px) and (min-width: 961px), (max-width: 560px) {
-    .themes { gap: 6px; }
-    .themes li { flex-direction: column; justify-content: center; text-align: center; padding: 9px 4px 8px; gap: 5px; font-size: 13px; }
-  }
-  @media (max-width: 960px) { .sample { grid-template-columns: 1fr; grid-template-areas: "head" "shots" "body"; } .sample .shots { margin-bottom: 30px; } .shots li:nth-child(2) { transform: none; } }
-  @media (max-width: 560px) {
-    .incl { gap: 6px; }
-    .incl li { padding: 9px 10px; font-size: 14px; gap: 8px; align-items: flex-start; }
-    .incl li::before { width: 20px; height: 20px; font-size: 12px; margin-top: 0; }
-    .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin: 0 -18px; padding: 4px 18px 10px; scrollbar-width: none; }
-    .shots::-webkit-scrollbar { display: none; }
-    .shots li { flex: 0 0 58%; scroll-snap-align: center; }
-  }
-
-  /* AI 검색 */
-  .ai-box { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
-  .ai-box .card p + p { margin-top: 10px; }
-  .ai-box .fine { font-size: 13.5px; color: var(--ink-faint); margin-top: 16px; }
-  .ai-q { list-style: none; padding: 0; margin-top: 12px; }
-  .ai-q li { font-size: 16px; padding: 14px 18px; margin-top: 10px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); }
-  .ai-q li::before { content: "Q. "; font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 19px; color: var(--violet); }
-  @media (max-width: 860px) { .ai-box { grid-template-columns: 1fr; } }
-
-  /* 숫자 카드 — 확인된 사실만 */
-  .facts-sec { padding: 40px 0 72px; }
-  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .facts li { list-style: none; padding: 28px 22px; text-align: center; }
-  .facts li + li { border-left: 1px solid var(--line); }
-  .facts .num { display: block; font-family: "Noto Serif KR", serif; font-weight: 700; font-size: clamp(34px, 4.6vw, 48px); line-height: 1.15; color: var(--violet); letter-spacing: -.03em; }
-  .facts .num small { font-size: .5em; margin-left: 2px; color: var(--ink); }
-  .facts b { display: block; font-size: 16px; margin-top: 8px; }
-  .facts span:last-child { display: block; font-size: 14px; color: var(--ink-soft); margin-top: 2px; }
-  ul.facts { padding: 0; margin: 0; }
-  @media (max-width: 760px) {
-    .facts { grid-template-columns: repeat(2, 1fr); }
-    .facts li { padding: 22px 12px; }
-    .facts li:nth-child(3) { border-left: 0; }
-    .facts li:nth-child(n+3) { border-top: 1px solid var(--line); }
-  }
-
-  /* AI 대화 예시 화면 */
-  .chat { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
-  .chat-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 20px 0; }
-  .chat > input { position: absolute; opacity: 0; pointer-events: none; }
-  .chat-tabs label { cursor: pointer; font-size: 14.5px; font-weight: 700; padding: 8px 16px; border-radius: 8px; background: var(--soft); border: 1px solid var(--line); color: var(--ink-soft); }
-  #ct1:focus-visible ~ .chat-tabs [for="ct1"], #ct2:focus-visible ~ .chat-tabs [for="ct2"], #ct3:focus-visible ~ .chat-tabs [for="ct3"] { outline: 2px solid var(--violet); outline-offset: 2px; }
-  #ct1:checked ~ .chat-tabs [for="ct1"], #ct2:checked ~ .chat-tabs [for="ct2"], #ct3:checked ~ .chat-tabs [for="ct3"] { background: var(--violet-deep); border-color: var(--violet-deep); color: #fff; }
-  .chat-bar { display: flex; align-items: center; gap: 8px; margin: 16px 20px 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); font-weight: 500; }
-  .chat-bar i { width: 9px; height: 9px; border-radius: 50%; background: #3fa37a; display: block; }
-  .chat-bar em { margin-left: auto; font-style: normal; font-size: 12px; color: var(--ink-faint); border: 1px solid var(--line); border-radius: 6px; padding: 1px 8px; }
-  .chat-panel { display: none; padding: 18px 20px 22px; }
-  #ct1:checked ~ .cp1, #ct2:checked ~ .cp2, #ct3:checked ~ .cp3 { display: block; }
-  .ask { margin-left: auto; width: fit-content; max-width: 88%; background: var(--grad); color: #fff; font-weight: 700; font-size: 15.5px; padding: 12px 18px; border-radius: 18px 18px 4px 18px; }
-  .ans { list-style: none; padding: 0; margin: 16px 0 0; counter-reset: a; }
-  .ans li { counter-increment: a; position: relative; padding: 7px 0 7px 26px; font-size: 15.5px; }
-  .ans li::before { content: counter(a) "."; color: var(--ink-faint); position: absolute; left: 0; }
-  .ans li b { font-weight: 700; }
-  .ans li span { color: var(--ink-soft); }
-  .miss { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 700; color: var(--warn); font-size: 15.5px; }
-  .chat-note { padding: 12px 20px 16px; background: var(--soft); font-size: 13px; color: var(--ink-faint); line-height: 1.6; }
-  :root { --warn: #c2553f; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --warn: #ff9b85; } }
-  :root[data-theme="dark"] { --warn: #ff9b85; }
-
-  /* 무료 진단 3단계 + 진단서 샘플 */
-  .check-flow { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-  .check-flow h3 { font-size: 24px; margin: 4px 0 20px; }
-  .flow { list-style: none; padding: 0; margin: 0; }
-  .flow li { display: grid; grid-template-columns: 56px 1fr; gap: 4px 0; padding: 18px 0; border-top: 1px solid var(--line); }
-  .flow li:last-child { border-bottom: 1px solid var(--line); }
-  .flow .n { grid-row: span 2; font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 30px; color: var(--violet); line-height: 1.1; }
-  .flow b { font-size: 17.5px; }
-  .flow span { color: var(--ink-soft); font-size: 15.5px; }
-  .flow-note { margin-top: 14px; font-size: 14px; color: var(--ink-faint); }
-  .report { position: relative; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px 22px; box-shadow: var(--shadow); }
-  .report .stamp { position: absolute; top: 18px; right: 18px; font-size: 13px; font-weight: 700; color: var(--warn); border: 1.5px solid var(--warn); border-radius: 8px; padding: 2px 10px; transform: rotate(4deg); }
-  .report .r-title { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 19px; padding-right: 64px; }
-  .report .r-date { font-size: 13px; color: var(--ink-faint); margin: 2px 0 16px; }
-  .report h4 { margin: 16px 0 6px; font-size: 13px; color: var(--ink-faint); font-weight: 500; }
-  .r-rows { list-style: none; padding: 0; margin: 0; font-size: 15px; }
-  .r-rows li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
-  .r-rows .ok { color: #3fa37a; font-weight: 700; white-space: nowrap; }
-  .r-rows .no { color: var(--warn); font-weight: 700; white-space: nowrap; }
-  .r-rows .mid { color: #b8862b; font-weight: 700; white-space: nowrap; }
-  .r-shots { display: flex; gap: 8px; margin-top: 10px; }
-  .r-shots span { flex: 1; height: 54px; border-radius: 8px; background: var(--lav); border: 1px solid var(--line); display: grid; place-items: center; font-size: 12px; color: var(--ink-faint); }
-  .r-fix { margin: 0; padding-left: 20px; font-size: 15px; color: var(--ink-soft); }
-  .r-fix li { padding: 3px 0; }
-  .report .r-note { margin-top: 14px; font-size: 12.5px; color: var(--ink-faint); }
-  @media (max-width: 860px) { .check-flow { grid-template-columns: 1fr; margin-top: 44px; } }
-
-  /* 휴대폰 아래 고정 버튼 */
-  .dock { display: none; }
-  @media (max-width: 760px) {
-    .dock { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
-    .dock a { display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 16px; border-radius: 12px; padding: 13px 8px; }
-    .dock .call { color: var(--violet); border: 1.5px solid var(--violet); background: var(--bg); }
-    .dock .talk { color: #fff; background: var(--violet-deep); }
-    .dock svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
-  }
-
-  /* 할 수 있는 일 */
-  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .svc-grid .no { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 34px; color: var(--violet); line-height: 1; margin-bottom: 14px; display: block; }
-  .svc-grid .label { display: block; margin-bottom: 4px; }
-  .svc-note { margin-top: 24px; font-size: 15px; color: var(--ink-soft); }
-  .svc-note a { color: var(--violet); font-weight: 700; }
-  @media (max-width: 860px) { .svc-grid { grid-template-columns: 1fr; } }
-
-  /* 상황별 안내 */
-  .fit-head { margin: 52px 0 18px; }
-  .fit-head h3 { font-size: clamp(24px, 3.2vw, 30px); margin-top: 6px; }
-  .fit-head p { color: var(--ink-soft); font-size: 17px; margin-top: 8px; }
-  .fit { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .fit li { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 12px; }
-  .fit .sit { font-family: "Noto Serif KR", serif; font-weight: 700; font-size: 20px; line-height: 1.5; }
-  .fit .sit::before { content: "“"; color: var(--violet); margin-right: 2px; }
-  .fit .sit::after { content: "”"; color: var(--violet); margin-left: 2px; }
-  .fit .todo { font-size: 16.5px; color: var(--ink-soft); }
-  .fit .todo b { color: var(--ink); font-weight: 700; margin-right: 6px; }
-  .fit .pick { margin-top: auto; align-self: flex-start; font-size: 15px; font-weight: 700; color: var(--violet); background: var(--bg); border: 1px solid color-mix(in srgb, var(--violet) 35%, var(--line)); border-radius: 8px; padding: 4px 12px; }
-  @media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
-
-  /* 원칙 (진한 보라) */
-  .principles { background: var(--soft); color: var(--ink); }
-  .steps { list-style: none; padding: 0; border-top: 1px solid var(--line); }
-  .steps li { display: grid; grid-template-columns: 64px 1fr; padding: 24px 0; border-bottom: 1px solid var(--line); }
-  .steps .n { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 28px; color: var(--violet); line-height: 1.2; }
-  .steps h3 { font-size: 20px; margin-bottom: 6px; color: var(--ink); }
-  .steps p { color: var(--ink-soft); font-size: 16px; }
-
-  /* 작업 노트 목록 */
-  .notes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .notes > li { display: flex; }
-  .notes .note-card { flex: 1; }
-  @media (max-width: 760px) { .notes { grid-template-columns: 1fr; } }
-  .note-card { display: block; text-decoration: none; color: var(--ink); transition: border-color .15s; }
-  .note-card:hover { border-color: color-mix(in srgb, var(--violet) 45%, var(--line)); }
-  .note-card .label { display: block; margin-bottom: 8px; }
-  .note-card h3 { font-size: 20px; margin-bottom: 8px; }
-  .note-card .more { display: inline-block; margin-top: 12px; color: var(--violet); font-weight: 700; font-size: 15px; }
-
-  /* 블로그 */
-  .blog-card { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; max-width: 780px; }
-  .blog-card h3 { font-size: 24px; margin: 6px 0 4px; }
-  .blog-card .sub { color: var(--violet); font-weight: 700; font-size: 14.5px; margin-bottom: 10px; }
-  .blog-card svg { width: 64px; height: 64px; stroke: var(--violet); fill: none; stroke-width: 1.3; }
-  @media (max-width: 560px) { .blog-card { grid-template-columns: 1fr; } .blog-card svg { display: none; } }
-
-  /* 마지막 안내 */
-  .cta-band { position: relative; overflow: hidden; background: var(--violet-deep); color: #fff; border-radius: 24px; padding: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; }
-  .cta-band > * { position: relative; }
-  .cta-band .en { font-size: 22px; color: #cfc4ff; display: block; margin-bottom: 10px; }
-  .cta-band h2 { font-size: clamp(30px, 4.4vw, 46px); line-height: 1.3; color: #fff; }
-  .cta-band h2 em { font-style: normal; color: #ffd98c; }
-  .cta-band p { color: rgba(255, 255, 255, .9); font-size: 18px; margin-top: 14px; }
-  .cta-band .tel { color: #fff; font-weight: 700; font-size: 20px; text-decoration: underline; text-underline-offset: 4px; }
-  .cta-band .btns { flex-direction: column; min-width: 280px; }
-  .cta-band .btn { background: #fff; color: #3d2c8f; font-size: 17px; padding: 18px 26px; justify-content: center; }
-  .cta-band .btn.line { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.75); box-shadow: none; }
-  .cta-band .btn.kch { background: #fee500; color: #191600; gap: 7px; font-size: 15.5px; padding: 12px 20px; margin-top: 8px; box-shadow: none; }
-  .cta-band .btn.kch svg { width: 19px; height: 19px; fill: #191600; flex: none; }
-  .cta-band .btn.kch span { font-size: 19px; line-height: 1; font-weight: 700; }
-  .cta-band .btn:first-child { font-size: 18px; padding: 20px 26px; }
-  .cta-band .kch-note { display: block; max-width: 300px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.82); text-align: center; margin: 2px auto 0; }
-  @media (max-width: 860px) { .cta-band .kch-note { max-width: none; } }
-  @media (max-width: 860px) { .cta-band .btns { min-width: 0; width: 100%; } }
-  @media (max-width: 560px) { .cta-band { padding: 40px 24px; } .cta-band p { font-size: 16.5px; } }
-
-  footer { border-top: 1px solid var(--line); padding: 36px 0 44px; font-size: 14px; color: var(--ink-soft); }
-  footer .wrap { display: grid; grid-template-columns: auto 1fr; gap: 16px 40px; align-items: start; }
-  footer .logo .en { font-size: 21px; }
-  footer .biz { line-height: 1.9; }
-  footer .biz b { color: var(--ink); font-weight: 700; }
-  footer .biz .bi { white-space: nowrap; }
-  @media (max-width: 560px) { footer .biz .bi { display: block; } footer .biz .sep, footer .biz br { display: none; } footer .biz .more { display: block; margin-top: 8px; } }
-  footer .copy { grid-column: 1 / -1; color: var(--ink-faint); font-size: 13px; }
-  @media (max-width: 720px) { footer .wrap { grid-template-columns: 1fr; } }
-  /* 자주 묻는 질문 */
-  .faq-list { display: grid; gap: 12px; }
-  .faq-list details { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 0 24px; }
-  .faq-list details[open] { border-color: color-mix(in srgb, var(--violet) 40%, var(--line)); }
-  .faq-list summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 14px; padding: 20px 0; font-weight: 700; font-size: 17px; color: var(--ink); }
-  .faq-list summary::-webkit-details-marker { display: none; }
-  .faq-list summary .n { font-size: 22px; color: var(--violet); min-width: 28px; }
-  .faq-list summary .q { flex: 1; }
-  .faq-list summary::after { content: "+"; color: var(--violet); font-size: 24px; font-weight: 400; line-height: 1; }
-  .faq-list details[open] summary::after { content: "−"; }
-  .faq-list details p { margin: -4px 0 0; padding: 0 0 22px 42px; color: var(--ink-soft); }
-  @media (max-width: 560px) { .faq-list details { padding: 0 18px; } .faq-list summary { font-size: 16px; gap: 10px; } .faq-list details p { padding-left: 0; } }
-
-  /* ───────── 디자인 시스템 부품 (위 규칙을 덮어씁니다) ───────── */
-  body { font-family: "Inter", "Noto Sans KR", system-ui, sans-serif; letter-spacing: -.01em; }
-  h1, h2, h3 { color: var(--text-strong); }
-  :focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; border-radius: 6px; }
-
-  /* Eyebrow: 연보라 칩 */
-  .eyebrow { display: inline-block; font-size: 17px; line-height: 1.4; color: var(--violet); background: var(--tint); padding: 2px 12px 3px; border-radius: 6px; margin-bottom: 16px; }
-
-  /* Button: 주(보라) · 보조(회색) — 그라데이션은 첫 화면 주 버튼만 */
-  .btn { height: 52px; padding: 0 22px; border-radius: 16px; background: var(--btn); box-shadow: var(--ev-2); transition: background-color .15s var(--ease), transform .15s var(--ease), box-shadow .15s var(--ease); }
-  .btn:hover { background: var(--btn-hover); }
-  .hero .btn:not(.ghost) { background: var(--grad); box-shadow: var(--ev-2); }
-  .hero .btn:not(.ghost):hover { box-shadow: var(--ev-3); }
-  .btn.ghost { background: var(--fill); color: var(--text-strong); border: 0; box-shadow: none; }
-  .btn.ghost:hover { background: var(--line-heavy); }
-  @media (max-width: 560px) { .btns .btn, .card > .btn { padding: 0 16px; } }
-
-  /* Header */
-  .top { background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: saturate(1.6) blur(16px); -webkit-backdrop-filter: saturate(1.6) blur(16px); }
-  .top .wrap { height: 64px; }
-  .top nav { gap: 2px; }
-  .top nav a:not(.cta) { color: var(--ink-soft); padding: 8px 12px; border-radius: 8px; transition: background-color .15s var(--ease), color .15s var(--ease); }
-  .top nav a:not(.cta):hover { background: var(--fill); color: var(--text-strong); }
-  .top nav .cta { margin-left: 10px; height: 40px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 12px; background: var(--btn); box-shadow: var(--ev-2); transition: background-color .15s var(--ease); }
-  .top nav .cta:hover { background: var(--btn-hover); color: #fff; }
-  @media (max-width: 400px) { .top nav .cta { height: 36px; padding: 0 12px; } }
-
-  /* 바로가기 아이콘 */
-  .quick .ic { border: 1px solid var(--line); }
-  .quick a:hover .ic { border-color: transparent; background: var(--tint); }
-
-  /* Stat: 숫자 카드 */
-  .facts { gap: 12px; border: 0; }
-  .facts li, .facts li + li { border: 1px solid var(--line); border-radius: 16px; background: var(--bg); padding: 24px 16px; }
-  .facts .num { color: var(--text-strong); }
-  .facts .num small { color: var(--ink-soft); }
-  @media (max-width: 760px) { .facts li:nth-child(3) { border-left: 1px solid var(--line); } .facts li:nth-child(n+3) { border-top: 1px solid var(--line); } .facts li { padding: 20px 12px; } }
-
-  /* Card: 그림자 없이 1px 테두리, 20px 모서리, 안쪽 24px */
-  .card { box-shadow: none; border-radius: 20px; padding: 24px; }
-  .chip-ic { width: 44px; height: 44px; border: 0; border-radius: 12px; background: var(--tint); }
-  .chip-ic svg { width: 22px; height: 22px; stroke-width: 2; }
-  .note-card { transition: box-shadow .15s var(--ease), transform .15s var(--ease); }
-  .note-card:hover { border-color: var(--line); box-shadow: var(--ev-3); transform: translateY(-2px); }
-
-  /* List: 해본 일 */
-  .tasks { border: 1px solid var(--line); border-radius: 16px; background: var(--bg); overflow: hidden; }
-  .tasks li { padding: 14px 20px; }
-  .tasks li:first-child { border-top: 0; }
-  .tasks li:last-child { border-bottom: 0; }
-
-  /* Quote + Banner(안내 띠) */
-  .quote .mark-q { color: var(--gold); }
-  .quote .fine, .ai-box .fine { margin-top: 20px; padding: 14px 16px; border: 0; border-radius: 12px; background: var(--tint); color: var(--ink); font-size: 14.5px; line-height: 1.6; }
-
-  /* AI 예시 창: 회색 트랙 탭(Segmented), 보라 말풍선, 번호 칩 */
-  .chat { border-radius: 20px; box-shadow: var(--ev-2); }
-  .chat-tabs { display: inline-flex; gap: 2px; padding: 3px; margin: 16px 20px 0; background: var(--fill); border-radius: 12px; }
-  .chat-tabs label { background: transparent; border: 0; border-radius: 8px; padding: 7px 14px; color: var(--ink-soft); transition: background-color .15s var(--ease), color .15s var(--ease); }
-  #ct1:checked ~ .chat-tabs [for="ct1"], #ct2:checked ~ .chat-tabs [for="ct2"], #ct3:checked ~ .chat-tabs [for="ct3"] { background: var(--bg); color: var(--text-strong); box-shadow: var(--ev-1); }
-  .chat-bar em { border: 0; border-radius: 6px; background: var(--fill); color: var(--ink-soft); font-size: 13px; font-weight: 700; padding: 2px 8px; }
-  .ask { background: var(--btn); border-radius: 16px 16px 4px 16px; }
-  .ans { display: grid; gap: 8px; }
-  .ans li { background: var(--fill-lighter); border-radius: 12px; padding: 10px 14px 10px 46px; }
-  .ans li::before { content: counter(a); left: 12px; top: 12px; width: 22px; height: 22px; border-radius: 6px; background: var(--fill); display: grid; place-items: center; font-size: 12px; font-weight: 700; line-height: 1; color: var(--ink-soft); }
-  .miss { border-top: 0; margin-top: 12px; padding: 12px 16px; border-radius: 12px; background: var(--red-tint); color: var(--red-text); }
-  .chat-note { background: var(--fill-lighter); }
-
-  /* Steps: 무료 진단 3단계 */
-  .flow { display: grid; gap: 12px; }
-  .flow li, .flow li:last-child { border: 1px solid var(--line); border-radius: 16px; background: var(--bg); padding: 20px; }
-
-  /* Report: 진단서 샘플 — 상태는 색 칩 + 글자 */
-  .report { border-radius: 20px; box-shadow: var(--ev-3); padding: 24px; }
-  .report .stamp { transform: none; border: 0; border-radius: 6px; background: var(--fill); color: var(--ink-soft); padding: 2px 8px; }
-  .r-rows li { align-items: center; border-bottom: 1px solid var(--line); }
-  .r-rows .ok, .r-rows .no, .r-rows .mid { font-size: 13px; line-height: 1.6; padding: 2px 8px; border-radius: 6px; }
-  .r-rows .ok { color: var(--green-text); background: var(--green-tint); }
-  .r-rows .no { color: var(--red-text); background: var(--red-tint); }
-  .r-rows .mid { color: var(--orange-text); background: var(--orange-tint); }
-  .r-shots span { border: 0; background: var(--fill); }
-
-  /* 상황별 안내: 흰 카드 + 연보라 태그 */
-  .fit li { background: var(--bg); border-radius: 16px; padding: 24px; }
-  .fit .sit::before, .fit .sit::after { color: var(--gold); }
-  .fit .pick { border: 0; border-radius: 6px; background: var(--tint); color: var(--violet); font-size: 14px; padding: 2px 10px; }
-
-  /* 원칙: 카드 그리드 */
-  .steps { border-top: 0; display: grid; gap: 12px; }
-  .steps li { display: block; border: 1px solid var(--line); border-radius: 16px; background: var(--bg); padding: 24px; }
-  .steps .n { display: block; font-size: 26px; margin-bottom: 6px; }
-  @media (min-width: 720px) { .steps { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1040px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-
-  /* FAQ: 꺾쇠, 열리면 그림자 */
-  .faq-list { gap: 8px; }
-  .faq-list details { transition: box-shadow .15s var(--ease); }
-  .faq-list details[open] { border-color: var(--line); box-shadow: var(--ev-2); }
-  .faq-list summary::after { content: ""; flex: none; align-self: center; width: 9px; height: 9px; margin: 0 4px 4px auto; border-right: 2px solid var(--ink-faint); border-bottom: 2px solid var(--ink-faint); transform: rotate(45deg); transition: transform .15s var(--ease); }
-  .faq-list details[open] summary::after { content: ""; margin-bottom: -4px; transform: rotate(-135deg); }
-  /* 질문 더 보기: 3개만 보이고 나머지 13개는 접어 둡니다 (AI 검색용 정보에는 16개 모두 그대로, 2026-11-24 13~16번 추가) */
-  .faq-more { margin-top: 12px; }
-  .faq-more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 12px; background: var(--fill); color: var(--text-strong); font-weight: 700; font-size: 15.5px; transition: background-color .15s var(--ease); }
-  .faq-more > summary::-webkit-details-marker { display: none; }
-  .faq-more > summary:hover { background: var(--line-heavy); }
-  .faq-more > summary span { color: var(--ink-faint); font-weight: 400; }
-  .faq-more > summary::after { content: ""; width: 7px; height: 7px; margin: 0 2px 4px 2px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .15s var(--ease); }
-  .faq-more[open] > summary { margin-bottom: 8px; }
-  .faq-more[open] > summary::after { margin: 4px 2px 0 2px; transform: rotate(-135deg); }
-
-  /* Final CTA: 진한 보라 단색(그라데이션·별 없음), 32px 모서리 */
-  .cta-band { border-radius: 32px; box-shadow: var(--ev-4); }
-  .cta-band .btn { background: #fff; color: #4b30c4; box-shadow: none; }
-  .cta-band .btn:hover { background: #f1eefc; }
-  .cta-band .btn.line { background: rgba(255, 255, 255, .16); border: 0; color: #fff; }
-  .cta-band .btn.line:hover { background: rgba(255, 255, 255, .26); }
-  .cta-band .btn.kch { height: 44px; border-radius: 12px; background: #fee500; color: #191600; }
-  .cta-band .btn.kch:hover { background: #f5dc00; }
-  @media (max-width: 560px) { .cta-band { border-radius: 24px; } }
-
-  /* Mobile bottom bar: 화면 아래 떠 있는 두 버튼 */
-  @media (max-width: 760px) {
-    .dock { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); padding: 8px; grid-template-columns: 1fr 1.4fr; border: 0; border-radius: 20px; box-shadow: var(--ev-4); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-    .dock a { height: 48px; padding: 0 8px; border-radius: 14px; }
-    .dock .call { background: var(--fill); color: var(--text-strong); border: 0; }
-    .dock .talk { background: var(--btn); }
-    body { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
-  }
-
-  .path-title small { font-family: "Noto Sans KR", sans-serif; font-weight: 500; font-size: 13px; color: var(--violet); margin-left: 8px; }
-  @media (max-width: 560px) { .path-title small { display: block; margin: 4px 0 0; } }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
-
-  /* 휴대폰에서 덜 길게 (2026-11-24): 내용은 그대로, 칸 안 여백·아이콘 줄만 줄임 */
-  @media (max-width: 560px) {
-    section { padding: 52px 0; }
-    .head { margin-bottom: 26px; }
-    .card { padding: 20px; }
-    #story .grid-2 { gap: 10px; }
-    #story .grid-2 .chip-ic { display: none; }
-    #story .grid-2 .card .top-line { margin-bottom: 4px; }
-    .story-top { margin-bottom: 24px; }
-    .work-head { margin: 40px 0 16px; }
-    .tasks li { padding: 10px 16px; font-size: 15.5px; grid-template-columns: 38px 1fr; line-height: 1.6; }
-    .tasks li::before { font-size: 18px; }
-    .svc-grid { gap: 10px; }
-    .svc-grid .no { display: inline-block; font-size: 26px; margin: 0 10px 0 0; vertical-align: -2px; }
-    .svc-grid .label { display: inline-block; }
-    .fit { gap: 10px; }
-    .fit li { padding: 18px 20px; gap: 8px; }
-    .steps { gap: 10px; }
-    .steps li { padding: 18px 20px; }
-    .steps .n { display: inline-block; font-size: 22px; margin: 0 8px 0 0; }
-    .steps li h3 { display: inline; }
-    .steps li p { margin-top: 6px; }
-    .hero-phones { max-width: 290px; }
-  }
-
-  /* ───── 2026-11-24 GPTO 참고 뒤 추가: 미색 바탕·편지·1분 점검·색 화면 8장·카톡 복사 ───── */
-  :root { --cream: #fbf7ef; --cream-line: #ece3d2; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --cream: #25221c; --cream-line: #3a352b; } }
-  :root[data-theme="dark"] { --cream: #25221c; --cream-line: #3a352b; }
-  section.cream { background: var(--cream); }
-
-  .letter { margin: 0 0 22px; background: var(--bg); border: 1px solid var(--cream-line); border-left: 4px solid var(--gold); border-radius: 20px; padding: 30px 32px 26px; }
-  .letter p { font-family: "Noto Serif KR", serif; font-weight: 600; font-size: 17px; line-height: 1.85; color: var(--ink); }
-  .letter p + p { margin-top: 12px; }
-  .letter .l-to { font-size: 19px; font-weight: 700; color: var(--text-strong); margin-bottom: 14px; }
-  .letter figcaption { margin-top: 20px; text-align: right; font-size: 15px; color: var(--ink-soft); }
-  .letter figcaption .en { font-size: 26px; color: var(--violet); margin-right: 10px; vertical-align: -3px; }
-  @media (max-width: 560px) { .letter { padding: 22px 20px 20px; } .letter p { font-size: 16px; line-height: 1.8; } }
-
-  .selfcheck { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: stretch; }
-  .sc-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-  .sc-list label { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 12px 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; cursor: pointer; font-size: 16px; line-height: 1.45; color: var(--text-strong); transition: border-color .15s var(--ease), background-color .15s var(--ease); }
-  .sc-list input { flex: 0 0 auto; width: 22px; height: 22px; accent-color: var(--violet); margin: 0; }
-  .sc-list label:has(input:checked) { border-color: var(--violet); background: var(--tint); }
-  .sc-result { display: flex; flex-direction: column; justify-content: center; gap: 12px; background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
-  .sc-count { font-family: "Noto Serif KR", serif; font-size: 18px; color: var(--ink-soft); }
-  .sc-count b { font-size: 40px; color: var(--violet); margin-right: 4px; }
-  .sc-msg { font-size: 16px; line-height: 1.65; color: var(--ink); min-height: 3.3em; }
-  .sc-result .btn { align-self: flex-start; }
-  @media (max-width: 860px) { .selfcheck { grid-template-columns: 1fr; } .sc-result .btn { align-self: stretch; justify-content: center; } }
-
-  .theme-row { margin-top: 40px; }
-  .theme-row .incl-title span { font-weight: 400; color: var(--ink-faint); margin-left: 6px; }
-  .theme-shots { list-style: none; margin: 0; padding: 4px 2px 10px; display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; }
-  .theme-shots li { text-align: center; }
-  .theme-shots .phone { border-width: 5px; border-radius: 20px; box-shadow: var(--ev-2); }
-  .theme-shots .phone img { border-radius: 15px; }
-  .theme-shots li.on .phone { outline: 2px solid var(--violet); outline-offset: 3px; }
-  .theme-shots b { display: block; margin-top: 10px; font-size: 14px; color: var(--text-strong); }
-  .theme-shots small { display: block; font-size: 12px; font-weight: 700; color: var(--violet); }
-  @media (max-width: 960px) {
-    .theme-shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -18px; padding: 6px 18px 12px; }
-    .theme-shots::-webkit-scrollbar { display: none; }
-    .theme-shots li { flex: 0 0 34%; scroll-snap-align: start; }
-  }
-  @media (min-width: 961px) { .theme-row .incl-title span { display: none; } }
-
-  .kt-copy { margin-top: 22px; max-width: 420px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .22); border-radius: 16px; padding: 16px 18px; }
-  .kt-title { font-size: 15px !important; font-weight: 700; color: #fff !important; margin: 0 0 8px !important; }
-  .kt-msg { margin: 0 0 12px; white-space: pre-wrap; font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 15px; line-height: 1.65; color: rgba(255, 255, 255, .92); }
-  .kt-btn { height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: #fff; color: #3d2c8f; font: 700 15px "Noto Sans KR", system-ui, sans-serif; cursor: pointer; }
-  .kt-btn:hover { background: #f1eefc; }
-  @media (max-width: 860px) { .kt-copy { max-width: none; } }
-
-  /* 숫자 카드 3장 (2026-11-24 '1년+ 블로그·플레이스 운영' 카드 뺌) */
-  .facts { grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 760px) {
-    .facts { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .facts li, .facts li + li, .facts li:nth-child(3), .facts li:nth-child(n+3) { border: 1px solid var(--line); padding: 16px 6px; }
-    .facts .num { font-size: 30px; }
-    .facts b { font-size: 13.5px; line-height: 1.4; margin-top: 6px; }
-    .facts span:last-child { font-size: 12px; line-height: 1.45; }
-  }
-
-  /* 휴대폰에서도 옆으로 넘기지 않고 한 화면에 다 보이게 (2026-11-24 사용자 요청) */
-  @media (max-width: 960px) {
-    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; overflow: visible; margin: 0; padding: 0; }
-    .shots li { flex: none; }
-    .theme-shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 10px; overflow: visible; margin: 0; padding: 4px 2px 6px; }
-    .theme-shots li { flex: none; }
-  }
-  @media (max-width: 560px) {
-    .shots { gap: 8px; }
-    .shots .phone { border-width: 4px; border-radius: 16px; }
-    .shots .phone img { border-radius: 12px; }
-    .shots b { font-size: 13px; margin-top: 8px; }
-    .shots small { font-size: 11px; }
-    .theme-shots { gap: 10px 8px; }
-    .theme-shots .phone { border-width: 3px; border-radius: 12px; }
-    .theme-shots .phone img { border-radius: 9px; }
-    .theme-shots b { font-size: 12px; margin-top: 6px; }
-    .theme-shots small { font-size: 10.5px; }
-    .theme-shots li.on .phone { outline-offset: 2px; }
-  }
-
-  /* 색 조합: 차이가 큰 3가지만 (2026-11-24 사용자 요청) */
-  .theme-shots { grid-template-columns: repeat(3, 1fr); max-width: 620px; }
-  .theme-row .incl-title span { display: inline !important; }
-  .theme-shots small { color: var(--ink-faint); font-weight: 500; }
-  .theme-shots li.on small { color: var(--violet); font-weight: 700; }
-  @media (max-width: 960px) { .theme-shots { grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: none; } }
-  @media (max-width: 560px) { .theme-shots { gap: 8px; } .theme-shots .phone { border-width: 4px; border-radius: 16px; } .theme-shots .phone img { border-radius: 12px; } .theme-shots b { font-size: 13px; } .theme-shots small { font-size: 11px; } }
-
-  /* 원칙 카드: 글이 짧아져 휴대폰에서도 2칸 (2026-11-24) */
-  @media (max-width: 560px) {
-    .principles .steps { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .principles .steps li { padding: 14px 14px 13px; }
-    .principles .steps .n { display: block; font-size: 18px; margin: 0 0 2px; }
-    .principles .steps h3 { display: block; font-size: 15px; line-height: 1.4; margin-bottom: 4px; }
-    .principles .steps p { font-size: 13px; line-height: 1.5; margin-top: 0; }
-  }
-
-  /* 더보기 접기: 해본 일 목록·원칙 04~06 (2026-11-24) — 접어도 검색·AI는 글을 읽음 */
-  .more-box { margin-top: 0; }
-  .more-box[open] > summary { margin-bottom: 12px; }
-  .work { grid-template-columns: 1fr; gap: 16px; max-width: 760px; align-items: start; }
-  .work .more-box { justify-self: start; }
-  .more-steps { margin-top: 12px; }
-  @media (max-width: 860px) { .work .more-box { margin-top: 4px; } }
-
-  .more-check[open] > summary { margin-bottom: 14px; }
-
-  /* 수가·식비 무료 수정 안내 (2026-11-24) */
-  .free-fix { margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: var(--tint); color: var(--text-strong); font-size: 14.5px; line-height: 1.6; }
-  .free-fix b { color: var(--violet); }
+@media (prefers-reduced-motion: reduce) {
+  #jini .jini-track { animation: none; }
+  #jini .dock { transition: none; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -795,555 +600,479 @@
 }
 </script>
 </head>
-<body>
+<body style="margin:0">
+<div id="jini">
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="마케팅지니 처음으로">
-      <img class="mark" src="logo.png" alt="" width="42" height="42">
-      <span><span class="en">Marketing Jini</span><b>마케팅지니</b></span>
-    </a>
-    <nav>
-      <a href="#story">소개</a>
-      <a href="#services">서비스</a>
-      <a href="#sample">샘플</a>
-      <a href="#ai">AI 검색</a>
-      <a href="#faq">자주 묻는 질문</a>
-      <a href="service/">상품·가격</a>
-      <a class="cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡 상담 ↗</a>
+<!-- ① 첫 화면 -->
+<section class="hero" id="top" aria-labelledby="jini-title">
+  <div class="jini-bar">
+    <a class="jini-brand" href="./"><img src="logo.png" alt="" width="30" height="30">마케팅지니</a>
+    <nav class="jini-nav" aria-label="바로가기">
+      <a class="pc-only" href="#path">하는 일</a>
+      <a class="pc-only" href="#sample">샘플</a>
+      <a href="#price">가격</a>
+      <a class="pc-only" href="#maker">소개</a>
+      <a class="pc-only" href="#notes">작업 노트</a>
+      <a href="#faq">질문</a>
+      <a href="#check">무료 진단</a>
     </nav>
   </div>
-</header>
-
-<main id="top">
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-panel">
-      <div>
-        <span class="eyebrow en"><span class="pc">Marketing Jini · </span><span class="nw">Suwon · Hwaseong · Yongin</span></span>
-        <h1>수원·화성·용인<br><span class="nw">주야간보호센터·</span><br class="mo"><span class="nw">요양기관</span><br class="pc"> <em>온라인 홍보.</em></h1>
-        <p class="strong"><span class="nw">센터를 직접 찾아가 돕는,</span> <span class="nw">보호자인 마케터.</span><br><span class="nw">블로그·네이버 플레이스·</span><wbr><span class="nw">홈페이지를</span> <span class="nw">함께 정리합니다.</span></p>
-        <div class="btns">
-          <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
-          <a class="btn ghost" href="service/">상품·가격 보기 <span>↗</span></a>
-        </div>
-        <span class="area"><span class="nw">주야간보호센터 중심</span> · <span class="nw">방문요양·요양원도 상담 가능</span></span>
-      </div>
-
-      <!-- 첫 화면 그림: 마케팅지니가 만드는 센터 홈페이지(가상의 샘플 센터) 휴대폰 화면 -->
-      <figure class="hero-phones">
-        <a class="stage" href="#sample" aria-label="샘플 센터 홈페이지 화면 보기">
-          <span class="phone ph-back"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지의 이용 비용 안내 화면" width="780" height="1688" loading="lazy"></span>
-          <span class="phone ph-front"><img src="img/sample-home.jpg" alt="샘플 센터 홈페이지의 첫 화면" width="780" height="1688"></span>
-          <span class="tag"><i>샘플</i>센터 홈페이지, 이렇게 만들어요</span>
-        </a>
-        <figcaption>가상의 샘플 센터 화면이에요 · 실제 센터가 아닙니다</figcaption>
-      </figure>
+  <p class="jini-word jini-word--top" aria-hidden="true">보호자</p>
+  <div class="jini-copy">
+    <h1 id="jini-title">수원·화성·용인 주야간보호센터의 블로그, 플레이스, 홈페이지를 만듭니다.</h1>
+    <p class="jini-sub">요양보호사로 일했고, 치매 어머니를 돌보는 8년차 보호자가 직접 찾아가 만듭니다.</p>
+    <a class="jini-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
+  </div>
+  <p class="jini-word jini-word--bottom" aria-hidden="true">마케터</p>
+  <div class="jini-band">
+    <div class="jini-track">
+      <ul>
+        <li>치매 어머니를 돌보는 가족 보호자 8년차</li>
+        <li>주야간보호센터 요양보호사 출신</li>
+        <li>센터 블로그와 플레이스 직접 운영</li>
+        <li>수원·화성·용인 직접 방문</li>
+        <li>무료 진단</li>
+        <li>홈페이지 25만 원</li>
+        <li>시작 패키지 50만 원</li>
+        <li>월간 관리 월 18만 원부터</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>치매 어머니를 돌보는 가족 보호자 8년차</li>
+        <li>주야간보호센터 요양보호사 출신</li>
+        <li>센터 블로그와 플레이스 직접 운영</li>
+        <li>수원·화성·용인 직접 방문</li>
+        <li>무료 진단</li>
+        <li>홈페이지 25만 원</li>
+        <li>시작 패키지 50만 원</li>
+        <li>월간 관리 월 18만 원부터</li>
+      </ul>
     </div>
-
-    <nav class="quick" aria-label="함께 정리하는 곳">
-      <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><rect x="7" y="5" width="18" height="22" rx="3"/><path d="M11 12h10M11 17h10M11 22h6"/></svg></span>블로그</a>
-      <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><path d="M16 28s-8.5-7.8-8.5-14.3a8.5 8.5 0 0 1 17 0C24.5 20.2 16 28 16 28Z"/><circle cx="16" cy="13.5" r="3.2"/></svg></span>플레이스</a>
-      <a href="#services"><span class="ic"><svg viewBox="0 0 32 32"><rect x="10" y="4" width="12" height="24" rx="3"/><path d="M14.5 24h3"/></svg></span>홈페이지</a>
-      <a href="#ai"><span class="ic"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/><path d="M14 10.5c.3 2 1.2 3 3.2 3.5-2 .5-2.9 1.5-3.2 3.5-.3-2-1.2-3-3.2-3.5 2-.5 2.9-1.5 3.2-3.5Z"/></svg></span>AI 검색</a>
-    </nav>
   </div>
 </section>
 
-<!-- 숫자 카드: 확인된 사실만 씁니다. 바뀌면 여기와 아래 소개 칸을 같이 고칩니다. -->
-<section class="facts-sec" aria-label="마케팅지니 한눈에 보기">
+<main>
+<!-- ①-1 이런 센터장님께 (2026-11-25, 레퍼런스 '이런 분께' 방식 — 고민은 상품 안내지와 같은 문장) -->
+<section class="sec sec-white who-sec" id="who" aria-labelledby="who-title">
   <div class="wrap">
-    <ul class="facts">
-      <li><span class="num">약 1<small>년</small></span><b>요양보호사 경력</b><span>주야간보호센터 현장</span></li>
-      <li><span class="num">3<small>개 시</small></span><b>직접 찾아가는 지역</b><span>수원·화성·용인</span></li>
-      <li><span class="num">3<small>가지</small></span><b>함께 정리하는 채널</b><span><span class="nw">블로그·플레이스·</span><wbr><span class="nw">홈페이지</span></span></li>
+    <h2 class="big big--7" id="who-title">이런 센터장님께</h2>
+    <ul class="worries">
+      <li class="worry">블로그를 해야 하는 건 아는데, 무엇을 써야 할지 모르겠어요.</li>
+      <li class="worry">플레이스에 비용·송영·하루 일과 안내가 빠져 있어요.</li>
+      <li class="worry">홈페이지는 비싸고, 만들어도 고치기가 어려워요.</li>
+      <li class="worry">직원에게 맡겼는데 그만두면 다시 처음부터예요.</li>
+    </ul>
+    <p class="who-end">하나라도 해당되면,<br><strong>마케팅지니가 함께 정리해 드릴게요.</strong></p>
+  </div>
+</section>
+
+<!-- ② 보호자가 센터를 찾아오는 길 (스크롤하면 단계가 하나씩 바뀌는 장면) -->
+<section class="sec sec-white" id="path" aria-labelledby="path-title">
+  <div class="wrap path-head">
+    <h2 class="h2" id="path-title">보호자는 이 길로<br>센터를 찾아옵니다.</h2>
+    <p class="lead">보호자가 우리 센터에 전화하기까지 거치는 네 단계예요. 단계마다 마케팅지니가 정리하는 것을 함께 적었어요.</p>
+  </div>
+  <div class="scene" id="scene">
+    <div class="scene-stick wrap">
+      <p class="scene-label">보호자가 우리 센터를 찾아오는 길</p>
+      <ol class="steps">
+        <li class="step is-on"><span class="step-n">1</span><b class="step-t">검색</b><span class="step-d">동네 이름 + 센터 종류로 찾아요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>블로그 글 주제 · 동네 이름</span><div class="phone" role="img" aria-label="예시 화면: 동네 이름으로 검색하면 우리 센터 플레이스가 맨 위에 보임"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-bar">수원 권선구 주간보호</p><ul class="ph-res"><li class="on"><b>○○주야간보호센터</b><span>플레이스 · 지도</span></li><li><b>○○센터의 하루 일과</b><span>블로그</span></li><li><b>○○주야간보호센터</b><span>홈페이지</span></li></ul></div></div></li>
+        <li class="step"><span class="step-n">2</span><b class="step-t">플레이스 · 블로그</b><span class="step-d">사진·소식으로 분위기를 봐요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>플레이스 정보 · 사진 순서</span><div class="phone" role="img" aria-label="예시 화면: 플레이스에서 센터 사진과 소식, 블로그 글을 봄"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-place"><b>○○주야간보호센터</b><span>주야간보호 · 수원 권선구</span></p><p class="ph-photos"><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i></i></p><p class="ph-line"><b>소식</b>이번 주 프로그램</p><p class="ph-line"><b>블로그</b>송영 지역 안내</p></div></div></li>
+        <li class="step"><span class="step-n">3</span><b class="step-t">홈페이지</b><span class="step-d">비용·송영·하루 일과를 확인해요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>센터 홈페이지</span><div class="phone phone--img" role="img" aria-label="샘플 화면: 센터 홈페이지의 등급별 이용 비용 안내"><div aria-hidden="true"><p class="ph-top">샘플 화면</p><img src="img/sample-fee.jpg" alt="" width="780" height="1688" loading="lazy"></div></div></li>
+        <li class="step"><span class="step-n">4</span><b class="step-t">전화 · 카톡</b><span class="step-d">전화 버튼을 눌러 상담해요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>전화 연결 점검</span><div class="phone" role="img" aria-label="예시 화면: 홈페이지에서 전화 걸기 버튼을 누름"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-call"><b>○○주야간보호센터</b><span>031-000-0000</span><em class="ph-btn">전화 걸기</em><em class="ph-btn ph-btn--line">카톡 상담</em></p></div></div></li>
+      </ol>
+      <div class="scene-foot" aria-hidden="true"><span class="scene-dots"><i class="is-on"></i><i></i><i></i><i></i></span><span><b id="sceneN">1</b> / 4</span></div>
+    </div>
+  </div>
+  <div class="wrap svc">
+    <h3 class="h3">센터는 사진만 보내 주세요.</h3>
+    <p class="lead">보호자가 찾는 길은 마케팅지니가 함께 정리합니다. 주야간보호센터 중심으로, 방문요양·요양원도 상담 가능해요.</p>
+    <ul class="rows">
+      <li><b class="svc-name">블로그·플레이스 정리</b><p>블로그·플레이스의 소개글·사진·기본 정보를 보호자가 보는 순서로 정리하고, 블로그 글 15편을 써 드려요. 시작 패키지로 진행해요.</p></li>
+      <li><b class="svc-name">홈페이지 제작</b><p>비용·송영·하루 일과·오시는 길·전화를 한 장에 담은 휴대폰용 홈페이지를 만들어 플레이스에 연결해요.</p></li>
+      <li><b class="svc-name">월간 관리</b><p>밴드·카톡방 사진과 한 줄 설명만 주시면 블로그 글과 플레이스 소식으로 올려요. 얼굴은 모자이크하고, 센터에서 확인한 뒤 게시해요.</p></li>
     </ul>
   </div>
 </section>
 
-<section class="cream" id="story">
+<!-- ③ 이렇게 만들어 드려요 (가상의 '샘플주야간보호센터' 화면 — 실제 센터는 동의를 받은 뒤에만 사례로 올립니다) -->
+<section class="sec sec-white sec-rule" id="sample" aria-labelledby="sample-title">
   <div class="wrap">
-    <div class="story-top">
-      <div class="head">
-        <span class="eyebrow en">About Jini</span>
-        <h2>사람을 먼저 이해하고,<br>보호자의 <span class="nw">궁금증부터 답합니다.</span></h2>
-      </div>
-      <aside class="card profile">
-        <div class="who"><strong>마케팅지니</strong><span class="en">Marketing Jini</span></div>
-        <p class="tagline">돌봄 경험 × 온라인 마케팅 × AI</p>
-        <ul class="rows">
-          <li><b>가족 돌봄</b><span>치매 어머니를 함께 사는 집에서 돌보는 보호자</span></li>
-          <li><b>현장 경력</b><span>주야간보호센터 요양보호사 약 1년</span></li>
-          <li><b>온라인 운영</b><span>주야간보호센터 블로그·네이버 플레이스 직접 운영</span></li>
-          <li><b>AI 활용</b><span>AI로 센터 홈페이지와 콘텐츠 제작</span></li>
-        </ul>
-      </aside>
+    <h2 class="h2" id="sample-title">센터 홈페이지,<br>이렇게 만들어 드립니다.</h2>
+    <p class="lead">보호자가 먼저 찾는 비용·송영·전화를 한 장에 담아요. 가상의 샘플 센터로 만든 예시예요.</p>
+    <div class="shots">
+      <figure class="shot"><img src="img/sample-home.jpg" alt="샘플 센터 홈페이지 첫 화면: 센터 한 줄 소개와 전화 버튼" width="780" height="1688" loading="lazy"><figcaption><b>샘플 · 첫 화면</b>센터 한 줄 소개와 전화</figcaption></figure>
+      <figure class="shot"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지 이용 비용: 등급별 월 예상 금액 계산기" width="780" height="1688" loading="lazy"><figcaption><b>샘플 · 이용 비용</b>등급별 월 예상 금액</figcaption></figure>
+      <figure class="shot"><img src="img/sample-contact.jpg" alt="샘플 센터 홈페이지 오시는 길: 지도 길찾기와 주소 복사" width="780" height="1688" loading="lazy"><figcaption><b>샘플 · 오시는 길</b>지도 길찾기와 주소 복사</figcaption></figure>
     </div>
-    <!-- 센터장님께 드리는 편지 (2026-11-24 사용자 확인, 서명은 마케팅지니 드림) — 확인된 사실로만 씀 -->
-    <figure class="letter">
-      <p class="l-to">센터장님께</p>
-      <p>저는 주야간보호센터에서 요양보호사로 일했고, 지금은 치매가 있는 어머니를 함께 사는 집에서 돌보는 보호자입니다.</p>
-      <p>어머니는 방금 있었던 일을 기억하지 못하세요. 그래서 센터를 알아볼 때 가장 걱정됐던 건 “기억을 못 하시고 집에 와서 말씀도 못 하시니, 소홀히 대하지는 않을까?”, “엄마 마음이 상하지는 않을까?”였어요. 센터에서 1년 동안 요양보호사로 일한 저도, 보호자 자리에 서니 그 걱정이 가장 컸습니다.</p>
-      <p>그래서 보호자에게는 센터 안에서 어르신이 어떤 하루를 보내시는지, 어떻게 대해 드리는지가 꼭 보여야 한다고 생각합니다. 센터장님이 돌봄에 집중하시는 동안, 그 하루를 센터의 온라인에 차근차근 담아 드리겠습니다.</p>
-      <figcaption><span class="en">Jini</span>마케팅지니 드림</figcaption>
-    </figure>
-    <!-- 해본 일 (2026-11-24 소개 칸으로 합침) -->
-    <div class="work-head" id="work">
-      <h3>블로그와 플레이스 운영, <span class="nw">처음부터 끝까지 직접 해봤습니다.</span></h3>
-    </div>
-    <div class="work">
-      <div class="card quote">
-        <div class="mark-q">“</div>
-        <blockquote>블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.</blockquote>
-        <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
-        <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
-      </div>
-      <details class="faq-more more-box">
-        <summary>해본 일 자세히 보기 <span>5개</span></summary>
-        <ol class="tasks">
-          <li>블로그 설정 · 글 기획 · 발행</li>
-          <li>네이버 플레이스 등록 · 정보 관리</li>
-          <li>사진 · 홍보 이미지 제작</li>
-          <li>검색 키워드 · 노출 관리</li>
-          <li>센터 직원 블로그 운영 교육</li>
-        </ol>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">Services</span>
-      <h2><span class="nw">센터는 사진만</span> <span class="nw">보내 주세요.</span><br>보호자가 찾는 길은 <span class="nw">함께 정리합니다.</span></h2>
-      <p>주야간보호센터 중심으로, 방문요양·요양원도 상담 가능합니다.</p>
-    </div>
-
-    <!-- 보호자가 센터를 찾아오는 길 (2026-11-24 추가) -->
-    <div class="path-box">
-      <p class="path-title">보호자가 우리 센터를 찾아오는 길 <small>보라 글씨 = 마케팅지니가 정리하는 것</small></p>
-      <ol class="path">
-        <li>
-          <span class="pn en">01</span>
-          <b>검색</b>
-          <span class="pd">동네 이름 + 센터 종류로 찾아요</span>
-          <span class="pj">블로그 글 주제 · 동네 이름</span>
-        </li>
-        <li>
-          <span class="pn en">02</span>
-          <b>플레이스 · 블로그</b>
-          <span class="pd">사진·소식으로 분위기를 봐요</span>
-          <span class="pj">플레이스 정보 · 사진 순서</span>
-        </li>
-        <li>
-          <span class="pn en">03</span>
-          <b>홈페이지</b>
-          <span class="pd">비용·송영·하루 일과를 확인해요</span>
-          <span class="pj">센터 홈페이지</span>
-        </li>
-        <li>
-          <span class="pn en">04</span>
-          <b>전화 · 카톡</b>
-          <span class="pd">전화 버튼을 눌러 상담해요</span>
-          <span class="pj">전화 연결 점검</span>
-        </li>
-      </ol>
-    </div>
-
-    <div class="svc-grid">
-      <div class="card">
-        <span class="no">01</span><span class="label en">Blog &amp; place</span>
-        <h3>블로그·플레이스 정리</h3>
-        <p>블로그·플레이스의 소개글·사진·기본 정보를 보호자가 보는 순서로 정리하고, 블로그 글 15편을 써 드려요. 시작 패키지로 진행해요.</p>
-      </div>
-      <div class="card">
-        <span class="no">02</span><span class="label en">Homepage</span>
-        <h3>홈페이지 제작</h3>
-        <p>비용·송영·하루 일과·오시는 길·전화를 한 장에 담은 휴대폰용 홈페이지를 만들어 플레이스에 연결해요.</p>
-        <a class="svc-more" href="#sample">샘플 화면 보기 ↓</a>
-      </div>
-      <div class="card">
-        <span class="no">03</span><span class="label en">Monthly</span>
-        <h3>월간 관리</h3>
-        <p>밴드·카톡방 사진과 한 줄 설명만 주시면 블로그 글과 플레이스 소식으로 올려요. 얼굴은 모자이크, 센터 확인 뒤 게시.</p>
-      </div>
-    </div>
-
-    <!-- 보호자처럼 1분 점검 (2026-11-24, '우리 센터는 어떤 상황인가요?' 자리) — 체크 내용은 저장하지 않습니다 -->
-    <div class="fit-head" id="check">
-      <span class="eyebrow en">Self Check</span>
-      <h3>보호자처럼 1분 점검</h3>
-      <p>보호자 눈으로 우리 센터를 점검해 보세요. 누른 내용은 저장되지 않아요.</p>
-    </div>
-    <details class="faq-more more-box more-check">
-      <summary>5가지 점검해 보기 <span>1분</span></summary>
-      <div class="selfcheck">
-        <ol class="sc-list">
-          <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
-          <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
-          <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
-          <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
-          <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
-        </ol>
-        <div class="sc-result" aria-live="polite">
-          <p class="sc-count"><b id="scN">0</b> / 5</p>
-          <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
-          <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
-        </div>
-      </div>
-    </details>
-
-    <p class="svc-note"><a href="service/">상품 구성과 가격 보기 ↗</a> · 범위와 비용은 시작 전에 문서로 안내해 드립니다.</p>
-  </div>
-</section>
-
-<!-- Sample Work: 가상의 '샘플주야간보호센터'로 만든 화면입니다. 일월센터 등 실제 센터는 동의를 받은 뒤에만 사례로 올립니다. -->
-<section class="soft" id="sample">
-  <div class="wrap sample">
-    <div class="head">
-      <span class="eyebrow en">Sample Work</span>
-      <h2>센터 홈페이지,<br><span class="nw">이렇게 만들어 드립니다.</span></h2>
-      <p>보호자가 먼저 찾는 비용·송영·전화를 한 장에 담아요. 가상의 샘플 센터로 만든 예시예요.</p>
-    </div>
-    <div class="sample-body">
-      <p class="incl-title">기본으로 들어가는 것</p>
-      <ul class="incl">
+    <p class="swipe">옆으로 넘겨 보세요</p>
+    <div class="basics">
+      <h3 class="h3">기본으로 들어가는 것</h3>
+      <ul class="rows">
         <li>등급만 고르면 나오는 본인부담금 계산기</li>
         <li>누르면 바로 거는 전화 버튼</li>
-        <li>송영 지역 · 오시는 길</li>
+        <li>송영 지역과 오시는 길</li>
         <li>보호자가 묻는 질문과 답</li>
         <li>AI·검색이 읽는 센터 정보 정리</li>
-        <li>카톡 미리보기 그림</li>
+        <li>카톡으로 보낼 때 보이는 미리보기 그림</li>
       </ul>
-      <div class="btns">
-        <a class="btn" href="sample/" target="_blank" rel="noopener">샘플 홈페이지 직접 보기 <span>↗</span></a>
-      </div>
-      <p class="free-fix">매년 바뀌는 장기요양 수가와 식비·간식비 변경은 마케팅지니가 관리하는 동안 <b>무료로 고쳐 드려요.</b></p>
-      <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
-    <ul class="shots" aria-label="샘플 센터 홈페이지 휴대폰 화면">
-      <li><span class="phone"><img src="img/sample-home.jpg" alt="샘플 센터 홈페이지 첫 화면: 센터 소개, 본인부담금 계산 버튼, 전화번호" width="780" height="1688" loading="lazy"></span><b>첫 화면</b><small>센터 한 줄 소개와 전화</small></li>
-      <li><span class="phone"><img src="img/sample-fee.jpg" alt="샘플 센터 홈페이지 이용 비용 화면: 4등급 기준 월 예상 금액 예시" width="780" height="1688" loading="lazy"></span><b>이용 비용</b><small>등급별 월 예상 금액</small></li>
-      <li><span class="phone"><img src="img/sample-contact.jpg" alt="샘플 센터 홈페이지 오시는 길 화면: 주소, 지도 길찾기 버튼" width="780" height="1688" loading="lazy"></span><b>오시는 길</b><small>지도 길찾기와 주소 복사</small></li>
-    </ul>
-  </div>
-  <div class="wrap">
-    <div class="theme-row">
-      <p class="incl-title">색 조합은 8가지 중에서 센터 분위기에 맞게 고릅니다 <span>그중 3가지 예시</span></p>
-      <ul class="theme-shots" aria-label="같은 샘플 센터를 서로 다른 색 조합 3가지로 만든 휴대폰 첫 화면">
-        <li class="on"><span class="phone"><img src="img/theme-sage.jpg" alt="편백정원 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>편백정원</b><small>초록 · 위 샘플 색</small></li>
-        <li><span class="phone"><img src="img/theme-terracotta.jpg" alt="정성한끼 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>정성한끼</b><small>따뜻한 붉은색</small></li>
-        <li><span class="phone"><img src="img/theme-royal.jpg" alt="단청품격 색으로 만든 샘플 센터 첫 화면" width="360" height="779" loading="lazy"></span><b>단청품격</b><small>차분한 남색</small></li>
-      </ul>
+    <div class="sample-notes">
+      <p>색 조합은 8가지 중에서 센터 분위기에 맞게 골라요.</p>
+      <p>매년 바뀌는 장기요양 수가와 식비·간식비 변경은 <strong class="hl">마케팅지니가 관리하는 동안 무료로 고쳐 드려요.</strong></p>
+      <p><a class="tl" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a></p>
+      <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
   </div>
 </section>
-
-<section id="ai">
+<!-- ④ 가격 (상품마다 가격과 상담 링크 — 가격을 바꾸면 자주 묻는 질문·안내지·llms.txt도 함께) -->
+<section class="sec sec-yellow" id="price" aria-labelledby="price-title">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">AI search</span>
-      <h2>네이버 블로그만으로는<br>AI 검색에 <span class="nw">나오기 어렵습니다.</span></h2>
-      <p>네이버 블로그는 ChatGPT 같은 바깥 AI가 글을 가져가지 못하게 막혀 있어요(2026년 11월 확인). 센터 이름으로 된 홈페이지가 함께 있어야 해요.</p>
+    <h2 class="big big--2" id="price-title">가격</h2>
+    <p class="lead">무료 진단부터 시작해요. 진단만 받으셔도 괜찮습니다.</p>
+    <ul class="plans">
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">01</span>
+        <h3 class="plan-name">센터 홈페이지</h3>
+        <p class="plan-desc">비용·송영·하루 일과·오시는 길·전화를 한 장에 담은 휴대폰용 홈페이지를 만들어 플레이스에 연결해요. 도메인은 센터 이름으로 따로 사요(1년 2~3만 원 안팎).</p>
+        <p class="plan-price">25만 원</p>
+        <a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener" aria-label="센터 홈페이지 상품 카톡으로 상담하기">이 상품 상담하기</a>
+      </li>
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">02</span>
+        <h3 class="plan-name">시작 패키지</h3>
+        <p class="plan-desc">홈페이지에 블로그 세팅 또는 정비, 블로그 글 15편, 플레이스 정리까지 함께해요. 블로그가 없으면 새로 세팅하고, 있으면 정비해요.</p>
+        <p class="plan-price">50만 원</p>
+        <a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener" aria-label="시작 패키지 카톡으로 상담하기">이 상품 상담하기</a>
+      </li>
+      <li class="plan">
+        <span class="plan-no" aria-hidden="true">03</span>
+        <h3 class="plan-name">월간 관리</h3>
+        <p class="plan-desc">밴드·카톡방 사진과 한 줄 설명만 주시면 블로그 글과 플레이스 소식으로 올려요. 매달 보고해 드려요.</p>
+        <div class="plan-two">
+          <p><span class="plan-price">월 18만 원</span><span>블로그 글 8편 + 플레이스 소식 4건</span></p>
+          <p><span class="plan-price">월 25만 원</span><span>블로그 글 12편 + 플레이스 소식 6건</span></p>
+        </div>
+        <a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener" aria-label="월간 관리 카톡으로 상담하기">이 상품 상담하기</a>
+      </li>
+    </ul>
+    <p class="price-note">부가세 10% 별도예요. 작업 범위, 수정 횟수, 일정, 최종 금액은 시작 전에 문서로 안내해 드립니다. <a class="tl" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
+  </div>
+</section>
+
+<!-- ⑤ 만드는 사람 (편지·들은 말·돌봄 8년차는 확인된 사실만 — 8년차는 2026-11-25 사용자 확인. 실제 고객 후기는 동의받은 뒤에만 넣습니다) -->
+<section class="sec sec-ink" id="maker" aria-labelledby="maker-title">
+  <div class="wrap">
+    <h2 class="h2" id="maker-title">보호자의 마음으로<br>만듭니다.</h2>
+    <!-- 글자·사진 겹침 ①: '8년차'가 밤 책상 사진(AI로 만든 사진, 사람 없음)의 왼쪽 빈 벽에 겹침 -->
+    <div class="photo-desk">
+      <div class="photo-frame"><img src="img/photo-desk.jpg" alt="밤에 스탠드가 켜진 책상 위의 수첩과 안경, 찻잔, 노트북" width="1280" height="720" loading="lazy"></div>
+      <p class="years photo-over"><span class="years-n">8년차</span><span class="years-t">치매 어머니를 돌보는<br>가족 보호자</span></p>
     </div>
-    <div class="ai-box">
-      <div class="card">
-        <div class="top-line"><span class="chip-ic"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7"/><path d="M14 10.5c.3 2 1.2 3 3.2 3.5-2 .5-2.9 1.5-3.2 3.5-.3-2-1.2-3-3.2-3.5 2-.5 2.9-1.5 3.2-3.5Z"/></svg></span><span class="label en">Free check</span></div>
-        <h3>무료 진단 · AI 추천 확인</h3>
-        <p>ChatGPT·제미나이·네이버 AI에 직접 물어보고 우리 센터가 나오는지 화면으로 보여 드려요. 빠진 정보와 고칠 순서도 함께요.</p>
-        <p class="fine">AI 추천·검색 순위는 약속하지 않아요.</p>
-        <a class="btn" style="margin-top:18px" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
-      </div>
+    <div class="maker-grid">
+      <figure class="letter">
+        <p class="letter-to">센터장님께</p>
+        <p>저는 주야간보호센터에서 요양보호사로 일했고, 지금은 치매가 있는 어머니를 함께 사는 집에서 8년째 돌보는 보호자입니다.</p>
+        <p>어머니는 방금 있었던 일을 기억하지 못하세요. 그래서 센터를 알아볼 때 가장 걱정됐던 건 “기억을 못 하시고 집에 와서 말씀도 못 하시니, 직원분들이 소홀히 대하지는 않을까?”, “건강한 식단으로 식사는 잘 드실까?”였어요. 센터에서 요양보호사로 일했던 저도, 보호자 자리에 서니 그 걱정이 가장 컸습니다.</p>
+        <p>그래서 보호자에게는 센터 안에서 어르신이 어떤 하루를 보내시는지, 어떻게 대해 드리는지가 꼭 보여야 한다고 생각합니다. 센터장님이 돌봄에 집중하시는 동안, 그 하루를 센터의 온라인에 차근차근 담아 드리겠습니다.</p>
+        <figcaption>마케팅지니 드림</figcaption>
+      </figure>
       <div>
-        <p class="meta" style="margin-bottom:12px">보호자가 AI에게 이렇게 묻습니다</p>
-        <!-- 예시 화면: 실제 AI 답변이 아닙니다. A·B·C는 가상의 센터입니다. -->
-        <div class="chat">
-          <input type="radio" name="ct" id="ct1" checked>
-          <input type="radio" name="ct" id="ct2">
-          <input type="radio" name="ct" id="ct3">
-          <div class="chat-tabs" role="group" aria-label="센터 종류 고르기">
-            <label for="ct1">주야간보호</label>
-            <label for="ct2">방문요양</label>
-            <label for="ct3">요양원</label>
-          </div>
-          <div class="chat-bar"><i></i>AI 검색<em>예시 화면</em></div>
-          <div class="chat-panel cp1">
-            <p class="ask">수원 권선구 주간보호센터 추천해 줘</p>
-            <ol class="ans">
-              <li><b>A 주간보호센터</b> <span>· 송영 지역과 하루 일과 안내</span></li>
-              <li><b>B 주야간보호센터</b> <span>· 등급별 이용 비용 공개</span></li>
-              <li><b>C 데이케어센터</b> <span>· 프로그램 사진과 오시는 길</span></li>
-            </ol>
-            <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
-          </div>
-          <div class="chat-panel cp2">
-            <p class="ask">화성 병점 근처 방문요양센터 알려 줘</p>
-            <ol class="ans">
-              <li><b>A 방문요양센터</b> <span>· 방문 가능 지역 안내</span></li>
-              <li><b>B 재가복지센터</b> <span>· 요양보호사 연결 절차 설명</span></li>
-              <li><b>C 방문요양센터</b> <span>· 상담 전화와 운영 시간</span></li>
-            </ol>
-            <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
-          </div>
-          <div class="chat-panel cp3">
-            <p class="ask">용인 기흥구에 어머니 모실 요양원 추천해 줘</p>
-            <ol class="ans">
-              <li><b>A 요양원</b> <span>· 입소 절차와 비용 안내</span></li>
-              <li><b>B 요양원</b> <span>· 면회 방법과 식단 공개</span></li>
-              <li><b>C 노인요양시설</b> <span>· 시설 사진과 오시는 길</span></li>
-            </ol>
-            <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
-          </div>
-          <p class="chat-note">이해를 돕기 위한 예시 화면이며, 실제 AI 답변이 아닙니다. A·B·C는 가상의 센터입니다. 무료 진단에서는 우리 센터로 실제로 물어본 화면을 캡처해 드립니다.</p>
+        <div class="heard">
+          <blockquote>“블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.”</blockquote>
+          <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
+          <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
+        </div>
+        <div class="done">
+          <h3 class="h3">해본 일</h3>
+          <ul class="rows">
+            <li><b>가족 돌봄</b><span>치매 어머니를 함께 사는 집에서 돌보는 보호자, 8년차</span></li>
+            <li><b>현장</b><span>주야간보호센터 요양보호사 출신</span></li>
+            <li><b>온라인 운영</b><span>주야간보호센터 블로그·네이버 플레이스 직접 운영</span></li>
+            <li><b>AI 활용</b><span>AI로 센터 홈페이지와 콘텐츠 제작</span></li>
+          </ul>
+          <details class="more">
+            <summary>해본 일 자세히 보기 (5개)</summary>
+            <ul class="more-list">
+              <li>블로그 설정 · 글 기획 · 발행</li>
+              <li>네이버 플레이스 등록 · 정보 관리</li>
+              <li>사진 · 홍보 이미지 제작</li>
+              <li>검색 키워드 · 노출 관리</li>
+              <li>센터 직원 블로그 운영 교육</li>
+            </ul>
+          </details>
         </div>
       </div>
     </div>
-
-    <!-- 무료 진단 3단계 + 진단서 샘플 (샘플 내용은 가상의 센터입니다) -->
-    <div class="check-flow">
-      <div>
-        <span class="eyebrow en">Step by Step</span>
-        <h3>무료 진단은 이렇게 진행됩니다</h3>
-        <ol class="flow">
-          <li><span class="n">01</span><b>카톡으로 센터 이름 보내기</b><span>센터 이름과 지역만 알려 주세요.</span></li>
-          <li><span class="n">02</span><b>AI 3곳 · 플레이스 · 블로그 · 전화 확인</b><span>보호자처럼 휴대폰으로 찾아보고, 전화도 직접 눌러 봐요.</span></li>
-          <li><span class="n">03</span><b>캡처를 붙인 진단서 받기</b><span>확인한 화면과 고칠 순서를 카톡으로 보내 드려요.</span></li>
-        </ol>
-        <p class="flow-note">진단은 무료이고, 진단만 받으셔도 괜찮습니다.</p>
-      </div>
-      <figure class="report" style="margin:0" aria-label="무료 진단서 샘플">
-        <span class="stamp">샘플</span>
-        <p class="r-title">○○주간보호센터 무료 진단서</p>
-        <p class="r-date">예시 · 수원시 ○○구</p>
-        <h4>AI 검색 확인 (질문 3개)</h4>
-        <ul class="r-rows">
-          <li><span>ChatGPT</span><span class="no">나오지 않음</span></li>
-          <li><span>제미나이</span><span class="no">나오지 않음</span></li>
-          <li><span>네이버 AI</span><span class="mid">이름만 나옴</span></li>
-        </ul>
-        <div class="r-shots" aria-hidden="true"><span>캡처 1</span><span>캡처 2</span><span>캡처 3</span></div>
-        <h4>플레이스 · 블로그</h4>
-        <ul class="r-rows">
-          <li><span>운영 시간 · 전화번호</span><span class="ok">있음</span></li>
-          <li><span>이용 비용 안내</span><span class="no">없음</span></li>
-          <li><span>송영 지역</span><span class="no">없음</span></li>
-        </ul>
-        <h4>전화 연결 (휴대폰으로 직접 눌러 봄)</h4>
-        <ul class="r-rows">
-          <li><span>플레이스 전화 버튼</span><span class="ok">연결됨</span></li>
-          <li><span>블로그 글에서 번호 찾기</span><span class="mid">찾기 어려움</span></li>
-          <li><span>플레이스·블로그 주소와 번호</span><span class="no">서로 다름</span></li>
-        </ul>
-        <h4>고칠 순서</h4>
-        <ol class="r-fix">
-          <li>블로그 글마다 전화번호와 상담 연결 넣기</li>
-          <li>플레이스에 송영 지역과 이용 비용 안내 넣기</li>
-          <li>센터 이름으로 된 홈페이지 만들기</li>
-        </ol>
-        <figcaption class="r-note">이해를 돕기 위한 샘플이며, 실제 센터의 진단 결과가 아닙니다.</figcaption>
-      </figure>
-    </div>
   </div>
 </section>
-
-<section class="principles cream" id="principles">
+<!-- ⑦-1 작업 노트 (자주 묻는 질문과 따로 — 새 글을 올리면 목록 맨 위에 한 줄씩 더합니다) -->
+<section class="sec sec-yellow" id="notes" aria-labelledby="notes-title">
   <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">Promise</span>
-      <h2>신뢰는 말보다<br>행동으로 쌓습니다.</h2>
-    </div>
-    <ol class="steps">
-      <li><span class="n">01</span><div><h3>확인된 것만 말합니다</h3><p>순위·문의 증가를 약속하지 않아요.</p></div></li>
-      <li><span class="n">02</span><div><h3>범위와 비용을 먼저 정합니다</h3><p>할 일·수정 횟수·금액을 시작 전에 문서로.</p></div></li>
-    </ol>
-    <details class="faq-more more-box more-steps">
-      <summary>원칙 더 보기 <span>4개</span></summary>
-      <ol class="steps">
-        <li><span class="n">03</span><div><h3>사진·정보는 동의한 것만 씁니다</h3><p>동의받은 것만, 얼굴은 모자이크해요.</p></div></li>
-        <li><span class="n">04</span><div><h3>필요 없는 일은 권하지 않습니다</h3><p>직접 고칠 수 있는 건 먼저 알려 드려요.</p></div></li>
-        <li><span class="n">05</span><div><h3>순서대로 고치고, 바꾼 것을 기록합니다</h3><p>연결 오류부터 고치고, 바꾼 날을 기록해요.</p></div></li>
-        <li><span class="n">06</span><div><h3>글은 사람이 확인하고 올립니다</h3><p>AI는 초안까지, 센터장님 확인 뒤 게시해요.</p></div></li>
-      </ol>
-    </details>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">FAQ</span>
-      <h2>센터장님이 자주 묻는 질문</h2>
-      <p>질문을 누르면 답이 열려요.</p>
-    </div>
-    <div class="faq-list">
-      <details>
-        <summary><span class="n en">01</span><span class="q">홍보 비용은 얼마이고, 견적은 어떻게 받나요?</span></summary>
-        <p>센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다.</p>
-      </details>
-      <details>
-        <summary><span class="n en">02</span><span class="q">한 번만 맡길 수 있나요, 매달 관리도 가능한가요?</span></summary>
-        <p>홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요.</p>
-      </details>
-      <details>
-        <summary><span class="n en">03</span><span class="q">무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</span></summary>
-        <p>ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다.</p>
-      </details>
-    </div>
-    <details class="faq-more">
-      <summary>질문 더 보기 <span>14개</span></summary>
-      <div class="faq-list">
-        <details>
-          <summary><span class="n en">04</span><span class="q">센터에서 준비해야 할 사진이나 자료가 있나요?</span></summary>
-          <p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">05</span><span class="q">어르신 얼굴이 나온 사진은 어떻게 처리하나요?</span></summary>
-          <p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p>
-        </details>
-        <details>
-          <summary><span class="n en">06</span><span class="q">홈페이지 제작만 따로 맡길 수 있나요?</span></summary>
-          <p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">07</span><span class="q">어떤 홍보를 도와주시나요?</span></summary>
-          <p>주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스 소식도 작성해 드립니다.</p>
-        </details>
-        <details>
-          <summary><span class="n en">08</span><span class="q">수원·화성·용인 외 지역도 상담할 수 있나요?</span></summary>
-          <p>네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">09</span><span class="q">블로그나 네이버 플레이스가 없어도 시작할 수 있나요?</span></summary>
-          <p>네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">10</span><span class="q">기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?</span></summary>
-          <p>블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다.</p>
-        </details>
-        <details>
-          <summary><span class="n en">11</span><span class="q">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span></summary>
-          <p>센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">12</span><span class="q">리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?</span></summary>
-          <p>글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">13</span><span class="q">성과를 보장하나요?</span></summary>
-          <p>아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다.</p>
-        </details>
-        <details>
-          <summary><span class="n en">14</span><span class="q">도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</span></summary>
-          <p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p>
-        </details>
-        <details>
-          <summary><span class="n en">15</span><span class="q">홍보 글 문구가 법에 걸리지는 않나요?</span></summary>
-          <p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">16</span><span class="q">도메인이 뭔가요? 꼭 사야 하나요?</span></summary>
-          <p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p>
-        </details>
-        <details>
-          <summary><span class="n en">17</span><span class="q">홈페이지를 만든 뒤 비용이 바뀌면요?</span></summary>
-          <p>매년 바뀌는 장기요양 수가는 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 식재료비·간식비 변경(1년에 2번까지)과 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p>
-        </details>
-      </div>
-    </details>
-    <p class="svc-note"><a href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 물어보기 ↗</a> · <a href="service/">상품 구성과 가격 보기 ↗</a></p>
-  </div>
-</section>
-
-<section id="blogs">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow en">Notes</span>
-      <h2>센터장님이 묻는 질문에<br><span class="nw">글로 답합니다.</span></h2>
-      <p>블로그·플레이스·홈페이지와 AI 검색에 대해 센터장님이 궁금해할 질문을 하나씩 골라, 확인한 사실로 답합니다.</p>
-    </div>
-    <!-- 작업 노트 목록: 새 글을 올리면 맨 위에 한 줄씩 더합니다 -->
-    <ul class="notes">
-      <li>
-        <a class="card note-card" href="notes/no-inquiry/">
-          <span class="meta">2026년 11월 확인 · 블로그·플레이스</span>
-          <h3>블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</h3>
-          <p>글을 더 쓰기 전에, 문의가 어디서 끊기는지부터 찾습니다. 검색에 보이는지, 전화가 이어지는지, 보호자가 찾는 답이 있는지 3단계로 점검하는 방법.</p>
-          <span class="more">읽어 보기 →</span>
-        </a>
-      </li>
-      <li>
-        <a class="card note-card" href="notes/naver-blog-ai/">
-          <span class="meta">2026년 11월 확인 · AI 검색</span>
-          <h3>네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</h3>
-          <p>네이버 블로그는 바깥 AI가 글을 직접 가져가지 못하게 막아 두었습니다. 블로그를 지키면서 AI 검색에도 정확한 정보를 남기는 방법.</p>
-          <span class="more">읽어 보기 →</span>
-        </a>
-      </li>
+    <h2 class="big big--4" id="notes-title">작업 노트</h2>
+    <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
+    <p class="lead">블로그·플레이스·홈페이지와 AI 검색에 대해 센터장님이 궁금해할 질문을 하나씩 골라, 확인한 사실로 답합니다.</p>
+    <ul class="notes-list">
+      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-meta">2026년 11월 확인 · 블로그·플레이스</span><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-sum">글을 더 쓰기 전에, 문의가 어디서 끊기는지부터 찾습니다. 검색에 보이는지, 전화가 이어지는지, 보호자가 찾는 답이 있는지 3단계로 점검하는 방법.</span><span class="note-go">읽어 보기</span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-meta">2026년 11월 확인 · AI 검색</span><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-sum">네이버 블로그는 바깥 AI가 글을 직접 가져가지 못하게 막아 두었습니다. 블로그를 지키면서 AI 검색에도 정확한 정보를 남기는 방법.</span><span class="note-go">읽어 보기</span></a></li>
     </ul>
+    <p class="notes-foot">새 글은 카톡 채널로 알려 드려요. <a class="tl" href="https://pf.kakao.com/_rxeExeX/friend" target="_blank" rel="noopener">카톡 채널 추가하기</a></p>
   </div>
 </section>
 
-<section style="padding-top:0">
+<!-- ⑦ 약속과 자주 묻는 질문 (질문 17개는 머리 정보의 FAQPage와 같은 내용 — 바꾸면 둘 다) -->
+<section class="sec sec-ink" id="faq" aria-labelledby="promise-title">
   <div class="wrap">
-    <div class="cta-band">
+    <h2 class="h2" id="promise-title">신뢰는 말보다<br>행동으로 쌓습니다.</h2>
+    <ul class="rows promise">
+      <li><h3 class="promise-t">확인된 것만 말합니다</h3><p>순위·문의 증가를 약속하지 않아요.</p></li>
+      <li><h3 class="promise-t">범위와 비용을 먼저 정합니다</h3><p>할 일·수정 횟수·금액을 시작 전에 문서로 정해요.</p></li>
+      <li><h3 class="promise-t">글은 사람이 확인하고 올립니다</h3><p>AI는 초안까지, 센터장님 확인 뒤 게시해요.</p></li>
+    </ul>
+    <details class="more">
+      <summary>약속 더 보기 (3개)</summary>
+      <ul class="rows promise">
+        <li><h3 class="promise-t">사진·정보는 동의한 것만 씁니다</h3><p>동의받은 것만, 얼굴은 모자이크해요.</p></li>
+        <li><h3 class="promise-t">필요 없는 일은 권하지 않습니다</h3><p>직접 고칠 수 있는 건 먼저 알려 드려요.</p></li>
+        <li><h3 class="promise-t">순서대로 고치고, 바꾼 것을 기록합니다</h3><p>연결 오류부터 고치고, 바꾼 날을 기록해요.</p></li>
+      </ul>
+    </details>
+
+    <div class="faq-block">
+      <p class="big big--7" aria-hidden="true">자주 묻는 질문</p>
+      <h2 class="h3 faq-title">센터장님이 자주 묻는 질문</h2>
+      <p class="fine">질문을 누르면 답이 열려요.</p>
+      <div class="faq-list">
+        <details class="qa"><summary>홍보 비용은 얼마이고, 견적은 어떻게 받나요?</summary><p>센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다.</p></details>
+        <details class="qa"><summary>한 번만 맡길 수 있나요, 매달 관리도 가능한가요?</summary><p>홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요.</p></details>
+        <details class="qa"><summary>무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</summary><p>ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다.</p></details>
+      </div>
+      <details class="more faq-more">
+        <summary>질문 더 보기 (14개)</summary>
+        <div class="faq-list">
+          <details class="qa"><summary>센터에서 준비해야 할 사진이나 자료가 있나요?</summary><p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p></details>
+          <details class="qa"><summary>어르신 얼굴이 나온 사진은 어떻게 처리하나요?</summary><p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p></details>
+          <details class="qa"><summary>홈페이지 제작만 따로 맡길 수 있나요?</summary><p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p></details>
+          <details class="qa"><summary>어떤 홍보를 도와주시나요?</summary><p>주야간보호센터의 네이버 블로그와 플레이스를 정리하고, 보호자가 휴대폰으로 보기 편한 센터 홈페이지를 만들어요. 월간 관리를 맡기시면 블로그 글과 플레이스 소식도 작성해 드립니다.</p></details>
+          <details class="qa"><summary>수원·화성·용인 외 지역도 상담할 수 있나요?</summary><p>네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요.</p></details>
+          <details class="qa"><summary>블로그나 네이버 플레이스가 없어도 시작할 수 있나요?</summary><p>네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요.</p></details>
+          <details class="qa"><summary>기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?</summary><p>블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다.</p></details>
+          <details class="qa"><summary>블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</summary><p>센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요.</p></details>
+          <details class="qa"><summary>리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?</summary><p>글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요.</p></details>
+          <details class="qa"><summary>성과를 보장하나요?</summary><p>아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다.</p></details>
+          <details class="qa"><summary>도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</summary><p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p></details>
+          <details class="qa"><summary>홍보 글 문구가 법에 걸리지는 않나요?</summary><p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p></details>
+          <details class="qa"><summary>도메인이 뭔가요? 꼭 사야 하나요?</summary><p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p></details>
+          <details class="qa"><summary>홈페이지를 만든 뒤 비용이 바뀌면요?</summary><p>매년 바뀌는 장기요양 수가는 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 식재료비·간식비 변경(1년에 2번까지)과 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p></details>
+        </div>
+      </details>
+      <p class="ask-link"><a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a> · <a class="tl" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⑥ 무료 진단 (AI 예시·진단서는 이해를 돕는 샘플이며 실제 결과가 아닙니다) -->
+<section class="sec sec-white check" id="check" aria-labelledby="check-title">
+  <div class="wrap">
+    <p class="big big--4" aria-hidden="true">무료 진단</p>
+    <h2 class="h2" id="check-title">우리 센터, AI에 물어보면<br>나올까요?</h2>
+    <p class="lead">네이버 블로그는 ChatGPT 같은 바깥 AI가 글을 가져가지 못하게 막혀 있어요(2026년 11월 확인). 그래서 센터 이름으로 된 홈페이지가 함께 있어야 해요.</p>
+    <p class="fine why-fine">AI 추천·검색 순위는 약속하지 않아요.</p>
+    <div class="check-grid">
       <div>
-        <span class="en">Free check</span>
-        <h2>우리 센터,<br><em>AI에 물어보면</em> <span class="nw">나올까요?</span></h2>
-        <p>무료 진단으로 지금 모습부터 함께 확인해 보세요.<br>전화가 편하시면 <a class="tel" href="tel:010-5904-5300">010-5904-5300</a></p>
-        <div class="kt-copy">
+        <div class="ai" role="group" aria-label="AI 검색 예시 화면">
+          <p class="ai-top"><span>보호자가 AI에게 이렇게 묻습니다</span><span>예시 화면</span></p>
+          <div class="ai-more">
+            <p class="ask">수원 권선구 주간보호센터 추천</p>
+            <ol class="ans">
+              <li><b>A 주간보호센터</b> · 송영 지역과 하루 일과 안내</li>
+              <li><b>B 주야간보호센터</b> · 등급별 이용 비용 공개</li>
+              <li><b>C 데이케어센터</b> · 프로그램 사진과 오시는 길</li>
+            </ol>
+            <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
+          </div>
+          <details class="more">
+            <summary>다른 질문 예시 2개 더 보기</summary>
+            <div class="ai-more">
+              <p class="ask">화성 병점 근처 방문요양센터 알려 줘</p>
+              <ol class="ans">
+                <li><b>A 방문요양센터</b> · 방문 가능 지역 안내</li>
+                <li><b>B 재가복지센터</b> · 요양보호사 연결 절차 설명</li>
+                <li><b>C 방문요양센터</b> · 상담 전화와 운영 시간</li>
+              </ol>
+              <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
+            </div>
+            <div class="ai-more">
+              <p class="ask">용인 기흥구에 어머니 모실 요양원 추천</p>
+              <ol class="ans">
+                <li><b>A 요양원</b> · 입소 절차와 비용 안내</li>
+                <li><b>B 요양원</b> · 면회 방법과 식단 공개</li>
+                <li><b>C 노인요양시설</b> · 시설 사진과 오시는 길</li>
+              </ol>
+              <p class="miss">우리 센터 이름은 이 답에 없습니다</p>
+            </div>
+          </details>
+        </div>
+        <p class="fine ai-note">이해를 돕기 위한 예시 화면이며, 실제 AI 답변이 아닙니다. A·B·C는 가상의 센터입니다. 무료 진단에서는 우리 센터로 실제로 물어본 화면을 캡처해 드립니다.</p>
+        <div class="steps3">
+          <h3 class="h3">진단은 이렇게 진행됩니다</h3>
+          <ol class="flow">
+            <li><span class="n">1</span><b>카톡으로 센터 이름 보내기</b><span>센터 이름과 지역만 알려 주세요.</span></li>
+            <li><span class="n">2</span><b>AI 3곳 · 플레이스 · 블로그 · 전화 확인</b><span>보호자처럼 휴대폰으로 찾아보고, 전화도 직접 눌러 봐요.</span></li>
+            <li><span class="n">3</span><b>캡처를 붙인 진단서 받기</b><span>확인한 화면과 고칠 순서를 카톡으로 보내 드려요.</span></li>
+          </ol>
+          <p class="flow-note">진단은 무료이고, 진단만 받으셔도 괜찮습니다.</p>
+        </div>
+      </div>
+      <div>
+        <figure class="report" aria-label="무료 진단서 샘플">
+          <span class="stamp">샘플</span>
+          <p class="r-title">○○주간보호센터 무료 진단서</p>
+          <p class="r-date">예시 · 수원시 ○○구</p>
+          <h4>AI 검색 확인 (질문 3개)</h4>
+          <ul class="r-rows">
+            <li><span>ChatGPT</span><span class="st st-no">나오지 않음</span></li>
+            <li><span>제미나이</span><span class="st st-no">나오지 않음</span></li>
+            <li><span>네이버 AI</span><span class="st st-mid">이름만 나옴</span></li>
+          </ul>
+          <div class="r-shots" aria-hidden="true"><span>캡처 1</span><span>캡처 2</span><span>캡처 3</span></div>
+          <h4>플레이스 · 블로그</h4>
+          <ul class="r-rows">
+            <li><span>운영 시간 · 전화번호</span><span class="st st-ok">있음</span></li>
+            <li><span>이용 비용 안내</span><span class="st st-no">없음</span></li>
+            <li><span>송영 지역</span><span class="st st-no">없음</span></li>
+          </ul>
+          <h4>전화 연결 (휴대폰으로 직접 눌러 봄)</h4>
+          <ul class="r-rows">
+            <li><span>플레이스 전화 버튼</span><span class="st st-ok">연결됨</span></li>
+            <li><span>블로그 글에서 번호 찾기</span><span class="st st-mid">찾기 어려움</span></li>
+            <li><span>플레이스·블로그 주소와 번호</span><span class="st st-no">서로 다름</span></li>
+          </ul>
+          <p class="r-legend">○ 잘 되어 있음 · △ 보완 필요 · × 없음</p>
+          <figcaption class="fine r-note">이해를 돕기 위한 샘플이며, 실제 센터의 진단 결과가 아닙니다.</figcaption>
+        </figure>
+        <details class="more sc-box">
+          <summary>먼저 혼자 점검해 보기 (1분)</summary>
+          <div class="selfcheck">
+            <p class="sc-intro">보호자 눈으로 우리 센터를 점검해 보세요. 누른 내용은 저장되지 않아요.</p>
+            <ol class="sc-list">
+              <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
+              <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
+              <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
+              <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
+              <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
+            </ol>
+            <div class="sc-result" aria-live="polite">
+              <p class="sc-count"><b id="scN">0</b> / 5</p>
+              <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+    <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
+  </div>
+</section>
+<!-- ⑧ 마지막 상담 (이름·전화 입력칸은 만들지 않음 — 상담은 카톡·전화로만) -->
+<section class="sec sec-yellow contact" id="contact" aria-labelledby="contact-title">
+  <!-- 글자·사진 겹침 ②: 큰 제목의 아랫줄이 같은 책상의 아침 사진(AI로 만든 사진, 사람 없음, 흰 벽) 위쪽 가장자리에 걸침 -->
+  <div class="photo-window">
+    <h2 class="h2 photo-title" id="contact-title">카톡 한 줄이면<br>시작됩니다.</h2>
+    <!-- PC에서는 안내 글·카톡 상자·버튼이 사진 왼쪽 빈 벽 위에 올라감 (휴대폰은 사진 아래) -->
+    <div class="photo-stage">
+      <div class="photo-frame photo-frame--light"><img src="img/photo-window.jpg" alt="아침 햇살이 드는 흰 벽 앞 책상 위의 수첩과 안경, 머그컵, 스탠드, 화분, 휴대폰" width="1280" height="720" loading="lazy"></div>
+      <div class="photo-panel">
+        <p class="lead">무료 진단으로 지금 모습부터 함께 확인해 보세요.</p>
+        <div class="kt">
           <p class="kt-title">카톡에 이렇게 보내 주세요</p>
-          <pre class="kt-msg" id="ktMsg">무료 진단 신청합니다.
+          <pre id="ktMsg">무료 진단 신청합니다.
 센터 이름: ○○주간보호센터
 지역: 수원시 ○○구
 블로그나 플레이스 주소: (있으면)</pre>
           <button type="button" class="kt-btn" id="ktCopy">복사하기</button>
         </div>
+        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
       </div>
-      <div class="btns">
-        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 신청 <span>↗</span></a>
-        <a class="btn line" href="service/">상품·가격 보기 <span>↗</span></a>
-        <a class="btn kch" href="https://pf.kakao.com/_rxeExeX/friend" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-4.8 0-8.5 3-8.5 6.7 0 2.4 1.6 4.5 4 5.7L6.8 20l4-2.5c.4 0 .8.1 1.2.1 4.8 0 8.5-3 8.5-6.8S16.8 4 12 4Z"/></svg>카톡 채널 추가하기 <span>+</span></a>
-        <small class="kch-note">채널을 추가해 두시면 새 작업 노트와 소식을 카톡으로 받아 보실 수 있어요.</small>
-      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="contact-links">
+      <p>전화가 편하시면 <a class="tl" href="tel:010-5904-5300">010-5904-5300</a></p>
+      <p><a class="tl" href="https://pf.kakao.com/_rxeExeX/friend" target="_blank" rel="noopener">카톡 채널 추가하기</a><br>채널을 추가해 두시면 새 작업 노트와 소식을 카톡으로 받아 보실 수 있어요.</p>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
+<!-- 맨 아래 사업자 정보 (주소는 구까지만) -->
+<footer class="foot">
   <div class="wrap">
-    <span class="logo">
-      <img class="mark" src="logo.png" alt="" width="42" height="42">
-      <span class="en">Marketing Jini</span>
-    </span>
-    <div class="biz">
-      <span class="bi"><b>상호</b> 마케팅지니</span><span class="sep"> · </span><span class="bi"><b>대표</b> 허효진</span><span class="sep"> · </span><span class="bi"><b>사업자등록번호</b> 529-30-02199</span><br>
-      <span class="bi"><b>사업장</b> 경기도 수원시 권선구</span><br>
-      <span class="bi"><b>상담</b> <a href="https://pf.kakao.com/_rxeExeX" target="_blank" rel="noopener">카카오톡 채널 ‘마케팅지니’</a> (<a href="https://pf.kakao.com/_rxeExeX/friend" target="_blank" rel="noopener">채널 추가</a>)</span><span class="sep"> · </span><span class="bi"><b>전화</b> <a href="tel:010-5904-5300">010-5904-5300</a></span><br>
-      <span class="more">수원·화성·용인은 직접 방문, 그 밖의 지역은 온라인으로 함께합니다. 학원·동네 가게 홍보도 상담은 가능해요.</span>
-    </div>
-    <p class="copy">© 2026 마케팅지니 · Marketing Jini<br class="mo"> — 고객의 시선으로 만드는 온라인 홍보</p>
+    <p class="foot-brand"><img src="logo.png" alt="" width="34" height="34">마케팅지니</p>
+    <nav class="foot-nav" aria-label="맨 아래 바로가기">
+      <a href="#top">맨 위로</a><a href="#path">하는 일</a><a href="#sample">샘플</a><a href="#price">가격</a><a href="#maker">소개</a><a href="#notes">작업 노트</a><a href="#faq">질문</a><a href="#check">무료 진단</a>
+    </nav>
+    <nav class="foot-nav foot-sub" aria-label="다른 페이지">
+      <a href="https://marketingjini.com/service/">상품 안내지(A4 인쇄)</a><a href="https://marketingjini.com/sample/">샘플 홈페이지</a><a href="https://blog.naver.com/jiniya_marketing" target="_blank" rel="noopener">네이버 블로그</a>
+    </nav>
+    <p><span class="nw">상호 마케팅지니</span> · <span class="nw">대표 허효진</span> · <span class="nw">사업자등록번호 529-30-02199</span></p>
+    <p><span class="nw">사업장 경기도 수원시 권선구</span> · 상담 <a class="tl nw" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카카오톡 채널 ‘마케팅지니’</a> · <a class="tl nw" href="tel:010-5904-5300">010-5904-5300</a></p>
+    <p>수원·화성·용인은 직접 방문, 그 밖의 지역은 온라인으로 함께합니다. 학원·동네 가게 홍보도 상담은 가능해요.</p>
+    <p class="fine">© 2026 마케팅지니 — 고객의 시선으로 만드는 온라인 홍보</p>
   </div>
 </footer>
+
+<!-- 휴대폰에서 첫 화면을 지나면 나타나는 상담 바 -->
+<div class="dock" id="dock">
+  <a class="dock-brand" href="#top"><img src="logo.png" alt="" width="28" height="28">마케팅지니</a>
+  <nav class="dock-nav" aria-label="떠 있는 바로가기"><a href="#price">가격</a><a href="#notes">작업 노트</a><a href="#faq">질문</a><a href="#check">무료 진단</a><a href="#top">맨 위로</a></nav>
+  <a class="dock-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
+</div>
+
+</div>
 
 <!-- 줄 첫머리에 '·'가 오지 않도록, 화면에 보이는 '·' 앞에 보이지 않는 붙임 글자를 넣습니다 -->
 <script>
   (function () {
-    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    var n;
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
     while ((n = w.nextNode())) {
       if (n.nodeValue.indexOf('·') > -1 && !n.parentNode.closest('script,style,pre')) {
-        n.nodeValue = n.nodeValue.replace(/ ·/g, ' ·').replace(/([^\s])·/g, '$1⁠·');
+        n.nodeValue = n.nodeValue.replace(/ ·/g, ' ·').replace(/([^\s])·/g, '$1⁠·');
       }
     }
   })();
 </script>
-
-<!-- 보호자처럼 1분 점검 · 카톡에 보낼 말 복사 -->
+<!-- ② 찾아오는 길: 스크롤한 만큼 1→4단계로 바뀝니다 (움직임 줄이기 설정이면 목록 그대로) -->
+<script>
+  (function () {
+    var scene = document.getElementById('scene');
+    if (!scene || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var steps = scene.querySelectorAll('.step'), dots = scene.querySelectorAll('.scene-dots i'), num = document.getElementById('sceneN');
+    var cur = 0;
+    scene.classList.add('is-scene');
+    function show(n) {
+      if (n === cur) return;
+      cur = n;
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].classList.toggle('is-on', i === n - 1);
+        if (dots[i]) dots[i].classList.toggle('is-on', i === n - 1);
+      }
+      if (num) num.textContent = n;
+    }
+    function update() {
+      var r = scene.getBoundingClientRect(), total = r.height - window.innerHeight;
+      var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
+      show(Math.min(steps.length, Math.floor(p * steps.length) + 1));
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
+<!-- ⑥ 먼저 혼자 점검해 보기: 누른 개수에 맞는 안내 (저장하지 않음) -->
 <script>
   (function () {
     var boxes = document.querySelectorAll('.sc'), n = document.getElementById('scN'), msg = document.getElementById('scMsg');
+    if (!boxes.length || !n || !msg) return;
     var text = [
       '보호자가 전화하기 전에 찾는 정보가 많이 비어 있어요. 홈페이지와 블로그·플레이스를 함께 정리하는 시작 패키지가 맞을 수 있어요. 먼저 무료 진단으로 확인해 보세요.',
       '기본은 갖춰져 있어요. 비어 있는 곳만 채우면 됩니다. 무료 진단에서 빠진 곳과 고칠 순서를 정리해 드려요.',
@@ -1355,23 +1084,40 @@
       msg.textContent = c <= 2 ? text[0] : (c <= 4 ? text[1] : text[2]);
     }
     for (var i = 0; i < boxes.length; i++) boxes[i].addEventListener('change', update);
-
+  })();
+</script>
+<!-- ⑧ 카톡에 보낼 말 복사 · 휴대폰 아래 카톡 바 (첫 화면을 지나면 나타나고, 마지막 상담 칸·맨 아래에서는 숨김) -->
+<script>
+  (function () {
     var btn = document.getElementById('ktCopy'), pre = document.getElementById('ktMsg');
     if (btn && pre) btn.addEventListener('click', function () {
       var t = pre.textContent;
-      function done() { btn.textContent = '복사했어요 ✓'; setTimeout(function () { btn.textContent = '복사하기'; }, 2000); }
+      function done() { btn.textContent = '복사했어요'; setTimeout(function () { btn.textContent = '복사하기'; }, 2000); }
       if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(t).then(done); return; }
       var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
       try { document.execCommand('copy'); done(); } catch (e) {} document.body.removeChild(ta);
     });
+
+    var dock = document.getElementById('dock'), hero = document.getElementById('top');
+    var ends = [document.getElementById('contact'), document.querySelector('#jini .foot')];
+    if (!dock || !hero || !('IntersectionObserver' in window)) return;
+    var heroSeen = true, endSeen = false;
+    function update() {
+      var on = !heroSeen && !endSeen;
+      dock.classList.toggle('is-on', on);
+      dock.setAttribute('aria-hidden', on ? 'false' : 'true');
+      var links = dock.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) links[i].tabIndex = on ? 0 : -1;
+    }
+    new IntersectionObserver(function (es) { heroSeen = es[0].isIntersecting; update(); }).observe(hero);
+    var seen = {};
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { seen[e.target === ends[0] ? 'c' : 'f'] = e.isIntersecting; });
+      endSeen = !!(seen.c || seen.f); update();
+    });
+    ends.forEach(function (el) { if (el) io.observe(el); });
+    update();
   })();
 </script>
-
-<!-- 휴대폰에서만 화면 아래에 늘 보이는 상담 버튼 -->
-<nav class="dock" aria-label="바로 상담">
-  <a class="call" href="tel:010-5904-5300"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>전화 상담</a>
-  <a class="talk" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-4.8 0-8.5 3-8.5 6.7 0 2.4 1.6 4.5 4 5.7L6.8 20l4-2.5c.4 0 .8.1 1.2.1 4.8 0 8.5-3 8.5-6.8S16.8 4 12 4Z"/></svg>카톡 상담</a>
-</nav>
-
 </body>
 </html>
