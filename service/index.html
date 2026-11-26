@@ -85,24 +85,25 @@
 #jini .free p { grid-column: 1 / -1; margin-top: 6px; font-size: 16px; line-height: 1.6; }
 /* 상품 01 02 03: 굵은 위 선 + 큰 번호 + 큰 가격 (2026-11-25 가시성) */
 #jini .plans { list-style: none; margin-top: 22px; border-bottom: 1px solid var(--ink); }
-#jini .plan { display: grid; grid-template-columns: 92px 1fr; column-gap: 12px; padding: 20px 0; border-top: 3px solid var(--ink); }
-#jini .plan-no { grid-row: span 3; white-space: nowrap; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 66px; line-height: .85; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
-#jini .plan-name { font-size: 21px; font-weight: 700; line-height: 1.4; }
-#jini .rec { margin-left: 8px; padding-bottom: 1px; border-bottom: 4px solid var(--yellow); font-size: 15px; }
-#jini .plan-price { margin-top: 4px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 38px; line-height: 1.15; letter-spacing: -.03em; }
-#jini .plan-desc { margin-top: 8px; font-size: 16.5px; line-height: 1.65; }
-#jini .month { list-style: none; margin-top: 6px; }
-#jini .month li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 4px 0; font-size: 16px; }
-#jini .month b { font-family: 'Noto Serif KR', serif; font-size: 32px; letter-spacing: -.03em; }
+/* 2026-11-26 가독성: 왼쪽 큰 번호 칸(92px)이 휴대폰에서 글 폭을 좁혀 → 번호는 이름 옆에 작게, 글은 넓게, 설명은 체크 목록, '추천'은 노란 네모 */
+#jini .plan { padding: 22px 0 20px; border-top: 3px solid var(--ink); }
+#jini .plan-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+#jini .plan-no { white-space: nowrap; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: .9; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+#jini .plan-name { font-size: 22px; font-weight: 700; line-height: 1.4; }
+#jini .rec { display: inline-block; margin-left: 10px; padding: 1px 9px 2px; border: 2px solid var(--ink); border-radius: 6px; background: var(--yellow); font-size: 14px; line-height: 1.4; vertical-align: 3px; }
+#jini .plan-price { margin-top: 6px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 42px; line-height: 1.15; letter-spacing: -.03em; }
+#jini .plan-list { list-style: none; margin-top: 10px; display: grid; gap: 6px; }
+#jini .plan-list li { position: relative; padding-left: 26px; font-size: 17px; line-height: 1.6; }
+#jini .plan-list li::before { content: ""; position: absolute; left: 3px; top: .45em; width: 11px; height: 6px; border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg); }
+#jini .month { list-style: none; margin-top: 8px; display: grid; gap: 6px; }
+#jini .month li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; font-size: 17px; line-height: 1.5; }
+#jini .month b { font-family: 'Noto Serif KR', serif; font-size: 34px; letter-spacing: -.03em; }
 #jini .fine { margin-top: 14px; font-size: 15px; line-height: 1.65; }
 
-/* 진행 순서 · 약속 */
-#jini .two { display: grid; gap: 26px; }
+/* 진행 순서 (2026-11-26 약속은 자주 묻는 질문으로 합침 — PC·인쇄는 5칸 가로) */
 #jini .flow { list-style: none; counter-reset: f; border-top: 1px solid var(--ink); }
 #jini .flow li { counter-increment: f; display: grid; grid-template-columns: 30px 1fr; column-gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--ink); font-size: 16.5px; line-height: 1.55; }
 #jini .flow li::before { content: counter(f); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1.05; }
-#jini .promise { list-style: none; border-top: 1px solid var(--ink); }
-#jini .promise li { padding: 10px 0; border-bottom: 1px solid var(--ink); font-size: 16.5px; line-height: 1.55; }
 
 /* 자주 묻는 질문 */
 #jini .faq { display: grid; gap: 0; border-top: 1px solid var(--ink); }
@@ -141,7 +142,14 @@
   #jini .head { padding: 34px 40px 36px; }
   #jini .sec { padding: 28px 40px; }
   #jini .worries { grid-template-columns: 1fr 1fr; column-gap: 28px; }
-  #jini .two { grid-template-columns: 1fr 1fr; gap: 36px; }
+  #jini .plan { display: grid; grid-template-columns: 280px 1fr; column-gap: 28px; align-items: start; padding: 24px 0 22px; }
+  #jini .plan-top, #jini .plan-price { grid-column: 1; }
+  #jini .plan > .plan-list, #jini .plan > .month { grid-column: 2; grid-row: 1 / span 2; margin-top: 4px; }
+  #jini .plan > .month + .plan-list { grid-row: 3; margin-top: 8px; }
+  #jini .plan > .month { grid-row: 1 / span 2; }
+  #jini .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 16px; border-top: 0; }
+  #jini .flow li { grid-template-columns: 1fr; row-gap: 4px; align-content: start; padding: 12px 0 0; border-top: 3px solid var(--ink); border-bottom: 0; font-size: 15.5px; }
+  #jini .flow li b { display: block; font-size: 16.5px; }
   #jini .faq { grid-template-columns: 1fr 1fr; column-gap: 28px; }
   #jini .who { grid-template-columns: auto 1fr; align-items: center; column-gap: 28px; padding: 22px 40px; }
   #jini .foot { grid-template-columns: 1fr auto; align-items: center; column-gap: 28px; padding: 24px 40px; }
@@ -173,24 +181,30 @@
   #jini .free-price { font-size: 20px; }
   #jini .free p { margin-top: 2px; font-size: 11.5px; line-height: 1.45; }
   #jini .plans { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; margin-top: 9px; border-bottom: 0; }
-  #jini .plan { grid-template-columns: 1fr; padding: 6px 0 2px; border-top: 3px solid var(--ink); }
-  #jini .plan-no { grid-row: auto; font-size: 38px; line-height: .9; }
-  #jini .plan-name { margin-top: 2px; font-size: 16px; }
-  #jini .rec { font-size: 12px; border-bottom-width: 3px; }
+  #jini .plan { display: block; padding: 6px 0 2px; border-top: 3px solid var(--ink); }
+  #jini .plan-top { gap: 2px 8px; }
+  #jini .plan-no { font-size: 24px; }
+  #jini .plan-name { font-size: 15px; }
+  #jini .rec { margin-left: 6px; padding: 0 5px 1px; border-width: 1.5px; border-radius: 4px; font-size: 10.5px; vertical-align: 2px; }
   #jini .plan-price { margin-top: 1px; font-size: 26px; }
-  #jini .plan-desc { margin-top: 3px; font-size: 11.5px; line-height: 1.45; }
-  #jini .month { margin-top: 1px; }
-  #jini .month li { padding: 0; gap: 0 8px; font-size: 11.5px; }
+  #jini .plan-list { display: block; margin-top: 3px; font-size: 11.5px; line-height: 1.45; }
+  #jini .plan-list li { display: inline; padding-left: 0; font-size: 11.5px; line-height: 1.45; }
+  #jini .plan-list li::before { content: none; }
+  #jini .plan-list li + li::before { content: " · "; position: static; width: auto; height: auto; border: 0; transform: none; }
+  #jini .month { margin-top: 1px; gap: 0; }
+  #jini .month li { gap: 0 8px; font-size: 11.5px; line-height: 1.4; }
   #jini .month b { font-size: 20px; }
   #jini .fine { margin-top: 7px; font-size: 11px; line-height: 1.45; }
-  #jini .two { grid-template-columns: 1fr 1fr; gap: 20px; }
-  #jini .flow li, #jini .promise li { padding: 2.5px 0; font-size: 12px; line-height: 1.45; }
-  #jini .flow li { grid-template-columns: 20px 1fr; }
-  #jini .flow li::before { font-size: 15px; }
+  #jini .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 10px; border-top: 0; }
+  #jini .flow li { grid-template-columns: 1fr; row-gap: 0; align-content: start; padding: 3px 0 0; border-top: 2px solid var(--ink); border-bottom: 0; font-size: 11px; line-height: 1.35; }
+  #jini .flow li b { display: block; font-size: 12px; }
+  #jini .flow li::before { font-size: 14px; }
   #jini .faq { grid-template-columns: 1fr 1fr; column-gap: 20px; }
-  #jini .faq div { padding: 3px 0; }
-  #jini .faq dt { font-size: 12px; }
-  #jini .faq dd { font-size: 11.5px; line-height: 1.45; }
+  #jini .faq div { padding: 2px 0; }
+  #jini .faq dt { font-size: 12px; line-height: 1.35; }
+  #jini .faq dd { margin-top: 0; font-size: 11.5px; line-height: 1.38; }
+  /* 인쇄에서는 가격·진행 순서 글을 뜻 단위로 묶지 않고 이어 써서 줄 수를 줄임 (A4 한 장) */
+  #jini .plan-list .nw, #jini .month .nw { white-space: normal; }
   #jini .who { grid-template-columns: auto 1fr; align-items: center; gap: 2px 20px; padding: 7px 20px; }
   #jini .who-n { font-size: 28px; }
   #jini .who-t { font-size: 13px; }
@@ -245,32 +259,42 @@
       <p>보호자 눈으로 플레이스·블로그를 살펴보고, AI 검색에 우리 센터가 나오는지 화면으로 확인해 드려요.</p>
     </div>
     <ol class="plans">
+      <!-- 가격 가독성 (2026-11-26): 왼쪽 큰 번호 칸을 없애고 번호는 이름 옆에, 설명은 체크 목록으로(인쇄하면 한 줄로 이어 씀), 02는 노란 '추천' 표시 -->
       <li class="plan">
-        <span class="plan-no" aria-hidden="true">01</span>
-        <h3 class="plan-name">센터 홈페이지</h3>
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">01</span><h3 class="plan-name">센터 홈페이지</h3></div>
         <p class="plan-price">25만 원</p>
-        <p class="plan-desc">본인부담금 계산기·송영·오시는 길·전화를 한 페이지에 담아 플레이스에 연결해요. 수가·식비 변경(1년 1회)은 관리하는 동안 무료. 도메인 별도(1년 2~3만 원 안팎).</p>
-      </li>
-      <li class="plan">
-        <span class="plan-no" aria-hidden="true">02</span>
-        <h3 class="plan-name">시작 패키지<span class="rec">추천</span></h3>
-        <p class="plan-price">50만 원</p>
-        <p class="plan-desc">홈페이지 + 블로그 세팅 또는 정비 + 블로그 글 15편 + 플레이스 정리를 한 번에 해요.</p>
-      </li>
-      <li class="plan">
-        <span class="plan-no" aria-hidden="true">03</span>
-        <h3 class="plan-name">월간 관리</h3>
-        <ul class="month">
-          <li><b>월 18만 원</b><span>블로그 글 8편 + 플레이스 소식 4건</span></li>
-          <li><b>월 25만 원</b><span>블로그 글 12편 + 플레이스 소식 6건</span></li>
+        <ul class="plan-list">
+          <li><span class="nw">본인부담금 계산기·송영·</span><span class="nw">오시는 길·전화 버튼</span></li>
+          <li><span class="nw">한 페이지에 담아</span> <span class="nw">네이버 플레이스에 연결</span></li>
+          <li><span class="nw">수가·식비 변경(1년 1회)은</span> <span class="nw">관리하는 동안 무료</span></li>
+          <li><span class="nw">도메인 별도</span> <span class="nw">(1년 2~3만 원 안팎)</span></li>
         </ul>
-        <p class="plan-desc">사진과 한 줄 설명만 주시면 글로 올리고, 매달 보고해 드려요.</p>
+      </li>
+      <li class="plan is-rec">
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">02</span><h3 class="plan-name">시작 패키지<span class="rec">추천</span></h3></div>
+        <p class="plan-price">50만 원</p>
+        <ul class="plan-list">
+          <li>센터 홈페이지(01) 전부</li>
+          <li><span class="nw">블로그 세팅 또는 정비</span></li>
+          <li>블로그 글 15편</li>
+          <li>플레이스 정리</li>
+        </ul>
+      </li>
+      <li class="plan">
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">03</span><h3 class="plan-name">월간 관리</h3></div>
+        <ul class="month">
+          <li><b>월 18만 원</b><span><span class="nw">블로그 글 8편</span> <span class="nw">+ 플레이스 소식 4건</span></span></li>
+          <li><b>월 25만 원</b><span><span class="nw">블로그 글 12편</span> <span class="nw">+ 플레이스 소식 6건</span></span></li>
+        </ul>
+        <ul class="plan-list">
+          <li><span class="nw">사진과 한 줄 설명만 주시면</span> <span class="nw">글로 올리고, 매달 보고</span></li>
+        </ul>
       </li>
     </ol>
     <p class="fine">모든 가격은 부가세 10% 별도입니다. 작업 범위·수정 횟수·일정과 최종 금액은 상담 후 견적서로 먼저 안내해 드립니다.</p>
   </section>
 
-  <section class="sec two">
+  <section class="sec">
     <div>
       <h2 class="sec-t">진행 순서</h2>
       <ol class="flow">
@@ -281,23 +305,18 @@
         <li><span><b>게시·보고</b> 블로그·플레이스에 올리고 매달 보고</span></li>
       </ol>
     </div>
-    <div>
-      <h2 class="sec-t">약속드립니다</h2>
-      <ul class="promise">
-        <li>검색 상위 노출이나 문의 증가를 약속하지 않습니다.</li>
-        <li>범위와 비용은 시작 전에 문서로 정합니다.</li>
-        <li>사진은 동의받은 것만, 어르신 얼굴은 모자이크합니다.</li>
-        <li>계정은 센터 이름 그대로, 작업 방법은 시작 전에 함께 정합니다.</li>
-        <li>글은 사람이 확인하고 올립니다. AI는 초안까지만 씁니다.</li>
-      </ul>
-    </div>
   </section>
 
+  <!-- 자주 묻는 질문 (2026-11-26 사용자: '약속드립니다'를 합침 — 약속 5개를 질문 4개로, 범위·비용은 상위 노출 답에 함께) -->
   <section class="sec">
     <h2 class="sec-t">자주 묻는 질문</h2>
     <dl class="faq">
       <div><dt>매번 원고를 써서 보내야 하나요?</dt><dd>아니요. 사진과 활동 이름, 한 줄 설명이면 됩니다. 모자라는 내용은 제가 여쭤봐요.</dd></div>
       <div><dt>지금 쓰는 블로그도 맡길 수 있나요?</dt><dd>네. 기존 글과 구성을 살펴보고 이어 갈 부분과 정리할 부분을 함께 정해요.</dd></div>
+      <div><dt>어르신 사진은 어떻게 하나요?</dt><dd>동의받은 사진만 쓰고, <span class="nw">어르신 얼굴은 모자이크합니다.</span></dd></div>
+      <div><dt>글은 AI가 쓰나요?</dt><dd>AI는 초안까지만 쓰고, 사람이 확인한 뒤 올립니다.</dd></div>
+      <div><dt>계정은 누구 이름으로 하나요?</dt><dd>센터 이름 그대로 두고, <span class="nw">작업 방법은</span> <span class="nw">시작 전에 함께 정합니다.</span></dd></div>
+      <div><dt>검색 상위 노출이나 문의 증가를 약속하나요?</dt><dd>아니요, 약속하지 않습니다. <span class="nw">범위와 비용은</span> <span class="nw">시작 전에 문서로 정합니다.</span></dd></div>
     </dl>
   </section>
 
