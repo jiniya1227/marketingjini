@@ -2164,9 +2164,10 @@ ${pageBody}
     <span>주소: ${esc(D.addrFull)}</span>
     <span>운영시간: ${esc(D.hours)} · ${esc(D.closedText)}${d.holidayNote ? ' · ' + esc(d.holidayNote) : ''}</span>
     <span>대표전화: ${esc(D.tel)}</span>
-    ${(d.orgNo || d.designDate || D.capacity) ? '<span>' + [d.orgNo ? '장기요양기관 기호 ' + esc(d.orgNo) : '', d.designDate ? '지정·신고일 ' + esc(ymdDots(d.designDate, '.')) : '', D.capacity ? '등록 정원 ' + D.capacity + '명' : ''].filter(Boolean).join(' · ') + '</span>' : ''}
+    ${d.orgNo ? '<span>장기요양기관 기호 ' + esc(d.orgNo) + '</span>' : ''}
+    ${(d.designDate || D.capacity) ? '<span>' + [d.designDate ? '지정·신고일 ' + esc(ymdDots(d.designDate, '.')) : '', D.capacity ? '등록 정원 ' + D.capacity + '명' : ''].filter(Boolean).join(' · ') + '</span>' : ''}
     <div class="geo-trust-bar">
-      <span>© ${esc(D.name)} · 정보 기준일: <time datetime="${isoToday}">${isoToday.slice(0, 4)}년</time> · 근거: 보건복지부 노인장기요양보험 고시${d.sample ? ' (샘플 페이지)' : ''}</span>
+      <span>© ${esc(D.name)} · 정보 기준일: <time datetime="${isoToday}">${isoToday.slice(0, 4)}년</time> · 근거: 보건복지부 노인장기요양보험 고시</span>
       
     </div>
   </div>
