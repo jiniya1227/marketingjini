@@ -211,11 +211,9 @@
   #jini .scene .step-t { font-size: 21px; }
   #jini .scene .step-d { margin-top: 2px; font-size: 17px; }
   #jini .scene .step-j { margin-top: 8px; padding: 6px 10px; font-size: 16px; }
-  #jini .scene .step-j small { display: inline; margin-right: 8px; font-size: 14px; }
 }
-/* '마케팅지니가 정리하는 것'은 노란 칸으로 눈에 띄게 (2026-11-25 가독성) */
+/* 단계마다 마케팅지니가 손보는 항목은 노란 칸 (2026-11-25 가독성, 2026-11-26 앞의 설명 글 삭제) */
 #jini .step-j { justify-self: start; margin-top: 14px; padding: 12px 16px; border-radius: 8px; background: var(--yellow); font-size: 18px; font-weight: 700; line-height: 1.45; }
-#jini .step-j small { display: block; margin-bottom: 2px; font-size: 15px; font-weight: 700; }
 #jini .scene-foot { display: none; }
 /* 단계별 휴대폰 예시 화면 (2026-11-25): 코드로 그린 가벼운 화면, 3단계만 실제 샘플 홈페이지 캡처. 스크롤 장면일 때만 보임 */
 #jini .phone { display: none; }
@@ -422,10 +420,9 @@
 #jini .ai-note { margin-top: 14px; font-size: 16px; }
 #jini .steps3 { margin-top: 52px; }
 #jini .flow { list-style: none; margin-top: 22px; border-top: 3px solid var(--ink); }
-#jini .flow li { display: grid; grid-template-columns: 52px 1fr; column-gap: 12px; padding: 22px 0; border-bottom: 1px solid var(--ink); }
-#jini .flow .n { grid-row: span 2; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 48px; line-height: .95; }
+#jini .flow li { display: grid; grid-template-columns: 52px 1fr; align-items: center; column-gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--ink); }
+#jini .flow .n { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 48px; line-height: .95; }
 #jini .flow b { font-size: 19px; line-height: 1.45; }
-#jini .flow li > span:last-child { margin-top: 6px; font-size: 17px; line-height: 1.65; }
 #jini .flow-note { margin-top: 16px; font-size: 17px; font-weight: 700; }
 #jini .report { position: relative; border: 3px solid var(--ink); border-radius: 8px; padding: 34px 22px 24px; background: var(--white); }
 #jini .stamp { position: absolute; top: -17px; left: 20px; padding: 3px 12px; border: 3px solid var(--ink); border-radius: 4px; background: var(--yellow); font-size: 15px; font-weight: 700; }
@@ -462,7 +459,6 @@
 #jini .st-ok::before { content: "○"; }
 #jini .r-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
 #jini .r-legend { margin-top: 18px; font-size: 16px; font-weight: 700; }
-#jini .r-note { margin-top: 8px; font-size: 16px; }
 /* 1분 점검 칸 (2026-11-26): 노란 바탕 위 흰 상자, 결과를 카톡 문구에 담는 버튼 */
 #jini .self-sec .selfcheck { margin-top: 28px; padding: 8px 20px 24px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
 #jini .sc-send { display: none; width: 100%; min-height: 56px; margin-top: 8px; padding: 0 20px; border: 0; border-radius: 10px; background: var(--violet); color: var(--white); font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; }
@@ -535,22 +531,21 @@
 #jini .sec-ink .tl { color: var(--yellow); }
 #jini .ask-link { margin-top: 28px; font-size: 17px; }
 /* ---------- ⑦-1 작업 노트 (자주 묻는 질문과 따로 둔 칸) ---------- */
-#jini .notes-list { list-style: none; margin-top: 40px; border-top: 3px solid var(--ink); }
-#jini .note { border-bottom: 1px solid var(--ink); }
-/* 작업 노트 (2026-11-26): 제목 + 더보기만, 최신 4편만 보임 */
-#jini .note a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0 19px; text-decoration: none; }
+/* 작업 노트 (2026-11-26 가시성 개선): 칸 이름은 작게, 글 4편은 통째로 눌리는 노란 카드, 최신 4편만 보임 */
+#jini #notes .big { margin-bottom: 0; font-size: clamp(34px, 9.4vw, 46px); line-height: 1.2; }
+#jini .notes-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; margin-top: 12px; }
+#jini .notes-lead { font-size: 18px; font-weight: 700; line-height: 1.65; }
+#jini .notes-all a { display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border: 3px solid var(--ink); border-radius: 10px; background: var(--white); font-size: 17px; font-weight: 700; white-space: nowrap; text-decoration: none; }
+#jini .notes-all a:hover { background: var(--yellow); }
+#jini .notes-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
 #jini .note:nth-child(n+5) { display: none; }
-#jini .note-title {
-  display: block;
-  font-family: 'Noto Serif KR', serif; font-weight: 700;
-  font-size: clamp(17px, 4.7vw, 21px); line-height: 1.5; letter-spacing: -.02em; /* 2026-11-26 사용자: 제목이 너무 커서 줄임 */
-}
+#jini .note a { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; height: 100%; padding: 22px 20px 16px; border: 3px solid var(--ink); border-radius: 12px; background: var(--yellow); text-decoration: none; transition: transform .18s ease; }
+#jini .note a:hover { transform: translateY(-4px); }
+#jini .note-title { display: block; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(19px, 5.2vw, 22px); line-height: 1.5; letter-spacing: -.02em; }
 #jini .note a:hover .note-title, #jini .note a:focus-visible .note-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
-#jini .notes-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 32px; }
-#jini .notes-all { margin: 0; font-size: 19px; white-space: nowrap; }
-/* 더보기 대신 + 버튼 (2026-11-26 사용자 의견, 자주 묻는 질문의 + 와 같은 모양) */
-#jini .note-go { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border: 2px solid var(--ink); border-radius: 50%; background: var(--white); font-family: 'Noto Serif KR', serif; font-size: 23px; font-weight: 700; line-height: 1; color: var(--violet); transition: background-color .15s, color .15s; }
-#jini .note a:hover .note-go, #jini .note a:focus-visible .note-go { background: var(--violet); border-color: var(--violet); color: var(--white); }
+#jini .note-go { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 2px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.4; }
+#jini .note-arrow { display: flex; justify-content: center; align-items: center; flex: none; width: 40px; height: 40px; border-radius: 8px; background: var(--violet); color: var(--white); font-size: 20px; line-height: 1; transition: transform .18s ease; }
+#jini .note a:hover .note-arrow { transform: translateX(4px); }
 /* 노란 칸(가격·작업 노트·상담)의 글자 링크는 굵은 보라 밑줄 (2026-11-25): 보라 형광펜은 먹색 글자와 겹치면 읽기 어려워, 글자 아래에 줄만 긋기 */
 #jini .sec-yellow .tl { text-decoration-color: var(--violet); text-decoration-thickness: 4px; text-underline-offset: 7px; }
 
@@ -605,8 +600,11 @@
   #jini .who-end { margin-top: 40px; padding: 30px 40px 32px; font-size: 22px; }
   #jini .who-end strong { font-size: 36px; }
   #jini .who-sec .big--7 { font-size: 72px; }
-  #jini .notes-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; border-top: 0; }
-  #jini .note { border-top: 3px solid var(--ink); border-bottom: 0; }
+  #jini #notes .big { font-size: 64px; }
+  #jini .notes-lead { font-size: 21px; }
+  #jini .notes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 36px; }
+  #jini .note a { padding: 28px 28px 20px; gap: 24px; }
+  #jini .note-title { font-size: 24px; }
   #jini .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 64px; align-items: stretch; }
   #jini .plan { padding: 34px 28px 28px; }
   #jini .plan.is-rec { margin: -18px 0; }
@@ -653,7 +651,6 @@
   #jini .is-scene .step-t { font-size: 44px; }
   #jini .is-scene .step-d { font-size: 24px; }
   #jini .is-scene .step-j { font-size: 22px; padding: 14px 20px; }
-  #jini .is-scene .step-j small { font-size: 15px; }
   #jini .is-scene .scene-foot { font-size: 16px; }
   #jini .svc .rows { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 44px; }
   #jini .svc .rows > li { padding: 34px 30px 36px; }
@@ -699,10 +696,9 @@
   #jini .ans { font-size: 18px; }
   #jini .ai-note { font-size: 17px; }
   #jini .flow b { font-size: 21px; }
-  #jini .flow li > span:last-child { font-size: 18px; }
   #jini .flow-note { font-size: 19px; }
   #jini .r-rows li { font-size: 18px; }
-  #jini .r-legend, #jini .r-note { font-size: 17px; }
+  #jini .r-legend { font-size: 17px; }
   #jini .sc-msg { font-size: 17px; }
   #jini .sc-list label { font-size: 18px; }
   #jini .contact-links { font-size: 26px; }
@@ -790,6 +786,7 @@
 @media (prefers-reduced-motion: reduce) {
   #jini .h1-em { animation: none; }
   #jini .plan { transition: none; }
+  #jini .note a, #jini .note-arrow { transition: none; }
   #jini .plan.is-picked { animation: none; }
   #jini .jini-track { animation: none; }
   #jini .dock { transition: none; }
@@ -967,10 +964,10 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <div class="scene-stick wrap">
       <p class="scene-label">보호자가 우리 센터를 찾아오는 길</p>
       <ol class="steps">
-        <li class="step is-on"><span class="step-n">1</span><b class="step-t">검색</b><span class="step-d">동네 이름 + 센터 종류로 찾아요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>블로그 글 주제 · 동네 이름</span><div class="phone" role="img" aria-label="예시 화면: 동네 이름으로 검색하면 우리 센터 플레이스가 맨 위에 보임"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-bar">수원 권선구 주간보호</p><ul class="ph-res"><li class="on"><b>○○주야간보호센터</b><span>플레이스 · 지도</span></li><li><b>○○센터의 하루 일과</b><span>블로그</span></li><li><b>○○주야간보호센터</b><span>홈페이지</span></li></ul></div></div></li>
-        <li class="step"><span class="step-n">2</span><b class="step-t">플레이스 · 블로그</b><span class="step-d">사진·소식으로 분위기를 봐요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>플레이스 정보 · 사진 순서</span><div class="phone" role="img" aria-label="예시 화면: 플레이스에서 센터 사진과 소식, 블로그 글을 봄"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-place"><b>○○주야간보호센터</b><span>주야간보호 · 수원 권선구</span></p><p class="ph-photos"><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i></i></p><p class="ph-line"><b>소식</b>이번 주 프로그램</p><p class="ph-line"><b>블로그</b>송영 지역 안내</p></div></div></li>
-        <li class="step"><span class="step-n">3</span><b class="step-t">홈페이지</b><span class="step-d">비용·송영·하루 일과를 확인해요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>센터 홈페이지</span><div class="phone phone--img" role="img" aria-label="샘플 화면: 센터 홈페이지의 등급별 이용 비용 안내"><div aria-hidden="true"><p class="ph-top">샘플 화면</p><img src="img/sample-fee.webp" alt="" width="640" height="1385" loading="lazy"></div></div></li>
-        <li class="step"><span class="step-n">4</span><b class="step-t">전화 · 카톡</b><span class="step-d">전화 버튼을 눌러 상담해요</span><span class="step-j"><small>마케팅지니가 정리하는 것</small>전화 연결 점검</span><div class="phone" role="img" aria-label="예시 화면: 홈페이지에서 전화 걸기 버튼을 누름"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-call"><b>○○주야간보호센터</b><span>031-000-0000</span><em class="ph-btn">전화 걸기</em><em class="ph-btn ph-btn--line">카톡 상담</em></p></div></div></li>
+        <li class="step is-on"><span class="step-n">1</span><b class="step-t">검색</b><span class="step-d">동네 이름 + 센터 종류로 찾아요</span><span class="step-j">블로그 글 주제 · 동네 이름</span><div class="phone" role="img" aria-label="예시 화면: 동네 이름으로 검색하면 우리 센터 플레이스가 맨 위에 보임"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-bar">수원 권선구 주간보호</p><ul class="ph-res"><li class="on"><b>○○주야간보호센터</b><span>플레이스 · 지도</span></li><li><b>○○센터의 하루 일과</b><span>블로그</span></li><li><b>○○주야간보호센터</b><span>홈페이지</span></li></ul></div></div></li>
+        <li class="step"><span class="step-n">2</span><b class="step-t">플레이스 · 블로그</b><span class="step-d">사진·소식으로 분위기를 봐요</span><span class="step-j">플레이스 정보 · 사진 순서</span><div class="phone" role="img" aria-label="예시 화면: 플레이스에서 센터 사진과 소식, 블로그 글을 봄"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-place"><b>○○주야간보호센터</b><span>주야간보호 · 수원 권선구</span></p><p class="ph-photos"><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i></i></p><p class="ph-line"><b>소식</b>이번 주 프로그램</p><p class="ph-line"><b>블로그</b>송영 지역 안내</p></div></div></li>
+        <li class="step"><span class="step-n">3</span><b class="step-t">홈페이지</b><span class="step-d">비용·송영·하루 일과를 확인해요</span><span class="step-j">센터 홈페이지</span><div class="phone phone--img" role="img" aria-label="샘플 화면: 센터 홈페이지의 등급별 이용 비용 안내"><div aria-hidden="true"><p class="ph-top">샘플 화면</p><img src="img/sample-fee.webp" alt="" width="640" height="1385" loading="lazy"></div></div></li>
+        <li class="step"><span class="step-n">4</span><b class="step-t">전화 · 카톡</b><span class="step-d">전화 버튼을 눌러 상담해요</span><span class="step-j">전화 연결 점검</span><div class="phone" role="img" aria-label="예시 화면: 홈페이지에서 전화 걸기 버튼을 누름"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-call"><b>○○주야간보호센터</b><span>031-000-0000</span><em class="ph-btn">전화 걸기</em><em class="ph-btn ph-btn--line">카톡 상담</em></p></div></div></li>
       </ol>
       <div class="scene-foot" aria-hidden="true"><span class="scene-dots"><i class="is-on"></i><i></i><i></i><i></i></span><span><b id="sceneN">1</b> / 4</span></div>
     </div>
@@ -1083,9 +1080,9 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <div class="steps3">
           <h3 class="h3">진단은 이렇게 진행됩니다</h3>
           <ol class="flow">
-            <li><span class="n">1</span><b>카톡으로 센터 이름 보내기</b><span>센터 이름과 지역만 알려 주세요.</span></li>
-            <li><span class="n">2</span><b>AI 3곳 · 플레이스 · 블로그 · 전화 확인</b><span>보호자처럼 휴대폰으로 찾아보고, 전화도 직접 눌러 봐요.</span></li>
-            <li><span class="n">3</span><b>캡처를 붙인 진단서 받기</b><span>확인한 화면을 붙여 카톡으로 보내 드려요.</span></li>
+            <li><span class="n">1</span><b>카톡으로 센터 이름 보내기</b></li>
+            <li><span class="n">2</span><b>AI 3곳 · 플레이스 · 블로그 · 전화 확인</b></li>
+            <li><span class="n">3</span><b>캡처를 붙인 진단서 받기</b></li>
           </ol>
           <p class="flow-note">진단은 무료이고, 진단만 받으셔도 괜찮습니다.</p>
         </div>
@@ -1093,7 +1090,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       <div>
         <figure class="report" aria-label="무료 진단서 샘플">
           <span class="stamp">샘플</span>
-          <p class="r-title">○○주간보호센터 무료 진단서</p>
+          <p class="r-title">○○센터 무료 진단서</p>
           <p class="r-date">예시 · 수원시 ○○구</p>
           <div class="r-sum">
             <p class="r-sum-n"><b>7곳</b> 보완이 필요해요</p>
@@ -1115,11 +1112,10 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           <h4>전화 연결 (휴대폰으로 직접 눌러 봄)</h4>
           <ul class="r-rows">
             <li><span>플레이스 전화 버튼</span><span class="st st-ok">연결됨</span></li>
-            <li><span>블로그 글에서 번호 찾기</span><span class="st st-mid">찾기 어려움</span></li>
-            <li><span>플레이스·블로그 주소와 번호</span><span class="st st-no">서로 다름</span></li>
+            <li><span>블로그 글에서 찾기</span><span class="st st-mid">찾기 어려움</span></li>
+            <li><span>플레이스·블로그 주소</span><span class="st st-no">서로 다름</span></li>
           </ul>
-          <p class="r-legend"><span class="st st-ok">○</span> 잘 되어 있음 <span class="st st-mid">△</span> 보완 필요 <span class="st st-no">×</span> 없음</p>
-          <figcaption class="fine r-note">이해를 돕기 위한 샘플이며, 실제 센터의 진단 결과가 아닙니다.</figcaption>
+          <p class="r-legend"><span class="st st-ok">○</span> 잘 되어 있음 <span class="st st-mid">△</span> 보완 필요</p>
         </figure>
       </div>
     </div>
@@ -1301,6 +1297,25 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   </div>
 </section>
 
+<!-- ⑦-1 작업 노트 (자주 묻는 질문과 따로 — 새 글을 올리면 목록 맨 위에 한 줄씩 더합니다) -->
+<section class="sec sec-white" id="notes" aria-labelledby="notes-title">
+  <div class="wrap">
+    <h2 class="big big--4" id="notes-title" data-rv>작업 노트</h2>
+    <!-- 소개 문구 옆에 '전체 보기' (2026-11-26 사용자 요청 — PC는 오른쪽 끝에 문구 마지막 줄과 나란히, 휴대폰은 폭이 좁아 문구 바로 아래) -->
+    <div class="notes-head">
+      <p class="notes-lead">센터장님이 묻는 질문에 <span class="nw">글로 답합니다.</span></p>
+      <p class="notes-all"><a href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
+    </div>
+    <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
+    <ul class="notes-list">
+      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ⑧ 마지막 상담 (이름·전화 입력칸은 만들지 않음 — 상담은 카톡·전화로만) -->
 <section class="sec sec-yellow contact" id="contact" aria-labelledby="contact-title">
   <!-- 글자·사진 겹침 ②: 큰 제목의 아랫줄이 같은 책상의 아침 사진(AI로 만든 사진, 사람 없음, 흰 벽) 위쪽 가장자리에 걸침 -->
@@ -1314,7 +1329,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <div class="kt">
           <p class="kt-title">카톡에 이렇게 보내 주세요</p>
           <pre id="ktMsg">무료 진단 신청합니다.
-센터 이름: ○○주간보호센터
+센터 이름: ○○센터
 지역: 수원시 ○○구
 블로그나 플레이스 주소: (있으면)</pre>
           <button type="button" class="kt-btn" id="ktCopy">복사하기</button>
@@ -1327,24 +1342,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <div class="contact-links">
       <p>전화가 편하시면 <a class="tl" href="tel:010-5904-5300">010-5904-5300</a></p>
     </div>
-  </div>
-</section>
-<!-- ⑦-1 작업 노트 (자주 묻는 질문과 따로 — 새 글을 올리면 목록 맨 위에 한 줄씩 더합니다) -->
-<section class="sec sec-white" id="notes" aria-labelledby="notes-title">
-  <div class="wrap">
-    <h2 class="big big--4" id="notes-title" data-rv>작업 노트</h2>
-    <!-- 소개 문구 옆에 '전체 보기' (2026-11-26 사용자 요청 — PC는 오른쪽 끝에 문구 마지막 줄과 나란히, 휴대폰은 폭이 좁아 문구 바로 아래) -->
-    <div class="notes-head">
-      <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
-      <p class="notes-all"><a class="tl" href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
-    </div>
-    <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
-    <ul class="notes-list">
-      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-    </ul>
   </div>
 </section>
 </main>
@@ -1454,9 +1451,12 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     var dock = document.getElementById('dock'), hero = document.getElementById('top');
     var ends = [document.getElementById('contact'), document.querySelector('#jini .foot')];
     if (!dock || !hero || !('IntersectionObserver' in window)) return;
-    var heroSeen = true, endSeen = false;
+    var heroSeen = true, endSeen = false, twinSeen = false;
+    /* 휴대폰: 본문의 카톡 단추가 보이는 동안에는 아래 떠 있는 단추를 숨김 (2026-11-26 사용자 요청, PC 위쪽 바로가기 바는 그대로) */
+    var pcBar = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
+    var twins = Array.prototype.slice.call(document.querySelectorAll('#jini .btn[href*="pf.kakao.com"]'));
     function update() {
-      var on = !heroSeen && !endSeen;
+      var on = !heroSeen && !endSeen && !(twinSeen && !pcBar.matches);
       dock.classList.toggle('is-on', on);
       dock.setAttribute('aria-hidden', on ? 'false' : 'true');
       var links = dock.querySelectorAll('a');
@@ -1469,6 +1469,13 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       endSeen = !!(seen.c || seen.f); update();
     });
     ends.forEach(function (el) { if (el) io.observe(el); });
+    var shown = [];
+    var tio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { shown[twins.indexOf(e.target)] = e.isIntersecting; });
+      twinSeen = shown.indexOf(true) > -1; update();
+    });
+    twins.forEach(function (el) { tio.observe(el); });
+    if (pcBar.addEventListener) pcBar.addEventListener('change', update);
     update();
   })();
 </script>
