@@ -60,7 +60,9 @@
   background: var(--main);
   color: var(--paper);
 }
-#jini .jini-bar { grid-area: bar; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px 0; }
+/* 상단바는 흰 바탕 + 아래 남색 선으로 노란 첫 화면과 구분 (2026-11-26 사용자 의견, Dguide 참고). 화면을 내리면 나오는 PC 떠 있는 바와 같은 모양.
+   모래 알갱이가 상단바 위로 지나가지 않게 알갱이 그림보다 위에 둠 */
+#jini .jini-bar { grid-area: bar; position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 20px; background: var(--white); border-bottom: 2px solid var(--ink); }
 /* 바로가기 메뉴 (휴대폰은 가격·무료 진단·질문 3개, PC는 6개) */
 #jini .jini-nav { display: flex; gap: 16px; font-size: 15px; font-weight: 700; white-space: nowrap; }
 #jini .jini-nav a { padding: 12px 0; text-decoration: none; }
@@ -77,7 +79,7 @@
   font-size: 33.5vw; line-height: .9; letter-spacing: -.06em; white-space: nowrap;
   color: var(--violet); /* 2026-11-25 사용자 선택: '보호자'·'마케터' 모두 보라 (남색 큰 글자가 너무 강해 보인다는 의견) */
 }
-#jini .jini-word--top { grid-area: w1; padding: 12px 0 0 3vw; }
+#jini .jini-word--top { grid-area: w1; padding: 20px 0 0 3vw; }
 #jini .jini-word--bottom { grid-area: w2; justify-self: end; padding: 0 2vw 26px 0; }
 #jini .jini-copy { grid-area: copy; align-self: center; padding: 28px 20px; max-width: 36rem; }
 #jini .jini-copy h1 {
@@ -569,13 +571,13 @@
     grid-template-rows: auto 1fr 1fr auto;
     grid-template-areas: "bar bar bar" "w1 w1 copy" "char w2 w2" "band band band";
   }
-  #jini .jini-bar { padding: 28px 48px 0; }
-  #jini .jini-nav { gap: 30px; font-size: 16px; }
+  #jini .jini-bar { padding: 10px 48px; }
+  #jini .jini-nav { gap: 34px; font-size: 17px; }
   #jini .jini-nav .pc-only { display: inline; }
   #jini .jini-brand { font-size: 19px; }
   #jini .jini-brand img { width: 34px; height: 34px; }
   #jini .jini-word { font-size: min(21.5vw, 33vh); }
-  #jini .jini-word--top { align-self: start; padding: 2vh 0 0 40px; }
+  #jini .jini-word--top { align-self: start; padding: 3vh 0 0 40px; }
   #jini .jini-word--bottom { align-self: end; padding: 0 40px 5vh 0; }
   #jini .jini-char { display: block; grid-area: char; align-self: end; justify-self: center; width: auto; height: min(42vh, 380px); } /* 두 분이 흐르는 띠 바로 뒤에 서 있는 모습 */
   #jini .jini-copy { align-self: end; padding: 0 48px 0 8px; }
@@ -1158,50 +1160,55 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 </script>
 <script>
 /* 첫 화면 '보호자·마케터' 모래 글자 효과 (2026-11-25 사용자 선택): 알갱이가 각 글자 둘레에서 1.5초 안에 모였다가 진짜 글자로 바뀜.
-   글꼴이 늦게 오거나 첫 화면이 안 보이면 효과 없이 바로 보여 줌 */
+   2026-11-26 고침: ① PC 화면 배율(125%·150%, 브라우저 확대·축소)에서 알갱이 간격이 소수가 되어 글자 모양을 못 읽던 문제 → 간격을 정수로
+   ② 뒤 탭으로 열리면 화면이 보일 때 시작 ③ 창이 막 열려 폭이 0이면 잠깐 기다렸다 다시 ④ 오류가 나거나 늦어지면 바로 진짜 글자 보이기 */
 (function () {
   var root = document.getElementById('jini');
   if (!root || !root.classList.contains('sand-on')) return;
   var hero = root.querySelector('.hero');
   var words = Array.prototype.slice.call(root.querySelectorAll('.jini-word'));
-  var started = false, tries = 0;
+  var started = false, tries = 0, begun = false, fontsReady = false;
+  function clean() { var c = hero.querySelector('canvas.sand-cv'); if (c) c.remove(); }
   function reveal() { root.classList.remove('sand-on'); }
-  setTimeout(function () { if (!started) { started = true; reveal(); } }, 2500);
-  /* 어떤 경우에도 4.5초 뒤에는 진짜 글자가 보이게 (2026-11-26: 창이 막 열릴 때 폭이 0이라 오류로 멈춰 PC에서 글자가 안 보였던 일 재발 방지) */
-  setTimeout(function () { reveal(); var c = hero.querySelector('canvas.sand-cv'); if (c) c.remove(); }, 4500);
+  function begin() {
+    if (begun) return; begun = true;
+    setTimeout(function () { if (!started) { started = true; reveal(); } }, 3000); /* 글꼴이 3초 안에 안 오면 효과 없이 */
+    setTimeout(function () { reveal(); clean(); }, 5500); /* 어떤 경우에도 5.5초 뒤엔 진짜 글자 */
+    if (fontsReady) requestAnimationFrame(run);
+  }
   function run() {
     if (started) return;
     var hr = hero.getBoundingClientRect();
-    if (hr.width < 10 || hr.height < 10) { /* 창이 아직 그려지는 중이면 잠깐 기다렸다 다시 */
+    if (hr.width < 10 || hr.height < 10) {
       if (++tries < 15) { setTimeout(run, 120); return; }
       started = true; reveal(); return;
     }
     started = true;
-    try { draw(hr); } catch (e) { reveal(); var c = hero.querySelector('canvas.sand-cv'); if (c) c.remove(); }
+    try { draw(hr); } catch (e) { reveal(); clean(); }
   }
   function draw(hr) {
     if (!words.length || hr.bottom <= 0) { reveal(); return; }
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var W = Math.round(hr.width * dpr), H = Math.round(hr.height * dpr);
     var off = document.createElement('canvas'); off.width = W; off.height = H;
-    var o = off.getContext('2d'), rs = getComputedStyle(root), ps = [], gap = 3 * dpr;
+    var o = off.getContext('2d'), rs = getComputedStyle(root), ps = [], gap = 3;
+    var col = rs.getPropertyValue('--violet').trim() || '#6A4BE3'; /* 두 글자 모두 보라 */
     words.forEach(function (w) {
       var cs = getComputedStyle(w), text = w.textContent.trim();
       var range = document.createRange(); range.selectNodeContents(w);
       var r = range.getBoundingClientRect(), fs = parseFloat(cs.fontSize);
-      gap = Math.max(3, Math.round(fs / 55)) * dpr;
+      gap = Math.max(2, Math.round(Math.max(3, Math.round(fs / 55)) * dpr)); /* 정수 간격 */
       o.clearRect(0, 0, W, H);
       o.font = cs.fontWeight + ' ' + (fs * dpr) + 'px ' + cs.fontFamily;
       if ('letterSpacing' in o) o.letterSpacing = (parseFloat(cs.letterSpacing) || 0) * dpr + 'px';
       o.textBaseline = 'alphabetic'; o.fillStyle = 'black';
       var m = o.measureText(text), asc = m.fontBoundingBoxAscent || m.actualBoundingBoxAscent || fs * dpr * 0.88;
-      o.fillText(text, (r.left - hr.left) * dpr, (r.top - hr.top) * dpr + asc);
+      o.fillText(text, Math.round((r.left - hr.left) * dpr), Math.round((r.top - hr.top) * dpr + asc));
       var data = o.getImageData(0, 0, W, H).data, spread = fs * dpr * 1.1;
-      var col = rs.getPropertyValue('--violet').trim(); /* 두 글자 모두 보라 */
       for (var y = 0; y < H; y += gap) for (var x = 0; x < W; x += gap) {
         if (data[(y * W + x) * 4 + 3] > 128) {
           var a = Math.random() * Math.PI * 2, d = spread * (0.25 + Math.random() * 0.75);
-          ps.push({ tx: x, ty: y, x0: x + Math.cos(a) * d * 1.4, y0: y + Math.sin(a) * d * 0.7, dl: Math.random() * 380, c: col });
+          ps.push({ tx: x, ty: y, x0: x + Math.cos(a) * d * 1.4, y0: y + Math.sin(a) * d * 0.7, dl: Math.random() * 380 });
         }
       }
     });
@@ -1210,20 +1217,20 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     cv.setAttribute('aria-hidden', 'true'); cv.className = 'sand-cv';
     cv.style.cssText = 'position:absolute;left:0;top:0;width:' + hr.width + 'px;height:' + hr.height + 'px;pointer-events:none;z-index:2;transition:opacity .5s ease';
     hero.appendChild(cv);
-    var ctx = cv.getContext('2d'), size = Math.max(1, gap * 0.82), dur = 1100, t0 = performance.now(), finished = false;
+    var ctx = cv.getContext('2d'), size = Math.max(1, Math.round(gap * 0.82)), dur = 1100, t0 = performance.now(), finished = false;
+    ctx.fillStyle = col;
     function finish() {
       if (finished) return; finished = true;
       reveal(); cv.style.opacity = '0';
       setTimeout(function () { cv.remove(); }, 600);
     }
-    setTimeout(finish, 3500); /* 화면이 꺼져 움직임이 멈춰도 3.5초 뒤에는 진짜 글자가 보이게 */
+    setTimeout(finish, 3500);
     (function frame(now) {
       if (finished) return;
       ctx.clearRect(0, 0, W, H);
-      var done = true, cur = '';
+      var done = true;
       for (var i = 0; i < ps.length; i++) {
         var p = ps[i], t = (now - t0 - p.dl) / dur;
-        if (p.c !== cur) { cur = p.c; ctx.fillStyle = cur; }
         if (t < 1) done = false;
         t = t < 0 ? 0 : t > 1 ? 1 : t;
         var e = 1 - Math.pow(1 - t, 3);
@@ -1233,9 +1240,15 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       finish();
     })(t0);
   }
-  var go = function () { requestAnimationFrame(run); };
-  if (document.fonts && document.fonts.load) document.fonts.load('700 100px "Noto Serif KR"', '보호자마케터').then(go, go);
-  else go();
+  function onFonts() { fontsReady = true; if (begun) requestAnimationFrame(run); }
+  if (document.fonts && document.fonts.load) document.fonts.load('700 100px "Noto Serif KR"', '보호자마케터').then(onFonts, onFonts);
+  else onFonts();
+  /* 화면이 보일 때 시작 (뒤 탭으로 열렸으면 그 탭을 열 때) */
+  if (document.visibilityState === 'hidden') {
+    document.addEventListener('visibilitychange', function vis() {
+      if (document.visibilityState !== 'hidden') { document.removeEventListener('visibilitychange', vis); begin(); }
+    });
+  } else begin();
 })();
 </script>
 </body>
