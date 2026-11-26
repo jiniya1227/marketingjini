@@ -40,6 +40,8 @@
 
 ## 작업 노트 (센터장님 질문에 답하는 글)
 
+- [작업 노트 전체 목록](https://marketingjini.com/notes/): 아래 글을 포함한 모든 작업 노트 목록
+
 - [보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?](https://marketingjini.com/notes/guardian-first/): 보호자가 센터 홈페이지에서 먼저 확인하는 다섯 가지(송영 지역·비용이 정해지는 방식·하루 일과와 식사·어르신을 대하는 모습·연락 방법)와 담는 방법, 홈페이지 점검표
 - [블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?](https://marketingjini.com/notes/no-inquiry/): 문의가 끊기는 곳을 검색 노출·전화 연결·빠진 정보 3단계로 점검하는 방법과 보호자가 전화 전에 찾는 정보 점검표
 - [네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?](https://marketingjini.com/notes/naver-blog-ai/): 네이버 블로그 robots.txt가 바깥 AI 로봇을 막아 둔 사실(2026-11-05 확인)과, 센터 홈페이지·정보 맞추기로 대비하는 방법
