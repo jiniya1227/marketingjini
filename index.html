@@ -292,7 +292,7 @@
 
 /* ---------- ⑤ 만드는 사람 ---------- */
 #jini .maker-grid { display: grid; gap: 56px; margin-top: 44px; }
-/* 편지 (2026-11-25): 어두운 칸 안에 흰 편지지 상자로 놓아 오른쪽(들은 말·해본 일)과 구분.
+/* 편지 (2026-11-25): 어두운 칸 안에 흰 편지지 상자로 놓아 오른쪽(들은 말)과 구분.
    흰 바탕 규칙대로 노랑은 걱정 두 줄의 노란 상자와 마지막 문장 형광펜에만 */
 #jini .letter { position: relative; padding: 60px 22px 30px; border-radius: 16px; background: var(--white); color: var(--ink); }
 #jini .letter::before {
@@ -307,8 +307,8 @@
 #jini .letter p.letter-end { margin-top: 26px; font-weight: 700; } /* 크기는 본문과 같게 (2026-11-25 사용자 의견) */
 #jini .letter figcaption { margin-top: 24px; text-align: right; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 18px; }
 #jini .heard { border-top: 3px solid var(--white); padding-top: 26px; }
-#jini .heard blockquote { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 25px; line-height: 1.5; letter-spacing: -.02em; }
-#jini .heard cite { display: block; margin-top: 14px; font-style: normal; font-size: 16px; font-weight: 700; color: var(--yellow); }
+#jini .heard blockquote { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 28px; line-height: 1.5; letter-spacing: -.02em; }
+#jini .heard cite { display: block; margin-top: 14px; font-style: normal; font-size: 18px; font-weight: 700; color: var(--yellow); }
 #jini .heard .fine { margin-top: 10px; }
 #jini .years { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px 18px; padding-bottom: 28px; border-bottom: 3px solid var(--white); }
 #jini .years-n { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(84px, 28vw, 168px); line-height: .9; letter-spacing: -.05em; color: var(--yellow); }
@@ -328,17 +328,9 @@
 #jini #maker { padding-top: 0; }
 #jini .photo-desk .h2 { color: var(--ink); font-size: clamp(24px, 6.6vw, 30px); }
 #jini .photo-over .years { margin-top: 14px; flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 0; border-bottom: 0; }
-#jini .done { margin-top: 48px; }
-#jini .done .h3 { color: var(--yellow); }
-#jini .done .rows { margin-top: 16px; }
-#jini .done .rows b { display: block; font-size: 15px; color: var(--yellow); margin-bottom: 2px; }
-#jini .done .rows span { font-size: 17px; line-height: 1.6; }
-#jini .more-list { list-style: none; }
-#jini .more-list li { padding: 12px 0; border-bottom: 1px solid currentColor; font-size: 16px; }
 
 /* ---------- ⑥ 무료 진단 ---------- */
 /* 2026-11-25 가독성 높임: 글자 한 단계씩 키우고, 점선 대신 실선, 테두리 굵게 */
-#jini .why-fine { margin-top: 12px; font-size: 16px; }
 #jini .check-grid { display: grid; gap: 56px; margin-top: 44px; }
 #jini .ai { border: 3px solid var(--ink); border-radius: 16px; padding: 22px 20px; }
 #jini .ai-top { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 700; margin-bottom: 18px; }
@@ -522,10 +514,14 @@
   #jini .letter-to { font-size: 40px; }
   #jini .letter-q { padding: 22px 26px; }
   #jini .letter-q li { font-size: 19px; }
-  #jini .heard cite { font-size: 17px; }
   #jini .years-t { font-size: 20px; }
-  #jini .done .rows span { font-size: 18px; }
-  #jini .why-fine { font-size: 17px; }
+  /* '해본 일'을 빼고(나중에 후기로 채움) 들은 말을 크게, 편지 옆 가운데에 (2026-11-26) */
+  #jini .maker-side { align-self: center; }
+  #jini .heard blockquote { font-size: 36px; }
+  #jini .heard cite { font-size: 20px; }
+  /* 무료 진단 설명은 문장마다 한 줄 (2026-11-26) */
+  #jini .check-lead { max-width: none; }
+  #jini .check-lead span { display: block; }
   #jini .ans { font-size: 18px; }
   #jini .ai-note { font-size: 17px; }
   #jini .flow b { font-size: 21px; }
@@ -840,30 +836,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <p class="letter-end"><span class="hl">센터장님이 돌봄에 집중하시는 동안, 그 하루를 센터의 온라인에 차근차근 담아 드리겠습니다.</span></p>
         <figcaption>마케팅지니 드림</figcaption>
       </figure>
-      <div>
+      <div class="maker-side">
         <div class="heard">
           <blockquote>“블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.”</blockquote>
           <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
           <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
-        </div>
-        <div class="done">
-          <h3 class="h3">해본 일</h3>
-          <ul class="rows">
-            <li><b>가족 돌봄</b><span>치매 어머니를 함께 사는 집에서 돌보는 보호자, 8년차</span></li>
-            <li><b>현장</b><span>주야간보호센터 요양보호사 출신</span></li>
-            <li><b>온라인 운영</b><span>주야간보호센터 블로그·네이버 플레이스 직접 운영</span></li>
-            <li><b>AI 활용</b><span>AI로 센터 홈페이지와 콘텐츠 제작</span></li>
-          </ul>
-          <details class="more">
-            <summary>해본 일 자세히 보기 (5개)</summary>
-            <ul class="more-list">
-              <li>블로그 설정 · 글 기획 · 발행</li>
-              <li>네이버 플레이스 등록 · 정보 관리</li>
-              <li>사진 · 홍보 이미지 제작</li>
-              <li>검색 키워드 · 노출 관리</li>
-              <li>센터 직원 블로그 운영 교육</li>
-            </ul>
-          </details>
         </div>
       </div>
     </div>
@@ -937,9 +914,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <section class="sec sec-white check" id="check" aria-labelledby="check-title">
   <div class="wrap">
     <p class="big big--4" aria-hidden="true">무료 진단</p>
-    <h2 class="h2" id="check-title">우리 센터, AI에 물어보면<br>나올까요?</h2>
-    <p class="lead">네이버 블로그는 ChatGPT 같은 바깥 AI가 글을 가져가지 못하게 막혀 있어요(2026년 11월 확인). 그래서 센터 이름으로 된 홈페이지가 함께 있어야 해요.</p>
-    <p class="fine why-fine">AI 추천·검색 순위는 약속하지 않아요.</p>
+    <h2 class="h2" id="check-title">우리 센터, AI에 물어보면 나올까요?</h2>
+    <p class="lead check-lead"><span>네이버 블로그는 ChatGPT 같은 바깥 AI가 글을 가져가지 못하게 막혀 있어요(2026년 11월 확인).</span> <span>그래서 센터 이름으로 된 홈페이지가 함께 있어야 해요.</span></p>
     <div class="check-grid">
       <div>
         <div class="ai" role="group" aria-label="AI 검색 예시 화면">
@@ -1188,12 +1164,22 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   if (!root || !root.classList.contains('sand-on')) return;
   var hero = root.querySelector('.hero');
   var words = Array.prototype.slice.call(root.querySelectorAll('.jini-word'));
-  var started = false;
+  var started = false, tries = 0;
   function reveal() { root.classList.remove('sand-on'); }
   setTimeout(function () { if (!started) { started = true; reveal(); } }, 2500);
+  /* 어떤 경우에도 4.5초 뒤에는 진짜 글자가 보이게 (2026-11-26: 창이 막 열릴 때 폭이 0이라 오류로 멈춰 PC에서 글자가 안 보였던 일 재발 방지) */
+  setTimeout(function () { reveal(); var c = hero.querySelector('canvas.sand-cv'); if (c) c.remove(); }, 4500);
   function run() {
-    if (started) return; started = true;
+    if (started) return;
     var hr = hero.getBoundingClientRect();
+    if (hr.width < 10 || hr.height < 10) { /* 창이 아직 그려지는 중이면 잠깐 기다렸다 다시 */
+      if (++tries < 15) { setTimeout(run, 120); return; }
+      started = true; reveal(); return;
+    }
+    started = true;
+    try { draw(hr); } catch (e) { reveal(); var c = hero.querySelector('canvas.sand-cv'); if (c) c.remove(); }
+  }
+  function draw(hr) {
     if (!words.length || hr.bottom <= 0) { reveal(); return; }
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var W = Math.round(hr.width * dpr), H = Math.round(hr.height * dpr);
@@ -1221,7 +1207,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     });
     if (!ps.length) { reveal(); return; }
     var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
-    cv.setAttribute('aria-hidden', 'true');
+    cv.setAttribute('aria-hidden', 'true'); cv.className = 'sand-cv';
     cv.style.cssText = 'position:absolute;left:0;top:0;width:' + hr.width + 'px;height:' + hr.height + 'px;pointer-events:none;z-index:2;transition:opacity .5s ease';
     hero.appendChild(cv);
     var ctx = cv.getContext('2d'), size = Math.max(1, gap * 0.82), dur = 1100, t0 = performance.now(), finished = false;
