@@ -9,11 +9,11 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <meta name="description" content="수원·화성·용인 주야간보호센터·요양기관 온라인 홍보. 요양보호사 출신이자 치매 어머니를 8년째 돌보는 보호자인 마케터가 센터의 블로그·네이버 플레이스·홈페이지를 함께 정리합니다.">
-<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 (2026-11-25 새 디자인: 보라 단색 og.png — 그림을 바꾸면 ?v= 날짜도 바꿉니다) -->
+<!-- 카카오톡·문자로 링크를 보낼 때 보이는 미리보기 (2026-11-26 큰 글자판: 보라 단색에 하는 일 두 줄 크게 — 홈페이지 폴더 make-og-main-big.ps1로 만듦, 2026-11-25 새 디자인: 보라 단색 og.png — 그림을 바꾸면 ?v= 날짜도 바꿉니다) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marketingjini.com/">
-<meta property="og:image" content="https://marketingjini.com/og.png?v=20261125">
-<meta property="og:image:secure_url" content="https://marketingjini.com/og.png?v=20261125">
+<meta property="og:image" content="https://marketingjini.com/og.png?v=20261126">
+<meta property="og:image:secure_url" content="https://marketingjini.com/og.png?v=20261126">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -491,7 +491,8 @@
   font-size: clamp(22px, 6vw, 30px); line-height: 1.45; letter-spacing: -.02em;
 }
 #jini .note a:hover .note-title, #jini .note a:focus-visible .note-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
-#jini .notes-all { margin-top: 32px; font-size: 19px; }
+#jini .notes-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 32px; }
+#jini .notes-all { margin: 0; font-size: 19px; white-space: nowrap; }
 /* 더보기 대신 + 버튼 (2026-11-26 사용자 의견, 자주 묻는 질문의 + 와 같은 모양) */
 #jini .note-go { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid var(--ink); border-radius: 50%; background: var(--white); font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 700; line-height: 1; color: var(--violet); transition: background-color .15s, color .15s; }
 #jini .note a:hover .note-go, #jini .note a:focus-visible .note-go { background: var(--violet); border-color: var(--violet); color: var(--white); }
@@ -754,7 +755,7 @@
       {"@type": "Question", "name": "도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다."}},
       {"@type": "Question", "name": "홍보 글 문구가 법에 걸리지는 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요."}},
       {"@type": "Question", "name": "도메인이 뭔가요? 꼭 사야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요."}},
-      {"@type": "Question", "name": "홈페이지를 만든 뒤 비용이 바뀌면요?", "acceptedAnswer": {"@type": "Answer", "text": "매년 바뀌는 장기요양 수가는 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 식재료비·간식비 변경(1년에 2번까지)과 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요."}}
+      {"@type": "Question", "name": "홈페이지를 만든 뒤 비용이 바뀌면요?", "acceptedAnswer": {"@type": "Answer", "text": "매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)은 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요."}}
       ]
     }
   ]
@@ -884,8 +885,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       </ul>
     </div>
     <div class="sample-notes">
-      <p>색 조합은 8가지 중에서 센터 분위기에 맞게 골라요.</p>
-      <p>매년 바뀌는 장기요양 수가와 식비·간식비 변경은 <strong class="hl">마케팅지니가 관리하는 동안 무료로 고쳐 드려요.</strong></p>
+      <p>8가지 컨셉 중에서 센터 분위기에 맞게 선택해요.</p>
+      <p>장기요양 수가·식비 변경(1년 1회)은 <strong class="hl"><span class="nw">마케팅지니가 관리하는 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong></p>
       <p><a class="tl hl" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a></p>
       <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
@@ -1008,7 +1009,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <section class="sec sec-yellow" id="notes" aria-labelledby="notes-title">
   <div class="wrap">
     <h2 class="big big--4" id="notes-title" data-rv>작업 노트</h2>
-    <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
+    <!-- 소개 문구 옆에 '전체 보기' (2026-11-26 사용자 요청 — PC는 오른쪽 끝에 문구 마지막 줄과 나란히, 휴대폰은 폭이 좁아 문구 바로 아래) -->
+    <div class="notes-head">
+      <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
+      <p class="notes-all"><a class="tl" href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
+    </div>
     <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
     <ul class="notes-list">
       <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
@@ -1016,7 +1021,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
       <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
     </ul>
-    <p class="notes-all"><a class="tl" href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
   </div>
 </section>
 
@@ -1047,7 +1051,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           <details class="qa"><summary>도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</summary><p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p></details>
           <details class="qa"><summary>홍보 글 문구가 법에 걸리지는 않나요?</summary><p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p></details>
           <details class="qa"><summary>도메인이 뭔가요? 꼭 사야 하나요?</summary><p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p></details>
-          <details class="qa"><summary>홈페이지를 만든 뒤 비용이 바뀌면요?</summary><p>매년 바뀌는 장기요양 수가는 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 식재료비·간식비 변경(1년에 2번까지)과 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p></details>
+          <details class="qa"><summary>홈페이지를 만든 뒤 비용이 바뀌면요?</summary><p>매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)은 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p></details>
         </div>
       </details>
       <p class="ask-link"><a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a> · <a class="tl" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
