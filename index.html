@@ -203,6 +203,16 @@
 }
 #jini .step-t { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.3; }
 #jini .step-d { margin-top: 8px; font-size: 18px; line-height: 1.6; }
+/* 휴대폰은 4줄 목록 (2026-11-26): 위 제목과 겹치는 작은 제목은 숨기고, 숫자·여백을 줄여 한 화면 남짓에 */
+@media not all and (min-width: 900px) and (orientation: landscape) {
+  #jini .scene .scene-label { display: none; }
+  #jini .scene .step { grid-template-columns: 34px 1fr; column-gap: 10px; padding: 16px 0; }
+  #jini .scene .step-n { grid-row: 1 / span 3; font-size: 36px; }
+  #jini .scene .step-t { font-size: 21px; }
+  #jini .scene .step-d { margin-top: 2px; font-size: 17px; }
+  #jini .scene .step-j { margin-top: 8px; padding: 6px 10px; font-size: 16px; }
+  #jini .scene .step-j small { display: inline; margin-right: 8px; font-size: 14px; }
+}
 /* '마케팅지니가 정리하는 것'은 노란 칸으로 눈에 띄게 (2026-11-25 가독성) */
 #jini .step-j { justify-self: start; margin-top: 14px; padding: 12px 16px; border-radius: 8px; background: var(--yellow); font-size: 18px; font-weight: 700; line-height: 1.45; }
 #jini .step-j small { display: block; margin-bottom: 2px; font-size: 15px; font-weight: 700; }
@@ -235,7 +245,7 @@
 #jini .ph-btn { display: block; padding: .8em; border-radius: .6em; background: var(--violet); color: var(--white); font-style: normal; font-weight: 700; }
 #jini .ph-btn--line { border: .15em solid var(--ink); background: var(--white); color: var(--ink); }
 /* 스크롤 장면: 자바스크립트가 .is-scene을 붙였을 때만 (움직임 줄이기 설정이면 목록 그대로) */
-#jini .scene.is-scene { position: relative; height: 270vh; height: 270svh; }
+#jini .scene.is-scene { position: relative; height: 195vh; height: 195svh; } /* 2026-11-26 짧게 (270 → 195) */
 #jini .is-scene .scene-stick { position: sticky; top: max(16px, calc(50vh - 250px)); }
 #jini .is-scene .steps { position: relative; min-height: 500px; }
 #jini .is-scene .step {
@@ -334,7 +344,12 @@
 /* 우리 센터에 맞는 상품 찾기 (2026-11-26): 스크립트가 켜질 때만 보임 */
 #jini .finder { display: none; margin-top: 44px; padding: 26px 22px 28px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
 #jini.js-on .finder { display: block; }
-#jini .finder-title { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1.45; letter-spacing: -.02em; }
+#jini .finder-title { display: flex; justify-content: space-between; align-items: center; gap: 14px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 20px; line-height: 1.45; letter-spacing: -.02em; cursor: pointer; list-style: none; }
+#jini .finder-title::-webkit-details-marker { display: none; }
+#jini .finder-title::after { content: "+"; flex: none; font-size: 28px; line-height: 1; }
+#jini .finder[open] > .finder-title::after { content: "−"; }
+#jini .plan-price--two { white-space: normal; font-size: clamp(32px, 8.6vw, 38px); line-height: 1.25; }
+#jini .plan-price--two .plan-per { margin-right: 2px; }
 #jini .finder-qs { list-style: none; margin-top: 18px; }
 #jini .finder-q { display: grid; gap: 12px; padding: 18px 0; border-top: 1px solid var(--ink); }
 #jini .finder-text { font-size: 18px; font-weight: 700; line-height: 1.5; }
@@ -448,8 +463,12 @@
 #jini .r-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
 #jini .r-legend { margin-top: 18px; font-size: 16px; font-weight: 700; }
 #jini .r-note { margin-top: 8px; font-size: 16px; }
-#jini .sc-box { margin-top: 32px; }
-#jini .sc-intro { padding-top: 14px; font-size: 16px; line-height: 1.7; }
+/* 1분 점검 칸 (2026-11-26): 노란 바탕 위 흰 상자, 결과를 카톡 문구에 담는 버튼 */
+#jini .self-sec .selfcheck { margin-top: 28px; padding: 8px 20px 24px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
+#jini .sc-send { display: none; width: 100%; min-height: 56px; margin-top: 8px; padding: 0 20px; border: 0; border-radius: 10px; background: var(--violet); color: var(--white); font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; }
+#jini.js-on .sc-send { display: block; }
+#jini .sc-done { margin-top: 16px; padding-top: 16px; border-top: 3px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.7; }
+#jini .sc-done .btn { margin: 12px 0 14px; }
 #jini .sc-list { list-style: none; margin-top: 6px; }
 #jini .sc-list li { border-bottom: 1px solid var(--ink); }
 #jini .sc-list label { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; font-size: 17px; line-height: 1.55; cursor: pointer; }
@@ -458,6 +477,42 @@
 #jini .sc-count { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 34px; }
 #jini .sc-msg { margin-top: 6px; font-size: 16px; line-height: 1.7; }
 #jini .check .btn { margin-top: 44px; }
+/* 진행 순서 · 약속 (가격 아래) */
+#jini .proc { margin-top: 44px; padding: 26px 22px 24px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
+#jini .proc-title { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1.4; }
+#jini .proc-title--2 { margin-top: 30px; }
+#jini .proc-steps { list-style: none; counter-reset: proc; margin-top: 14px; border-top: 1px solid var(--ink); }
+#jini .proc-steps li { counter-increment: proc; position: relative; display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--ink); }
+#jini .proc-steps li::before { content: counter(proc); grid-row: span 2; align-self: start; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border: 3px solid var(--violet); border-radius: 8px; background: var(--violet); color: var(--white); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 20px; line-height: 1; transition: background-color .25s ease, border-color .25s ease, color .25s ease; }
+/* 번호 사이 연결선 (휴대폰은 아래로) */
+#jini .proc-steps li::after { content: ""; position: absolute; left: 18.5px; top: 54px; bottom: -15px; width: 3px; background: var(--violet); transform-origin: top; transition: transform .4s ease; }
+#jini .proc-steps li:last-child::after { display: none; }
+/* 차례로 켜기 (2026-11-26 사용자 요청, 스크립트가 .flow-on을 붙일 때만 — 움직임 줄이기·스크립트 없음이면 처음부터 켜진 모습) */
+#jini .proc-steps.flow-on li:not(.is-lit)::before { border-color: var(--ink); background: var(--white); color: var(--ink); }
+#jini .proc-steps.flow-on li:not(.is-lit)::after { transform: scaleY(0); }
+#jini .proc-steps b { font-size: 18px; line-height: 1.4; }
+#jini .proc-steps span { font-size: 16px; line-height: 1.6; }
+#jini .proc-promise { list-style: none; margin-top: 14px; border-top: 1px solid var(--ink); }
+#jini .proc-promise li { position: relative; padding: 11px 0 11px 22px; border-bottom: 1px solid var(--ink); font-size: 16px; font-weight: 700; line-height: 1.6; }
+#jini .proc-promise li::before { content: ""; position: absolute; left: 2px; top: 20px; width: 8px; height: 8px; background: var(--ink); transform: rotate(45deg); }
+/* 샘플 디자인 8가지 · 계산기 바로 가기 */
+#jini .themes { margin-top: 64px; }
+#jini .themes .h3, #jini .calc-try .h3 { font-size: 26px; }
+#jini .themes .fine { margin-top: 8px; }
+#jini .theme-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
+#jini .theme-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: center; align-items: center; column-gap: 14px; padding: 14px; border: 2px solid var(--ink); border-radius: 12px; }
+#jini .theme-sw { display: flex; width: 84px; height: 34px; border-radius: 17px; overflow: hidden; }
+#jini .theme-sw i { flex: 1; }
+#jini .theme-sw i:first-child { flex: 1.25; }
+#jini .theme-list b { font-size: 18px; line-height: 1.5; }
+#jini .theme-desc { display: none; margin-top: 2px; color: #1F1A33CC; font-size: 15px; line-height: 1.55; } /* 휴대폰은 색 막대와 이름만 (2026-11-26) */
+#jini .calc-try { margin-top: 56px; padding: 26px 22px 28px; border-radius: 12px; background: var(--yellow); }
+#jini .calc-try p { margin-top: 10px; font-size: 17px; line-height: 1.7; }
+#jini .calc-try .btn { margin-top: 18px; }
+#jini .svc .rows p.svc-price { margin-bottom: 12px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.4; }
+#jini .svc-note { margin-top: 18px; font-size: 16px; font-weight: 700; line-height: 1.7; }
+/* 먹색 칸이 이어지는 곳(만드는 사람 → 질문)은 흰 선으로 나눔 */
+#jini #maker + #faq { border-top: 1px solid var(--white); }
 
 /* ---------- ⑦ 자주 묻는 질문 (약속 칸은 2026-11-26 삭제 — 같은 내용이 질문·가격 칸에 있음) ---------- */
 #jini .faq-block { margin-top: 0; } /* 2026-11-26 위의 약속 칸을 지워 질문 칸이 바로 시작 */
@@ -483,18 +538,18 @@
 #jini .notes-list { list-style: none; margin-top: 40px; border-top: 3px solid var(--ink); }
 #jini .note { border-bottom: 1px solid var(--ink); }
 /* 작업 노트 (2026-11-26): 제목 + 더보기만, 최신 4편만 보임 */
-#jini .note a { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 0 28px; text-decoration: none; }
+#jini .note a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0 19px; text-decoration: none; }
 #jini .note:nth-child(n+5) { display: none; }
 #jini .note-title {
   display: block;
   font-family: 'Noto Serif KR', serif; font-weight: 700;
-  font-size: clamp(22px, 6vw, 30px); line-height: 1.45; letter-spacing: -.02em;
+  font-size: clamp(17px, 4.7vw, 21px); line-height: 1.5; letter-spacing: -.02em; /* 2026-11-26 사용자: 제목이 너무 커서 줄임 */
 }
 #jini .note a:hover .note-title, #jini .note a:focus-visible .note-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 #jini .notes-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 32px; }
 #jini .notes-all { margin: 0; font-size: 19px; white-space: nowrap; }
 /* 더보기 대신 + 버튼 (2026-11-26 사용자 의견, 자주 묻는 질문의 + 와 같은 모양) */
-#jini .note-go { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid var(--ink); border-radius: 50%; background: var(--white); font-family: 'Noto Serif KR', serif; font-size: 28px; font-weight: 700; line-height: 1; color: var(--violet); transition: background-color .15s, color .15s; }
+#jini .note-go { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border: 2px solid var(--ink); border-radius: 50%; background: var(--white); font-family: 'Noto Serif KR', serif; font-size: 23px; font-weight: 700; line-height: 1; color: var(--violet); transition: background-color .15s, color .15s; }
 #jini .note a:hover .note-go, #jini .note a:focus-visible .note-go { background: var(--violet); border-color: var(--violet); color: var(--white); }
 /* 노란 칸(가격·작업 노트·상담)의 글자 링크는 굵은 보라 밑줄 (2026-11-25): 보라 형광펜은 먹색 글자와 겹치면 읽기 어려워, 글자 아래에 줄만 긋기 */
 #jini .sec-yellow .tl { text-decoration-color: var(--violet); text-decoration-thickness: 4px; text-underline-offset: 7px; }
@@ -523,7 +578,27 @@
 #jini .contact-links .tl { font-family: 'Noto Serif KR', serif; font-size: 1.25em; white-space: nowrap; } /* 2026-11-26 전화 문구 크게 */
 
 @media (min-width: 900px) and (orientation: landscape) {
+  #jini .qa p { max-width: 62em; }
   #jini .check-grid { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  #jini .theme-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
+  #jini .theme-list li { column-gap: 18px; padding: 16px 18px; }
+  #jini .theme-sw { grid-row: span 2; width: 104px; height: 40px; border-radius: 20px; }
+  #jini .theme-desc { display: block; }
+  /* 1분 점검: 왼쪽 제목, 오른쪽 점검 상자 */
+  #jini .self-sec .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); column-gap: 72px; align-items: start; }
+  #jini .self-sec .h2 { grid-column: 1; font-size: 56px; }
+  #jini .self-sec .lead { grid-column: 1; grid-row: 2; }
+  #jini .self-sec .selfcheck { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; padding: 12px 32px 30px; }
+  #jini .sc-send { width: auto; }
+  #jini .proc { padding: 34px 40px 32px; }
+  #jini .proc-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 18px; border-top: 0; }
+  #jini .proc-steps li { grid-template-columns: 1fr; row-gap: 8px; align-content: start; border-top: 3px solid var(--ink); border-bottom: 0; }
+  #jini .proc-steps li::before { grid-row: auto; justify-self: start; }
+  /* 연결선 (PC는 칸 윗선을 따라 옆으로) */
+  #jini .proc-steps li::after, #jini .proc-steps li:last-child::after { display: block; left: 0; right: -18px; top: -3px; bottom: auto; width: auto; height: 3px; transform-origin: left; }
+  #jini .proc-steps li:last-child::after { right: 0; }
+  #jini .proc-steps.flow-on li:not(.is-lit)::after { transform: scaleX(0); }
+  #jini .proc-promise { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
   #jini .worries { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; border-top: 0; }
   #jini .worry { border-top: 3px solid var(--ink); border-bottom: 0; padding: 24px 0 24px 34px; font-size: 21px; }
   #jini .worry::before { top: 18px; }
@@ -628,7 +703,7 @@
   #jini .flow-note { font-size: 19px; }
   #jini .r-rows li { font-size: 18px; }
   #jini .r-legend, #jini .r-note { font-size: 17px; }
-  #jini .sc-intro, #jini .sc-msg { font-size: 17px; }
+  #jini .sc-msg { font-size: 17px; }
   #jini .sc-list label { font-size: 18px; }
   #jini .contact-links { font-size: 26px; }
 }
@@ -667,7 +742,7 @@
 @media (min-width: 900px) and (orientation: landscape) {
   #jini .hero {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas: "bar bar bar" "w1 w1 copy" ". w2 w2" "band band band";
   }
   #jini .jini-bar { padding: 10px 48px; }
@@ -678,7 +753,7 @@
   #jini .jini-word { font-size: min(21.5vw, 33vh); }
   #jini .jini-word--top { align-self: start; padding: 3vh 0 0 40px; }
   #jini .jini-word--bottom { align-self: end; padding: 0 40px 5vh 0; }
-  #jini .jini-copy { align-self: end; padding: 0 48px 0 8px; }
+  #jini .jini-copy { align-self: end; padding: 32px 48px 0 8px; } /* 2026-11-26 큰 문구가 상단 막대에 붙지 않게 */
   #jini .jini-copy h1 { font-size: clamp(26px, 2.2vw, 34px); }
   #jini .jini-sub { font-size: 17px; }
   #jini .jini-cta, #jini .btn { width: auto; display: inline-flex; }
@@ -719,6 +794,28 @@
   #jini .jini-track { animation: none; }
   #jini .dock { transition: none; }
 }
+
+/* ---------- PC 겹침 효과 (움직임 줄이기·낮은 창에서는 보통 스크롤) ---------- */
+#jini .top-mark { position: absolute; top: 0; left: 0; width: 1px; height: 100vh; pointer-events: none; }
+@media (min-width: 900px) and (orientation: landscape) and (min-height: 620px) and (prefers-reduced-motion: no-preference) {
+  #jini .stack > .hero { position: sticky; top: 0; z-index: 0; }
+  #jini .stack > .who-sec { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: flex-start; padding-top: 80px; border-top: 3px solid var(--ink); border-radius: 32px 32px 0 0; box-shadow: 0 -24px 56px #1F1A3340; }
+  #jini .stack > .who-sec > .wrap { width: 100%; }
+}
+
+/* ---------- 큰 PC 화면 (2026-11-26 사용자: 원래 비율로 시원하게) ----------
+   가로 1680px 이상(배율 100%의 와이드 모니터)에서 1.2배 — 120%로 확대해 보던 원래 모습과 같은 크기(본문 1040 × 1.2 = 1248px).
+   확대(zoom)한 상자 안의 vw·px도 1.2배가 되므로 사진 위 글자의 왼쪽 위치는 1.2로 나눠 적음 */
+@media (min-width: 1680px) and (min-height: 760px) and (orientation: landscape) {
+  #jini #maker > .wrap { max-width: 1248px; }
+  #jini .jini-bar, #jini .dock, #jini .jini-copy, #jini .jini-band { zoom: 1.2; }
+  #jini .who-sec > .wrap, #jini .self-sec > .wrap, #jini #path .wrap, #jini .svc-sec > .wrap, #jini #sample > .wrap, #jini #check > .wrap, #jini #price > .wrap, #jini #faq > .wrap, #jini #notes > .wrap, #jini #contact > .wrap, #jini #maker .maker-grid, #jini .foot > .wrap { zoom: 1.2; }
+  #jini .photo-over, #jini .photo-panel, #jini .photo-title { zoom: 1.2; }
+  #jini .photo-title { left: calc(50vw / 1.2 - 520px); }
+  #jini .photo-panel { padding-left: calc(50vw / 1.2 - 520px); }
+  #jini .photo-over { padding-left: calc(50vw / 1.2 - 520px); }
+  #jini .jini-word { font-size: min(21.5vw, 31vh); }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -741,21 +838,23 @@
       "@type": "FAQPage",
       "mainEntity": [
       {"@type": "Question", "name": "수원·화성·용인 외 지역도 상담할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요."}},
-      {"@type": "Question", "name": "홍보 비용은 얼마이고, 견적은 어떻게 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다."}},
+      {"@type": "Question", "name": "홍보 비용은 얼마이고, 견적은 어떻게 받나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 센터 홈페이지는 자료를 모두 받은 날부터 2주 이내에 만들고, 게시 전에 2회까지 고쳐 드려요. 호스팅비(홈페이지를 올려 두는 비용)는 2년 동안 받지 않아요(호스팅 업체 정책이 바뀌면 미리 안내). 상담 후 작업 범위, 일정, 최종 금액을 견적서로 안내해 드립니다."}},
       {"@type": "Question", "name": "블로그나 네이버 플레이스가 없어도 시작할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요."}},
       {"@type": "Question", "name": "기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다."}},
+      {"@type": "Question", "name": "중간에 그만두면 환불은 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "상품과 진행 단계에 따라 달라요. 계약 전에 환불·해지 조건을 문서로 안내해 드리고, 확인하신 뒤에 결제와 계약을 진행해요. 모든 상품은 전액 선결제 후 작업을 시작하고, 월간 관리는 약정이 없어요."}},
       {"@type": "Question", "name": "홈페이지 제작만 따로 맡길 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요."}},
       {"@type": "Question", "name": "센터에서 준비해야 할 사진이나 자료가 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요."}},
       {"@type": "Question", "name": "어르신 얼굴이 나온 사진은 어떻게 처리하나요?", "acceptedAnswer": {"@type": "Answer", "text": "사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다."}},
+      {"@type": "Question", "name": "보낸 사진은 얼마나 보관하나요?", "acceptedAnswer": {"@type": "Answer", "text": "정해 둔 기간이 지나면 지워요. 얼굴이 보이는 원본은 AI 서비스에 올리지 않고, 사진에 나온 분이 동의를 거두시면 바로 지우고 게시물도 내려요. 자세한 보관 기간은 계약 전에 문서로 안내해 드려요."}},
       {"@type": "Question", "name": "한 번만 맡길 수 있나요, 매달 관리도 가능한가요?", "acceptedAnswer": {"@type": "Answer", "text": "홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요."}},
-      {"@type": "Question", "name": "무료 AI 검색 진단에서는 무엇을 확인해 주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다."}},
+      {"@type": "Question", "name": "무료 AI 검색 진단에서는 무엇을 확인해 주시나요?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 빠진 곳과 보완하면 좋은 점도 알려드립니다."}},
       {"@type": "Question", "name": "블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?", "acceptedAnswer": {"@type": "Answer", "text": "센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요."}},
       {"@type": "Question", "name": "리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?", "acceptedAnswer": {"@type": "Answer", "text": "글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요."}},
       {"@type": "Question", "name": "성과를 보장하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다."}},
       {"@type": "Question", "name": "도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다."}},
       {"@type": "Question", "name": "홍보 글 문구가 법에 걸리지는 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요."}},
       {"@type": "Question", "name": "도메인이 뭔가요? 꼭 사야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요."}},
-      {"@type": "Question", "name": "홈페이지를 만든 뒤 비용이 바뀌면요?", "acceptedAnswer": {"@type": "Answer", "text": "매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)은 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요."}}
+      {"@type": "Question", "name": "홈페이지를 만든 뒤 비용이 바뀌면요?", "acceptedAnswer": {"@type": "Answer", "text": "홈페이지를 만든 날부터 2년 동안은 매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)을 무료로 반영해 드리고, 2년이 지난 뒤에는 별도 비용이 들어요. 그 밖의 수정 범위는 계약 전에 문서로 안내해 드려요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요."}}
       ]
     }
   ]
@@ -769,18 +868,23 @@
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.getElementById('jini').classList.add('sand-on');
 </script>
 
+<main>
+<!-- PC 겹침 (2026-11-26 사용자 결정): 첫 화면은 이 묶음 안에서 머물고 '이런 센터장님께' 칸이 위로 덮음. 휴대폰은 보통 스크롤.
+     맨 위 표시선(#top)은 '맨 위로'와 아래 카톡 바·PC 머리 띠가 나오는 때를 정함 -->
+<div id="top" class="top-mark" aria-hidden="true"></div>
+<div class="stack">
 <!-- ① 첫 화면 -->
-<section class="hero" id="top" aria-labelledby="jini-title">
+<section class="hero" aria-labelledby="jini-title">
   <div class="jini-bar">
     <a class="jini-brand" href="./"><img src="logo.png" alt="" width="30" height="30">마케팅지니</a>
     <nav class="jini-nav" aria-label="바로가기">
       <a class="pc-only" href="#path">하는 일</a>
       <a class="pc-only" href="#sample">샘플</a>
+      <a href="#check">무료 진단</a>
       <a href="#price">가격</a>
       <a class="pc-only" href="#maker">소개</a>
-      <a class="pc-only" href="#notes">작업 노트</a>
       <a href="#faq">질문</a>
-      <a href="#check">무료 진단</a>
+      <a class="pc-only" href="#notes">작업 노트</a>
     </nav>
   </div>
   <p class="jini-word jini-word--top" aria-hidden="true">보호자</p>
@@ -798,9 +902,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <li>센터 블로그와 플레이스 직접 운영</li>
         <li>수원·화성·용인 직접 방문</li>
         <li>무료 진단</li>
-        <li>홈페이지 25만 원</li>
-        <li>시작 패키지 50만 원</li>
-        <li>월간 관리 월 18만 원부터</li>
       </ul>
       <ul aria-hidden="true">
         <li>치매 어머니를 돌보는 가족 보호자 8년차</li>
@@ -808,15 +909,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <li>센터 블로그와 플레이스 직접 운영</li>
         <li>수원·화성·용인 직접 방문</li>
         <li>무료 진단</li>
-        <li>홈페이지 25만 원</li>
-        <li>시작 패키지 50만 원</li>
-        <li>월간 관리 월 18만 원부터</li>
       </ul>
     </div>
   </div>
 </section>
 
-<main>
 <!-- ①-1 이런 센터장님께 (2026-11-25, 레퍼런스 '이런 분께' 방식 — 고민은 상품 안내지와 같은 문장) -->
 <section class="sec sec-white who-sec" id="who" aria-labelledby="who-title">
   <div class="wrap">
@@ -831,11 +928,40 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   </div>
 </section>
 
+</div><!-- /stack -->
+
+<!-- ①-2 보호자 눈으로 1분 점검 (2026-11-26 사용자 요청: 접어 두지 않고 위에서 펼쳐 보임, 결과는 카톡 보낼 말에 담음. 저장하지 않음) -->
+<section class="sec sec-yellow self-sec" id="self" aria-labelledby="self-title">
+  <div class="wrap">
+    <h2 class="h2" id="self-title">보호자 눈으로<br>1분 점검</h2>
+    <p class="lead">우리 센터에 해당하는 것을 눌러 보세요. 누른 내용은 저장되지 않아요.</p>
+    <div class="selfcheck">
+      <ol class="sc-list">
+        <li><label><input type="checkbox" class="sc" data-short="동네 검색에 플레이스"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
+        <li><label><input type="checkbox" class="sc" data-short="이용 비용 안내"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
+        <li><label><input type="checkbox" class="sc" data-short="송영 지역"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
+        <li><label><input type="checkbox" class="sc" data-short="전화 버튼 연결"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
+        <li><label><input type="checkbox" class="sc" data-short="센터 홈페이지"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
+      </ol>
+      <div class="sc-result" aria-live="polite">
+        <p class="sc-count"><b id="scN">0</b> / 5</p>
+        <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
+      </div>
+      <button type="button" class="sc-send" id="scSend">결과를 카톡 문구에 담기</button>
+      <div class="sc-done" id="scDone" aria-live="polite" hidden>
+        <p id="scDoneMsg"></p>
+        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡 열고 붙여 넣기</a>
+        <p><a class="tl" href="#contact">담긴 문구 보기</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ② 보호자가 센터를 찾아오는 길 (스크롤하면 단계가 하나씩 바뀌는 장면) -->
 <section class="sec sec-white" id="path" aria-labelledby="path-title">
   <div class="wrap path-head">
     <h2 class="h2" id="path-title">보호자는 이 길로<br>센터를 찾아옵니다.</h2>
-    <p class="lead">보호자가 우리 센터에 전화하기까지 거치는 네 단계예요. 단계마다 마케팅지니가 정리하는 것을 함께 적었어요.</p>
+    <p class="lead">전화하기까지 네 단계, 단계마다 마케팅지니가 정리합니다.</p>
   </div>
   <div class="scene" id="scene">
     <div class="scene-stick wrap">
@@ -857,10 +983,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <h2 class="h3" id="svc-title">센터는 사진만 <span class="nw">보내 주세요.</span></h2>
     <p class="lead">보호자가 찾는 길은 마케팅지니가 함께 정리합니다. <span class="nw">주야간보호센터 중심으로,</span> <span class="nw">방문요양·요양원도 상담 가능해요.</span></p>
     <ul class="rows">
-      <li><b class="svc-name">블로그·플레이스 정리</b><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요. <span class="nw">시작 패키지로 진행해요.</span></p></li>
-      <li><b class="svc-name">홈페이지 제작</b><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
-      <li><b class="svc-name">월간 관리</b><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span></p></li>
+      <li><b class="svc-name">블로그·플레이스 정리</b><p class="svc-price">시작 패키지 <span class="nw">50만 원</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요. <span class="nw">시작 패키지로 진행해요.</span></p></li>
+      <li><b class="svc-name">홈페이지 제작</b><p class="svc-price">25만 원</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
+      <li><b class="svc-name">월간 관리</b><p class="svc-price"><span class="nw">월 18만 원</span> <span class="nw">또는 25만 원</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p></li>
     </ul>
+    <p class="svc-note">부가세 10%와 도메인 비용은 별도예요. 홈페이지는 시작 패키지에도 들어가요.</p>
   </div>
 </section>
 
@@ -872,6 +999,26 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       <figure class="shot" data-rv><img src="img/sample-home.webp" alt="샘플 센터 홈페이지 첫 화면: 센터 한 줄 소개와 전화 버튼" width="640" height="1385" loading="lazy"></figure>
       <figure class="shot" data-rv><img src="img/sample-fee.webp" alt="샘플 센터 홈페이지 이용 비용: 등급별 월 예상 금액 계산기" width="640" height="1385" loading="lazy"></figure>
       <figure class="shot" data-rv><img src="img/sample-contact.webp" alt="샘플 센터 홈페이지 오시는 길: 지도 길찾기와 주소 복사" width="640" height="1385" loading="lazy"></figure>
+    </div>
+    <!-- 샘플 디자인 8가지 (2026-11-26 사용자 요청): 화면 그림 없이 제작기의 색 조합만. 화면 비교는 계약할 때 -->
+    <div class="themes">
+      <h3 class="h3">분위기는 8가지 중에서 고릅니다</h3>
+      <p class="fine">홈페이지에 쓰는 색 조합이에요. <span class="nw">실제 화면 비교는</span> <span class="nw">계약할 때 자세히 안내해 드려요.</span></p>
+      <ul class="theme-list">
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#82663f"></i><i style="background:#3e5638"></i><i style="background:#4b3a28"></i><i style="background:#2f4029"></i></span><b>① 햇살마루 · 기본</b><span class="theme-desc"><span class="nw">품격 있고 따스한</span> <span class="nw">골드 &amp; 포레스트그린</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#365B49"></i><i style="background:#896b3e"></i><i style="background:#5F6F52"></i><i style="background:#223A2E"></i></span><b>② 편백정원</b><span class="theme-desc"><span class="nw">편안한</span> <span class="nw">숲초록 &amp; 앤틱브론즈</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#235A5C"></i><i style="background:#8d6a3d"></i><i style="background:#4F706B"></i><i style="background:#173B3D"></i></span><b>③ 맑은활력</b><span class="theme-desc"><span class="nw">산뜻한</span> <span class="nw">에메랄드틸 &amp; 앰버골드</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#5E4973"></i><i style="background:#8b6a4c"></i><i style="background:#786582"></i><i style="background:#2E223B"></i></span><b>④ 고운선율</b><span class="theme-desc"><span class="nw">우아한</span> <span class="nw">플럼라벤더 &amp; 로즈골드</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#8e6221"></i><i style="background:#3B573A"></i><i style="background:#7E5E3D"></i><i style="background:#2D3A27"></i></span><b>⑤ 웃음가득</b><span class="theme-desc"><span class="nw">화사한</span> <span class="nw">허니골드 &amp; 딥올리브</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#96462E"></i><i style="background:#3D5A47"></i><i style="background:#7D5D4B"></i><i style="background:#36231D"></i></span><b>⑥ 정성한끼</b><span class="theme-desc"><span class="nw">정겨운</span> <span class="nw">테라코타 &amp; 세이지그린</span> <span class="nw">조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#A64424"></i><i style="background:#2E5848"></i><i style="background:#8C6A3D"></i><i style="background:#233A30"></i></span><b>⑦ 감귤햇살</b><span class="theme-desc"><span class="nw">생기 넘치는</span> <span class="nw">시트러스 &amp; 딥티트리</span> <span class="nw">투톤 조화</span></span></li>
+        <li><span class="theme-sw" aria-hidden="true"><i style="background:#1F3A68"></i><i style="background:#8e6b38"></i><i style="background:#48635E"></i><i style="background:#162747"></i></span><b>⑧ 단청품격</b><span class="theme-desc"><span class="nw">호텔급</span> <span class="nw">로얄인디고 &amp; 황금빛 샴페인</span> <span class="nw">투톤 조화</span></span></li>
+      </ul>
+    </div>
+    <div class="calc-try">
+      <h3 class="h3">본인부담금 계산기,<br>직접 눌러 보세요</h3>
+      <p>보호자가 등급과 이용 일수를 고르면 한 달 예상 금액이 나옵니다.</p>
+      <a class="btn" href="sample/guide.html#guide">계산기 바로 눌러 보기</a>
     </div>
     <div class="basics">
       <h3 class="h3">기본으로 들어가는 것</h3>
@@ -885,183 +1032,14 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       </ul>
     </div>
     <div class="sample-notes">
-      <p>8가지 컨셉 중 센터 분위기에 맞게 선택해요.</p>
-      <p>장기요양 수가·식비 변경(1년 1회)은 <strong class="hl"><span class="nw">마케팅지니가 관리하는 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong></p>
+      <p>장기요양 수가·식비 변경(1년 1회)은 <strong class="hl"><span class="nw">홈페이지를 만든 날부터 2년 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong> <span class="nw">2년 뒤에는 별도 비용이에요.</span></p>
       <p><a class="tl hl" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a></p>
       <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
   </div>
 </section>
-<!-- ④ 가격 (상품마다 가격과 상담 링크 — 가격을 바꾸면 자주 묻는 질문·안내지·llms.txt도 함께) -->
-<section class="sec sec-yellow" id="price" aria-labelledby="price-title">
-  <div class="wrap">
-    <h2 class="big big--2" id="price-title" data-rv>가격</h2>
-    <!-- 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 → 작은 안내.
-         02 시작 패키지가 추천(보라 테두리·추천 표시·보라 버튼). '이 상품으로 상담하기'는 그 상품을 카톡 보낼 말에 담고 상담 칸으로 내려감 -->
-    <ul class="plans">
-      <li class="plan">
-        <div class="plan-top"><span class="plan-no" aria-hidden="true">01</span><h3 class="plan-name">센터 홈페이지</h3></div>
-        <p class="plan-price">25만 원</p>
-        <p class="plan-vat">부가세 별도</p>
-        <p class="plan-for">블로그·플레이스는 있고,<br>홈페이지만 필요하다면.</p>
-        <div class="plan-body">
-          <p class="plan-what">센터 홈페이지 1개</p>
-          <p class="plan-sub"><span class="nw">보호자가 찾는 정보를</span> <span class="nw">한 곳에.</span></p>
-          <ul class="plan-checks">
-            <li>센터 소개, <span class="nw">비용·하루 일과·프로그램</span></li>
-            <li><span class="nw">오시는 길과</span> <span class="nw">누르면 거는 전화 버튼</span></li>
-            <li><span class="nw">네이버 플레이스에</span> <span class="nw">홈페이지 연결</span></li>
-          </ul>
-        </div>
-        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">도메인은 센터 이름으로 따로 사요</span> <span class="nw">(1년 2~3만 원 안팎).</span></p>
-      </li>
-      <li class="plan is-rec">
-        <span class="plan-badge">추천</span>
-        <div class="plan-top"><span class="plan-no" aria-hidden="true">02</span><h3 class="plan-name">시작 패키지</h3></div>
-        <p class="plan-price">50만 원</p>
-        <p class="plan-vat">부가세 별도</p>
-        <p class="plan-for">처음 시작한다면,<br>여기서부터 한 번에.</p>
-        <div class="plan-body">
-          <p class="plan-what">홈페이지 + 블로그 글 15편</p>
-          <p class="plan-sub"><span class="nw">블로그·플레이스를</span> <span class="nw">보호자가 보는 순서로.</span></p>
-          <ul class="plan-checks">
-            <li>01 센터 홈페이지 전부</li>
-            <li><span class="nw">블로그·플레이스</span> <span class="nw">소개글·사진·기본 정보</span> 정리</li>
-            <li>블로그 글 15편</li>
-          </ul>
-        </div>
-        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">보호자가 어디서 찾아도</span> <span class="nw">같은 정보를 보게 돼요.</span></p>
-      </li>
-      <li class="plan">
-        <div class="plan-top"><span class="plan-no" aria-hidden="true">03</span><h3 class="plan-name">월간 관리</h3></div>
-        <p class="plan-price">18만 원<span class="plan-per">~ / 월</span></p>
-        <p class="plan-vat">부가세 별도, 두 가지 중 선택</p>
-        <p class="plan-for">매달 글을 올릴 분이<br>없다면.</p>
-        <div class="plan-body">
-          <p class="plan-what"><span class="nw">블로그 글</span> <span class="nw">+ 플레이스 소식</span></p>
-          <p class="plan-sub"><span class="nw">사진과 한 줄 설명만</span> <span class="nw">주시면 돼요.</span></p>
-          <ul class="plan-checks">
-            <li><b class="nw">월 18만 원</b> <span class="nw">블로그 글 8편</span> <span class="nw">+ 플레이스 소식 4건</span></li>
-            <li><b class="nw">월 25만 원</b> <span class="nw">블로그 글 12편</span> <span class="nw">+ 플레이스 소식 6건</span></li>
-            <li><span class="nw">얼굴은 모자이크,</span> <span class="nw">센터에서 확인한 뒤 게시</span></li>
-          </ul>
-        </div>
-        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">센터의 요즘 모습이</span> <span class="nw">블로그·플레이스에 쌓여요.</span></p>
-      </li>
-    </ul>
-    <!-- 우리 센터에 맞는 상품 찾기 (2026-11-26): 버튼만 누르고 개인정보는 받지 않음. 결과에 맞는 가격 상자가 강조되고 카톡 문구에 담김 -->
-    <div class="finder" role="group" aria-labelledby="finder-title">
-      <h3 class="finder-title" id="finder-title">어떤 상품이 맞을지 모르겠다면, 세 가지만 골라 보세요</h3>
-      <ol class="finder-qs">
-        <li class="finder-q" data-q="home"><p class="finder-text"><span class="finder-no" aria-hidden="true">1</span>센터 홈페이지가 있나요?</p><div class="finder-btns"><button type="button" data-v="1">있어요</button><button type="button" data-v="0">없어요</button></div></li>
-        <li class="finder-q" data-q="tidy"><p class="finder-text"><span class="finder-no" aria-hidden="true">2</span>블로그·플레이스가 보호자가 보기 좋게 정리돼 있나요?</p><div class="finder-btns"><button type="button" data-v="1">정리돼 있어요</button><button type="button" data-v="0">아직이에요</button></div></li>
-        <li class="finder-q" data-q="writer"><p class="finder-text"><span class="finder-no" aria-hidden="true">3</span>매달 블로그 글과 플레이스 소식을 올릴 분이 있나요?</p><div class="finder-btns"><button type="button" data-v="1">있어요</button><button type="button" data-v="0">없어요</button></div></li>
-      </ol>
-      <div class="finder-result" aria-live="polite" hidden>
-        <p class="finder-pick"></p>
-        <p class="finder-why"></p>
-        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 상담하기</a>
-      </div>
-    </div>
-    <p class="price-note">부가세 10% 별도이고, 도메인(홈페이지 주소)은 센터 이름으로 따로 사요(1년 2~3만 원 안팎). 작업 범위, 수정 횟수, 일정, 최종 금액은 시작 전에 문서로 안내해 드립니다. <a class="tl nw" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
-  </div>
-</section>
-
-<!-- ⑤ 만드는 사람 (편지·들은 말·돌봄 8년차는 확인된 사실만 — 8년차는 2026-11-25 사용자 확인. 실제 고객 후기는 동의받은 뒤에만 넣습니다) -->
-<section class="sec sec-ink" id="maker" aria-labelledby="maker-title">
-  <div class="wrap">
-    <!-- 글자·사진 겹침 ①: 칸 제목과 '8년차'가 따뜻한 책상 사진(AI로 만든 사진, 사람 없음)의 왼쪽 빈 벽에 겹침 -->
-    <div class="photo-desk">
-      <div class="photo-frame"><img src="img/photo-desk.webp" alt="따뜻한 스탠드 불빛이 비치는 베이지 벽 앞 책상 위의 수첩과 안경, 찻잔, 노트북" width="1280" height="720" loading="lazy"></div>
-      <div class="photo-over">
-        <h2 class="h2" id="maker-title">보호자의 마음으로<br>만듭니다.</h2>
-        <p class="years"><span class="years-n">8년차</span><span class="years-t">치매 어머니를 돌보는<br>가족 보호자</span></p>
-      </div>
-    </div>
-    <div class="maker-grid">
-      <figure class="letter">
-        <p class="letter-to">센터장님께</p>
-        <p>저는 주야간보호센터에서 요양보호사로 일했습니다. 지금은 치매가 있는 어머니를 함께 사는 집에서 8년째 돌보는 보호자입니다.</p>
-        <p>어머니는 방금 있었던 일을 기억하지 못하세요. 그래서 센터를 알아볼 때 이 두 가지가 가장 걱정됐어요.</p>
-        <ul class="letter-q">
-          <li>“기억을 못 하시고 집에 와서 말씀도 못 하시니, 직원분들이 소홀히 대하지는 않을까?”</li>
-          <li>“건강한 식단으로 식사는 잘 드실까?”</li>
-        </ul>
-        <p>센터에서 요양보호사로 일했던 저도, 보호자 자리에 서니 이 걱정이 가장 컸습니다.</p>
-        <p>그래서 보호자에게는 어르신이 센터에서 어떤 하루를 보내시는지, 어떻게 대해 드리는지가 꼭 보여야 한다고 생각합니다.</p>
-        <p class="letter-end"><span class="hl">센터장님이 돌봄에 집중하시는 동안, 그 하루를 센터의 온라인에 차근차근 담아 드리겠습니다.</span></p>
-        <figcaption>마케팅지니 드림</figcaption>
-      </figure>
-      <div class="maker-side">
-        <div class="heard">
-          <blockquote>“블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.”</blockquote>
-          <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
-          <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ⑦-1 작업 노트 (자주 묻는 질문과 따로 — 새 글을 올리면 목록 맨 위에 한 줄씩 더합니다) -->
-<section class="sec sec-yellow" id="notes" aria-labelledby="notes-title">
-  <div class="wrap">
-    <h2 class="big big--4" id="notes-title" data-rv>작업 노트</h2>
-    <!-- 소개 문구 옆에 '전체 보기' (2026-11-26 사용자 요청 — PC는 오른쪽 끝에 문구 마지막 줄과 나란히, 휴대폰은 폭이 좁아 문구 바로 아래) -->
-    <div class="notes-head">
-      <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
-      <p class="notes-all"><a class="tl" href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
-    </div>
-    <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
-    <ul class="notes-list">
-      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ⑦ 자주 묻는 질문 (질문 16개는 머리 정보의 FAQPage와 같은 내용 — 바꾸면 둘 다) -->
-<section class="sec sec-ink" id="faq" aria-labelledby="faq-title">
-  <div class="wrap">
-    <div class="faq-block">
-      <p class="big big--7" aria-hidden="true" data-rv>자주 묻는 질문</p>
-      <h2 class="h3 faq-title" id="faq-title">센터장님이 자주 묻는 질문</h2>
-      <p class="fine">질문을 누르면 답이 열려요.</p>
-      <div class="faq-list">
-        <details class="qa"><summary>홍보 비용은 얼마이고, 견적은 어떻게 받나요?</summary><p>센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 상담 후 작업 범위, 수정 횟수, 일정, 최종 금액을 견적서로 안내해 드립니다.</p></details>
-        <details class="qa"><summary>한 번만 맡길 수 있나요, 매달 관리도 가능한가요?</summary><p>홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요.</p></details>
-        <details class="qa"><summary>무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</summary><p>ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 그다음 무엇부터 보완하면 좋을지 알려드립니다.</p></details>
-      </div>
-      <details class="more faq-more">
-        <summary>질문 더 보기 (13개)</summary>
-        <div class="faq-list">
-          <details class="qa"><summary>센터에서 준비해야 할 사진이나 자료가 있나요?</summary><p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p></details>
-          <details class="qa"><summary>어르신 얼굴이 나온 사진은 어떻게 처리하나요?</summary><p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p></details>
-          <details class="qa"><summary>홈페이지 제작만 따로 맡길 수 있나요?</summary><p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p></details>
-          <details class="qa"><summary>수원·화성·용인 외 지역도 상담할 수 있나요?</summary><p>네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요.</p></details>
-          <details class="qa"><summary>블로그나 네이버 플레이스가 없어도 시작할 수 있나요?</summary><p>네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요.</p></details>
-          <details class="qa"><summary>기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?</summary><p>블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다.</p></details>
-          <details class="qa"><summary>블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</summary><p>센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요.</p></details>
-          <details class="qa"><summary>리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?</summary><p>글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요.</p></details>
-          <details class="qa"><summary>성과를 보장하나요?</summary><p>아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다.</p></details>
-          <details class="qa"><summary>도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</summary><p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p></details>
-          <details class="qa"><summary>홍보 글 문구가 법에 걸리지는 않나요?</summary><p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p></details>
-          <details class="qa"><summary>도메인이 뭔가요? 꼭 사야 하나요?</summary><p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p></details>
-          <details class="qa"><summary>홈페이지를 만든 뒤 비용이 바뀌면요?</summary><p>매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)은 마케팅지니가 관리하는 동안 무료로 반영해 드려요. 전화번호·운영 시간 같은 기본 정보 오류 수정도 무료예요. 사진·프로그램 바꾸기, 페이지·기능 추가, 디자인 변경은 따로 안내해 드리거나 월간 관리에 포함돼요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p></details>
-        </div>
-      </details>
-      <p class="ask-link"><a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a> · <a class="tl" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
-    </div>
-
-  </div>
-</section>
-
 <!-- ⑥ 무료 진단 (AI 예시·진단서는 이해를 돕는 샘플이며 실제 결과가 아닙니다) -->
-<section class="sec sec-white check" id="check" aria-labelledby="check-title">
+<section class="sec sec-white sec-rule check" id="check" aria-labelledby="check-title">
   <div class="wrap">
     <p class="big big--4" aria-hidden="true" data-rv>무료 진단</p>
     <h2 class="h2" id="check-title">우리 센터, AI에 물어보면 나올까요?</h2>
@@ -1107,7 +1085,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           <ol class="flow">
             <li><span class="n">1</span><b>카톡으로 센터 이름 보내기</b><span>센터 이름과 지역만 알려 주세요.</span></li>
             <li><span class="n">2</span><b>AI 3곳 · 플레이스 · 블로그 · 전화 확인</b><span>보호자처럼 휴대폰으로 찾아보고, 전화도 직접 눌러 봐요.</span></li>
-            <li><span class="n">3</span><b>캡처를 붙인 진단서 받기</b><span>확인한 화면과 고칠 순서를 카톡으로 보내 드려요.</span></li>
+            <li><span class="n">3</span><b>캡처를 붙인 진단서 받기</b><span>확인한 화면을 붙여 카톡으로 보내 드려요.</span></li>
           </ol>
           <p class="flow-note">진단은 무료이고, 진단만 받으셔도 괜찮습니다.</p>
         </div>
@@ -1143,28 +1121,186 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           <p class="r-legend"><span class="st st-ok">○</span> 잘 되어 있음 <span class="st st-mid">△</span> 보완 필요 <span class="st st-no">×</span> 없음</p>
           <figcaption class="fine r-note">이해를 돕기 위한 샘플이며, 실제 센터의 진단 결과가 아닙니다.</figcaption>
         </figure>
-        <details class="more sc-box">
-          <summary><span class="hl">먼저 혼자 점검해 보기 (1분)</span></summary>
-          <div class="selfcheck">
-            <p class="sc-intro">보호자 눈으로 우리 센터를 점검해 보세요. 누른 내용은 저장되지 않아요.</p>
-            <ol class="sc-list">
-              <li><label><input type="checkbox" class="sc"><span>‘동네 이름 + 주간보호’로 검색하면 우리 센터 플레이스가 보여요</span></label></li>
-              <li><label><input type="checkbox" class="sc"><span>플레이스나 블로그에 이용 비용 안내가 있어요</span></label></li>
-              <li><label><input type="checkbox" class="sc"><span>송영(차량) 지역이 적혀 있어요</span></label></li>
-              <li><label><input type="checkbox" class="sc"><span>휴대폰에서 전화 버튼을 누르면 바로 연결돼요</span></label></li>
-              <li><label><input type="checkbox" class="sc"><span>센터 이름으로 된 홈페이지가 있어요</span></label></li>
-            </ol>
-            <div class="sc-result" aria-live="polite">
-              <p class="sc-count"><b id="scN">0</b> / 5</p>
-              <p class="sc-msg" id="scMsg">해당하는 것을 하나씩 눌러 보세요.</p>
-            </div>
-          </div>
-        </details>
       </div>
     </div>
     <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
   </div>
 </section>
+<!-- ④ 가격 (상품마다 가격과 상담 링크 — 가격을 바꾸면 자주 묻는 질문·안내지·llms.txt도 함께) -->
+<section class="sec sec-yellow" id="price" aria-labelledby="price-title">
+  <div class="wrap">
+    <h2 class="big big--2" id="price-title" data-rv>가격</h2>
+    <!-- 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 → 작은 안내.
+         02 시작 패키지가 추천(보라 테두리·추천 표시·보라 버튼). '이 상품으로 상담하기'는 그 상품을 카톡 보낼 말에 담고 상담 칸으로 내려감 -->
+    <ul class="plans">
+      <li class="plan">
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">01</span><h3 class="plan-name">센터 홈페이지</h3></div>
+        <p class="plan-price">25만 원</p>
+        <p class="plan-vat">부가세 별도</p>
+        <p class="plan-for">블로그·플레이스는 있고,<br>홈페이지만 필요하다면.</p>
+        <div class="plan-body">
+          <p class="plan-what">센터 홈페이지 1개</p>
+          <p class="plan-sub"><span class="nw">보호자가 찾는 정보를</span> <span class="nw">한 곳에.</span></p>
+          <ul class="plan-checks">
+            <li>센터 소개, <span class="nw">비용·하루 일과·프로그램</span></li>
+            <li><span class="nw">오시는 길과</span> <span class="nw">누르면 거는 전화 버튼</span></li>
+            <li><span class="nw">네이버 플레이스에</span> <span class="nw">홈페이지 연결</span></li>
+            <li><span class="nw">수가·식비 수정(1년 1회)</span> <span class="nw">2년 무료,</span> <span class="nw">이후 별도 비용</span></li>
+            <li><span class="nw">자료 받고 2주 이내 제작,</span> <span class="nw">게시 전 수정 2회</span></li>
+            <li><span class="nw">호스팅비 2년 무료</span> <span class="nw">(업체 정책이 바뀌면</span> <span class="nw">미리 안내)</span></li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
+        <p class="plan-foot"><span class="nw">도메인은 센터 이름으로 따로 사요</span> <span class="nw">(1년 2~3만 원 안팎).</span></p>
+      </li>
+      <li class="plan is-rec">
+        <span class="plan-badge">추천</span>
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">02</span><h3 class="plan-name">시작 패키지</h3></div>
+        <p class="plan-price">50만 원</p>
+        <p class="plan-vat">부가세 별도</p>
+        <p class="plan-for">처음 시작한다면,<br>여기서부터 한 번에.</p>
+        <div class="plan-body">
+          <p class="plan-what">홈페이지 + 블로그 글 15편</p>
+          <p class="plan-sub"><span class="nw">블로그·플레이스를</span> <span class="nw">보호자가 보는 순서로.</span></p>
+          <ul class="plan-checks">
+            <li>01 센터 홈페이지 전부</li>
+            <li><span class="nw">블로그·플레이스</span> <span class="nw">소개글·사진·기본 정보</span> 정리</li>
+            <li>블로그 글 15편</li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
+        <p class="plan-foot"><span class="nw">보호자가 어디서 찾아도</span> <span class="nw">같은 정보를 보게 돼요.</span></p>
+      </li>
+      <li class="plan">
+        <div class="plan-top"><span class="plan-no" aria-hidden="true">03</span><h3 class="plan-name">월간 관리</h3></div>
+        <p class="plan-price plan-price--two"><span class="nw">18만 원</span> <span class="plan-per">또는</span> <span class="nw">25만 원<span class="plan-per">/ 월</span></span></p>
+        <p class="plan-vat">부가세 별도, 두 가지 중 선택</p>
+        <p class="plan-for">매달 글을 올릴 분이<br>없다면.</p>
+        <div class="plan-body">
+          <p class="plan-what"><span class="nw">블로그 글</span> <span class="nw">+ 플레이스 소식</span></p>
+          <p class="plan-sub"><span class="nw">사진과 한 줄 설명만</span> <span class="nw">주시면 돼요.</span></p>
+          <ul class="plan-checks">
+            <li><b class="nw">월 18만 원</b> <span class="nw">블로그 글 8편</span> <span class="nw">+ 플레이스 소식 4건</span></li>
+            <li><b class="nw">월 25만 원</b> <span class="nw">블로그 글 12편</span> <span class="nw">+ 플레이스 소식 6건</span></li>
+            <li><span class="nw">얼굴은 모자이크,</span> <span class="nw">센터에서 확인한 뒤 게시</span></li>
+            <li><span class="nw">한 일은 매달 보고</span></li>
+            <li><span class="nw">약정 없이 월 단위 선결제</span></li>
+          </ul>
+        </div>
+        <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
+        <p class="plan-foot"><span class="nw">센터의 요즘 모습이</span> <span class="nw">블로그·플레이스에 쌓여요.</span></p>
+      </li>
+    </ul>
+    <!-- 우리 센터에 맞는 상품 찾기 (2026-11-26): 버튼만 누르고 개인정보는 받지 않음. 결과에 맞는 가격 상자가 강조되고 카톡 문구에 담김 -->
+    <details class="finder">
+      <summary class="finder-title">어떤 상품이 맞을지 모르겠다면, 세 가지만 골라 보세요</summary>
+      <ol class="finder-qs">
+        <li class="finder-q" data-q="home"><p class="finder-text"><span class="finder-no" aria-hidden="true">1</span>센터 홈페이지가 있나요?</p><div class="finder-btns"><button type="button" data-v="1">있어요</button><button type="button" data-v="0">없어요</button></div></li>
+        <li class="finder-q" data-q="tidy"><p class="finder-text"><span class="finder-no" aria-hidden="true">2</span>블로그·플레이스가 보호자가 보기 좋게 정리돼 있나요?</p><div class="finder-btns"><button type="button" data-v="1">정리돼 있어요</button><button type="button" data-v="0">아직이에요</button></div></li>
+        <li class="finder-q" data-q="writer"><p class="finder-text"><span class="finder-no" aria-hidden="true">3</span>매달 블로그 글과 플레이스 소식을 올릴 분이 있나요?</p><div class="finder-btns"><button type="button" data-v="1">있어요</button><button type="button" data-v="0">없어요</button></div></li>
+      </ol>
+      <div class="finder-result" aria-live="polite" hidden>
+        <p class="finder-pick"></p>
+        <p class="finder-why"></p>
+        <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 상담하기</a>
+      </div>
+    </details>
+    <p class="price-note">부가세 10% 별도이고, 도메인(홈페이지 주소)은 센터 이름으로 따로 사요(1년 2~3만 원 안팎). 모든 상품은 전액 선결제 후 계약하고 작업을 시작합니다. <strong>환불·해지와 사진 보관 같은 세부 조건은 계약 전에 문서로 안내해 드려요.</strong> <a class="tl nw" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
+    <!-- 진행 순서 · 약속 (2026-11-26 사용자 요청: 상품 안내지와 같은 내용을 가격 아래에 짧게) -->
+    <div class="proc">
+      <h3 class="proc-title">진행 순서</h3>
+      <ol class="proc-steps">
+        <li><b>상담·무료 진단</b><span>센터 상황을 듣고 AI 검색 확인 화면 전달</span></li>
+        <li><b>견적서·결제</b><span>할 일·일정·금액·조건을 문서로, 전액 선결제 후 계약</span></li>
+        <li><b>사진 보내기</b><span>평소처럼 사진과 한 줄 설명</span></li>
+        <li><b>작성·확인</b><span>모자이크·글 작성 뒤 센터 확인</span></li>
+        <li><b>게시·보고</b><span>확인한 것만 게시, 월간 관리는 매달 보고</span></li>
+      </ol>
+      <h3 class="proc-title proc-title--2">약속드립니다</h3>
+      <ul class="proc-promise">
+        <li>검색 상위 노출이나 문의 증가를 약속하지 않습니다.</li>
+        <li>범위와 비용은 시작 전에 문서로 정합니다.</li>
+        <li>사진은 동의받은 것만, 어르신 얼굴은 모자이크합니다.</li>
+        <li>계정은 센터 이름 그대로, 작업 방법은 시작 전에 함께 정합니다.</li>
+        <li>글은 사람이 확인하고 올립니다. AI는 초안까지만 씁니다.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 만드는 사람 (편지·들은 말·돌봄 8년차는 확인된 사실만 — 8년차는 2026-11-25 사용자 확인. 실제 고객 후기는 동의받은 뒤에만 넣습니다) -->
+<section class="sec sec-ink" id="maker" aria-labelledby="maker-title">
+  <div class="wrap">
+    <!-- 글자·사진 겹침 ①: 칸 제목과 '8년차'가 따뜻한 책상 사진(AI로 만든 사진, 사람 없음)의 왼쪽 빈 벽에 겹침 -->
+    <div class="photo-desk">
+      <div class="photo-frame"><img src="img/photo-desk.webp" alt="따뜻한 스탠드 불빛이 비치는 베이지 벽 앞 책상 위의 수첩과 안경, 찻잔, 노트북" width="1280" height="720" loading="lazy"></div>
+      <div class="photo-over">
+        <h2 class="h2" id="maker-title">보호자의 마음으로<br>만듭니다.</h2>
+        <p class="years"><span class="years-n">8년차</span><span class="years-t">치매 어머니를 돌보는<br>가족 보호자</span></p>
+      </div>
+    </div>
+    <div class="maker-grid">
+      <figure class="letter">
+        <p class="letter-to">센터장님께</p>
+        <p>저는 주야간보호센터에서 요양보호사로 일했습니다. 지금은 치매가 있는 어머니를 함께 사는 집에서 8년째 돌보는 보호자입니다.</p>
+        <p>어머니는 방금 있었던 일을 기억하지 못하세요. 그래서 센터를 알아볼 때 이 두 가지가 가장 걱정됐어요.</p>
+        <ul class="letter-q">
+          <li>“기억을 못 하시고 집에 와서 말씀도 못 하시니, 직원분들이 소홀히 대하지는 않을까?”</li>
+          <li>“건강한 식단으로 식사는 잘 드실까?”</li>
+        </ul>
+        <p>센터에서 요양보호사로 일했던 저도, 보호자 자리에 서니 이 걱정이 가장 컸습니다.</p>
+        <p>그래서 보호자에게는 어르신이 센터에서 어떤 하루를 보내시는지, 어떻게 대해 드리는지가 꼭 보여야 한다고 생각합니다.</p>
+        <p class="letter-end"><span class="hl">센터장님이 돌봄에 집중하시는 동안, 그 하루를 센터의 온라인에 차근차근 담아 드리겠습니다.</span></p>
+        <figcaption>마케팅지니 드림</figcaption>
+      </figure>
+      <div class="maker-side">
+        <div class="heard">
+          <blockquote>“블로그 글을 올린 날에는 전화 문의가 더 많이 들어왔어요.”</blockquote>
+          <cite>— 운영을 맡았던 센터 관계자의 이야기</cite>
+          <p class="fine">정확한 수치는 기록하지 못해, 들은 이야기만 그대로 옮깁니다. 모두 블로그 덕분이라고 단정하지 않습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ⑦ 자주 묻는 질문 (질문 18개는 머리 정보의 FAQPage와 같은 내용 — 바꾸면 둘 다) -->
+<section class="sec sec-ink" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="faq-block">
+      <p class="big big--7" aria-hidden="true" data-rv>자주 묻는 질문</p>
+      <h2 class="h3 faq-title" id="faq-title">센터장님이 자주 묻는 질문</h2>
+      <p class="fine">질문을 누르면 답이 열려요.</p>
+      <div class="faq-list">
+        <details class="qa"><summary>홍보 비용은 얼마이고, 견적은 어떻게 받나요?</summary><p>센터 홈페이지 제작은 25만 원이고, 홈페이지에 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하는 시작 패키지는 50만 원입니다. 매달 관리는 월 18만 원(블로그 글 8편 + 플레이스 소식 4건)과 월 25만 원(블로그 글 12편 + 플레이스 소식 6건) 두 가지예요. 부가세 10%와 도메인 비용(1년 2~3만 원 안팎)은 별도예요. 센터 홈페이지는 자료를 모두 받은 날부터 2주 이내에 만들고, 게시 전에 2회까지 고쳐 드려요. 호스팅비(홈페이지를 올려 두는 비용)는 2년 동안 받지 않아요(호스팅 업체 정책이 바뀌면 미리 안내). 상담 후 작업 범위, 일정, 최종 금액을 견적서로 안내해 드립니다.</p></details>
+        <details class="qa"><summary>한 번만 맡길 수 있나요, 매달 관리도 가능한가요?</summary><p>홈페이지 제작이나 시작 패키지는 한 번만 맡기실 수 있어요. 꾸준히 소식을 올리고 싶다면 월간 관리 두 가지 중에서 고르시면 됩니다. 블로그 글 8편과 플레이스 소식 4건(월 18만 원), 또는 블로그 글 12편과 플레이스 소식 6건(월 25만 원)이에요.</p></details>
+        <details class="qa"><summary>무료 AI 검색 진단에서는 무엇을 확인해 주시나요?</summary><p>ChatGPT·제미나이·네이버 AI에 보호자가 물어볼 만한 질문을 넣어, 우리 센터가 답변에 나오는지 화면으로 보여드려요. 블로그와 플레이스에서 빠진 정보를 살펴보고, 보호자처럼 휴대폰으로 전화가 실제로 연결되는지도 눌러 봐요. 빠진 곳과 보완하면 좋은 점도 알려드립니다.</p></details>
+      </div>
+      <details class="more faq-more">
+        <summary>질문 더 보기 (15개)</summary>
+        <div class="faq-list">
+          <details class="qa"><summary>센터에서 준비해야 할 사진이나 자료가 있나요?</summary><p>센터 활동 사진과 활동 이름, 한 줄 설명이면 글을 시작할 수 있어요. 밴드나 카톡방에 평소처럼 올려 주시면, 글에 필요한 정보는 제가 추가로 여쭤볼게요.</p></details>
+          <details class="qa"><summary>어르신 얼굴이 나온 사진은 어떻게 처리하나요?</summary><p>사용에 동의받은 사진만 쓰고, 어르신 얼굴은 모자이크해요. 글과 사진은 센터에서 확인한 뒤 게시합니다.</p></details>
+          <details class="qa"><summary>보낸 사진은 얼마나 보관하나요?</summary><p>정해 둔 기간이 지나면 지워요. 얼굴이 보이는 원본은 AI 서비스에 올리지 않고, 사진에 나온 분이 동의를 거두시면 바로 지우고 게시물도 내려요. 자세한 보관 기간은 계약 전에 문서로 안내해 드려요.</p></details>
+          <details class="qa"><summary>홈페이지 제작만 따로 맡길 수 있나요?</summary><p>네. 센터 홈페이지는 25만 원(부가세·도메인 별도)으로 단독 제작할 수 있어요. 블로그 세팅 또는 정비와 글 15편, 플레이스 정리까지 함께 하시려면 시작 패키지(50만 원)로 진행해요.</p></details>
+          <details class="qa"><summary>중간에 그만두면 환불은 어떻게 되나요?</summary><p>상품과 진행 단계에 따라 달라요. 계약 전에 환불·해지 조건을 문서로 안내해 드리고, 확인하신 뒤에 결제와 계약을 진행해요. 모든 상품은 전액 선결제 후 작업을 시작하고, 월간 관리는 약정이 없어요.</p></details>
+          <details class="qa"><summary>수원·화성·용인 외 지역도 상담할 수 있나요?</summary><p>네. 수원·화성·용인은 직접 방문하고, 그 밖의 지역은 온라인으로 상담합니다. 방문요양기관과 요양원도 상담할 수 있어요.</p></details>
+          <details class="qa"><summary>블로그나 네이버 플레이스가 없어도 시작할 수 있나요?</summary><p>네. 상담할 때 지금 운영 중인 채널이 있는지 알려 주세요. 아무것도 없다면 센터 상황을 듣고 무엇부터 준비하면 좋을지 함께 정해요.</p></details>
+          <details class="qa"><summary>기존 블로그와 플레이스에서 어떤 부분을 정리해 주시나요?</summary><p>블로그는 메뉴·카테고리·소개글을, 플레이스는 소개 문구·사진 순서·기본 정보를 살펴봐요. 기존 글은 이어갈 부분과 정리할 부분을 함께 정하고, 블로그와 플레이스도 연결해 드립니다.</p></details>
+          <details class="qa"><summary>블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</summary><p>센터마다 원인이 달라서, 글을 더 쓰기 전에 어디서 끊기는지부터 봐야 해요. 검색으로 들어오는 사람이 적은지, 들어와도 이용 비용·송영 같은 정보가 없는지, 전화번호를 찾기 어렵거나 연결이 안 되는지 차례로 확인합니다. 무료 진단에서 이 순서대로 살펴봐 드려요.</p></details>
+          <details class="qa"><summary>리뷰와 글을 더 올리면 플레이스 순위가 올라가나요?</summary><p>글이나 리뷰 수만으로 순위가 오른다고 약속할 수는 없어요. 그보다 보호자가 실제로 검색할 동네 이름으로 센터가 보이는지, 보였을 때 필요한 정보와 연락 방법이 갖춰져 있는지를 먼저 확인하는 것이 좋아요.</p></details>
+          <details class="qa"><summary>성과를 보장하나요?</summary><p>아니요. 검색 순위·AI 추천·문의 수는 지역 경쟁과 센터 상황에 따라 달라서 약속하지 않아요. 대신 무엇을 언제 바꿨는지 기록해 두고, 실제로 확인된 변화만 함께 봅니다.</p></details>
+          <details class="qa"><summary>도메인과 블로그·플레이스 계정은 누구 이름으로 하나요? 비밀번호를 알려 드려야 하나요?</summary><p>블로그·플레이스는 센터가 지금 쓰는 계정을 그대로 쓰고, 도메인도 센터 이름으로 사시도록 안내해 드려요. 플레이스는 네이버의 공식 매니저 초대 기능으로 함께 관리할 수 있어 비밀번호를 받지 않아도 돼요. 홈페이지를 어디에 두고 누가 관리할지, 나중에 넘겨받는 방법은 시작 전에 문서로 정해 드립니다.</p></details>
+          <details class="qa"><summary>홍보 글 문구가 법에 걸리지는 않나요?</summary><p>본인부담금을 면제하거나 깎아 주는 것은 노인장기요양보험법 제35조에서 금지하고 있어, 그렇게 읽힐 수 있는 문구는 쓰지 않아요. ‘최고·1위·보장’ 같은 과장 표현도 넣지 않고, 올리기 전에 센터장님과 함께 확인합니다. 다만 법률 자문은 아니에요.</p></details>
+          <details class="qa"><summary>도메인이 뭔가요? 꼭 사야 하나요?</summary><p>도메인은 홈페이지 주소예요(예: ○○daycare.com). 센터 이름으로 1년 단위로 사서 쓰고, 보통 1년에 2~3만 원 안팎이에요. 센터 이름으로 사 두면 명함·전단·플레이스에 적기 쉽고, 나중에 다른 업체에 맡기셔도 주소가 그대로 센터에 남아요. 사는 방법은 화면을 보며 함께 안내해 드려요.</p></details>
+          <details class="qa"><summary>홈페이지를 만든 뒤 비용이 바뀌면요?</summary><p>홈페이지를 만든 날부터 2년 동안은 매년 바뀌는 장기요양 수가와 식재료비·간식비 변경(1년 1회)을 무료로 반영해 드리고, 2년이 지난 뒤에는 별도 비용이 들어요. 그 밖의 수정 범위는 계약 전에 문서로 안내해 드려요. 계산기 금액은 예상 금액이라 실제와 다를 수 있어요.</p></details>
+        </div>
+      </details>
+      <p class="ask-link"><a class="tl" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 물어보기</a> · <a class="tl" href="https://marketingjini.com/service/">A4 안내지로 보기</a></p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ⑧ 마지막 상담 (이름·전화 입력칸은 만들지 않음 — 상담은 카톡·전화로만) -->
 <section class="sec sec-yellow contact" id="contact" aria-labelledby="contact-title">
   <!-- 글자·사진 겹침 ②: 큰 제목의 아랫줄이 같은 책상의 아침 사진(AI로 만든 사진, 사람 없음, 흰 벽) 위쪽 가장자리에 걸침 -->
@@ -1193,6 +1329,24 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     </div>
   </div>
 </section>
+<!-- ⑦-1 작업 노트 (자주 묻는 질문과 따로 — 새 글을 올리면 목록 맨 위에 한 줄씩 더합니다) -->
+<section class="sec sec-white" id="notes" aria-labelledby="notes-title">
+  <div class="wrap">
+    <h2 class="big big--4" id="notes-title" data-rv>작업 노트</h2>
+    <!-- 소개 문구 옆에 '전체 보기' (2026-11-26 사용자 요청 — PC는 오른쪽 끝에 문구 마지막 줄과 나란히, 휴대폰은 폭이 좁아 문구 바로 아래) -->
+    <div class="notes-head">
+      <p class="h2">센터장님이 묻는 질문에<br>글로 답합니다.</p>
+      <p class="notes-all"><a class="tl" href="https://marketingjini.com/notes/">작업 노트 전체 보기</a></p>
+    </div>
+    <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
+    <ul class="notes-list">
+      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go" aria-hidden="true">+</span></a></li>
+    </ul>
+  </div>
+</section>
 </main>
 
 <!-- 맨 아래 사업자 정보 (주소는 구까지만) -->
@@ -1202,7 +1356,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <p class="foot-brand">마케팅지니</p>
     <p class="foot-tag">고객의 시선으로 만드는 온라인 홍보</p>
     <nav class="foot-nav" aria-label="맨 아래 바로가기">
-      <a href="#top">맨 위로</a><a href="#path">하는 일</a><a href="#sample">샘플</a><a href="#price">가격</a><a href="#maker">소개</a><a href="#notes">작업 노트</a><a href="#faq">질문</a><a href="#check">무료 진단</a>
+      <a href="#top">맨 위로</a><a href="#path">하는 일</a><a href="#sample">샘플</a><a href="#check">무료 진단</a><a href="#price">가격</a><a href="#maker">소개</a><a href="#faq">질문</a><a href="#notes">작업 노트</a>
     </nav>
     <nav class="foot-sub" aria-label="다른 페이지">
       <a href="https://marketingjini.com/service/">상품 안내지</a><a href="https://marketingjini.com/sample/">샘플 홈페이지</a><a href="https://blog.naver.com/jiniya_marketing" target="_blank" rel="noopener">네이버 블로그</a>
@@ -1212,7 +1366,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       <p>사업자등록번호 529-30-02199</p>
       <p>사업장 경기도 수원시 권선구</p>
       <p>상담 <a class="tl nw" href="tel:010-5904-5300">010-5904-5300</a> · <a class="tl nw" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카카오톡 채널</a></p>
-      <p class="foot-area"><span class="nw">수원·화성·용인은 직접 방문하고,</span> <span class="nw">그 밖의 지역은 온라인으로 함께합니다.</span> <span class="nw">학원·동네 가게 홍보도 상담할 수 있어요.</span></p>
+      <p class="foot-area"><span class="nw">수원·화성·용인은 직접 방문하고,</span> <span class="nw">그 밖의 지역은 온라인으로 함께합니다.</span></p>
       <p class="foot-copy">© 2026 마케팅지니</p>
     </div>
   </div>
@@ -1221,7 +1375,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <!-- 휴대폰에서 첫 화면을 지나면 나타나는 상담 바 -->
 <div class="dock" id="dock">
   <a class="dock-brand" href="#top"><img src="logo.png" alt="" width="28" height="28">마케팅지니</a>
-  <nav class="dock-nav" aria-label="떠 있는 바로가기"><a href="#price">가격</a><a href="#notes">작업 노트</a><a href="#faq">질문</a><a href="#check">무료 진단</a><a href="#top">맨 위로</a></nav>
+  <nav class="dock-nav" aria-label="떠 있는 바로가기"><a href="#check">무료 진단</a><a href="#price">가격</a><a href="#faq">질문</a><a href="#notes">작업 노트</a><a href="#top">맨 위로</a></nav>
   <a class="dock-cta" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 무료 진단 받기</a>
 </div>
 
@@ -1238,14 +1392,14 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     }
   })();
 </script>
-<!-- ② 찾아오는 길: 스크롤한 만큼 1→4단계로 바뀝니다 (움직임 줄이기 설정이면 목록 그대로) -->
+<!-- ② 찾아오는 길: PC에서는 스크롤한 만큼 1→4단계로 바뀌고, 휴대폰에서는 4줄 목록 (2026-11-26 사용자 요청). 움직임 줄이기 설정이면 어디서나 목록 -->
 <script>
   (function () {
     var scene = document.getElementById('scene');
     if (!scene || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var steps = scene.querySelectorAll('.step'), dots = scene.querySelectorAll('.scene-dots i'), num = document.getElementById('sceneN');
     var cur = 0;
-    scene.classList.add('is-scene');
+    var wide = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
     function show(n) {
       if (n === cur) return;
       cur = n;
@@ -1256,6 +1410,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       if (num) num.textContent = n;
     }
     function update() {
+      scene.classList.toggle('is-scene', wide.matches);
+      if (!wide.matches) return;
       var r = scene.getBoundingClientRect(), total = r.height - window.innerHeight;
       var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
       show(Math.min(steps.length, Math.floor(p * steps.length) + 1));
@@ -1272,7 +1428,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     if (!boxes.length || !n || !msg) return;
     var text = [
       '보호자가 전화하기 전에 찾는 정보가 많이 비어 있어요. 홈페이지와 블로그·플레이스를 함께 정리하는 시작 패키지가 맞을 수 있어요. 먼저 무료 진단으로 확인해 보세요.',
-      '기본은 갖춰져 있어요. 비어 있는 곳만 채우면 됩니다. 무료 진단에서 빠진 곳과 고칠 순서를 정리해 드려요.',
+      '기본은 갖춰져 있어요. 비어 있는 곳만 채우면 됩니다. 무료 진단에서 빠진 곳을 확인해 드려요.',
       '보호자가 찾는 기본 정보가 잘 갖춰져 있어요. 지금 방식을 그대로 두셔도 괜찮아요. 글 쓸 시간이 부족하시면 월간 관리를 살펴보세요.'
     ];
     function update() {
@@ -1422,11 +1578,37 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 
   /* ① 가격 상자 + 카톡 보낼 말 */
   var pre = document.getElementById('ktMsg'), base = pre ? pre.textContent : '';
-  function setInterest(label) {
+  var interest = '', selfLines = [];
+  function renderMsg() {
     if (!pre) return;
     var lines = base.split('\n');
-    if (label) lines.splice(1, 0, '관심 상품: ' + label);
-    pre.textContent = lines.join('\n');
+    if (interest) lines.splice(1, 0, '관심 상품: ' + interest);
+    pre.textContent = lines.concat(selfLines).join('\n');
+  }
+  function setInterest(label) { interest = label; renderMsg(); }
+  /* 1분 점검 결과를 카톡 보낼 말에 담고 복사 */
+  var send = document.getElementById('scSend');
+  if (send) {
+    var done = document.getElementById('scDone'), doneMsg = document.getElementById('scDoneMsg'), sent = false;
+    var boxes = root.querySelectorAll('.sc');
+    function pick() {
+      var yes = 0, no = [];
+      each(boxes, function (b) { if (b.checked) yes++; else no.push(b.getAttribute('data-short')); });
+      selfLines = ['1분 점검: ' + boxes.length + '개 중 ' + yes + '개 해당'];
+      if (no.length) selfLines.push('아직 안 된 것: ' + no.join(', '));
+      renderMsg();
+    }
+    send.addEventListener('click', function () {
+      sent = true; pick(); done.hidden = false;
+      function ok() { doneMsg.textContent = '문구를 복사했어요. 카톡을 열고 붙여 넣어 보내 주세요.'; }
+      function fail() { doneMsg.textContent = '아래 상담 칸의 카톡 문구에 담았어요. 거기서 복사해 주세요.'; }
+      if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(pre.textContent).then(ok, fail); return; }
+      var ta = document.createElement('textarea'); ta.value = pre.textContent; document.body.appendChild(ta); ta.select();
+      var copied = false; try { copied = document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta);
+      if (copied) ok(); else fail();
+    });
+    /* 담은 뒤에 점검을 바꾸면 문구도 따라 바뀌고, 다시 담도록 안내를 닫음 */
+    each(boxes, function (b) { b.addEventListener('change', function () { if (sent) { pick(); done.hidden = true; } }); });
   }
   var plans = Array.prototype.slice.call(root.querySelectorAll('.plan'));
   var names = plans.map(function (p) {
@@ -1481,8 +1663,38 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     }
   }
 
+  /* 겹침: 첫 화면이 창보다 크면, 아래(띠)까지 다 보인 뒤에 멈추도록 멈춤 위치를 위로 옮김 */
+  var heroBox = root.querySelector('.stack > .hero');
+  if (heroBox) {
+    var fit = function () { heroBox.style.top = Math.min(0, window.innerHeight - heroBox.offsetHeight) + 'px'; };
+    window.addEventListener('resize', fit); window.addEventListener('load', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    fit();
+  }
+
   if (calm || !('IntersectionObserver' in window)) return;
   root.classList.add('rv-on');
+
+  /* 진행 순서: 화면에 들어온 칸까지 번호를 1부터 차례로 켬 (한 번만) */
+  var flow = root.querySelector('.proc-steps');
+  if (flow) {
+    var steps = Array.prototype.slice.call(flow.querySelectorAll('li')), lit = 0, goal = 0, busy = false;
+    flow.classList.add('flow-on');
+    var lightNext = function () {
+      if (lit >= goal) { busy = false; return; }
+      busy = true; steps[lit++].classList.add('is-lit');
+      setTimeout(lightNext, 450);
+    };
+    var fio = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        fio.unobserve(en.target);
+        goal = Math.max(goal, steps.indexOf(en.target) + 1);
+      });
+      if (!busy) lightNext();
+    }, { threshold: 0.6, rootMargin: '0px 0px -12% 0px' });
+    steps.forEach(function (li) { fio.observe(li); });
+  }
 
   /* ③ 화면에 들어오면 */
   var io = new IntersectionObserver(function (es) {

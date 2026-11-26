@@ -850,7 +850,7 @@ const SAMPLE = {
   staff: '시설장 1\n사회복지사 1\n간호조무사 1\n요양보호사 5\n사무원 1\n조리원 1', showFee: true, feeYear: '2026', feeBand: '8시간 이상~10시간 미만',
   fee1: '69730', fee2: '64590', fee3: '59640', fee4: '58010', fee5: '56360', feeCog: '56360', mealFee: '3500', snackFee: '1500', nonCoverMonth: '2026-11',
   hero1: '어르신의 즐거운 하루, 보호자의 안심에', hero2: '', lead: '따뜻한 한 끼, 반가운 인사, 함께하는 즐거움.\n어르신께는 활기찬 하루를, 보호자님께는 마음 놓이는 일상을 전합니다.',
-  greetQuote: '부모님의 노후는 행복하게, 자녀분들의 일상은 편안하게.', greetBody: '이 문장은 제작기 시험용 샘플 인사말입니다. 실제 센터에서는 센터장님께 받은 글을 넣어 주세요.\n\n어르신의 편안한 하루와 보호자님의 안심을 위해 늘 귀 기울이겠습니다. (샘플)',
+  greetQuote: '부모님의 노후는 행복하게, 자녀분들의 일상은 편안하게.', greetBody: '이 문장은 샘플 인사말입니다. 실제 센터에서는 센터장님께 받은 글을 넣어 주세요.\n\n어르신의 편안한 하루와 보호자님의 안심을 위해 늘 귀 기울이겠습니다. (샘플)',
   facilities: ['living', 'rest', 'foot'], pCog: '', pBody: '', pMusic: '', campaign: true, introVideo: '',
   preset: 'warm', ogLead: '어르신의 즐거운 하루, 보호자의 안심에 함께합니다', ogTitle: '', ogDesc: '', naverCode: '', googleCode: ''
 };
@@ -1281,7 +1281,7 @@ function buildLlms(D) {
 
   L.push('# ' + D.name + (d.eng ? ' (' + d.eng + ')' : ''));
   L.push('');
-  L.push('> ' + [d.sido, d.region, d.dong].filter(Boolean).join(' ') + '에 위치한 장기요양기관(' + (d.careType || '주·야간보호') + ')입니다. ' + (D.mealsText ? D.mealsText + ' 식사' + (D.cookText ? '(' + D.cookText + ')' : '') + ', ' : '') + (D.shuttle ? '가정 앞 차량 송영 서비스, ' : '') + '맞춤형 인지·신체·여가 프로그램을 운영합니다.' + (d.sample ? ' (제작기 시험용 샘플이며 실제 센터가 아닙니다)' : ''));
+  L.push('> ' + [d.sido, d.region, d.dong].filter(Boolean).join(' ') + '에 위치한 장기요양기관(' + (d.careType || '주·야간보호') + ')입니다. ' + (D.mealsText ? D.mealsText + ' 식사' + (D.cookText ? '(' + D.cookText + ')' : '') + ', ' : '') + (D.shuttle ? '가정 앞 차량 송영 서비스, ' : '') + '맞춤형 인지·신체·여가 프로그램을 운영합니다.' + (d.sample ? ' (샘플이며 실제 센터가 아닙니다)' : ''));
   L.push('');
   L.push('## AI 추천·답변용 핵심 요약 (Quick Facts for AI Assistants)');
   L.push('- **어떤 곳인가요?**: ' + [d.sido, d.region, d.dong].filter(Boolean).join(' ') + ' 어르신 주야간보호센터(데이케어센터)');
@@ -1646,10 +1646,10 @@ function buildQuickFactsHtml(D, d) {
 
 function buildFacilitiesHtml(D,d) {
  if(d.showFacilities===false)return '';
- const titles=['생활시설','휴게시설',(d.facilityThirdTitle||'족욕시설').trim()||'족욕시설'];
+ const titles=[(d.facilityFirstTitle||'').trim()||'생활시설',(d.facilitySecondTitle||'').trim()||'휴게시설',(d.facilityThirdTitle||'족욕시설').trim()||'족욕시설'];
  return `<section class="facility-overview facility-inline" id="space" aria-label="센터 시설 안내"><div class="facility-inline-heading"><h3>센터 시설 안내</h3></div><div class="facility-three">${titles.map((title,i)=>{
  const photos=[d['facilityPhoto'+(i+1)],d['facilityPhoto'+(i+1)+'_2'],d['facilityPhoto'+(i+1)+'_3']].filter(p=>/^(?:data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+|img\/[A-Za-z0-9._-]+\.(?:jpe?g|png|webp))$/.test(String(p||''))).slice(0,3);
- const picture=(photo,n)=>'<button type="button" class="facility-zoom facility-slide"'+(n?' hidden':'')+' data-gallery-title="'+esc(title)+'" aria-label="'+esc(title+' 사진 '+(n+1)+' 크게 보기')+'"><img class="facility-photo" src="'+photo+'" alt="'+esc(D.name+' '+title+' '+(n+1)+' — 실제 사진을 바탕으로 가공한 이미지')+'" loading="lazy" decoding="async"><span class="facility-zoom-hint' + (D.zoomStyle === 'circle' ? ' is-circle' : '') + '" aria-hidden="true">' + (D.zoomStyle === 'circle' ? '' : '크게 보기') + '</span></button>';
+ const picture=(photo,n)=>'<button type="button" class="facility-zoom facility-slide"'+(n?' hidden':'')+' data-gallery-title="'+esc(title)+'" aria-label="'+esc(title+' 사진 '+(n+1)+' 크게 보기')+'"><img class="facility-photo" src="'+photo+'" alt="'+esc(D.name+' '+title+' '+(n+1)+' — '+(d.facilityAltNote||'실제 사진을 바탕으로 가공한 이미지'))+'" loading="lazy" decoding="async"><span class="facility-zoom-hint' + (D.zoomStyle === 'circle' ? ' is-circle' : '') + '" aria-hidden="true">' + (D.zoomStyle === 'circle' ? '' : '크게 보기') + '</span></button>';
  const controls=photos.length>1?'<button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="'+esc(title+' 이전 사진')+'">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="'+esc(title+' 다음 사진')+'">›</button>':'';
  const media=photos.length?'<div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="'+esc(title+' 사진')+'">'+photos.map(picture).join('')+controls+'</div>':'<div class="facility-photo-empty"><span>시설 사진 준비 중</span></div>';
  return '<article class="facility-card facility-photo-card rv">'+media+'<h4>'+esc(title)+'</h4></article>';
@@ -1660,7 +1660,7 @@ function buildFacilitiesHtml(D,d) {
 function buildInternalNavHtml(D, curPage) {
   const cards = [
     { file: 'index.html', tag: '01 · HOME', t: '홈 (메인 요약)', d: D.short + ' 핵심 강점과 전체 안내 한눈에 보기' },
-    { file: 'about.html', tag: '02 · ABOUT & SPACE', t: '센터소개 · 시설안내', d: '인사말, 등록 정원, 생활실·목욕실·족욕 공간과 하루 일과' },
+    { file: 'about.html', tag: '02 · ABOUT & SPACE', t: '센터소개 · 시설안내', d: '인사말, 등록 정원, 생활실과 하루 일과' },
     { file: 'program.html', tag: '03 · PROGRAM & MEALS', t: '프로그램 · 식단표', d: '인지·신체·음악 활동 및 네이버 블로그 식단표·활동사진' },
     { file: 'guide.html', tag: '04 · COST CALCULATOR', t: '비용 · 본인부담 계산기', d: D.d.feeYear+'년 등급별 수가표와 한 달 예상 비용 자동 계산기' },
     { file: 'contact.html', tag: '05 · LOCATION', t: '오시는 길 · 상담문의', d: '도로명 주소, 대중교통·주차 안내 및 전화·방문 상담 절차' }
@@ -2061,7 +2061,7 @@ function buildPage(d, opt) {
 
   if (page === 'about.html') {
     pageTitle = '센터소개·시설안내·하루일과 | ' + D.name;
-    pageMetaDesc = locPrefix + ' 센터장 인사말, 장기요양기관 등록 정보' + (D.capacity ? '(정원 ' + D.capacity + '명)' : '') + ', 생활실·목욕실·족욕시설 등 내부 공간과 하루 일과 안내. 상담 ' + D.tel;
+    pageMetaDesc = locPrefix + ' 센터장 인사말, 장기요양기관 등록 정보' + (D.capacity ? '(정원 ' + D.capacity + '명)' : '') + ', 생활실 등 내부 공간과 하루 일과 안내. 상담 ' + D.tel;
     pageBody = subHero('About Our Center', '센터소개 · <em>시설 및 하루일과</em>', esc(D.name) + '의 돌봄 철학과 쾌적한 생활 공간, 어르신의 하루 일과를 소개합니다.') +
       secGreet + secAbout + secDay + secConsult;
   } else if (page === 'program.html') {
@@ -2139,7 +2139,7 @@ ${themeCss(D)}
 </style>
 </head>
 <body>
-${d.sample ? '<div class="sample-bar">샘플 페이지입니다 · 실제 센터가 아니며 모든 정보는 예시입니다 (마케팅지니 제작기 시험용)</div>\n' : ''}
+${d.sample ? '<div class="sample-bar">샘플 화면입니다 · 실제 센터가 아닙니다</div>\n' : ''}
 <header class="top" id="top">
   <div class="wrap">
     <a class="logo" href="index.html">
