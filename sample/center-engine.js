@@ -760,6 +760,7 @@ const GROUPS = [
     { id: 'careImage2', type: 'photo', label: '돌봄 카드 사진 2 · 인지 활동', def: '', help: '홈·프로그램 페이지의 큰 사진이에요. 가로 16:10 권장. 비우면 그림(아이콘)이 나와요. 센터가 실제로 하는 활동만 넣으세요.' },
     { id: 'careImage3', type: 'photo', label: '돌봄 카드 사진 3 · 신체 활동', def: '', help: '홈·프로그램 페이지의 큰 사진이에요. 가로 16:10 권장. 비우면 그림(아이콘)이 나와요. 센터가 실제로 하는 활동만 넣으세요.' },
     { id: 'careImage4', type: 'photo', label: '돌봄 카드 사진 4 · 음악·여가', def: '', help: '홈·프로그램 페이지의 큰 사진이에요. 가로 16:10 권장. 비우면 그림(아이콘)이 나와요. 센터가 실제로 하는 활동만 넣으세요.' },
+    { id: 'careTitle4', label: '돌봄 카드 4 제목', def: '음악·여가', help: '사진에 맞게 바꿔요. 예) 생신 잔치 사진이면 여가·행사. 비우면 음악·여가.' },
     { id: 'careImageAi', type: 'check', label: '돌봄 카드 사진은 AI로 만든 연출 사진', def: true, help: '켜 두면 "AI로 만든 연출 예시" 안내 글이 붙어요. 실제로 찍은 사진만 넣었을 때 끄세요.' },
     { id: 'careText', type: 'check', label: '돌봄 카드 아래 작은 설명 글 보이기', def: false, help: '끄면(처음 값) 사진과 제목만 나와요.' },
     { id: 'campaign', type: 'check', label: '공단 공식 유튜브 캠페인 영상 넣기', def: true, help: '국민건강보험공단 공식 영상만 퍼가기(embed)해요. 영상 파일은 올리지 않아요.' },
@@ -1967,7 +1968,7 @@ function buildPage(d, opt) {
     D.meals.length ? { img: d.careImage1, icon: ICON.bowl, t: d.cooking === 'direct' ? '균형 잡힌 식사' : (D.meals.length === 1 && D.meals[0] === '간식' ? '간식' : '식사'), p: (D.cookText ? D.cookText + '합니다. ' : '') + D.meals.join('·') + ' 제공' } : null,
     { img: d.careImage2, icon: ICON.puzzle, t: '인지 활동', p: progs.c },
     { img: d.careImage3, icon: ICON.bike, t: '신체 활동', p: progs.b },
-    { img: d.careImage4, icon: ICON.music, t: '음악·여가', p: progs.m }
+    { img: d.careImage4, icon: ICON.music, t: String(d.careTitle4 || '').trim() || '음악·여가', p: progs.m }
   ].filter(Boolean);
   const careCards = (list, cls) => {
     const anyPhoto = list.some(c => imgOk(c.img)), ai = d.careImageAi !== false;
@@ -1979,7 +1980,7 @@ function buildPage(d, opt) {
   const careIntro = (D.shuttle ? '아침에 차량으로 모셔 오고, ' : '') + (D.meals.length ? '식사와 ' : '') + '활동을 함께' + (D.shuttle ? '한 뒤 댁으로 모셔다 드립니다.' : '합니다.');
   const secCare = block('about', 'white', headHtml('센터에서 보내는 하루', esc(careIntro), true) + '<div style="height:36px"></div>' + careCards(careList, ''));
   const secPrograms = block('programs', 'white', headHtml('오늘도 즐거운 이유', '어르신의 상태와 흥미를 살피며 다양한 활동을 함께합니다.', true) + '<div style="height:36px"></div>' +
-    careCards(careList.filter(c => c.t === '인지 활동' || c.t === '신체 활동' || c.t === '음악·여가'), ' three') + '<p class="note">실제 일정과 참여 내용은 센터 운영에 따라 달라질 수 있습니다.</p>');
+    careCards(careList.filter(c => c.icon !== ICON.bowl), ' three') + '<p class="note">실제 일정과 참여 내용은 센터 운영에 따라 달라질 수 있습니다.</p>');
 
   const secMeals = D.meals.length ? block('meals', 'soft', headHtml('식사 안내', '') + '<table class="info rv"><tbody>' + [
     ['제공', esc(D.mealsText)], ['조리', esc(D.cookText)],
