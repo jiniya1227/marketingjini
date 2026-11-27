@@ -496,17 +496,8 @@
 #jini .proc-promise { list-style: none; margin-top: 14px; border-top: 1px solid var(--ink); }
 #jini .proc-promise li { position: relative; padding: 11px 0 11px 22px; border-bottom: 1px solid var(--ink); font-size: 16px; font-weight: 700; line-height: 1.6; }
 #jini .proc-promise li::before { content: ""; position: absolute; left: 1px; top: calc(11px + .45em); width: 12px; height: 6px; border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg); }
-/* 샘플 디자인 8가지 · 계산기 바로 가기 */
-#jini .themes { margin-top: 64px; }
-#jini .themes .h3, #jini .calc-try .h3 { font-size: 26px; }
-#jini .themes .fine { margin-top: 8px; }
-#jini .theme-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
-#jini .theme-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: center; align-items: center; column-gap: 14px; padding: 14px; border: 2px solid var(--ink); border-radius: 12px; }
-#jini .theme-sw { display: flex; width: 84px; height: 34px; border-radius: 17px; overflow: hidden; }
-#jini .theme-sw i { flex: 1; }
-#jini .theme-sw i:first-child { flex: 1.25; }
-#jini .theme-list b { font-size: 18px; line-height: 1.5; }
-#jini .theme-desc { display: none; margin-top: 2px; color: #1F1A33CC; font-size: 15px; line-height: 1.55; } /* 휴대폰은 색 막대와 이름만 (2026-11-26) */
+/* 계산기 바로 가기 */
+#jini .calc-try .h3 { font-size: 26px; }
 #jini .calc-try { margin-top: 56px; padding: 26px 22px 28px; border-radius: 12px; background: var(--yellow); }
 #jini .calc-try p { margin-top: 10px; font-size: 17px; line-height: 1.7; }
 #jini .calc-try .btn { margin-top: 18px; }
@@ -579,10 +570,6 @@
 @media (min-width: 900px) and (orientation: landscape) {
   #jini .qa p { max-width: 62em; }
   #jini .check-grid { grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-  #jini .theme-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; }
-  #jini .theme-list li { column-gap: 18px; padding: 16px 18px; }
-  #jini .theme-sw { grid-row: span 2; width: 104px; height: 40px; border-radius: 20px; }
-  #jini .theme-desc { display: block; }
   /* 1분 점검: 왼쪽 제목, 오른쪽 점검 상자 */
   #jini .self-sec .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); column-gap: 72px; align-items: start; }
   #jini .self-sec .h2 { grid-column: 1; font-size: 56px; }
@@ -963,7 +950,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       <ol class="steps">
         <li class="step is-on"><span class="step-n">1</span><b class="step-t">검색</b><span class="step-d">동네 이름 + 센터 종류로 찾아요</span><span class="step-j">블로그 글 주제 · 동네 이름</span><div class="phone" role="img" aria-label="예시 화면: 동네 이름으로 검색하면 우리 센터 플레이스가 맨 위에 보임"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-bar">수원 권선구 주간보호</p><ul class="ph-res"><li class="on"><b>○○주야간보호센터</b><span>플레이스 · 지도</span></li><li><b>○○센터의 하루 일과</b><span>블로그</span></li><li><b>○○주야간보호센터</b><span>홈페이지</span></li></ul></div></div></li>
         <li class="step"><span class="step-n">2</span><b class="step-t">플레이스 · 블로그</b><span class="step-d">사진·소식으로 분위기를 봐요</span><span class="step-j">플레이스 정보 · 사진 순서</span><div class="phone" role="img" aria-label="예시 화면: 플레이스에서 센터 사진과 소식, 블로그 글을 봄"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-place"><b>○○주야간보호센터</b><span>주야간보호 · 수원 권선구</span></p><p class="ph-photos"><i></i><i class="y"></i><i></i><i class="y"></i><i></i><i></i></p><p class="ph-line"><b>소식</b>이번 주 프로그램</p><p class="ph-line"><b>블로그</b>송영 지역 안내</p></div></div></li>
-        <li class="step"><span class="step-n">3</span><b class="step-t">홈페이지</b><span class="step-d">비용·송영·하루 일과를 확인해요</span><span class="step-j">센터 홈페이지</span><div class="phone phone--img" role="img" aria-label="샘플 화면: 센터 홈페이지의 등급별 이용 비용 안내"><div aria-hidden="true"><p class="ph-top">샘플 화면</p><img src="img/sample-fee.webp" alt="" width="640" height="1385" loading="lazy"></div></div></li>
+        <li class="step"><span class="step-n">3</span><b class="step-t">홈페이지</b><span class="step-d">비용·송영·하루 일과를 확인해요</span><span class="step-j">센터 홈페이지</span><div class="phone phone--img" role="img" aria-label="샘플 화면: 센터 홈페이지의 등급별 이용 비용 안내"><div aria-hidden="true"><p class="ph-top">샘플 화면</p><img src="img/flow-fee.webp?v=20261127d" alt="" width="640" height="1385" loading="lazy"></div></div></li>
         <li class="step"><span class="step-n">4</span><b class="step-t">전화 · 카톡</b><span class="step-d">전화 버튼을 눌러 상담해요</span><span class="step-j">전화 연결 점검</span><div class="phone" role="img" aria-label="예시 화면: 홈페이지에서 전화 걸기 버튼을 누름"><div aria-hidden="true"><p class="ph-top">예시 화면</p><p class="ph-call"><b>○○주야간보호센터</b><span>031-000-0000</span><em class="ph-btn">전화 걸기</em><em class="ph-btn ph-btn--line">카톡 상담</em></p></div></div></li>
       </ol>
       <div class="scene-foot" aria-hidden="true"><span class="scene-dots"><i class="is-on"></i><i></i><i></i><i></i></span><span><b id="sceneN">1</b> / 4</span></div>
@@ -988,26 +975,11 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <!-- ③ 이렇게 만들어 드려요 (가상의 '샘플주야간보호센터' 화면 — 실제 센터는 동의를 받은 뒤에만 사례로 올립니다) -->
 <section class="sec sec-white" id="sample" aria-labelledby="sample-title">
   <div class="wrap">
-    <h2 class="h2" id="sample-title">센터 홈페이지,<br>이렇게 만들어 드립니다.</h2>
+    <h2 class="h2" id="sample-title">요양기관 홈페이지,<br>이렇게 만들어 드립니다.</h2>
     <div class="shots">
-      <figure class="shot" data-rv><img src="img/sample-home.webp" alt="샘플 센터 홈페이지 첫 화면: 센터 한 줄 소개와 전화 버튼" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-fee.webp" alt="샘플 센터 홈페이지 이용 비용: 등급별 월 예상 금액 계산기" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-contact.webp" alt="샘플 센터 홈페이지 오시는 길: 지도 길찾기와 주소 복사" width="640" height="1385" loading="lazy"></figure>
-    </div>
-    <!-- 샘플 디자인 8가지 (2026-11-26 사용자 요청): 화면 그림 없이 제작기의 색 조합만. 화면 비교는 계약할 때 -->
-    <div class="themes">
-      <h3 class="h3">분위기는 8가지 중에서 고릅니다</h3>
-      <p class="fine">홈페이지에 쓰는 색 조합이에요. <span class="nw">실제 화면 비교는</span> <span class="nw">계약할 때 자세히 안내해 드려요.</span></p>
-      <ul class="theme-list">
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#82663f"></i><i style="background:#3e5638"></i><i style="background:#4b3a28"></i><i style="background:#2f4029"></i></span><b>① 햇살마루 · 기본</b><span class="theme-desc"><span class="nw">품격 있고 따스한</span> <span class="nw">골드 &amp; 포레스트그린</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#365B49"></i><i style="background:#896b3e"></i><i style="background:#5F6F52"></i><i style="background:#223A2E"></i></span><b>② 편백정원</b><span class="theme-desc"><span class="nw">편안한</span> <span class="nw">숲초록 &amp; 앤틱브론즈</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#235A5C"></i><i style="background:#8d6a3d"></i><i style="background:#4F706B"></i><i style="background:#173B3D"></i></span><b>③ 맑은활력</b><span class="theme-desc"><span class="nw">산뜻한</span> <span class="nw">에메랄드틸 &amp; 앰버골드</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#5E4973"></i><i style="background:#8b6a4c"></i><i style="background:#786582"></i><i style="background:#2E223B"></i></span><b>④ 고운선율</b><span class="theme-desc"><span class="nw">우아한</span> <span class="nw">플럼라벤더 &amp; 로즈골드</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#8e6221"></i><i style="background:#3B573A"></i><i style="background:#7E5E3D"></i><i style="background:#2D3A27"></i></span><b>⑤ 웃음가득</b><span class="theme-desc"><span class="nw">화사한</span> <span class="nw">허니골드 &amp; 딥올리브</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#96462E"></i><i style="background:#3D5A47"></i><i style="background:#7D5D4B"></i><i style="background:#36231D"></i></span><b>⑥ 정성한끼</b><span class="theme-desc"><span class="nw">정겨운</span> <span class="nw">테라코타 &amp; 세이지그린</span> <span class="nw">조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#A64424"></i><i style="background:#2E5848"></i><i style="background:#8C6A3D"></i><i style="background:#233A30"></i></span><b>⑦ 감귤햇살</b><span class="theme-desc"><span class="nw">생기 넘치는</span> <span class="nw">시트러스 &amp; 딥티트리</span> <span class="nw">투톤 조화</span></span></li>
-        <li><span class="theme-sw" aria-hidden="true"><i style="background:#1F3A68"></i><i style="background:#8e6b38"></i><i style="background:#48635E"></i><i style="background:#162747"></i></span><b>⑧ 단청품격</b><span class="theme-desc"><span class="nw">호텔급</span> <span class="nw">로얄인디고 &amp; 황금빛 샴페인</span> <span class="nw">투톤 조화</span></span></li>
-      </ul>
+      <figure class="shot" data-rv><img src="img/sample-home.webp?v=20261128b" alt="샘플 센터 홈페이지 첫 화면: 큰 제목과 전화 상담 버튼, 비용 계산 버튼" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-fee.webp?v=20261128b" alt="샘플 센터 홈페이지 이용 비용: 계산기의 한 달 예상 본인부담금" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-contact.webp?v=20261128b" alt="샘플 센터 홈페이지 오시는 길: 지도 길찾기와 주소 복사" width="640" height="1385" loading="lazy"></figure>
     </div>
     <div class="calc-try">
       <h3 class="h3">본인부담금 계산기,<br>직접 눌러 보세요</h3>
@@ -1028,7 +1000,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <div class="sample-notes">
       <p>장기요양 수가·식비 변경(1년 1회)은 <strong class="hl"><span class="nw">홈페이지를 만든 날부터 2년 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong> <span class="nw">2년 뒤에는 별도 비용이에요.</span></p>
       <p><a class="tl hl" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a></p>
-      <p class="fine">샘플 화면입니다. 센터 이름·전화·주소·비용은 예시이며, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
+      <p class="fine">샘플 화면입니다. 가상의 센터이며 이름·전화·주소·비용은 예시이고, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
   </div>
 </section>
