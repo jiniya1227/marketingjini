@@ -491,6 +491,22 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     .hero.hero-cover .s-dots { bottom: 76px; }   /* 아래 고정 단추 바로 위 (2026-11-28 사용자 요청으로 조금 아래로) */
     .hero.hero-cover .ai-note { padding: 8px 0 12px; font-size: 13px; }
   }
+  /* 사진 가득: 글자 크기는 반반 배치와 같게(제목 36~52px), 사진이 여러 장이면 홀수 번째 사진에 큰 제목·짝수 번째 사진에 작은 소개 글을
+     같은 자리에서 바꿔 보여 준다 (2026-11-28 사용자 요청). msg-swap·s-alt 는 사진 넘기기 코드가 붙이고, 코드가 없으면 둘 다 위아래로 보인다 */
+  @media (min-width: 961px) {   /* 휴대폰 글자 크기는 반반 배치와 같은 기본값 그대로 */
+    .hero.hero-cover h1 { font-size: clamp(36px, 3.5vw, 52px); letter-spacing: -1.2px; }
+    .hero.hero-cover .hero-row .lead { font-size: clamp(17px, 1.4vw, 21px); }
+  }
+  .hero.hero-cover.msg-swap .hero-top { display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; }
+  .hero.hero-cover.msg-swap .hero-row { display: contents; }
+  .hero.hero-cover.msg-swap .hero-text, .hero.hero-cover.msg-swap .hero-row .lead { grid-area: 1 / 1; align-self: end; margin: 0; transition: opacity .8s ease; }
+  .hero.hero-cover.msg-swap .hero-row .btns { grid-area: 2 / 1; }
+  .hero.hero-cover.msg-swap .hero-row .lead { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-alt .hero-text { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-alt .hero-row .lead { opacity: 1; }
+  @media (max-width: 960px), (orientation: portrait) {
+    .hero.hero-cover.msg-swap .hero-top { align-content: end; }
+  }
   /* 휴대폰(아래 고정 단추에 '전화 상담'이 늘 있는 화면): 첫 화면의 전화 상담 버튼은 빼고, 남은 버튼이 없으면 버튼 줄도 뺀다 (2026-11-28 사용자 요청) */
   @media (max-width: 720px) {
     .hero .hero-row .btns .btn.cta { display: none; }
@@ -1330,12 +1346,16 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     });
     var dots = dotsBox.querySelectorAll('button');
     var paused = false;
+    /* 사진 가득 배치: 홀수 번째 사진에는 큰 제목, 짝수 번째 사진에는 작은 소개 글 (2026-11-28 사용자 요청) */
+    var cover = box.closest('.hero-cover');
+    if (cover && slides.length > 1) cover.classList.add('msg-swap');
     /* 멈춤 버튼은 두지 않는다(2026-11-28). 대신 사진을 누르면 멈추고, 다시 누르면 이어서 넘어간다 */
     box.addEventListener('click', function (e) { if (e.target.closest('button')) return; paused = !paused; if (paused) clearInterval(timer); else restart(); });
     function go(n) {
       cur = (n + slides.length) % slides.length;
       slides.forEach(function (s, i) { s.classList.toggle('on', i === cur); });
       dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+      if (cover) cover.classList.toggle('s-alt', cur % 2 === 1);
     }
     function restart() {
       clearInterval(timer);
@@ -1343,7 +1363,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     }
     box.querySelector('.s-prev').addEventListener('click', function () { go(cur - 1); restart(); });
     box.querySelector('.s-next').addEventListener('click', function () { go(cur + 1); restart(); });
-    box.addEventListener('mouseenter', function () { clearInterval(timer); });
+    box.addEventListener('mouseenter', function () { if (!cover) clearInterval(timer); });   /* 사진 가득은 첫 화면 전체가 사진이라 마우스를 올려도 계속 넘어간다 */
     box.addEventListener('mouseleave', restart);
     var x0 = null;
     box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
