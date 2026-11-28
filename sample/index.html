@@ -515,6 +515,28 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero .hero-row .lead-3 { display: none; }   /* 3번 사진 하루 소개: 사진 넘기기가 돌 때만 보임 */
   .hero.hero-cover.msg-swap .hero-row .lead.lead-3 { display: block; }
   .hero .lead-3 .dl { display: inline-block; }   /* 뜻 덩어리 사이에서만 줄바꿈 */
+  /* 컴퓨터: 넓은 사진 덮개 대신 글자·전화 단추 뒤에만 모서리 둥근 반투명 상자 (2026-11-28 사용자 요청 — 사진은 그대로 또렷하게).
+     사진마다 바뀌는 글(제목·소개·하루 소개)이 각자 상자를 갖고, 아래 여백 안에 단추가 올라앉는다. 휴대폰은 아래쪽 덮개 그대로 */
+  @media (min-width: 961px) and (orientation: landscape) {
+    .hero.hero-cover.msg-swap .slider::after { display: none; }
+    .hero.hero-cover.msg-swap .hero-text, .hero.hero-cover.msg-swap .hero-row .lead { position: relative; z-index: 0; justify-self: start; width: fit-content; min-width: 360px; max-width: none; margin-left: -36px; padding: 30px 36px 116px; transition: opacity .35s ease; }
+    .hero.hero-cover.msg-swap .hero-text::before, .hero.hero-cover.msg-swap .hero-row .lead::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 18px; background: rgba(10, 22, 16, .6); }
+    /* 사진이 바뀔 때(2026-11-28 사용자 C안): 상자가 왼쪽에서 오른쪽으로 펼쳐지고(0.5초), 0.2초 뒤 글자가 살짝 떠오른다(글자 움직임은 아래 공통) */
+    .hero.hero-cover.msg-swap.msg-anim:not(.s-alt):not(.s-3) .hero-text::before,
+    .hero.hero-cover.msg-swap.msg-anim.s-alt .hero-row .lead:not(.lead-3)::before,
+    .hero.hero-cover.msg-swap.msg-anim.s-3 .hero-row .lead-3::before { animation: box-open .55s cubic-bezier(.2, .7, .2, 1) both; }
+    @keyframes box-open { from { clip-path: inset(0 100% 0 0 round 18px); } to { clip-path: inset(0 0 0 0 round 18px); } }
+  }
+  /* 사진이 바뀔 때 새 글자는 0.2초 뒤 살짝 떠오른다 — 컴퓨터·휴대폰 공통 (처음 화면은 원래 등장 움직임 그대로) */
+  .hero.hero-cover.msg-swap .hero-row .lead > .lt { display: block; }
+  .hero.hero-cover.msg-swap.msg-anim:not(.s-alt):not(.s-3) .hero-text > h1,
+  .hero.hero-cover.msg-swap.msg-anim.s-alt .hero-row .lead:not(.lead-3) > .lt,
+  .hero.hero-cover.msg-swap.msg-anim.s-3 .hero-row .lead-3 > .lt { animation: box-text .55s cubic-bezier(.2, .7, .2, 1) .2s both; }
+  @keyframes box-text { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @media (min-width: 961px) and (orientation: landscape) {
+    .hero.hero-cover.msg-swap:has(.hero-calculator-link) .hero-text, .hero.hero-cover.msg-swap:has(.hero-calculator-link) .hero-row .lead { min-width: 640px; }
+    .hero.hero-cover.msg-swap .hero-row .btns { position: relative; align-self: start; margin: -86px 0 0; }   /* 단추 높이 56 + 아래 여백 30 (align-self: 단추가 늘어나지 않게) */
+  }
   .hero.hero-cover.msg-swap.s-alt .hero-row .lead.lead-3 { opacity: 0; }
   .hero.hero-cover.msg-swap.s-3 .hero-text { opacity: 0; }
   .hero.hero-cover.msg-swap.s-3 .hero-row .lead.lead-3 { opacity: 1; }
@@ -1262,8 +1284,8 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     <div class="hero-top">
     <div class="hero-text rv"><h1><span class="l">어르신의 즐거운 하루,</span> <span class="l">보호자의 안심에</span> <span class="l"><u>샘플</u>이 함께합니다.</span></h1></div>
     <div class="hero-row rv">
-      <p class="lead">따뜻한 한 끼, 반가운 인사, 함께하는 즐거움.<br>어르신께는 활기찬 하루를, 보호자님께는<br>마음 놓이는 일상을 전합니다.</p>
-      <p class="lead lead-3"><span class="dl">아침에는 차량으로</span> <span class="dl">댁 앞까지 모시러 가고,</span><br><span class="dl">따뜻한 식사와 즐거운 활동으로</span> <span class="dl">하루를 채운 뒤</span><br><span class="dl">돌아가실 때도</span> <span class="dl">댁까지 편안히 모셔다 드립니다.</span></p>
+      <p class="lead"><span class="lt">따뜻한 한 끼, 반가운 인사, 함께하는 즐거움.<br>어르신께는 활기찬 하루를, 보호자님께는<br>마음 놓이는 일상을 전합니다.</span></p>
+      <p class="lead lead-3"><span class="lt"><span class="dl">아침에는 차량으로</span> <span class="dl">댁 앞까지 모시러 가고,</span><br><span class="dl">따뜻한 식사와 즐거운 활동으로</span> <span class="dl">하루를 채운 뒤</span><br><span class="dl">돌아가실 때도</span> <span class="dl">댁까지 편안히 모셔다 드립니다.</span></span></p>
       <div class="btns"><a class="btn cta" href="tel:0310000000">전화 상담 031-000-0000</a></div>
     </div>
     </div>
@@ -1448,7 +1470,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
       dotsBox.appendChild(d);
     });
     var dots = dotsBox.querySelectorAll('button');
-    var paused = false;
+    var paused = false, swapped = false;
     /* 사진 가득 배치: 홀수 번째 사진에는 큰 제목, 짝수 번째 사진에는 작은 소개 글 (2026-11-28 사용자 요청) */
     var cover = box.closest('.hero-cover');
     if (cover && slides.length > 1) cover.classList.add('msg-swap');
@@ -1459,6 +1481,8 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
       slides.forEach(function (s, i) { s.classList.toggle('on', i === cur); });
       dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
       if (cover) {   /* 사진마다 글: 1 큰 제목 → 2 소개 글 → 3 하루 소개(.lead-3 이 있을 때) → 다시 처음 */
+        if (swapped) cover.classList.add('msg-anim');   /* 처음 화면은 원래 등장 움직임 그대로, 사진이 바뀔 때부터 상자 펼침 */
+        swapped = true;
         var ph = cover.querySelector('.lead-3') ? cur % 3 : cur % 2;
         cover.classList.toggle('s-alt', ph === 1); cover.classList.toggle('s-3', ph === 2);
       }
