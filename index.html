@@ -896,8 +896,11 @@
 /* ⑤ '마케팅지니가 함께 정리해 드릴게요.': 낱말이 하나씩 내려앉고 마지막에 밑줄 — 키네틱 */
 #jini.rv-on .who-end .kw { display: inline-block; opacity: 0; }
 #jini.rv-on .who-end.is-in .kw { animation: jini-word-drop .75s cubic-bezier(.2, .75, .25, 1) calc(var(--i) * .14s + .25s) both; }
-#jini.rv-on .who-end .ku { padding-bottom: .06em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%231F1A33'/%3E%3C/svg%3E") no-repeat 0 100% / 0% .1em; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size .8s cubic-bezier(.2, .7, .2, 1) var(--k-line, 1s); }
-#jini.rv-on .who-end.is-in .ku { background-size: 100% .1em; }
+#jini.rv-on .who-end .ku { padding-bottom: .24em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M3 13 C 40 9.5, 70 16, 110 12 S 180 8.5, 220 12.5 S 280 10, 297 5.5' fill='none' stroke='%236A4BE3' stroke-width='3.4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M14 16 C 70 13, 140 17.5, 200 14 S 260 12.5, 290 10' fill='none' stroke='%236A4BE3' stroke-width='1.8' stroke-linecap='round' stroke-opacity='.6' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") no-repeat 0 100% / 0% .5em; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size .8s cubic-bezier(.2, .7, .2, 1) var(--k-line, 1s); }   /* 보라 손글씨 밑줄 — 작업 노트 제목과 같은 그림 (2026-11-28 사용자 요청, 그 전에는 먹색 곧은 줄) */
+#jini.rv-on .who-end.is-in .ku { background-size: 100% .5em; }
+/* 휴대폰: '마케팅지니가' 다음에서 줄을 바꾼다 (2026-11-28 사용자 요청) */
+#jini .who-end .m-br { display: none; }
+@media (max-width: 899px) { #jini .who-end .m-br { display: inline; } }
 @keyframes jini-word-drop { 0% { opacity: 0; transform: translateY(-.75em) rotate(-8deg) scale(1.15); } 60% { opacity: 1; transform: translateY(.06em) rotate(2deg) scale(.98); } 100% { opacity: 1; transform: none; } }
 
 /* ---------- PC 겹침 효과 (움직임 줄이기·낮은 창에서는 보통 스크롤) ---------- */
@@ -1021,7 +1024,7 @@ document.getElementById('jini').classList.add('sand-on');
       <li class="worry">홈페이지는 비싸고, 만들어도 고치기가 어려워요.</li>
       <li class="worry">직원에게 맡겼는데 그만두면 다시 처음부터예요.</li>
     </ul>
-    <p class="who-end">하나라도 해당되면,<br><strong>마케팅지니가 함께 정리해 드릴게요.</strong></p>
+    <p class="who-end">하나라도 해당되면,<br><strong>마케팅지니가<br class="m-br"> 함께 정리해 드릴게요.</strong></p>
   </div>
 </section>
 
@@ -1094,9 +1097,9 @@ document.getElementById('jini').classList.add('sand-on');
   <div class="wrap">
     <h2 class="h2" id="sample-title">요양기관 홈페이지,<br>이렇게 만들어 드립니다.</h2>
     <div class="shots">
-      <figure class="shot" data-rv><img src="img/sample-home.webp?v=20261128zk" alt="샘플 센터 홈페이지 첫 화면: 큰 제목과 전화 상담 버튼, 비용 계산 버튼" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-program.webp?v=20261128zk" alt="샘플 센터 홈페이지 프로그램: 신체 활동과 여가·행사 사진" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-blog.webp?v=20261128zk" alt="샘플 센터 홈페이지 블로그 소식: 프로그램표·식단표 보기와 활동 사진 네 칸" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-home.webp?v=20261128zl" alt="샘플 센터 홈페이지 첫 화면: 큰 제목과 전화 상담 버튼, 비용 계산 버튼" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-program.webp?v=20261128zl" alt="샘플 센터 홈페이지 프로그램: 신체 활동과 여가·행사 사진" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-blog.webp?v=20261128zl" alt="샘플 센터 홈페이지 블로그 소식: 프로그램표·식단표 보기와 활동 사진 네 칸" width="640" height="1385" loading="lazy"></figure>
     </div>
     <div class="calc-try">
       <h3 class="h3">본인부담금 계산기,<br>직접 눌러 보세요</h3>
@@ -1797,9 +1800,11 @@ document.getElementById('jini').classList.add('sand-on');
   if (quote) splitWords(quote, 'w');
   var endS = root.querySelector('.who-end strong');
   if (endS) {
+    var br0 = endS.querySelector('br'), brAt = br0 && br0.previousSibling ? br0.previousSibling.textContent.trim().split(/\s+/).filter(Boolean).length : 0;   /* 휴대폰 줄바꿈 자리(낱말 수) */
     var ku = document.createElement('span'); ku.className = 'ku'; ku.textContent = endS.textContent.trim();
     endS.textContent = ''; endS.appendChild(ku);
     ku.style.setProperty('--k-line', (splitWords(ku, 'kw') * .14 + .6).toFixed(2) + 's');
+    if (brAt) { var kw = ku.querySelectorAll('.kw')[brAt - 1]; if (kw && kw.nextSibling) { var br = document.createElement('br'); br.className = 'm-br'; ku.insertBefore(br, kw.nextSibling); } }
   }
 
   /* 맨 아래 상담 칸의 카톡 단추: 화면에 보이는 동안 화살표가 콕콕 가리킴 (2026-11-28 사용자 요청, 안 보이면 멈춤) */
