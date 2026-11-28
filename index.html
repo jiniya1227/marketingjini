@@ -513,8 +513,9 @@
 #jini .calc-try { margin-top: 56px; padding: 26px 22px 28px; border-radius: 12px; background: var(--yellow); }
 #jini .calc-try p { margin-top: 10px; font-size: 17px; line-height: 1.7; }
 #jini .calc-try .btn { margin-top: 18px; }
-#jini .svc .rows p.svc-price { margin-bottom: 12px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 27px; line-height: 1.35; letter-spacing: -.02em; }
-#jini .svc-note { margin-top: 18px; font-size: 16px; font-weight: 700; line-height: 1.7; }
+#jini .svc .rows p.svc-what { margin-bottom: 10px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 21px; line-height: 1.4; letter-spacing: -.02em; } /* 2026-11-28 가격 대신 무엇을 해 드리는지 (가격은 가격 칸 한 곳) */
+#jini .svc-no { margin-right: 10px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600; font-size: 1.15em; line-height: 1; color: var(--violet); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; } /* 가격 칸 01 02 03 과 같은 모양 */
+#jini .svc-more { margin-top: 26px; } /* '가격 한눈에 보기' 단추 — A4 안내자료 단추와 같은 모양 */
 /* 먹색 칸이 이어지는 곳(만드는 사람 → 질문)은 흰 선으로 나눔 */
 #jini #maker + #faq { border-top: 1px solid var(--white); }
 
@@ -662,11 +663,12 @@
   #jini .svc .rows > li { padding: 34px 30px 36px; }
   #jini .svc .rows > li.svc-rec { margin: -16px 0; padding-top: 50px; padding-bottom: 52px; } /* 추천 칸은 위아래로 조금 더 크게 (구분선 높이는 그대로) */
   #jini .svc-badge { top: 22px; right: 22px; }
-  #jini .svc .rows p.svc-price { font-size: 24px; } /* 세 칸 가격이 한 줄에 들어가게 */
-  #jini .svc-note { margin-top: 38px; } /* 추천 칸이 아래로 나온 만큼 띄움 */
+  #jini .svc .rows p.svc-what { min-height: 2.8em; font-size: 20px; } /* 두 줄 자리를 잡아 세 칸 본문 높이를 맞춤 */
+  #jini .svc-more { margin-top: 42px; } /* 추천 칸이 아래로 나온 만큼 띄움 */
+  #jini .svc-more .doc-btn { display: inline-flex; }
   #jini .svc > .h3 { font-size: 48px; }
   #jini .svc > .lead { font-size: 21px; }
-  #jini .svc-name { min-height: calc(2.7em + 15px); font-size: clamp(19px, 1.95vw, 27px); white-space: nowrap; } /* 첫 칸 제목이 두 줄이라 세 칸의 구분선·가격 높이를 맞춤 */
+  #jini .svc-name { font-size: clamp(22px, 2vw, 27px); white-space: nowrap; } /* 2026-11-28 제목이 모두 한 줄이 되어 높이 맞춤을 뺌 */
   #jini .svc .rows p { font-size: 19px; }
   #jini .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 48px; }
   #jini .shot { width: 100%; }
@@ -1033,12 +1035,13 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   <div class="wrap svc">
     <h2 class="h3" id="svc-title">센터는 사진만 <span class="nw">보내 주세요.</span></h2>
     <p class="lead">보호자가 찾는 길은 마케팅지니가 함께 정리합니다. <span class="nw">주야간보호센터 중심으로,</span> <span class="nw">방문요양·요양원도 상담 가능해요.</span></p>
+    <!-- 하는 일 (2026-11-28 사용자 A안): 가격은 아래 '가격' 칸 한 곳에만 둔다. 여기는 무엇을 해 드리는지만, 순서·번호는 가격 칸과 같게(02 시작 패키지 추천) -->
     <ul class="rows">
-      <li class="svc-rec"><span class="svc-badge">추천</span><b class="svc-name">홈페이지+<wbr><span class="nw">블로그·플레이스 정리</span></b><p class="svc-price">시작 패키지 <span class="nw">50만 원</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요. <span class="nw">시작 패키지로 진행해요.</span></p></li>
-      <li><b class="svc-name">홈페이지 제작</b><p class="svc-price">25만 원</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
-      <li><b class="svc-name">월간 관리</b><p class="svc-price"><span class="nw">월 18만 원</span> <span class="nw">또는 25만 원</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p></li>
+      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">01</span>홈페이지 제작</b><p class="svc-what">센터 홈페이지 1개</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
+      <li class="svc-rec"><span class="svc-badge">추천</span><b class="svc-name"><span class="svc-no" aria-hidden="true">02</span>시작 패키지</b><p class="svc-what">홈페이지 + <span class="nw">블로그·플레이스 정리</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요.</p></li>
+      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">03</span>월간 관리</b><p class="svc-what"><span class="nw">블로그 글</span> <span class="nw">+ 플레이스 소식</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p></li>
     </ul>
-    <p class="svc-note">부가세 10%와 도메인 비용은 별도예요.</p>
+    <p class="svc-more"><a class="doc-btn" href="#price">가격 한눈에 보기<i class="doc-arrow" aria-hidden="true"></i></a></p>
   </div>
 </section>
 
