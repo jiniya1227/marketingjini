@@ -160,64 +160,66 @@
   #jini .biz { grid-column: 1 / -1; }
 }
 
-/* 인쇄: A4 한 장 (2026-11-25 가독성: 본문 12px 이상, 상품은 굵은 위 선 + 번호 38px + 가격 26px) */
-@page { size: A4; margin: 9mm; }
+/* 인쇄: A4 한 장 (2026-11-25 가독성: 본문 12px 이상, 상품은 굵은 위 선 + 번호 38px + 가격 26px)
+   2026-11-28 가시성 개선(사용자 요청): 글자를 한 단계씩 키우고, 상품 설명은 한 줄에 하나씩 체크 목록으로, 진행 번호는 크게, 맨 아래는 QR 옆에 사업자 정보까지 넣어 높이를 줄임 */
+@page { size: A4; margin: 8mm; }
 @media print {
   #jini { min-height: 0; background: var(--white); }
   #jini .tb, #jini .tools { display: none; }
   #jini .sheet { max-width: none; border: 1.5px solid var(--ink); }
-  #jini .head { padding: 12px 20px; }
-  #jini .brand { font-size: 11.5px; }
+  #jini .head { padding: 11px 20px 12px; }
+  #jini .brand { font-size: 12px; }
   #jini .brand img { width: 22px; height: 22px; }
-  #jini .head h1 { margin-top: 7px; font-size: 28px; }
-  #jini .head-sub { margin-top: 2px; font-size: 16px; }
-  #jini .head-lead { margin-top: 5px; font-size: 12px; line-height: 1.5; }
-  #jini .sec { padding: 9px 20px; }
-  #jini .sec-t { font-size: 16px; margin-bottom: 6px; }
+  #jini .head h1 { margin-top: 6px; font-size: 30px; }
+  #jini .head-sub { margin-top: 2px; font-size: 17.5px; }
+  #jini .head-lead { margin-top: 5px; font-size: 13px; line-height: 1.5; }
+  #jini .sec { padding: 7px 20px 8px; }
+  #jini .sec-t { font-size: 17.5px; margin-bottom: 5px; }
   #jini .worries { grid-template-columns: 1fr 1fr; column-gap: 20px; }
-  #jini .worries li { padding: 3px 0; font-size: 12px; line-height: 1.45; }
+  #jini .worries li { padding: 3px 0; font-size: 13px; line-height: 1.45; }
   #jini .free { padding: 6px 12px; }
-  #jini .free-name { font-size: 14px; }
-  #jini .free-price { font-size: 20px; }
-  #jini .free p { margin-top: 2px; font-size: 11.5px; line-height: 1.45; }
-  #jini .plans { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; margin-top: 9px; border-bottom: 0; }
+  #jini .free-name { font-size: 15px; }
+  #jini .free-price { font-size: 21px; }
+  #jini .free p { margin-top: 2px; font-size: 12.5px; line-height: 1.45; }
+  #jini .plans { display: grid; grid-template-columns: 1.3fr 1fr 1fr; column-gap: 16px; margin-top: 9px; border-bottom: 0; }
   #jini .plan { display: block; padding: 6px 0 2px; border-top: 3px solid var(--ink); }
   #jini .plan-top { gap: 2px 8px; }
-  #jini .plan-no { font-size: 24px; }
-  #jini .plan-name { font-size: 15px; }
+  #jini .plan-no { font-size: 26px; }
+  #jini .plan-name { font-size: 16.5px; }
   #jini .rec { margin-left: 6px; padding: 0 5px 1px; border-width: 1.5px; border-radius: 4px; font-size: 10.5px; vertical-align: 2px; }
-  #jini .plan-price { margin-top: 1px; font-size: 26px; }
-  #jini .plan-list { display: block; margin-top: 3px; font-size: 11.5px; line-height: 1.45; }
-  #jini .plan-list li { display: inline; padding-left: 0; font-size: 11.5px; line-height: 1.45; }
-  #jini .plan-list li::before { content: none; }
-  #jini .plan-list li + li::before { content: " · "; position: static; width: auto; height: auto; border: 0; transform: none; }
+  #jini .plan-price { margin-top: 1px; font-size: 28px; }
+  #jini .plan-list { display: grid; gap: 1px; margin-top: 4px; }
+  #jini .plan-list li { padding-left: 15px; font-size: 12.5px; line-height: 1.42; }
+  #jini .plan-list li::before { left: 1px; top: .42em; width: 8px; height: 4.5px; border-left-width: 2px; border-bottom-width: 2px; }
   #jini .month { margin-top: 1px; gap: 0; }
-  #jini .month li { gap: 0 8px; font-size: 11.5px; line-height: 1.4; }
-  #jini .month b { font-size: 20px; }
-  #jini .fine { margin-top: 7px; font-size: 11px; line-height: 1.45; }
+  #jini .month li { gap: 0 8px; font-size: 12.5px; line-height: 1.4; }
+  #jini .month b { font-size: 22px; }
+  #jini .fine { margin-top: 7px; font-size: 12px; line-height: 1.45; }
   #jini .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 10px; border-top: 0; }
-  #jini .flow li { grid-template-columns: 1fr; row-gap: 0; align-content: start; padding: 3px 0 0; border-top: 2px solid var(--ink); border-bottom: 0; font-size: 11px; line-height: 1.35; }
-  #jini .flow li b { display: block; font-size: 12px; }
-  #jini .flow li::before { font-size: 14px; }
+  #jini .flow li { display: block; padding: 5px 0 0; border-top: 2px solid var(--ink); border-bottom: 0; font-size: 12px; line-height: 1.38; }
+  #jini .flow li b { display: block; font-size: 13.5px; line-height: 20px; }
+  #jini .flow li::before { float: left; height: 20px; margin: 0 6px 0 0; font-size: 19px; line-height: 20px; } /* 번호는 제목 옆에 (한 줄 아낌), 설명은 그 아래 */
   #jini .faq { grid-template-columns: 1fr 1fr; column-gap: 20px; }
   #jini .faq div { padding: 2px 0; }
-  #jini .faq dt { font-size: 12px; line-height: 1.35; }
-  #jini .faq dd { margin-top: 0; font-size: 11.5px; line-height: 1.38; }
+  #jini .faq dt { font-size: 13px; line-height: 1.35; }
+  #jini .faq dd { margin-top: 0; font-size: 12.5px; line-height: 1.38; }
   /* 인쇄에서는 가격·진행 순서 글을 뜻 단위로 묶지 않고 이어 써서 줄 수를 줄임 (A4 한 장) */
   #jini .plan-list .nw, #jini .month .nw { white-space: normal; }
   #jini .who { grid-template-columns: auto 1fr; align-items: center; gap: 2px 20px; padding: 7px 20px; }
-  #jini .who-n { font-size: 28px; }
-  #jini .who-t { font-size: 13px; }
-  #jini .who ul { font-size: 12px; }
-  #jini .foot { grid-template-columns: 1fr auto; align-items: center; gap: 4px 20px; padding: 9px 20px; }
+  #jini .who-n { font-size: 31px; }
+  #jini .who-t { font-size: 14.5px; }
+  #jini .who ul { font-size: 13px; }
+  #jini .foot { grid-template-columns: 1fr auto; grid-template-areas: "main qr" "biz qr"; align-items: center; gap: 4px 20px; padding: 8px 20px; }
+  #jini .foot-main { grid-area: main; }
+  #jini .qr { grid-area: qr; }
   #jini .foot-main { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; }
-  #jini .foot-t { font-size: 15px; }
-  #jini .foot-cta { min-height: 32px; padding: 0 12px; font-size: 13px; }
-  #jini .foot-tel { font-size: 12.5px; }
-  #jini .foot-tel a { font-size: 16px; }
+  #jini .foot-t { font-size: 17px; }
+  #jini .foot-cta { min-height: 34px; padding: 0 14px; font-size: 14px; }
+  #jini .foot-tel { font-size: 13.5px; }
+  #jini .foot-tel a { font-size: 19px; }
   #jini .qr { display: grid; justify-items: center; gap: 2px; padding: 4px; border: 1.5px solid var(--ink); border-radius: 6px; background: var(--white); color: var(--ink); font-size: 9.5px; font-weight: 700; text-decoration: none; }
-  #jini .qr img { width: 62px; height: 62px; }
-  #jini .biz { grid-column: 1 / -1; font-size: 10.5px; line-height: 1.45; }
+  #jini .qr img { width: 58px; height: 58px; }
+  #jini .biz { grid-area: biz; grid-column: auto; align-self: start; font-size: 11px; line-height: 1.45; }
   #jini .sec, #jini .who, #jini .foot { break-inside: avoid; }
 }
 </style>
@@ -292,7 +294,7 @@
         </ul>
       </li>
     </ol>
-    <p class="fine">모든 가격은 부가세 10% 별도입니다. 작업 범위·일정과 최종 금액은 상담 후 견적서로 먼저 안내해 드립니다. 월간 관리는 약정이 없고, 환불·해지와 사진 보관 조건은 계약 전에 문서로 안내해 드립니다.</p>
+    <p class="fine">모든 가격은 부가세 10% 별도입니다. 작업 범위·일정과 최종 금액은 상담 후 견적서로 먼저 안내해 드립니다. 월간 관리는 약정이 없고, <span class="nw">환불·해지와</span> 사진 보관 조건은 계약 전에 문서로 안내해 드립니다.</p>
   </section>
 
   <section class="sec">
@@ -302,7 +304,7 @@
         <li><span><b>상담·무료 진단</b> 센터 상황 듣기, AI 추천 확인 화면 전달</span></li>
         <li><span><b>견적서·결제</b> 금액을 문서로, 전액 선결제 후 계약</span></li>
         <li><span><b>사진 보내기</b> 밴드·카톡방에 평소처럼 사진과 한 줄 설명</span></li>
-        <li><span><b>작성·확인</b> 사진 고르기·모자이크·글 작성 뒤 센터 확인</span></li>
+        <li><span><b>작성·확인</b> 사진 고르기·<span class="nw">모자이크·글</span> 작성 뒤 센터 확인</span></li>
         <li><span><b>게시·보고</b> 블로그·플레이스에 올리고 매달 보고</span></li>
       </ol>
     </div>

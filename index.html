@@ -308,7 +308,7 @@
 #jini #sample { padding-bottom: 56px; }
 /* ---------- ④ 가격 ---------- */
 /* 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 노란 바탕 위 흰 상자 3개, 02 시작 패키지는 추천 — 보라 테두리·추천 표시·보라 버튼, PC에서 위아래로 조금 더 큼.
-   이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 → 작은 안내. 흐린 글자·가는 선은 먹색을 반투명으로 */
+   이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 (버튼 아래 작은 안내는 2026-11-28 사용자 요청으로 뺌). 흐린 글자·가는 선은 먹색을 반투명으로 */
 #jini .plans { list-style: none; margin-top: 40px; display: grid; gap: 20px; }
 #jini .plan { position: relative; display: flex; flex-direction: column; padding: 30px 24px 26px; border: 2px solid #1F1A3340; border-radius: 22px; background: var(--white); cursor: pointer; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
 #jini .plan.is-rec { border: 3px solid var(--violet); box-shadow: 0 22px 44px #1F1A3326; }
@@ -333,7 +333,6 @@
 #jini .plan.is-rec .plan-btn { border-color: var(--violet); background: var(--violet); color: var(--white); }
 #jini .plan .plan-btn:hover, #jini .plan.is-rec .plan-btn:hover { border-color: var(--ink); background: var(--ink); color: var(--white); }
 #jini .plan-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
-#jini .plan-foot { margin-top: 14px; font-size: 14px; line-height: 1.6; opacity: .65; }
 /* 상자를 누르거나(마우스) 상품 찾기 결과가 나오면 그 상자가 살짝 떠오르며 강조 — 한 번에 하나, 다시 누르면 원래대로 */
 #jini .plan.is-picked { z-index: 1; border-color: var(--ink); box-shadow: 10px 10px 0 var(--ink); transform: translateY(-6px); animation: jini-pop .45s ease; }
 #jini .plan.is-rec.is-picked { border-color: var(--violet); }
@@ -481,23 +480,24 @@
 #jini .sc-msg { margin-top: 6px; font-size: 16px; line-height: 1.7; }
 #jini .check .btn { margin-top: 44px; }
 /* 진행 순서 · 약속 (가격 아래) */
-#jini .proc { margin-top: 44px; padding: 26px 22px 24px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
-#jini .proc-title { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1.4; }
-#jini .proc-title--2 { margin-top: 30px; }
-#jini .proc-steps { list-style: none; counter-reset: proc; margin-top: 14px; border-top: 1px solid var(--ink); }
-#jini .proc-steps li { counter-increment: proc; position: relative; display: grid; grid-template-columns: 40px 1fr; column-gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--ink); }
-#jini .proc-steps li::before { content: counter(proc); grid-row: span 2; align-self: start; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border: 3px solid var(--violet); border-radius: 8px; background: var(--violet); color: var(--white); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 20px; line-height: 1; transition: background-color .25s ease, border-color .25s ease, color .25s ease; }
+#jini .proc { margin-top: 44px; padding: 30px 22px 28px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
+/* 진행 순서·약속 칸 가독성 (2026-11-28 사용자 요청): 제목·글자를 키우고 본문 글자를 조금 굵게, 줄 간격과 여백을 넉넉히 */
+#jini .proc-title { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 25px; line-height: 1.4; letter-spacing: -.02em; }
+#jini .proc-title--2 { margin-top: 42px; }
+#jini .proc-steps { list-style: none; counter-reset: proc; margin-top: 16px; border-top: 1px solid var(--ink); }
+#jini .proc-steps li { counter-increment: proc; position: relative; display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--ink); }
+#jini .proc-steps li::before { content: counter(proc); grid-row: span 2; align-self: start; display: flex; justify-content: center; align-items: center; width: 44px; height: 44px; border: 3px solid var(--violet); border-radius: 8px; background: var(--violet); color: var(--white); font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 22px; line-height: 1; transition: background-color .25s ease, border-color .25s ease, color .25s ease; }
 /* 번호 사이 연결선 (휴대폰은 아래로) */
-#jini .proc-steps li::after { content: ""; position: absolute; left: 18.5px; top: 54px; bottom: -15px; width: 3px; background: var(--violet); transform-origin: top; transition: transform .4s ease; }
+#jini .proc-steps li::after { content: ""; position: absolute; left: 20.5px; top: 62px; bottom: -19px; width: 3px; background: var(--violet); transform-origin: top; transition: transform .4s ease; }
 #jini .proc-steps li:last-child::after { display: none; }
 /* 차례로 켜기 (2026-11-26 사용자 요청, 스크립트가 .flow-on을 붙일 때만 — 움직임 줄이기·스크립트 없음이면 처음부터 켜진 모습) */
 #jini .proc-steps.flow-on li:not(.is-lit)::before { border-color: var(--ink); background: var(--white); color: var(--ink); }
 #jini .proc-steps.flow-on li:not(.is-lit)::after { transform: scaleY(0); }
-#jini .proc-steps b { font-size: 18px; line-height: 1.4; }
-#jini .proc-steps span { font-size: 16px; line-height: 1.6; }
-#jini .proc-promise { list-style: none; margin-top: 14px; border-top: 1px solid var(--ink); }
-#jini .proc-promise li { position: relative; padding: 11px 0 11px 22px; border-bottom: 1px solid var(--ink); font-size: 16px; font-weight: 700; line-height: 1.6; }
-#jini .proc-promise li::before { content: ""; position: absolute; left: 1px; top: calc(11px + .45em); width: 12px; height: 6px; border-left: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); transform: rotate(-45deg); }
+#jini .proc-steps b { font-size: 20px; line-height: 1.4; letter-spacing: -.02em; }
+#jini .proc-steps span { margin-top: 4px; font-size: 17px; font-weight: 500; line-height: 1.65; }
+#jini .proc-promise { list-style: none; margin-top: 16px; border-top: 1px solid var(--ink); }
+#jini .proc-promise li { position: relative; padding: 15px 0 15px 30px; border-bottom: 1px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.6; }
+#jini .proc-promise li::before { content: ""; position: absolute; left: 2px; top: calc(15px + .38em); width: 14px; height: 7px; border-left: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(-45deg); }
 /* 계산기 바로 가기 */
 #jini .calc-try .h3 { font-size: 26px; }
 #jini .calc-try { margin-top: 56px; padding: 26px 22px 28px; border-radius: 12px; background: var(--yellow); }
@@ -579,15 +579,17 @@
   #jini .self-sec .lead { grid-column: 1; grid-row: 2; }
   #jini .self-sec .selfcheck { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; padding: 12px 32px 30px; }
   #jini .sc-send { width: auto; }
-  #jini .proc { padding: 34px 40px 32px; }
-  #jini .proc-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 18px; border-top: 0; }
-  #jini .proc-steps li { grid-template-columns: 1fr; row-gap: 8px; align-content: start; border-top: 3px solid var(--ink); border-bottom: 0; }
+  #jini .proc { padding: 44px 48px 40px; }
+  #jini .proc-title { font-size: 30px; }
+  #jini .proc-title--2 { margin-top: 52px; }
+  #jini .proc-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 22px; margin-top: 20px; border-top: 0; }
+  #jini .proc-steps li { grid-template-columns: 1fr; row-gap: 10px; align-content: start; padding: 22px 0 6px; border-top: 3px solid var(--ink); border-bottom: 0; }
   #jini .proc-steps li::before { grid-row: auto; justify-self: start; }
   /* 연결선 (PC는 칸 윗선을 따라 옆으로) */
-  #jini .proc-steps li::after, #jini .proc-steps li:last-child::after { display: block; left: 0; right: -18px; top: -3px; bottom: auto; width: auto; height: 3px; transform-origin: left; }
+  #jini .proc-steps li::after, #jini .proc-steps li:last-child::after { display: block; left: 0; right: -22px; top: -3px; bottom: auto; width: auto; height: 3px; transform-origin: left; }
   #jini .proc-steps li:last-child::after { right: 0; }
   #jini .proc-steps.flow-on li:not(.is-lit)::after { transform: scaleX(0); }
-  #jini .proc-promise { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  #jini .proc-promise { display: grid; grid-template-columns: 1fr 1fr; column-gap: 44px; margin-top: 20px; }
   #jini .worries { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; border-top: 0; }
   #jini .worry { border-top: 3px solid var(--ink); border-bottom: 0; padding: 24px 0 24px 34px; font-size: 21px; }
   #jini .worry::before { top: 18px; }
@@ -780,6 +782,34 @@
 /* 큰 칸 제목은 조금만 올라오게 (2026-11-26) */
 #jini.rv-on .big[data-rv] { transform: translateY(50px); transition-duration: .7s, .9s; }
 #jini.rv-on .big[data-rv].is-in { transform: none; }
+/* 단추 반응 (2026-11-28 사용자 선택, 센터 제작기와 같은 방식): 누르면 살짝 눌리고 진한 색이 왼쪽에서 차오름. 마우스가 있으면 올렸을 때도 차오름 */
+@media (prefers-reduced-motion: no-preference) {
+  #jini .btn, #jini .jini-cta, #jini .dock-cta, #jini .plan-btn { position: relative; overflow: hidden; isolation: isolate; }
+  #jini .btn, #jini .jini-cta, #jini .dock-cta { transition: transform .2s ease; }
+  #jini .plan-btn { transition: transform .2s ease, color .15s ease .2s, border-color .3s ease, background-color .15s; } /* 글자색은 먹색이 가운데쯤 찼을 때 바뀜 */
+  #jini .btn::before, #jini .jini-cta::before, #jini .dock-cta::before, #jini .plan-btn::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: #1F1A3342; transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.7, 0, .2, 1);
+  }
+  #jini .plan-btn::before { background: var(--ink); }
+  #jini .btn:active::before, #jini .jini-cta:active::before, #jini .dock-cta:active::before, #jini .plan-btn:active::before { transform: scaleX(1); }
+  #jini .btn:active, #jini .jini-cta:active, #jini .dock-cta:active, #jini .plan-btn:active { transform: scale(.96); transition-duration: .1s; }
+  /* 휴대폰 아래 카톡 단추: 처음 나타날 때 두 번 통통 (스크립트가 한 번만 붙임) */
+  #jini .dock-cta.is-bob { animation: jini-bob .7s ease 2; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #jini .btn:hover, #jini .jini-cta:hover { filter: none; }
+  #jini .btn:hover::before, #jini .jini-cta:hover::before, #jini .dock-cta:hover::before, #jini .plan-btn:hover::before { transform: scaleX(1); }
+  #jini .plan .plan-btn:hover { background: var(--white); }
+  #jini .plan.is-rec .plan-btn:hover { background: var(--violet); }
+}
+@keyframes jini-bob { 0% { transform: none; } 45% { transform: translateY(-10px); } 100% { transform: none; } }
+/* 만드는 사람: '8년차'가 화면에 들어오면 톡 튀어나오고, 옆 글이 뒤따라 들어옴 (2026-11-28 사용자 선택) */
+#jini.rv-on .years .years-n { opacity: 0; transform-origin: left bottom; }
+#jini.rv-on .years.is-in .years-n { animation: jini-num-pop .7s cubic-bezier(.2, .8, .3, 1.4) .15s both; }
+#jini.rv-on .years .years-t { opacity: 0; transform: translateX(-18px); transition: opacity .5s ease .75s, transform .6s cubic-bezier(.2, .7, .2, 1) .75s; }
+#jini.rv-on .years.is-in .years-t { opacity: 1; transform: none; }
+@keyframes jini-num-pop { from { opacity: 0; transform: scale(.35); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   #jini .h1-em { animation: none; }
   #jini .plan { transition: none; }
@@ -1100,7 +1130,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <section class="sec sec-yellow" id="price" aria-labelledby="price-title">
   <div class="wrap">
     <h2 class="big big--2" id="price-title" data-rv>가격</h2>
-    <!-- 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 → 작은 안내.
+    <!-- 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 (버튼 아래 작은 안내는 2026-11-28 사용자 요청으로 뺌).
          02 시작 패키지가 추천(보라 테두리·추천 표시·보라 버튼). '이 상품으로 상담하기'는 그 상품을 카톡 보낼 말에 담고 상담 칸으로 내려감 -->
     <ul class="plans">
       <li class="plan">
@@ -1121,7 +1151,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           </ul>
         </div>
         <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">도메인은 센터 이름으로 따로 사요</span> <span class="nw">(1년 2~3만 원 안팎).</span></p>
       </li>
       <li class="plan is-rec">
         <span class="plan-badge">추천</span>
@@ -1139,7 +1168,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           </ul>
         </div>
         <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">보호자가 어디서 찾아도</span> <span class="nw">같은 정보를 보게 돼요.</span></p>
       </li>
       <li class="plan">
         <div class="plan-top"><span class="plan-no" aria-hidden="true">03</span><h3 class="plan-name">월간 관리</h3></div>
@@ -1158,7 +1186,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
           </ul>
         </div>
         <a class="plan-btn" href="#contact">이 상품으로 상담하기</a>
-        <p class="plan-foot"><span class="nw">센터의 요즘 모습이</span> <span class="nw">블로그·플레이스에 쌓여요.</span></p>
       </li>
     </ul>
     <!-- 우리 센터에 맞는 상품 찾기 (2026-11-26): 버튼만 누르고 개인정보는 받지 않음. 결과에 맞는 가격 상자가 강조되고 카톡 문구에 담김 -->
@@ -1417,13 +1444,19 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     var dock = document.getElementById('dock'), hero = document.getElementById('top');
     var ends = [document.getElementById('contact'), document.querySelector('#jini .foot')];
     if (!dock || !hero || !('IntersectionObserver' in window)) return;
-    var heroSeen = true, endSeen = false, twinSeen = false;
+    var heroSeen = true, endSeen = false, twinSeen = false, bobbed = false;
+    var cta = dock.querySelector('.dock-cta');
+    if (cta) cta.addEventListener('animationend', function () { cta.classList.remove('is-bob'); });
     /* 휴대폰: 본문의 카톡 단추가 보이는 동안에는 아래 떠 있는 단추를 숨김 (2026-11-26 사용자 요청, PC 위쪽 바로가기 바는 그대로) */
     var pcBar = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
     var twins = Array.prototype.slice.call(document.querySelectorAll('#jini .btn[href*="pf.kakao.com"]'));
     function update() {
       var on = !heroSeen && !endSeen && !(twinSeen && !pcBar.matches);
       dock.classList.toggle('is-on', on);
+      if (on && !bobbed && !pcBar.matches) { /* 휴대폰: 카톡 단추가 처음 나타날 때 한 번만 통통 */
+        bobbed = true;
+        setTimeout(function () { if (cta) cta.classList.add('is-bob'); }, 600);
+      }
       dock.setAttribute('aria-hidden', on ? 'false' : 'true');
       var links = dock.querySelectorAll('a');
       for (var i = 0; i < links.length; i++) links[i].tabIndex = on ? 0 : -1;
@@ -1645,6 +1678,9 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     fit();
   }
 
+  /* 아이폰에서도 누르는 동안 단추가 눌린 모습이 보이게 (이 줄이 있어야 :active 가 동작) */
+  document.addEventListener('touchstart', function () { }, { passive: true });
+
   if (calm || !('IntersectionObserver' in window)) return;
   root.classList.add('rv-on');
 
@@ -1673,7 +1709,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  each(root.querySelectorAll('[data-rv], .hl'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
+  each(root.querySelectorAll('[data-rv], .hl, .years'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
   /* 샘플 화면 (2026-11-26): 카드가 화면 아래 30% 선을 지나 충분히 보일 때, 그림을 다 받은 뒤 움직임.
      PC는 3장이 한 줄이라 줄 전체를 보고(오른쪽 밖으로 밀려난 카드는 화면에 안 잡히므로), 휴대폰은 한 장씩 */
   var pcRow = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
