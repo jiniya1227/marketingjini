@@ -739,8 +739,9 @@
 #jini .foot-sub { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 14px; padding-top: 12px; border-top: 1px solid #FFFFFF40; font-size: 15px; font-weight: 500; }
 #jini .foot-info { margin-top: 14px; padding-top: 24px; border-top: 1px solid #FFFFFF40; font-size: 14px; line-height: 1.8; }
 #jini .foot-info p { opacity: .82; }
-#jini .foot-area { margin-top: 16px; }
-#jini .foot-copy { margin-top: 16px; opacity: .6 !important; }
+#jini .foot-brand a { display: inline-block; padding: 4px 0; margin: -4px 0; color: inherit; text-decoration: none; }   /* 큰 노란 '마케팅지니' = 맨 위(홈)로 (2026-11-28 사용자 요청). 누르는 높이 44px 이상, 자리는 그대로 */
+#jini .foot-brand a:hover, #jini .foot-brand a:focus-visible { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+#jini .foot-copy { margin-top: 16px; opacity: .6 !important; }   /* 맨 아래 저작권 줄 (2026-11-28 센터 홈페이지와 같은 문구, 지역 안내 줄은 사용자 요청으로 뺌) */
 
 /* ---------- 떠 있는 바: 휴대폰은 아래 카톡 바, PC는 오른쪽 위 바로가기 묶음 (소이정 참고, 2026-11-25) ---------- */
 #jini .dock {
@@ -1433,7 +1434,7 @@ document.getElementById('jini').classList.add('sand-on');
 <footer class="foot">
   <!-- 맨 아래 (2026-11-26 '휴대폰에서 복잡하고 답답하다'·'로고 그림은 빼는 게 깔끔'): 이름 + 한 줄 소개 → 바로가기 4칸 2줄 → 다른 페이지 한 줄 → 사업자 정보 한 줄에 하나씩. 문구는 뜻 단위로만 줄이 바뀜(nw) -->
   <div class="wrap">
-    <p class="foot-brand">마케팅지니</p>
+    <p class="foot-brand"><a href="#top">마케팅지니</a></p>
     <p class="foot-tag">고객의 시선으로 만드는 온라인 홍보</p>
     <nav class="foot-nav" aria-label="맨 아래 바로가기">
       <a href="#top">맨 위로</a><a href="#path">하는 일</a><a href="#sample">샘플</a><a href="#check">무료 진단</a><a href="#price">가격</a><a href="#maker">소개</a><a href="#faq">질문</a><a href="#notes">작업 노트</a>
@@ -1446,8 +1447,7 @@ document.getElementById('jini').classList.add('sand-on');
       <p>사업자등록번호 529-30-02199</p>
       <p>사업장 경기도 수원시 권선구</p>
       <p>상담 <a class="tl nw" href="tel:010-5904-5300">010-5904-5300</a> · <a class="tl nw" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카카오톡 채널</a></p>
-      <p class="foot-area"><span class="nw">수원·화성·용인은 직접 방문하고,</span> <span class="nw">그 밖의 지역은 온라인으로 함께합니다.</span></p>
-      <p class="foot-copy">© 2026 마케팅지니</p>
+      <p class="foot-copy">Copyright © 2026 마케팅지니 <span class="nw">All rights reserved.</span></p>
     </div>
   </div>
 </footer>
