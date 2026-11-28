@@ -419,10 +419,14 @@
 #jini .check-grid { display: grid; gap: 56px; margin-top: 44px; }
 #jini .ai { border: 3px solid var(--ink); border-radius: 16px; padding: 22px 20px; }
 #jini .ai-top { display: flex; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 700; margin-bottom: 18px; }
-/* AI 질문 타자기 효과 (2026-11-26 사용자 의견): 화면에 들어오면 한 글자씩, 다 치면 답이 차례로 나타남 */
-#jini .ask.is-typing::after { content: ""; display: inline-block; width: 2px; height: 1.05em; margin-left: 3px; vertical-align: -.15em; background: var(--ink); animation: jini-caret .8s steps(1) infinite; }
+/* AI 질문 상자: 질문은 바로 보이고, 화면에 들어오면 답이 차례로 나타남 (2026-11-28 타자기는 위 제목으로 옮김) */
 @keyframes jini-caret { 50% { opacity: 0; } }
 #jini.rv-on .tw-after { opacity: 0; transform: translateY(10px); transition: opacity .45s ease, transform .45s ease; }
+/* 무료 진단 칸 제목 타자기 (2026-11-28 사용자 A안): 자리는 투명한 원래 글자가 잡고, 그 위에 한 글자씩. 끝에 깜빡이는 커서 */
+#jini #check-title .tw-ghost { visibility: hidden; }
+#jini #check-title .tw-live { position: absolute; inset: 0; }
+#jini #check-title { position: relative; }
+#jini #check-title.is-typing .tw-live::after { content: ""; display: inline-block; width: 3px; height: .9em; margin-left: 4px; vertical-align: -.1em; background: var(--ink); animation: jini-caret .8s steps(1) infinite; }
 #jini.rv-on .tw-after.is-in { opacity: 1; transform: none; }
 #jini .ask { margin-left: 8%; padding: 16px 18px; border-radius: 14px 14px 4px 14px; background: var(--yellow); font-size: 18px; font-weight: 700; line-height: 1.5; }
 #jini .ans { list-style: none; margin-top: 18px; display: grid; gap: 12px; font-size: 17px; line-height: 1.6; }
@@ -478,7 +482,7 @@
 #jini .self-sec .br-pc { display: none; }
 #jini .self-sec .selfcheck { margin-top: 28px; padding: 8px 20px 24px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
 #jini .sc-send { display: none; width: 100%; min-height: 56px; margin-top: 8px; padding: 0 20px; border: 0; border-radius: 10px; background: var(--violet); color: var(--white); font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; }
-#jini.js-on .sc-send { display: block; }
+#jini.js-on .sc-send { display: flex; align-items: center; justify-content: center; }
 #jini .sc-done { margin-top: 16px; padding-top: 16px; border-top: 3px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.7; }
 #jini .sc-done .btn { margin: 12px 0 14px; }
 #jini .sc-list { list-style: none; margin-top: 6px; }
@@ -845,6 +849,21 @@
 #jini.rv-on .years.is-in .years-t { opacity: 1; transform: none; }
 @keyframes jini-num-pop { from { opacity: 0; transform: scale(.35); } to { opacity: 1; transform: none; } }
 /* 2026-11-28 사용자 결정: 기기의 '움직임 줄이기' 설정은 따지지 않는다 (센터 홈페이지와 같게) */
+/* 누르는 단추에는 화살표 (2026-11-28 사용자 요청: 누르면 어디로 가는 단추임을 한눈에) — 화살표 색은 글자색을 따라가고, 마우스를 올리거나 누르면 오른쪽으로 */
+#jini .btn::after, #jini .jini-cta::after, #jini .dock-cta::after, #jini .plan-btn::after, #jini .sc-send::after, #jini .notes-all a::after {
+  content: ""; flex: none; width: 18px; height: 13px; margin-left: 12px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M1.5 7h15.5M11.5 1.5L17 7l-5.5 5.5' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 14'%3E%3Cpath d='M1.5 7h15.5M11.5 1.5L17 7l-5.5 5.5' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .25s ease;
+}
+#jini .btn:active::after, #jini .jini-cta:active::after, #jini .dock-cta:active::after, #jini .plan-btn:active::after, #jini .sc-send:active::after, #jini .notes-all a:active::after { transform: translateX(5px); }
+@media (hover: hover) {
+  #jini .btn:hover::after, #jini .jini-cta:hover::after, #jini .dock-cta:hover::after, #jini .plan-btn:hover::after, #jini .sc-send:hover::after, #jini .notes-all a:hover::after { transform: translateX(5px); }
+}
+/* 하는 일 카드: 맨 아래 '가격 보기 →' (작업 노트 카드의 '글 읽기 →'와 같은 모양, 카드 전체를 누르면 가격 칸으로) */
+#jini .svc .rows > li { display: flex; flex-direction: column; }
+#jini .svc-go { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 2px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.4; }
+#jini .svc .rows > li > p:last-of-type { margin-bottom: 22px; }
+@media (hover: hover) { #jini .svc .rows > li:hover .svc-go .note-arrow { transform: translateX(4px); } }
 /* ===== 움직임 더하기 (2026-11-28 사용자 선택 '추천대로') ===== */
 /* ① 큰 칸 제목: 보이지 않는 선 아래에서 글자가 쑥 올라옴 — 마스크 리빌 (스크립트가 .mask 와 안쪽 글자 상자를 붙일 때만) */
 #jini.rv-on .big[data-rv].mask { opacity: 1; transform: none; transition: none; }
@@ -1056,9 +1075,9 @@ document.getElementById('jini').classList.add('sand-on');
     <p class="lead">보호자가 찾는 길은 마케팅지니가 함께 정리합니다. <span class="nw">주야간보호센터 중심으로,</span> <span class="nw">방문요양·요양원도 상담 가능해요.</span></p>
     <!-- 하는 일 (2026-11-28 사용자 A안): 가격은 아래 '가격' 칸 한 곳에만 둔다. 여기는 무엇을 해 드리는지만, 순서·번호는 가격 칸과 같게(02 시작 패키지 추천) -->
     <ul class="rows">
-      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">01</span>홈페이지 제작</b><p class="svc-what">센터 홈페이지 1개</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
-      <li class="svc-rec"><span class="svc-badge">추천</span><b class="svc-name"><span class="svc-no" aria-hidden="true">02</span>시작 패키지</b><p class="svc-what">홈페이지 + <span class="nw">블로그·플레이스 정리</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요.</p></li>
-      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">03</span>월간 관리</b><p class="svc-what"><span class="nw">블로그 글</span> <span class="nw">+ 플레이스 소식</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p></li>
+      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">01</span>홈페이지 제작</b><p class="svc-what">센터 홈페이지 1개</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p><span class="svc-go" aria-hidden="true">가격 보기<span class="note-arrow">→</span></span></li>
+      <li class="svc-rec"><span class="svc-badge">추천</span><b class="svc-name"><span class="svc-no" aria-hidden="true">02</span>시작 패키지</b><p class="svc-what">홈페이지 + <span class="nw">블로그·플레이스 정리</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요.</p><span class="svc-go" aria-hidden="true">가격 보기<span class="note-arrow">→</span></span></li>
+      <li><b class="svc-name"><span class="svc-no" aria-hidden="true">03</span>월간 관리</b><p class="svc-what"><span class="nw">블로그 글</span> <span class="nw">+ 플레이스 소식</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p><span class="svc-go" aria-hidden="true">가격 보기<span class="note-arrow">→</span></span></li>
     </ul>
     <p class="svc-more"><a class="doc-btn" href="#price">가격 한눈에 보기<i class="doc-arrow" aria-hidden="true"></i></a></p>
   </div>
@@ -1838,25 +1857,39 @@ document.getElementById('jini').classList.add('sand-on');
   /* 진단서: 상태 상자에 차례 번호를 매겨 도장처럼 하나씩 */
   each(root.querySelectorAll('.report'), function (rep) { each(rep.querySelectorAll('.st'), function (st, i) { st.style.setProperty('--k', i); }); io.observe(rep); });
 
-  /* ④ 타자기: 질문을 한 글자씩 친 뒤 답이 차례로 나타남 */
-  var ask = root.querySelector('.ask[data-type]');
+  /* ④ 무료 진단 칸 (2026-11-28 사용자 A안 — 한 칸에 타자 한 번): 제목 '우리 센터, AI에 물어보면 나올까요?'를 한 글자씩 치고,
+     아래 AI 질문 상자는 질문이 바로 보이고 답만 차례로 나타남 */
   var after = Array.prototype.slice.call(root.querySelectorAll('.tw-after'));
-  if (!ask) { after.forEach(function (el) { el.classList.add('is-in'); }); return; }
-  var full = ask.textContent;
-  after.forEach(function (el, i) { el.style.transitionDelay = (i * 0.12) + 's'; });
-  ask.style.minHeight = ask.offsetHeight + 'px';
-  ask.textContent = '';
-  var tio = new IntersectionObserver(function (es) {
-    if (!es[0].isIntersecting) return;
-    tio.disconnect();
-    var i = 0; ask.classList.add('is-typing');
-    (function type() {
-      i++; ask.textContent = full.slice(0, i);
-      if (i < full.length) { setTimeout(type, 70 + Math.random() * 50); return; }
-      setTimeout(function () { ask.classList.remove('is-typing'); ask.style.minHeight = ''; after.forEach(function (el) { el.classList.add('is-in'); }); }, 350);
-    })();
-  }, { threshold: 0.6 });
-  tio.observe(ask);
+  after.forEach(function (el, i) { el.style.transitionDelay = (i * 0.12 + 0.15) + 's'; });
+  var askBox = root.querySelector('.ask[data-type]');
+  if (askBox) {
+    var aio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      aio.disconnect();
+      after.forEach(function (el) { el.classList.add('is-in'); });
+    }, { threshold: 0.6 });
+    aio.observe(askBox);
+  } else { after.forEach(function (el) { el.classList.add('is-in'); }); }
+
+  var tw = root.querySelector('#check-title');
+  if (tw) {
+    var full = tw.textContent;
+    tw.setAttribute('aria-label', full);   /* 화면 낭독기는 제목 전체를 그대로 읽음 */
+    tw.innerHTML = '<span class="tw-ghost" aria-hidden="true"></span><span class="tw-live" aria-hidden="true"></span>';
+    tw.firstChild.textContent = full;     /* 투명한 원래 글자가 자리를 잡아 아래 내용이 들썩이지 않음 */
+    var live = tw.lastChild;
+    var hio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      hio.disconnect();
+      var i = 0; tw.classList.add('is-typing');
+      (function type() {
+        i++; live.textContent = full.slice(0, i);
+        if (i < full.length) { setTimeout(type, 65 + Math.random() * 45); return; }
+        setTimeout(function () { tw.classList.remove('is-typing'); }, 1000);   /* 다 치면 커서가 잠깐 깜빡이다 사라짐 */
+      })();
+    }, { threshold: 0.8 });
+    hio.observe(tw);
+  }
 })();
 </script>
 </body>
