@@ -628,7 +628,6 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     .gal > h3, .gal .gal-tabs { margin-left: 16px; margin-right: 16px; }
     .facility-carousel-arrow { display: none; }   /* 휴대폰은 첫 화면 사진처럼 밀어서 넘긴다 */
     .gal .facility-carousel .facility-zoom { border-radius: 0; }
-    .cost-sum { padding: 22px; } .cost-sum li { font-size: 15px; }
     .links li { grid-template-columns: minmax(0, 1fr) auto; padding: 16px 0; }
     .links h3 { font-size: 20px; }
     .cost { display: flex; flex-direction: column; align-items: stretch; gap: 22px; }
@@ -882,6 +881,86 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .facility-zoom .facility-zoom-hint::before {content:"";position:static;inset:auto;flex:none;width:16px;height:16px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2a2a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E");filter:none;}
   .ltc-wrap { border: 1px solid var(--line); border-radius: 18px; }
   .ltc-card { border-radius: 14px; }
+
+  /* ===== 2026-11-28 사용자: 다섯 칸 손보기 ===== */
+  /* 링크는 화살표로 알아보게 (전화 버튼·메뉴·아래 고정 버튼은 제외) */
+  .wrap a.btn:not([href^="tel:"])::after, .iv-src a::after { content: "→"; font-weight: 700; }
+  .greet .more::after, .info-boxes a::after { content: "→"; margin-left: 8px; }
+  .iv-src a::after { margin-left: 6px; }
+  /* 센터란? 네 칸 */
+  .what-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 30px; padding: 0; list-style: none; }
+  .what-cards li { padding: 22px 22px 24px; border-top: 5px solid var(--deep); border-radius: 14px; background: #fff; color: var(--ink); }
+  .bg-white .what-cards li { background: var(--soft); }
+  .what-cards .n { display: block; font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: 1; color: var(--deep); }
+  .what-cards h3 { margin: 10px 0 8px; font-size: 23px; }
+  .what-cards p { font-size: 18px; line-height: 1.75; }
+  .what-btns { margin-top: 26px; }
+  .bg-soft .what-btns .btn.line { background: #fff; }
+  /* 비용 예시 상자: 색 머리 + 큰 금액 */
+  .cost-sum { padding: 0; overflow: hidden; border: 3px solid var(--deep); }
+  .cost-sum small { padding: 16px 24px; background: var(--deep); color: #fff; font-size: 17px; }
+  .cost-sum strong { margin: 0; padding: 18px 24px 8px; color: var(--deep); }
+  .cost-sum ul { margin: 0; padding: 0 24px; }
+  .cost-sum li { font-size: 19px; }
+  .cost-sum li b { font-size: 1.12em; }
+  .cost-sum p { margin: 0; padding: 12px 24px 20px; border-top: 1px solid var(--line); font-size: 16px; }
+  /* 기관정보 확인: 버튼색으로 눈에 띄게 */
+  .org-row { margin-top: 20px; }
+  .btn.org { background: var(--cta); border-color: var(--cta); color: var(--cta-text); }
+  /* 바로가기 카드: 오른쪽 동그라미 화살표 */
+  .more-cards a { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: center; column-gap: 16px; }
+  .more-cards strong, .more-cards span { grid-column: 1; }
+  .more-cards a::after { content: "→"; grid-column: 2; grid-row: 1 / 3; align-self: center; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--deep); color: #fff; font-size: 24px; font-weight: 700; }
+  @media (max-width: 720px) {
+    .what-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 22px; }
+    .cost-sum small { padding: 14px 18px; font-size: 15px; } .cost-sum strong { padding: 14px 18px 6px; } .cost-sum ul { padding: 0 18px; } .cost-sum li { font-size: 16px; } .cost-sum p { padding: 10px 18px 16px; font-size: 14px; }
+  }
+  /* 컴퓨터 가로 화면: 다섯 칸이 각각 머리를 뺀 한 화면을 채운다 */
+  @media (min-width: 961px) and (orientation: landscape) {
+    #what, #calc-preview, #monthly, #contact, #more { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 84px); min-height: calc(100svh - 84px); padding: clamp(28px, 4.5vh, 64px) 0; }
+    #what > .wrap, #calc-preview > .wrap, #monthly > .wrap, #contact > .wrap, #more > .wrap { width: 100%; max-width: 1440px; padding: 0 clamp(24px, 4vw, 56px); }
+    #what, #calc-preview { padding: clamp(14px, 2.6vh, 44px) 0; }
+    #what div.head h2, #monthly div.head h2, #contact div.head h2, #more div.head h2 { font-size: clamp(40px, 7.4vh, 72px); }
+    #what div.head, #monthly div.head, #contact div.head, #more div.head { margin-bottom: 0; }
+    #what div.head p { margin-top: clamp(8px, 1.6vh, 20px); font-size: clamp(18px, 2.4vh, 22px); line-height: 1.65; }
+    .what-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: clamp(14px, 3vh, 36px); }
+    .what-cards li { min-height: clamp(180px, 31vh, 330px); padding: clamp(14px, 2.6vh, 30px) 24px; }
+    .what-cards .n { font-size: clamp(30px, 5vh, 50px); }
+    .what-cards h3 { margin: clamp(4px, 1.4vh, 16px) 0 clamp(4px, .9vh, 10px); font-size: clamp(21px, 2.9vh, 27px); }
+    .what-cards p { font-size: clamp(16px, 2.15vh, 20px); line-height: 1.65; }
+    .what-btns { margin-top: clamp(12px, 2.6vh, 30px); }
+    .what-btns .btn { min-height: clamp(52px, 7.4vh, 70px); padding: 8px 34px; font-size: 21px; }
+    .cost { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 64px; }
+    .cost div.head h2 { font-size: clamp(44px, 9vh, 88px); }
+    .cost div.head p { margin-top: 22px; font-size: clamp(20px, 2.9vh, 26px); }
+    .cost .btn { min-height: clamp(64px, 10vh, 88px); padding: 14px 42px; font-size: 23px; }
+    .cost-sum { border-radius: 22px; }
+    .cost-sum small { padding: clamp(12px, 2.4vh, 26px) 40px; font-size: clamp(17px, 2.3vh, 21px); }
+    .cost-sum strong { padding: clamp(10px, 2.2vh, 28px) 40px 6px; font-size: min(10.5vh, 4.4vw, 92px); white-space: nowrap; }
+    .cost-sum ul { padding: 0 40px; }
+    .cost-sum li { padding: clamp(8px, 1.9vh, 22px) 0; font-size: clamp(18px, 2.5vh, 25px); }
+    .cost-sum p { padding: clamp(8px, 1.8vh, 20px) 40px clamp(12px, 2.4vh, 26px); font-size: clamp(15px, 2vh, 18px); }
+    .links li { padding: clamp(12px, 2vh, 24px) 0; }
+    .links li:first-child { padding-top: 0; }
+    .links h3 { font-size: clamp(28px, 4.2vh, 38px); }
+    .links p { font-size: clamp(20px, 2.8vh, 25px); }
+    .links .btn { min-width: 270px; min-height: clamp(66px, 11.5vh, 104px); font-size: 22px; }
+    .photo-cats { margin-top: clamp(20px, 3.6vh, 40px); }
+    .photo-cats h3 { font-size: clamp(24px, 3.6vh, 32px); }
+    .photo-cats a { min-height: clamp(120px, 22vh, 200px); font-size: clamp(21px, 3vh, 27px); }
+    .visit { align-items: center; }
+    .visit .addr { margin-top: clamp(18px, 3vh, 34px); font-size: clamp(25px, 3.7vh, 34px); }
+    .visit p { font-size: clamp(20px, 2.8vh, 25px); }
+    .visit .btns { margin-top: clamp(22px, 4vh, 40px); }
+    .visit .btns .btn { min-height: clamp(62px, 10vh, 86px); font-size: 21px; }
+    .visit .info th, .visit .info td { padding: clamp(12px, 2.5vh, 26px) 8px; font-size: clamp(19px, 2.6vh, 24px); }
+    .visit .org-row .btn { width: 100%; min-height: clamp(62px, 9.5vh, 82px); font-size: 22px; }
+    .more-cards { gap: 24px; margin-top: clamp(26px, 5vh, 52px); }
+    .more-cards a { min-height: clamp(160px, 27vh, 260px); padding: 30px 40px; }
+    .more-cards strong { font-size: clamp(28px, 4.4vh, 40px); }
+    .more-cards span { margin-top: 14px; font-size: clamp(18px, 2.7vh, 24px); }
+    .more-cards a::after { width: clamp(56px, 8.6vh, 78px); height: clamp(56px, 8.6vh, 78px); font-size: 32px; }
+  }
 :root{--bar-tel:rgba(20,50,37,.72);--main:#1E4D39;--on-main:#FFFFFF;--cta:#F0CF7E;--cta-text:#1F1A33;--photo-1:#1E4D39;--photo-1-text:#FFFFFF;--photo-2:#59714C;--photo-2-text:#FFFFFF;--photo-3:#BCAF6D;--photo-3-text:#1F1A33;--photo-4:#F0CF7E;--photo-4-text:#1F1A33;--deep:#1E4D39;--soft:#E7F0E6;--mark:#1E4D39;--accent-on-ink:#F0CF7E;--ink:#1F1A33;--line:#d8d5e2;--logo-fs:clamp(20px,6vw,27px);--gold:#1E4D39;--green:#1E4D39;--green-deep:#1E4D39;--light-gold:#F0CF7E;--gold-soft:#E7F0E6;--ink-soft:#423d57;--ink-faint:#5f5a73}
 </style>
 </head>
