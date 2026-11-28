@@ -266,7 +266,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   /* 첫 화면 */
   .hero { padding: 68px 0 0; overflow-x: clip; }   /* 아래 여백 없이 사진이 다음 칸에 닿는다 */
   .hero h1 { font-size: clamp(39px, 6.3vw, 88px); line-height: 1.24; letter-spacing: -2.5px; }
-  .hero h1 u { text-decoration: underline; text-decoration-color: var(--cta); text-decoration-thickness: .09em; text-underline-offset: .16em; }
+  .hero h1 u { color: var(--cta); text-decoration: underline; text-decoration-color: var(--cta); text-decoration-thickness: .09em; text-underline-offset: .16em; }
   .hero h1 .l { display: block; }
   .hero-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin: 40px 0 44px; }
   .hero-row .lead { max-width: 600px; font-size: 22px; font-weight: 500; }
@@ -474,7 +474,8 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero.hero-cover { padding: 0; }
   .hero.hero-cover > .wrap { display: grid; grid-template-columns: minmax(0, 1fr); }
   .hero.hero-cover .slider { grid-area: 1 / 1; z-index: 0; width: 100vw; margin-inline: calc(50% - 50vw); height: auto; min-height: 0; max-height: none; aspect-ratio: auto; align-self: stretch; }
-  .hero.hero-cover .slider::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(10, 22, 16, .76) 0%, rgba(10, 22, 16, .52) 40%, rgba(10, 22, 16, .12) 72%, rgba(10, 22, 16, 0) 100%); }
+  /* 사진 덮개는 글자 칸 쪽만 (2026-11-28 사용자 B안 — 전에는 왼쪽 70%까지 어두워 사진이 흐려 보임): 컴퓨터는 왼쪽 절반까지만, 오른쪽 절반은 사진 그대로 */
+  .hero.hero-cover .slider::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(10, 22, 16, .66) 0%, rgba(10, 22, 16, .5) 28%, rgba(10, 22, 16, .18) 44%, rgba(10, 22, 16, 0) 56%); }
   .hero.hero-cover .slide { position: absolute; inset: 0; }
   .hero.hero-cover .slide img { height: 100%; aspect-ratio: auto; }
   .hero.hero-cover .s-arrow, .hero.hero-cover .s-dots { z-index: 3; }
@@ -487,7 +488,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero.hero-cover .ai-note { grid-area: 2 / 1; margin: 0; padding: 10px 0 14px; font-size: 14px; color: rgba(255, 255, 255, .8); }
   @media (max-width: 960px), (orientation: portrait) {
     .hero.hero-cover .hero-top { min-height: calc(100vh - 70px); min-height: calc(100svh - 70px); justify-content: flex-end; padding: 0 0 124px; }   /* 아래 고정 단추(전화·카톡)와 사진 순서 점에 글자가 닿지 않게 */
-    .hero.hero-cover .slider::after { background: linear-gradient(0deg, rgba(10, 22, 16, .88) 0%, rgba(10, 22, 16, .62) 46%, rgba(10, 22, 16, .12) 76%, rgba(10, 22, 16, 0) 100%); }
+    .hero.hero-cover .slider::after { background: linear-gradient(0deg, rgba(10, 22, 16, .85) 0%, rgba(10, 22, 16, .6) 24%, rgba(10, 22, 16, .2) 40%, rgba(10, 22, 16, 0) 52%); }   /* 휴대폰: 아래 글자 칸만, 위쪽 절반은 사진 그대로 */
     .hero.hero-cover .s-dots { bottom: 76px; }   /* 아래 고정 단추 바로 위 (2026-11-28 사용자 요청으로 조금 아래로) */
     .hero.hero-cover .ai-note { padding: 8px 0 12px; font-size: 13px; }
   }
@@ -506,6 +507,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero.hero-cover.msg-swap.s-alt .hero-row .lead { opacity: 1; }
   .hero .hero-row .lead-3 { display: none; }   /* 3번 사진 하루 소개: 사진 넘기기가 돌 때만 보임 */
   .hero.hero-cover.msg-swap .hero-row .lead.lead-3 { display: block; }
+  .hero .lead-3 .dl { display: inline-block; }   /* 뜻 덩어리 사이에서만 줄바꿈 */
   .hero.hero-cover.msg-swap.s-alt .hero-row .lead.lead-3 { opacity: 0; }
   .hero.hero-cover.msg-swap.s-3 .hero-text { opacity: 0; }
   .hero.hero-cover.msg-swap.s-3 .hero-row .lead.lead-3 { opacity: 1; }
