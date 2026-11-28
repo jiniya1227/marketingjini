@@ -511,6 +511,11 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero.hero-cover.msg-swap .hero-row .lead { opacity: 0; }
   .hero.hero-cover.msg-swap.s-alt .hero-text { opacity: 0; }
   .hero.hero-cover.msg-swap.s-alt .hero-row .lead { opacity: 1; }
+  .hero .hero-row .lead-3 { display: none; }   /* 3번 사진 하루 소개: 사진 넘기기가 돌 때만 보임 */
+  .hero.hero-cover.msg-swap .hero-row .lead.lead-3 { display: block; }
+  .hero.hero-cover.msg-swap.s-alt .hero-row .lead.lead-3 { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-3 .hero-text { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-3 .hero-row .lead.lead-3 { opacity: 1; }
   @media (max-width: 960px), (orientation: portrait) {
     .hero.hero-cover.msg-swap .hero-top { align-content: end; }
   }
@@ -1256,6 +1261,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     <div class="hero-text rv"><h1><span class="l">어르신의 즐거운 하루,</span> <span class="l">보호자의 안심에</span> <span class="l"><u>샘플</u>이 함께합니다.</span></h1></div>
     <div class="hero-row rv">
       <p class="lead">따뜻한 한 끼, 반가운 인사, 함께하는 즐거움.<br>어르신께는 활기찬 하루를, 보호자님께는<br>마음 놓이는 일상을 전합니다.</p>
+      <p class="lead lead-3">아침에 차량으로 모셔 오고,<br>식사와 활동을 함께한 뒤<br>댁으로 모셔다 드립니다.</p>
       <div class="btns"><a class="btn cta" href="tel:0310000000">전화 상담 031-000-0000</a></div>
     </div>
     </div>
@@ -1270,7 +1276,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   </div>
 </section>
 <section class="bg-white" id="about">
-  <div class="wrap"><div class="head ruled rv"><h2>센터에서 보내는 하루</h2><p>아침에 차량으로 모셔 오고, 식사와 활동을 함께한 뒤 댁으로 모셔다 드립니다.</p></div><div style="height:36px"></div><div class="cards"><article class="care rv"><figure><img src="img/care-1.webp" alt="균형 잡힌 식사 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>01</span>균형 잡힌 식사</h3></article><article class="care rv"><figure><img src="img/care-2.webp" alt="인지 활동 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>02</span>인지 활동</h3></article><article class="care rv"><figure><img src="img/care-3.webp" alt="신체 활동 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>03</span>신체 활동</h3></article><article class="care rv"><figure><img src="img/care-4.webp" alt="여가·행사 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>04</span>여가·행사</h3></article></div>
+  <div class="wrap"><div class="head ruled rv"><h2>센터에서 보내는 하루</h2></div><div style="height:36px"></div><div class="cards"><article class="care rv"><figure><img src="img/care-1.webp" alt="균형 잡힌 식사 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>01</span>균형 잡힌 식사</h3></article><article class="care rv"><figure><img src="img/care-2.webp" alt="인지 활동 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>02</span>인지 활동</h3></article><article class="care rv"><figure><img src="img/care-3.webp" alt="신체 활동 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>03</span>신체 활동</h3></article><article class="care rv"><figure><img src="img/care-4.webp" alt="여가·행사 — AI 연출 예시" width="960" height="600" decoding="async"></figure><h3><span>04</span>여가·행사</h3></article></div>
   </div>
 </section>
 <section class="bg-soft" id="what">
@@ -1450,7 +1456,10 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
       cur = (n + slides.length) % slides.length;
       slides.forEach(function (s, i) { s.classList.toggle('on', i === cur); });
       dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
-      if (cover) cover.classList.toggle('s-alt', cur % 2 === 1);
+      if (cover) {   /* 사진마다 글: 1 큰 제목 → 2 소개 글 → 3 하루 소개(.lead-3 이 있을 때) → 다시 처음 */
+        var ph = cover.querySelector('.lead-3') ? cur % 3 : cur % 2;
+        cover.classList.toggle('s-alt', ph === 1); cover.classList.toggle('s-3', ph === 2);
+      }
     }
     function restart() {
       clearInterval(timer);

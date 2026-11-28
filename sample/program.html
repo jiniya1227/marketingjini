@@ -504,6 +504,11 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .hero.hero-cover.msg-swap .hero-row .lead { opacity: 0; }
   .hero.hero-cover.msg-swap.s-alt .hero-text { opacity: 0; }
   .hero.hero-cover.msg-swap.s-alt .hero-row .lead { opacity: 1; }
+  .hero .hero-row .lead-3 { display: none; }   /* 3번 사진 하루 소개: 사진 넘기기가 돌 때만 보임 */
+  .hero.hero-cover.msg-swap .hero-row .lead.lead-3 { display: block; }
+  .hero.hero-cover.msg-swap.s-alt .hero-row .lead.lead-3 { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-3 .hero-text { opacity: 0; }
+  .hero.hero-cover.msg-swap.s-3 .hero-row .lead.lead-3 { opacity: 1; }
   @media (max-width: 960px), (orientation: portrait) {
     .hero.hero-cover.msg-swap .hero-top { align-content: end; }
   }
@@ -1359,7 +1364,10 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
       cur = (n + slides.length) % slides.length;
       slides.forEach(function (s, i) { s.classList.toggle('on', i === cur); });
       dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
-      if (cover) cover.classList.toggle('s-alt', cur % 2 === 1);
+      if (cover) {   /* 사진마다 글: 1 큰 제목 → 2 소개 글 → 3 하루 소개(.lead-3 이 있을 때) → 다시 처음 */
+        var ph = cover.querySelector('.lead-3') ? cur % 3 : cur % 2;
+        cover.classList.toggle('s-alt', ph === 1); cover.classList.toggle('s-3', ph === 2);
+      }
     }
     function restart() {
       clearInterval(timer);
