@@ -1028,19 +1028,37 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     html.m-on .photo-cats.in li:nth-child(2) { transition-delay: .12s; }
     html.m-on .photo-cats.in li:nth-child(3) { transition-delay: .24s; }
     html.m-on .photo-cats.in li:nth-child(4) { transition-delay: .36s; }
-    /* 상담 순서: 01 → 02 → 03 차례로 들어오며 위의 선이 그어진다 */
-    html.m-on .steps li { position: relative; border-top-color: transparent; opacity: 0; transform: translateX(-64px); transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+    /* 상담 순서: 칸마다 화면에 들어올 때 왼쪽에서 들어오며 위의 선이 그어진다. 가로로 나란한 컴퓨터에서는 01 → 02 → 03 차례 */
+    html.m-on .steps li.rv:not(.slider):not(.hero-row) { position: relative; border-top-color: transparent; transform: translateX(-64px); transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+    html.m-on .steps li.rv.in:not(.slider):not(.hero-row) { transform: none; }
     html.m-on .steps li::before { content: ""; position: absolute; left: 0; right: 0; top: -3px; height: 3px; background: var(--accent-on-ink); transform: scaleX(0); transform-origin: left; transition: transform .7s ease; }
-    html.m-on .steps.in li { opacity: 1; transform: none; }
-    html.m-on .steps.in li::before { transform: scaleX(1); transition-delay: .35s; }
-    html.m-on .steps.in li:nth-child(2) { transition-delay: .7s; }
-    html.m-on .steps.in li:nth-child(2)::before { transition-delay: 1.05s; }
-    html.m-on .steps.in li:nth-child(3) { transition-delay: 1.4s; }
-    html.m-on .steps.in li:nth-child(3)::before { transition-delay: 1.75s; }
+    html.m-on .steps li.in::before { transform: scaleX(1); transition-delay: .35s; }
+    html.m-on .steps li.rv:nth-child(2):not(.slider):not(.hero-row) { transition-delay: .7s; }
+    html.m-on .steps li.in:nth-child(2)::before { transition-delay: 1.05s; }
+    html.m-on .steps li.rv:nth-child(3):not(.slider):not(.hero-row) { transition-delay: 1.4s; }
+    html.m-on .steps li.in:nth-child(3)::before { transition-delay: 1.75s; }
     html.m-on .btn, html.m-on .more-cards a, html.m-on .photo-cats a { transition: transform .2s ease, box-shadow .2s ease; }
     html.m-on .btn::after, html.m-on .photo-cats a span { display: inline-block; transition: transform .2s ease; }
     html.m-on .more-cards a::after { transition: transform .2s ease; }
   }
+  /* 한 줄로 쌓이는 휴대폰·좁은 화면: 칸마다 따로 보이므로 기다리지 않고 바로 움직인다 */
+  @media screen and (max-width: 960px) {
+    html.m-on .steps li.rv:nth-child(n+1):not(.slider):not(.hero-row) { transition-delay: .1s; }
+    html.m-on .steps li.in:nth-child(n+1)::before { transition-delay: .45s; }
+    html.m-on .what-cards li.rv:nth-child(n+1):not(.slider):not(.hero-row), html.m-on .more-cards li.rv:nth-child(n+1):not(.slider):not(.hero-row) { transition-delay: .1s; }
+    html.m-on .what-cards li.in:nth-child(n+1) .n { animation-delay: .4s; }
+    html.m-on .cards .care.rv:nth-child(even):not(.slider):not(.hero-row) { transition-delay: 0s; }
+  }
+  /* 첫 화면의 센터 이름: 글자가 하나씩 내려앉아 강조색이 되고, 밑줄 뒤에 한 번 출렁인다 (2026-11-28 사용자 선택 A안) */
+  @media screen {
+    html.m-on .hero h1 u.k-on { display: inline-block; max-width: 100%; }   /* 밑줄이 이름 전체 너비로 그어지게 */
+    html.m-on .hero h1 u .kw { display: inline-block; white-space: nowrap; }   /* 낱말 중간에서 줄이 바뀌지 않게 */
+    html.m-on .hero h1 u .k { display: inline-block; white-space: pre; color: var(--cta); transform-origin: 50% 90%; animation: k-drop .9s cubic-bezier(.2, .75, .25, 1) both; }
+    html.m-on .hero h1 u .k.again { animation: k-wave .7s cubic-bezier(.3, .7, .3, 1) both; }
+    html.m-on .hero h1 u.k-on::after { animation-delay: var(--k-line, 2s); }
+  }
+  @keyframes k-drop { 0% { opacity: 0; transform: translateY(-.9em) rotate(-18deg) scale(1.7); } 55% { opacity: 1; transform: translateY(.1em) rotate(6deg) scale(.94, 1.08); } 75% { transform: translateY(-.06em) rotate(-2deg) scale(1.03, .97); } 100% { opacity: 1; transform: none; } }
+  @keyframes k-wave { 0%, 100% { transform: none; } 45% { transform: translateY(-.16em); } }
   @media screen and (hover: hover) {
     html.m-on .btn:hover, html.m-on .more-cards a:hover, html.m-on .photo-cats a:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(31, 26, 51, .18); }
     html.m-on .btn:hover::after, html.m-on .photo-cats a:hover span, html.m-on .more-cards a:hover::after { transform: translateX(6px); }
@@ -1048,18 +1066,99 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   @keyframes m-up { from { opacity: 0; transform: translateY(46px); } to { opacity: 1; transform: none; } }
   @keyframes m-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes m-pop { from { opacity: 0; transform: scale(.35); } to { opacity: 1; transform: none; } }
-  /* 시설 사진: 아래쪽에 옅은 덮개를 씌우고 이름을 올린다 (2026-11-28 사용자) */
-  .gal.facility-card { position: relative; padding: 0; overflow: hidden; background: var(--ink); }
-  .gal.facility-card > h3 { position: absolute; left: 20px; bottom: 44px; z-index: 2; margin: 0; color: #fff; font-size: 30px; text-shadow: 0 2px 12px rgba(0, 0, 0, .5); pointer-events: none; }
-  .gal.facility-card .facility-carousel::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 46%; background: linear-gradient(to top, rgba(0, 0, 0, .66), rgba(0, 0, 0, 0)); pointer-events: none; }
+  /* 시설 사진: 흰 이름표가 사진 아래에 걸친다 (2026-11-28 사용자 선택 B안). 사진 순서는 얇은 막대, 크게 보기는 오른쪽 위 */
+  .gal.facility-card { position: relative; margin-bottom: 26px; padding: 0; overflow: visible; background: transparent; }
+  .gal.facility-card + .gal.facility-card { margin-top: 52px; }
+  .gal.facility-card > h3 { position: absolute; left: 16px; right: 16px; bottom: -26px; z-index: 4; display: flex; align-items: center; gap: 14px; margin: 0; padding: 14px 18px; border-radius: 14px; background: #fff; color: var(--ink); font-size: 23px; box-shadow: 0 10px 26px rgba(31, 26, 51, .16); }
+  .gal.facility-card > h3 i { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 1.35em; line-height: 1; color: var(--deep); }
+  .gal.facility-card .facility-carousel { overflow: hidden; }   /* 넘기는 동작이 화면 밖으로 밀리지 않게 */
   .gal.facility-card .facility-zoom { border-radius: 0; }
-  .gal.facility-card .facility-zoom .facility-zoom-hint { z-index: 2; }
+  .gal.facility-card .facility-zoom .facility-zoom-hint { top: 12px; right: 12px; bottom: auto; }
+  .gal.facility-card .facility-zoom .facility-zoom-hint.is-circle { width: 34px; height: 34px; }
+  .gal.facility-card .fac-dots { left: 50%; bottom: 46px; width: min(56%, 240px); gap: 6px; transform: translateX(-50%); }
+  .gal.facility-card .fac-dots button { flex: 1; width: auto; height: 4px; margin: 0; border-radius: 2px; background: rgba(255, 255, 255, .85); box-shadow: 0 0 5px rgba(0, 0, 0, .45); }
+  .gal.facility-card .fac-dots button::after { inset: -20px -2px; }
+  .gal.facility-card .fac-dots button[aria-current="true"] { background: var(--photo-4); }
+  @media (min-width: 721px) {
+    .gal.facility-card .facility-zoom { border-radius: 14px; }
+  }
   @media (min-width: 961px) and (orientation: landscape) {
-    .gal.facility-card { overflow: visible; }
-    .gal.facility-card > h3 { left: 0; bottom: clamp(48px, 8vh, 84px); font-size: clamp(38px, 6.4vh, 62px); }
+    .gal.facility-card { margin-bottom: 40px; }
+    .gal.facility-card + .gal.facility-card { margin-top: 72px; }
+    .gal.facility-card .facility-zoom { height: calc(100vh - 152px); height: calc(100svh - 152px); border-radius: 0; }   /* 걸친 이름표까지 한 화면에 */
+    .gal.facility-card > h3 { left: 0; right: auto; bottom: -40px; gap: 22px; min-width: 360px; padding: clamp(16px, 2.6vh, 26px) 34px; border-radius: 18px; font-size: clamp(28px, 4.4vh, 42px); box-shadow: 0 18px 44px rgba(31, 26, 51, .2); }
+    .gal.facility-card .facility-zoom .facility-zoom-hint { top: 20px; right: 24px; bottom: auto; }
+    .gal.facility-card .facility-zoom .facility-zoom-hint.is-circle { width: 46px; height: 46px; }
+    .gal.facility-card .fac-dots { bottom: 24px; width: 260px; }
   }
   /* 눈에 띄어야 하는 단추: 테마의 밝은 강조색 */
   .btn.accent { background: var(--photo-4); border-color: var(--photo-4); color: var(--photo-4-text); }
+
+  /* ===== 선 · 단추 반응 · 카톡 말풍선 (2026-11-28 사용자 선택) ===== */
+  /* 칸 제목 밑의 짧은 선 */
+  section div.head h2::after { content: ""; display: block; width: 72px; height: 5px; margin-top: 14px; border-radius: 3px; background: var(--deep); }
+  section.bg-ink div.head h2::after { background: var(--accent-on-ink); }
+  section.bg-main div.head h2::after { background: var(--cta); }
+  /* 높이가 낮은 컴퓨터 화면에서도 한 화면에 들어오게 */
+  @media (min-width: 961px) and (max-height: 700px) and (orientation: landscape) {
+    #what div.head h2::after, #monthly div.head h2::after { height: 4px; margin-top: 4px; }
+    #monthly .photo-cats a { min-height: 108px; }
+  }
+  /* 하루 일과를 따라 내려가는 선 */
+  .day { position: relative; padding-left: 28px; }
+  .day::before, .day::after { content: ""; position: absolute; left: 4px; top: 8px; bottom: 8px; width: 4px; border-radius: 2px; background: var(--soft); }
+  .bg-soft .day::before { background: #fff; }
+  .day::after { background: var(--deep); transform-origin: top; }
+  @media screen {
+    html.m-on section div.head h2::after { transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.7, 0, .2, 1) .35s; }
+    html.m-on section div.head.in h2::after { transform: scaleX(1); }
+    html.m-on .day::after { transform: scaleY(var(--g, 0)); }
+  }
+  /* 컴퓨터 메뉴: 밑줄이 왼쪽에서 그어진다 */
+  @media (min-width: 1181px) {
+    .top nav a, .top nav a:hover, .top nav a[aria-current="page"] { position: relative; border-bottom-color: transparent; }
+    .top nav a::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -3px; height: 3px; background: var(--deep); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
+    .top nav a:hover::after, .top nav a[aria-current="page"]::after { transform: scaleX(1); }
+  }
+  /* 바로가기 카드: 테두리가 그어진다 */
+  .more-cards a { position: relative; }
+  .more-cards a::before { content: ""; position: absolute; inset: 0; border: 3px solid var(--deep); border-radius: inherit; clip-path: inset(0 100% 0 0); transition: clip-path .6s cubic-bezier(.7, 0, .2, 1); pointer-events: none; }
+  .more-cards a:active::before, .more-cards a:focus-visible::before { clip-path: inset(0 0 0 0); }
+  /* 단추: 색이 왼쪽에서 차오르고, 누르면 살짝 눌린다 */
+  .btn { position: relative; overflow: hidden; isolation: isolate; }
+  .btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(255, 255, 255, .26); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+  .btn.line::before, .btn.accent::before, .btn.org::before, .bg-main .btn::before { background: rgba(31, 26, 51, .12); }
+  .btn:active::before { transform: scaleX(1); }
+  .btn:active, .mbar a:active, .fab:active, .photo-cats a:active, .more-cards a:active { transform: scale(.95) !important; transition-duration: .1s !important; }
+  @media screen and (hover: hover) {
+    .btn:hover::before { transform: scaleX(1); }
+    .more-cards a:hover::before { clip-path: inset(0 0 0 0); }
+  }
+  /* 카톡 상담: 말풍선 모양 (카카오 로고 그림은 쓰지 않는다) */
+  .fab { width: 96px; min-height: 80px; overflow: visible; border-radius: 50%; background: #FEE500; }
+  .fab::after { content: ""; position: absolute; right: 12px; bottom: -11px; width: 28px; height: 26px; background: #FEE500; clip-path: polygon(0 35%, 100% 100%, 62% 0); }
+  @media screen { html.m-on .fab { animation: k-bob .7s ease 2.5s 2; } }
+  @keyframes k-bob { 0%, 100% { transform: none; } 45% { transform: translateY(-10px); } }
+  a.btn.kakao { overflow: visible; border-radius: 999px; padding-left: 34px; padding-right: 34px; }
+  a.btn.kakao::before { content: ""; position: absolute; inset: auto auto -10px 30px; z-index: 0; width: 24px; height: 18px; background: #FEE500; transform: none; clip-path: polygon(0 0, 100% 0, 14% 100%); }
+  @media (max-width: 720px) {
+    .mbar { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
+    .mbar .m-sub.kakao { position: relative; border-radius: 999px; background: #FEE500; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .mbar .m-sub.kakao::after { content: ""; position: absolute; right: 26px; bottom: -9px; width: 22px; height: 16px; background: #FEE500; clip-path: polygon(0 0, 100% 0, 82% 100%); }
+  }
+
+  /* 상담 순서: 강조 상자가 옮겨 가는 효과 (2026-11-28 사용자 선택 B안). 스크립트가 .hl 을 붙였을 때만 — 상자 색은 먹색 위 강조색이라 12색 모두 먹색 글씨가 잘 보인다 */
+  .steps.hl { position: relative; gap: 20px; }
+  .steps.hl::before { content: ""; position: absolute; left: 0; top: 0; z-index: 0; width: var(--hw, 0px); height: var(--hh, 0px); border-radius: 18px; background: var(--accent-on-ink); box-shadow: 0 18px 44px rgba(0, 0, 0, .35); transform: translate(var(--hx, 0px), var(--hy, 0px)); opacity: 0; pointer-events: none; transition: transform .75s cubic-bezier(.7, 0, .2, 1), width .75s cubic-bezier(.7, 0, .2, 1), height .75s cubic-bezier(.7, 0, .2, 1), opacity .5s ease; }
+  .steps.hl.lit::before { opacity: 1; }
+  .steps.hl li { position: relative; z-index: 1; padding: 26px 22px; border-top-color: transparent; cursor: pointer; }
+  html.m-on .steps.hl li::before { display: none; }
+  .steps.hl li > * { transition: opacity .5s ease, color .45s ease; }
+  .steps.hl.lit li:not(.on) > * { opacity: .74; }
+  .steps.hl.lit li.on > .n, .steps.hl.lit li.on > h3, .steps.hl.lit li.on > p { color: var(--ink); }
+  /* 상담 칸의 카톡 단추: 마우스가 가까이 오면 끌려온다 (2026-11-28 사용자 선택). 위치는 translate 로만 옮겨 눌림 효과(transform)와 겹치지 않게 */
+  html.m-on .btn.magnet { transition: translate .6s cubic-bezier(.2, 1.6, .35, 1), transform .2s ease, box-shadow .3s ease; }
+  html.m-on .btn.magnet.pull { transition: translate .18s ease-out, transform .2s ease, box-shadow .2s ease; box-shadow: 0 14px 30px rgba(0, 0, 0, .35); }
 :root{--bar-tel:rgba(20,50,37,.72);--main:#1E4D39;--on-main:#FFFFFF;--cta:#F0CF7E;--cta-text:#1F1A33;--photo-1:#1E4D39;--photo-1-text:#FFFFFF;--photo-2:#59714C;--photo-2-text:#FFFFFF;--photo-3:#BCAF6D;--photo-3-text:#1F1A33;--photo-4:#F0CF7E;--photo-4-text:#1F1A33;--deep:#1E4D39;--soft:#E7F0E6;--mark:#1E4D39;--accent-on-ink:#F0CF7E;--ink:#1F1A33;--line:#d8d5e2;--logo-fs:clamp(20px,6vw,27px);--gold:#1E4D39;--green:#1E4D39;--green-deep:#1E4D39;--light-gold:#F0CF7E;--gold-soft:#E7F0E6;--ink-soft:#423d57;--ink-faint:#5f5a73}
 </style>
 </head>
@@ -1466,6 +1565,106 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     });
   })();
 
+  // 첫 화면의 센터 이름을 글자마다 나눠 차례로 움직인다. 화면 낭독기는 제목 전체를 원래대로 읽는다
+  (function () {
+    if (!document.documentElement.classList.contains('m-on')) return;
+    var u = document.querySelector('.hero h1 u');
+    if (!u || !u.textContent) return;
+    var h1 = u.closest('h1'), words = u.textContent.trim().split(/\s+/), count = words.join('').length;
+    if (h1) h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g, ' ').trim());
+    var start = 1.1, step = Math.min(.22, 1.2 / count), spans = [];   // 이름이 길면 간격을 좁힌다
+    u.textContent = '';
+    words.forEach(function (word, w) {
+      var box = document.createElement('span');
+      box.className = 'kw'; box.setAttribute('aria-hidden', 'true');
+      Array.from(word).forEach(function (c) {
+        var s = document.createElement('span');
+        s.className = 'k'; s.textContent = c;
+        s.style.animationDelay = (start + spans.length * step).toFixed(2) + 's';
+        box.appendChild(s); spans.push(s);
+      });
+      if (w) u.appendChild(document.createTextNode(' '));
+      u.appendChild(box);
+    });
+    var done = start + (spans.length - 1) * step + .9;
+    u.style.setProperty('--k-line', (done - .3).toFixed(2) + 's');
+    u.classList.add('k-on');
+    setTimeout(function () { spans.forEach(function (s, i) { s.style.animationDelay = (i * Math.min(.12, step)).toFixed(2) + 's'; s.classList.add('again'); }); }, (done + 2.2) * 1000);
+  })();
+
+  // 휴대폰에서 누를 때 눌리는 모습이 보이게 (아이폰은 이 줄이 있어야 :active 가 동작)
+  document.addEventListener('touchstart', function () { }, { passive: true });
+
+  // 하루 일과: 내려갈수록 왼쪽 선이 채워진다
+  (function () {
+    var day = document.querySelector('.day');
+    if (!day || !document.documentElement.classList.contains('m-on')) return;
+    function fill() {
+      var r = day.getBoundingClientRect();
+      day.style.setProperty('--g', Math.max(0, Math.min(1, (window.innerHeight * .75 - r.top) / r.height)).toFixed(3));
+    }
+    window.addEventListener('scroll', fill, { passive: true });
+    window.addEventListener('resize', fill);
+    fill();
+  })();
+
+  // 상담 순서: 강조 상자가 칸을 옮겨 다닌다
+  (function () {
+    if (!document.documentElement.classList.contains('m-on') || !('IntersectionObserver' in window)) return;
+    Array.prototype.forEach.call(document.querySelectorAll('ol.steps'), function (ol) {
+      var items = Array.prototype.slice.call(ol.children);
+      if (items.length < 2) return;
+      var cur = 0, timer = null, asked = false, started = false, visible = false;
+      ol.classList.add('hl');
+      function place() {
+        var li = items[cur];
+        ol.style.setProperty('--hx', li.offsetLeft + 'px'); ol.style.setProperty('--hy', li.offsetTop + 'px');
+        ol.style.setProperty('--hw', li.offsetWidth + 'px'); ol.style.setProperty('--hh', li.offsetHeight + 'px');
+      }
+      function show(i) { cur = i; items.forEach(function (x, n) { x.classList.toggle('on', n === i); }); place(); }
+      function stacked() { return items[1].offsetTop > items[0].offsetTop + 10; }   // 위아래로 쌓인 화면
+      function stop() { clearInterval(timer); timer = null; }
+      function run() { stop(); if (started && visible && !stacked()) timer = setInterval(function () { show((cur + 1) % items.length); }, 2600); }
+      function follow() {   // 쌓인 화면에서는 화면 가운데에 가까운 칸을 따라간다
+        if (!started || !stacked()) return;
+        var mid = window.innerHeight * .5, best = 0, gap = Infinity;
+        items.forEach(function (li, i) { var r = li.getBoundingClientRect(), v = Math.abs((r.top + r.bottom) / 2 - mid); if (v < gap) { gap = v; best = i; } });
+        if (best !== cur) show(best);
+      }
+      items.forEach(function (li, i) {
+        li.addEventListener('mouseenter', function () { if (started) { show(i); stop(); } });
+        li.addEventListener('mouseleave', run);
+        li.addEventListener('click', function () { if (started) { show(i); run(); } });
+      });
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (!visible) { stop(); return; }
+        if (started) { run(); return; }
+        if (asked) return;
+        asked = true;
+        setTimeout(function () { started = true; show(0); ol.classList.add('lit'); follow(); run(); }, 1800);   // 칸이 들어오는 움직임이 끝난 뒤
+      }, { threshold: .2 }).observe(ol);
+      window.addEventListener('scroll', follow, { passive: true });
+      window.addEventListener('resize', function () { place(); run(); });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    });
+  })();
+
+  // 상담 칸의 카톡 단추: 마우스가 가까이 오면 살짝 끌려온다 (마우스가 있는 컴퓨터만)
+  (function () {
+    if (!document.documentElement.classList.contains('m-on') || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    Array.prototype.forEach.call(document.querySelectorAll('.consult a.btn.kakao'), function (el) {
+      el.classList.add('magnet');
+      var x = 0, y = 0, on = false;
+      window.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2 - x), dy = e.clientY - (r.top + r.height / 2 - y);
+        if (Math.abs(dx) < r.width / 2 + 80 && Math.abs(dy) < r.height / 2 + 70) {
+          x = dx * .3; y = dy * .4; on = true; el.classList.add('pull'); el.style.translate = x.toFixed(1) + 'px ' + y.toFixed(1) + 'px';
+        } else if (on) { x = 0; y = 0; on = false; el.classList.remove('pull'); el.style.translate = ''; }
+      }, { passive: true });
+    });
+  })();
+
   // 스크롤하면 천천히 나타나기
   (function () {
     window.__mReady = true;   // 머리의 작은 코드가 이 표시를 보고 숨김 상태를 유지한다
@@ -1473,7 +1672,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); return; }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { rootMargin: '0px 0px -8% 0px' });
+    }, { rootMargin: window.innerWidth <= 960 ? '0px 0px -18% 0px' : '0px 0px -8% 0px' });
     items.forEach(function (el) { io.observe(el); });
   })();
 
