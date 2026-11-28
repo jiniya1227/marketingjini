@@ -554,7 +554,9 @@
 #jini .note a { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; height: 100%; padding: 22px 20px 16px; border: 3px solid var(--ink); border-radius: 12px; background: var(--yellow); text-decoration: none; transition: transform .18s ease; }
 #jini .note a:hover { transform: translateY(-4px); }
 #jini .note-title { display: block; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(19px, 5.2vw, 22px); line-height: 1.5; letter-spacing: -.02em; }
-#jini .note a:hover .note-title, #jini .note a:focus-visible .note-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+/* 작업 노트 제목: 마우스를 올리면 손글씨 느낌의 보라 밑줄이 왼쪽부터 그어짐 (2026-11-28 사용자 — 직선 대신 손글씨, 줄마다 따로) */
+#jini .note-title .hand { padding-bottom: .12em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M3 13 C 40 9.5, 70 16, 110 12 S 180 8.5, 220 12.5 S 280 10, 297 5.5' fill='none' stroke='%236A4BE3' stroke-width='3.4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3Cpath d='M14 16 C 70 13, 140 17.5, 200 14 S 260 12.5, 290 10' fill='none' stroke='%236A4BE3' stroke-width='1.8' stroke-linecap='round' stroke-opacity='.6' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") no-repeat 0 100% / 0% .55em; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size .45s cubic-bezier(.2, .7, .2, 1); }
+#jini .note a:hover .hand, #jini .note a:focus-visible .hand { background-size: 100% .55em; }
 #jini .note-go { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; border-top: 2px solid var(--ink); font-size: 17px; font-weight: 700; line-height: 1.4; }
 #jini .note-arrow { display: flex; justify-content: center; align-items: center; flex: none; width: 40px; height: 40px; border-radius: 8px; background: var(--violet); color: var(--white); font-size: 20px; line-height: 1; transition: transform .18s ease; }
 #jini .note a:hover .note-arrow { transform: translateX(4px); }
@@ -856,6 +858,10 @@
   transition: transform .25s ease;
 }
 #jini .btn:active::after, #jini .jini-cta:active::after, #jini .dock-cta:active::after, #jini .plan-btn:active::after, #jini .sc-send:active::after, #jini .notes-all a:active::after { transform: translateX(5px); }
+/* 맨 아래 상담 칸 카톡 단추: 화면에 보이는 동안 화살표가 단추 끝을 콕콕 두 번씩 가리킴 (2026-11-28 사용자 요청, 스크립트가 .poke 를 붙였다 뗌) */
+#jini .btn.poke::after { animation: jini-poke 2.4s ease-in-out infinite; }
+#jini .btn.poke:hover::after, #jini .btn.poke:active::after { animation: none; }
+@keyframes jini-poke { 0% { transform: none; } 10% { transform: translateX(8px); } 20% { transform: none; } 30% { transform: translateX(8px); } 40% { transform: none; } 100% { transform: none; } }
 @media (hover: hover) {
   #jini .btn:hover::after, #jini .jini-cta:hover::after, #jini .dock-cta:hover::after, #jini .plan-btn:hover::after, #jini .sc-send:hover::after, #jini .notes-all a:hover::after { transform: translateX(5px); }
 }
@@ -1380,10 +1386,10 @@ document.getElementById('jini').classList.add('sand-on');
     </div>
     <!-- 최신 4편만 보이고(5번째부터는 CSS로 숨김), 전체 목록은 notes/ 페이지 — 새 글은 맨 위에 한 줄 더하고 notes/index.html 목록에도 추가 -->
     <ul class="notes-list">
-      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
-      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/place-photos/"><span class="note-title"><span class="hand">네이버 플레이스 사진, 어떤 순서로 올려야 보호자가 안심할까요?</span></span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/guardian-first/"><span class="note-title"><span class="hand">보호자는 센터 홈페이지에서 무엇을 먼저 볼까요?</span></span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/no-inquiry/"><span class="note-title"><span class="hand">블로그 글을 꾸준히 쓰는데 왜 문의가 없을까요?</span></span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
+      <li class="note"><a href="https://marketingjini.com/notes/naver-blog-ai/"><span class="note-title"><span class="hand">네이버 블로그만 있으면 왜 ChatGPT에 우리 센터가 잘 안 나올까요?</span></span><span class="note-go">글 읽기<span class="note-arrow" aria-hidden="true">→</span></span></a></li>
     </ul>
   </div>
 </section>
@@ -1795,6 +1801,11 @@ document.getElementById('jini').classList.add('sand-on');
     endS.textContent = ''; endS.appendChild(ku);
     ku.style.setProperty('--k-line', (splitWords(ku, 'kw') * .14 + .6).toFixed(2) + 's');
   }
+
+  /* 맨 아래 상담 칸의 카톡 단추: 화면에 보이는 동안 화살표가 콕콕 가리킴 (2026-11-28 사용자 요청, 안 보이면 멈춤) */
+  each(root.querySelectorAll('#contact .btn[href*="pf.kakao.com"]'), function (el) {
+    new IntersectionObserver(function (es) { el.classList.toggle('poke', es[0].isIntersecting); }, { threshold: 0.6 }).observe(el);
+  });
 
   /* 맨 아래 상담 칸의 카톡 단추: 마우스가 가까이 오면 살짝 끌려옴 (마우스가 있는 컴퓨터만, 2026-11-28 사용자 요청 — 센터 제작기와 같은 방식) */
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
