@@ -889,6 +889,26 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     .greet .sign { margin-top: clamp(16px, 3.4vh, 36px); font-size: clamp(21px, 3vh, 28px); }
     .greet .more { min-height: clamp(52px, 8vh, 70px); margin-top: clamp(14px, 3vh, 30px); padding: 8px 34px; font-size: 21px; }
   }
+  /* 안내 영상 칸 (2026-11-28 사용자: 다른 칸과 균형 맞게 크게) */
+  #video .iv-src a { display: flex; width: max-content; max-width: 100%; min-height: 52px; margin-top: 12px; padding: 0 22px; gap: 8px; border-radius: 10px; background: var(--soft); color: var(--ink); font-size: 17px; text-decoration: none; }
+  #video.bg-soft .iv-src a { background: #fff; }
+  #video .iv-src a::after { margin-left: 0; }
+  #video .iv-summary summary { gap: 10px; }
+  #video .iv-summary summary::after { content: "＋"; }
+  #video .iv-summary[open] summary::after { content: "－"; }
+  @media (min-width: 961px) and (orientation: landscape) {
+    #video { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 84px); min-height: calc(100svh - 84px); padding: clamp(18px, 4vh, 60px) 0; }
+    #video > .wrap { width: 100%; max-width: 1600px; padding: 0 clamp(24px, 4vw, 56px); }
+    #video .intro-video { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 1fr auto auto auto 1fr; column-gap: clamp(28px, 3.4vw, 60px); max-width: none; margin: 0; }
+    #video .intro-video > div:not([class]), #video .intro-video > div.head + div:not(.iv-frame) { display: none; }
+    #video .intro-video > .head { grid-column: 1; grid-row: 2; margin: 0; }
+    #video .intro-video > .head h2 { margin: 0; font-size: min(6.4vh, 3.4vw, 60px); }
+    #video .iv-src { grid-column: 1; grid-row: 3; margin-top: clamp(16px, 3vh, 32px); font-size: clamp(16px, 2.3vh, 20px); line-height: 1.7; }
+    #video .iv-src a { min-height: clamp(54px, 8vh, 70px); margin-top: clamp(14px, 2.6vh, 28px); padding: 0 30px; font-size: 20px; }
+    #video .iv-summary { grid-column: 1; grid-row: 4; margin-top: clamp(10px, 2vh, 22px); font-size: 18px; }
+    #video .iv-frame { grid-column: 2; grid-row: 1 / -1; align-self: center; width: min(66vw, 1100px, (100vh - 160px) * 16 / 9); width: min(66vw, 1100px, (100svh - 160px) * 16 / 9); border-radius: 22px; }
+    #video .iv-poster::after { width: 112px; height: 82px; margin: -41px 0 0 -56px; border-radius: 18px; font-size: 36px; }
+  }
 :root{--bar-tel:rgba(20,50,37,.72);--main:#1E4D39;--on-main:#FFFFFF;--cta:#F0CF7E;--cta-text:#1F1A33;--photo-1:#1E4D39;--photo-1-text:#FFFFFF;--photo-2:#59714C;--photo-2-text:#FFFFFF;--photo-3:#BCAF6D;--photo-3-text:#1F1A33;--photo-4:#F0CF7E;--photo-4-text:#1F1A33;--deep:#1E4D39;--soft:#E7F0E6;--mark:#1E4D39;--accent-on-ink:#F0CF7E;--ink:#1F1A33;--line:#d8d5e2;--logo-fs:clamp(20px,6vw,27px);--gold:#1E4D39;--green:#1E4D39;--green-deep:#1E4D39;--light-gold:#F0CF7E;--gold-soft:#E7F0E6;--ink-soft:#423d57;--ink-faint:#5f5a73}
 </style>
 </head>
