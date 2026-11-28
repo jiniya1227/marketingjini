@@ -676,8 +676,8 @@
   /* 2026-11-26 '움직임 없이 정지된 그림 같다'는 의견: 120px만 움직여 거의 안 보였음 → 화면 오른쪽 밖에서 길게, 카드가 충분히 보일 때 시작(스크립트) */
   #jini.rv-on .shot[data-rv] { transform: translateX(55vw); transition: opacity .6s ease, transform 1.1s cubic-bezier(.16, .84, .24, 1); }
   #jini.rv-on .shot[data-rv].is-in { transform: none; }
-  #jini.rv-on .shot:nth-child(2) { transition-delay: .25s; }
-  #jini.rv-on .shot:nth-child(3) { transition-delay: .5s; }
+  #jini.rv-on .shot:nth-child(2) { transition-delay: .14s; }
+  #jini.rv-on .shot:nth-child(3) { transition-delay: .28s; }
   #jini .basics .rows { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
   #jini .basics .rows li { font-size: 21px; }
   #jini .basics .rows li::before { top: 33px; }
@@ -799,7 +799,7 @@
 #jini.rv-on .big[data-rv] { transform: translateY(50px); transition-duration: .7s, .9s; }
 #jini.rv-on .big[data-rv].is-in { transform: none; }
 /* 단추 반응 (2026-11-28 사용자 선택, 센터 제작기와 같은 방식): 누르면 살짝 눌리고 진한 색이 왼쪽에서 차오름. 마우스가 있으면 올렸을 때도 차오름 */
-@media (prefers-reduced-motion: no-preference) {
+@media screen {
   #jini .btn, #jini .jini-cta, #jini .dock-cta, #jini .plan-btn { position: relative; overflow: hidden; isolation: isolate; }
   #jini .btn, #jini .jini-cta, #jini .dock-cta { transition: transform .2s ease; }
   #jini .plan-btn { transition: transform .2s ease, color .15s ease .2s, border-color .3s ease, background-color .15s; } /* 글자색은 먹색이 가운데쯤 찼을 때 바뀜 */
@@ -813,7 +813,7 @@
   /* 휴대폰 아래 카톡 단추: 처음 나타날 때 두 번 통통 (스크립트가 한 번만 붙임) */
   #jini .dock-cta.is-bob { animation: jini-bob .7s ease 2; }
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+@media (hover: hover) {
   #jini .btn:hover, #jini .jini-cta:hover { filter: none; }
   #jini .btn:hover::before, #jini .jini-cta:hover::before, #jini .dock-cta:hover::before, #jini .plan-btn:hover::before { transform: scaleX(1); }
   #jini .plan .plan-btn:hover { background: var(--white); }
@@ -821,7 +821,7 @@
 }
 @keyframes jini-bob { 0% { transform: none; } 45% { transform: translateY(-10px); } 100% { transform: none; } }
 /* A4 안내자료 단추: 화면에 들어오면 화살표가 두 번 콕콕, 마우스를 올리면 떠오르며 먹색이 차오르고, 누르면 그림자 쪽으로 꾹 눌림 */
-@media (prefers-reduced-motion: no-preference) {
+@media screen {
   #jini .doc-btn { transition: transform .2s ease, box-shadow .2s ease, color .15s ease .2s; }
   #jini .doc-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
   #jini .doc-arrow { transition: transform .25s ease; }
@@ -832,13 +832,10 @@
   #jini .btn.magnet { transition: translate .6s cubic-bezier(.2, 1.6, .35, 1), transform .2s ease, box-shadow .3s ease; }
   #jini .btn.magnet.pull { transition: translate .18s ease-out, transform .2s ease, box-shadow .2s ease; box-shadow: 0 14px 30px #1F1A3359; }
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+@media (hover: hover) {
   #jini .doc-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); color: var(--white); }
   #jini .doc-btn:hover::before { transform: scaleX(1); }
   #jini .doc-btn:hover .doc-arrow { transform: translateX(5px); }
-}
-@media (hover: hover) and (prefers-reduced-motion: reduce) {
-  #jini .doc-btn:hover { background: var(--ink); color: var(--white); }
 }
 @keyframes jini-nudge { 0% { transform: none; } 50% { transform: translateX(7px); } 100% { transform: none; } }
 /* 만드는 사람: '8년차'가 화면에 들어오면 톡 튀어나오고, 옆 글이 뒤따라 들어옴 (2026-11-28 사용자 선택) */
@@ -847,18 +844,40 @@
 #jini.rv-on .years .years-t { opacity: 0; transform: translateX(-18px); transition: opacity .5s ease .75s, transform .6s cubic-bezier(.2, .7, .2, 1) .75s; }
 #jini.rv-on .years.is-in .years-t { opacity: 1; transform: none; }
 @keyframes jini-num-pop { from { opacity: 0; transform: scale(.35); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  #jini .h1-em { animation: none; }
-  #jini .plan { transition: none; }
-  #jini .note a, #jini .note-arrow { transition: none; }
-  #jini .plan.is-picked { animation: none; }
-  #jini .jini-track { animation: none; }
-  #jini .dock { transition: none; }
+/* 2026-11-28 사용자 결정: 기기의 '움직임 줄이기' 설정은 따지지 않는다 (센터 홈페이지와 같게) */
+/* ===== 움직임 더하기 (2026-11-28 사용자 선택 '추천대로') ===== */
+/* ① 큰 칸 제목: 보이지 않는 선 아래에서 글자가 쑥 올라옴 — 마스크 리빌 (스크립트가 .mask 와 안쪽 글자 상자를 붙일 때만) */
+#jini.rv-on .big[data-rv].mask { opacity: 1; transform: none; transition: none; }
+#jini .big .mask-in { display: block; overflow: hidden; padding: .12em .08em .16em; margin: -.12em -.08em -.16em; }
+#jini .big .mask-txt { display: block; }
+#jini.rv-on .big.mask .mask-txt { transform: translateY(120%); transition: transform 1.05s cubic-bezier(.2, .75, .2, 1) .1s; }
+#jini.rv-on .big.mask.is-in .mask-txt { transform: none; }
+/* ② 인용문: 흐린 낱말이 앞에서부터 차례로 또렷해짐 */
+#jini.rv-on .heard blockquote .w { opacity: .15; transition: opacity .6s ease; }
+#jini.rv-on .heard blockquote.is-in .w { opacity: 1; transition-delay: calc(var(--i) * .1s + .15s); }
+/* ③ 카드 차례로 등장: 하는 일 3장·작업 노트 4장 (PC는 한 줄에 나란해서 0.14초 간격, 휴대폰은 카드마다 화면에 들어올 때) */
+#jini.rv-on .svc .rows > li, #jini.rv-on .notes-list > .note { opacity: 0; transform: translateY(40px); transition: opacity .6s ease, transform .75s cubic-bezier(.2, .7, .2, 1); }
+#jini.rv-on .svc .rows > li.is-in, #jini.rv-on .notes-list > .note.is-in { opacity: 1; transform: none; }
+@media (min-width: 900px) and (orientation: landscape) {
+  #jini.rv-on .svc .rows > li:nth-child(2).is-in, #jini.rv-on .notes-list > .note:nth-child(2).is-in { transition-delay: .14s; }
+  #jini.rv-on .svc .rows > li:nth-child(3).is-in, #jini.rv-on .notes-list > .note:nth-child(3).is-in { transition-delay: .28s; }
+  #jini.rv-on .notes-list > .note:nth-child(4).is-in { transition-delay: .42s; }
 }
+/* ④ 하는 일 카드: 누르면 가격 칸의 같은 상품 상자로 내려가 그 상자가 톡 튀어 강조됨 (스크립트) */
+#jini .svc .rows > li { cursor: pointer; }
+@media (hover: hover) {
+  #jini .svc .rows > li:hover, #jini.rv-on .svc .rows > li.is-in:hover { transform: translateY(-6px); transition-delay: 0s; transition-duration: .25s; }
+}
+/* ⑤ '마케팅지니가 함께 정리해 드릴게요.': 낱말이 하나씩 내려앉고 마지막에 밑줄 — 키네틱 */
+#jini.rv-on .who-end .kw { display: inline-block; opacity: 0; }
+#jini.rv-on .who-end.is-in .kw { animation: jini-word-drop .75s cubic-bezier(.2, .75, .25, 1) calc(var(--i) * .14s + .25s) both; }
+#jini.rv-on .who-end .ku { padding-bottom: .06em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%231F1A33'/%3E%3C/svg%3E") no-repeat 0 100% / 0% .1em; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size .8s cubic-bezier(.2, .7, .2, 1) var(--k-line, 1s); }
+#jini.rv-on .who-end.is-in .ku { background-size: 100% .1em; }
+@keyframes jini-word-drop { 0% { opacity: 0; transform: translateY(-.75em) rotate(-8deg) scale(1.15); } 60% { opacity: 1; transform: translateY(.06em) rotate(2deg) scale(.98); } 100% { opacity: 1; transform: none; } }
 
 /* ---------- PC 겹침 효과 (움직임 줄이기·낮은 창에서는 보통 스크롤) ---------- */
 #jini .top-mark { position: absolute; top: 0; left: 0; width: 1px; height: 100vh; pointer-events: none; }
-@media (min-width: 900px) and (orientation: landscape) and (min-height: 620px) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 900px) and (orientation: landscape) and (min-height: 620px) {
   #jini .stack > .hero { position: sticky; top: 0; z-index: 0; }
   #jini .stack > .who-sec { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: flex-start; padding-top: 80px; border-top: 3px solid var(--ink); border-radius: 32px 32px 0 0; box-shadow: 0 -24px 56px #1F1A3340; }
   #jini .stack > .who-sec > .wrap { width: 100%; }
@@ -917,8 +936,8 @@
 <body style="margin:0">
 <div id="jini">
 <script>
-/* 모래 글자 효과 준비: 움직임 줄이기를 켜지 않았으면 첫 화면이 그려지기 전에 큰 글자를 숨겨 둠 (스크립트가 못 돌면 그대로 보임) */
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.getElementById('jini').classList.add('sand-on');
+/* 모래 글자 효과 준비: 첫 화면이 그려지기 전에 큰 글자를 숨겨 둠 (스크립트가 못 돌면 그대로 보임) */
+document.getElementById('jini').classList.add('sand-on');
 </script>
 
 <main>
@@ -1427,7 +1446,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 <script>
   (function () {
     var scene = document.getElementById('scene');
-    if (!scene || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!scene) return;
     var steps = scene.querySelectorAll('.step'), dots = scene.querySelectorAll('.scene-dots i'), num = document.getElementById('sceneN');
     var cur = 0;
     var wide = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
@@ -1620,7 +1639,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
 (function () {
   var root = document.getElementById('jini'); if (!root) return;
   root.classList.add('js-on');
-  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var calm = false; /* 2026-11-28 사용자: 기기의 '움직임 줄이기' 설정은 따지지 않음 */
   var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
 
   /* ① 가격 상자 + 카톡 보낼 말 */
@@ -1677,6 +1696,15 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     var go = p.querySelector('.plan-btn');
     if (go) go.addEventListener('click', function () { setPick(i); });
   });
+  /* 하는 일 카드를 누르면 가격 칸의 같은 상품 상자로 내려가 그 상자를 강조 (2026-11-28 사용자 선택, 순서가 같아 같은 번호끼리 연결) */
+  each(root.querySelectorAll('.svc .rows > li'), function (li, i) {
+    if (!plans[i]) return;
+    li.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('a')) return;
+      plans[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function () { setPick(i); }, 700);
+    });
+  });
 
   /* ② 우리 센터에 맞는 상품 찾기 */
   var finder = root.querySelector('.finder');
@@ -1725,6 +1753,30 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   if (calm || !('IntersectionObserver' in window)) return;
   root.classList.add('rv-on');
 
+  /* 큰 칸 제목 마스크 리빌: 글자를 안쪽 상자에 넣어 선 아래에 숨겨 둠 */
+  each(root.querySelectorAll('.big[data-rv]'), function (el) {
+    el.innerHTML = '<span class="mask-in"><span class="mask-txt">' + el.innerHTML + '</span></span>';
+    el.classList.add('mask');
+  });
+  /* 낱말마다 나누기 (글자·띄어쓰기는 그대로라 화면 낭독기는 원래 문장대로 읽음) */
+  var splitWords = function (el, cls) {
+    var ws = el.textContent.trim().split(/\s+/), box = document.createDocumentFragment();
+    ws.forEach(function (w, i) {
+      if (i) box.appendChild(document.createTextNode(' '));
+      var sp = document.createElement('span'); sp.className = cls; sp.textContent = w; sp.style.setProperty('--i', i); box.appendChild(sp);
+    });
+    el.textContent = ''; el.appendChild(box);
+    return ws.length;
+  };
+  var quote = root.querySelector('.heard blockquote');
+  if (quote) splitWords(quote, 'w');
+  var endS = root.querySelector('.who-end strong');
+  if (endS) {
+    var ku = document.createElement('span'); ku.className = 'ku'; ku.textContent = endS.textContent.trim();
+    endS.textContent = ''; endS.appendChild(ku);
+    ku.style.setProperty('--k-line', (splitWords(ku, 'kw') * .14 + .6).toFixed(2) + 's');
+  }
+
   /* 맨 아래 상담 칸의 카톡 단추: 마우스가 가까이 오면 살짝 끌려옴 (마우스가 있는 컴퓨터만, 2026-11-28 사용자 요청 — 센터 제작기와 같은 방식) */
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     each(root.querySelectorAll('#contact .btn[href*="pf.kakao.com"]'), function (el) {
@@ -1764,7 +1816,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  each(root.querySelectorAll('[data-rv], .hl, .years, .doc-btn, .svc-rec'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
+  each(root.querySelectorAll('[data-rv], .hl, .years, .doc-btn, .svc .rows > li, .notes-list > .note, .heard blockquote, .who-end'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
   /* 샘플 화면 (2026-11-26): 카드가 화면 아래 30% 선을 지나 충분히 보일 때, 그림을 다 받은 뒤 움직임.
      PC는 3장이 한 줄이라 줄 전체를 보고(오른쪽 밖으로 밀려난 카드는 화면에 안 잡히므로), 휴대폰은 한 장씩 */
   var pcRow = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
