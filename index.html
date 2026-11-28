@@ -283,8 +283,13 @@
 #jini .svc > .lead { margin-top: 14px; font-size: 18px; font-weight: 500; line-height: 1.75; opacity: 1; }
 #jini .svc .rows { margin-top: 32px; display: grid; gap: 16px; border-top: 0; }
 #jini .svc .rows > li { padding: 28px 24px 30px; border: 2px solid #1F1A3340; border-radius: 22px; background: var(--white); }
-#jini .svc-name { display: block; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #1F1A3326; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 26px; line-height: 1.35; }
-#jini .svc .rows p { font-size: 18px; line-height: 1.8; }
+#jini .svc-name { display: block; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #1F1A3333; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 26px; line-height: 1.35; }
+#jini .svc .rows p { font-size: 18px; font-weight: 500; line-height: 1.75; } /* 2026-11-28 가독성: 본문을 조금 굵게 */
+/* 하는 일: 시작 패키지 강조 (2026-11-28 사용자 요청 — 가격 칸 추천 상자와 같은 모양: 보라 테두리 + 보라 '추천' 표시 + 그림자) */
+#jini .svc .rows > li.svc-rec { position: relative; border: 3px solid var(--violet); box-shadow: 0 22px 44px #1F1A3326; }
+#jini .svc-badge { position: absolute; top: 24px; right: 20px; padding: 5px 12px 6px; border-radius: 8px; background: var(--violet); color: var(--white); font-size: 15px; font-weight: 700; line-height: 1.3; }
+#jini.rv-on .svc-rec .svc-badge { opacity: 0; }
+#jini.rv-on .svc-rec.is-in .svc-badge { animation: jini-stamp .38s cubic-bezier(.2, .9, .3, 1.3) .5s both; } /* 화면에 들어오면 도장 찍히듯 */
 
 /* ---------- ③ 이렇게 만들어 드려요 ---------- */
 #jini .sec-rule { padding-top: 0; }
@@ -338,7 +343,12 @@
 #jini .plan.is-rec.is-picked { border-color: var(--violet); }
 @media (hover: hover) { #jini .plan:hover { transform: translateY(-4px); } #jini .plan.is-picked:hover { transform: translateY(-6px); } }
 @keyframes jini-pop { 0% { transform: none; } 45% { transform: translateY(-14px); } 100% { transform: translateY(-6px); } }
-#jini .price-note { margin-top: 28px; font-size: 16px; line-height: 1.8; }
+/* 세부 조건 안내 + A4 안내자료 단추 (2026-11-28 사용자 요청: 글자 링크 → 눈에 띄는 테두리 단추 + 화살표·눌림 움직임) */
+#jini .price-note { display: grid; gap: 16px; margin-top: 28px; font-size: 16px; line-height: 1.7; }
+#jini .doc-btn { position: relative; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 58px; padding: 0 24px; border: 3px solid var(--ink); border-radius: 10px; background: var(--white); color: var(--ink); font-size: 17px; font-weight: 700; text-decoration: none; white-space: nowrap; box-shadow: 4px 4px 0 var(--ink); }
+#jini .doc-btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
+#jini .doc-arrow { position: relative; display: block; flex: none; width: 20px; height: 3px; border-radius: 2px; background: currentColor; }
+#jini .doc-arrow::after { content: ""; position: absolute; right: 1px; top: 50%; width: 9px; height: 9px; border-top: 3px solid currentColor; border-right: 3px solid currentColor; transform: translateY(-50%) rotate(45deg); }
 
 /* 우리 센터에 맞는 상품 찾기 (2026-11-26): 스크립트가 켜질 때만 보임 */
 #jini .finder { display: none; margin-top: 44px; padding: 26px 22px 28px; border: 3px solid var(--ink); border-radius: 12px; background: var(--white); }
@@ -503,7 +513,7 @@
 #jini .calc-try { margin-top: 56px; padding: 26px 22px 28px; border-radius: 12px; background: var(--yellow); }
 #jini .calc-try p { margin-top: 10px; font-size: 17px; line-height: 1.7; }
 #jini .calc-try .btn { margin-top: 18px; }
-#jini .svc .rows p.svc-price { margin-bottom: 12px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 24px; line-height: 1.4; }
+#jini .svc .rows p.svc-price { margin-bottom: 12px; font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 27px; line-height: 1.35; letter-spacing: -.02em; }
 #jini .svc-note { margin-top: 18px; font-size: 16px; font-weight: 700; line-height: 1.7; }
 /* 먹색 칸이 이어지는 곳(만드는 사람 → 질문)은 흰 선으로 나눔 */
 #jini #maker + #faq { border-top: 1px solid var(--white); }
@@ -650,6 +660,10 @@
   #jini .is-scene .scene-foot { font-size: 16px; }
   #jini .svc .rows { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 44px; }
   #jini .svc .rows > li { padding: 34px 30px 36px; }
+  #jini .svc .rows > li.svc-rec { margin: -16px 0; padding-top: 50px; padding-bottom: 52px; } /* 추천 칸은 위아래로 조금 더 크게 (구분선 높이는 그대로) */
+  #jini .svc-badge { top: 22px; right: 22px; }
+  #jini .svc .rows p.svc-price { font-size: 24px; } /* 세 칸 가격이 한 줄에 들어가게 */
+  #jini .svc-note { margin-top: 38px; } /* 추천 칸이 아래로 나온 만큼 띄움 */
   #jini .svc > .h3 { font-size: 48px; }
   #jini .svc > .lead { font-size: 21px; }
   #jini .svc-name { min-height: calc(2.7em + 15px); font-size: clamp(19px, 1.95vw, 27px); white-space: nowrap; } /* 첫 칸 제목이 두 줄이라 세 칸의 구분선·가격 높이를 맞춤 */
@@ -679,7 +693,7 @@
   #jini .plan-name { font-size: 23px; }
   #jini .plan-for { font-size: 19px; }
   #jini .plan-checks li { font-size: 17px; }
-  #jini .price-note { font-size: 17px; }
+  #jini .price-note { grid-template-columns: 1fr auto; align-items: center; gap: 28px; font-size: 17px; }
   #jini .letter p:not(.letter-to) { font-size: 19px; }
   #jini .letter-to { font-size: 40px; }
   #jini .letter-q { padding: 22px 26px; }
@@ -804,6 +818,27 @@
   #jini .plan.is-rec .plan-btn:hover { background: var(--violet); }
 }
 @keyframes jini-bob { 0% { transform: none; } 45% { transform: translateY(-10px); } 100% { transform: none; } }
+/* A4 안내자료 단추: 화면에 들어오면 화살표가 두 번 콕콕, 마우스를 올리면 떠오르며 먹색이 차오르고, 누르면 그림자 쪽으로 꾹 눌림 */
+@media (prefers-reduced-motion: no-preference) {
+  #jini .doc-btn { transition: transform .2s ease, box-shadow .2s ease, color .15s ease .2s; }
+  #jini .doc-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+  #jini .doc-arrow { transition: transform .25s ease; }
+  #jini .doc-btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); color: var(--white); transition-duration: .1s; }
+  #jini .doc-btn:active::before { transform: scaleX(1); }
+  #jini.rv-on .doc-btn.is-in .doc-arrow { animation: jini-nudge .7s ease .6s 2; }
+  /* 맨 아래 상담 칸 카톡 단추: 마우스가 가까이 오면 끌려옴 (스크립트가 마우스 있는 컴퓨터에서만 .magnet 을 붙임, 위치는 translate 로만 옮겨 눌림과 겹치지 않음) */
+  #jini .btn.magnet { transition: translate .6s cubic-bezier(.2, 1.6, .35, 1), transform .2s ease, box-shadow .3s ease; }
+  #jini .btn.magnet.pull { transition: translate .18s ease-out, transform .2s ease, box-shadow .2s ease; box-shadow: 0 14px 30px #1F1A3359; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #jini .doc-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); color: var(--white); }
+  #jini .doc-btn:hover::before { transform: scaleX(1); }
+  #jini .doc-btn:hover .doc-arrow { transform: translateX(5px); }
+}
+@media (hover: hover) and (prefers-reduced-motion: reduce) {
+  #jini .doc-btn:hover { background: var(--ink); color: var(--white); }
+}
+@keyframes jini-nudge { 0% { transform: none; } 50% { transform: translateX(7px); } 100% { transform: none; } }
 /* 만드는 사람: '8년차'가 화면에 들어오면 톡 튀어나오고, 옆 글이 뒤따라 들어옴 (2026-11-28 사용자 선택) */
 #jini.rv-on .years .years-n { opacity: 0; transform-origin: left bottom; }
 #jini.rv-on .years.is-in .years-n { animation: jini-num-pop .7s cubic-bezier(.2, .8, .3, 1.4) .15s both; }
@@ -999,7 +1034,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
     <h2 class="h3" id="svc-title">센터는 사진만 <span class="nw">보내 주세요.</span></h2>
     <p class="lead">보호자가 찾는 길은 마케팅지니가 함께 정리합니다. <span class="nw">주야간보호센터 중심으로,</span> <span class="nw">방문요양·요양원도 상담 가능해요.</span></p>
     <ul class="rows">
-      <li><b class="svc-name">홈페이지+<wbr><span class="nw">블로그·플레이스 정리</span></b><p class="svc-price">시작 패키지 <span class="nw">50만 원</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요. <span class="nw">시작 패키지로 진행해요.</span></p></li>
+      <li class="svc-rec"><span class="svc-badge">추천</span><b class="svc-name">홈페이지+<wbr><span class="nw">블로그·플레이스 정리</span></b><p class="svc-price">시작 패키지 <span class="nw">50만 원</span></p><p>블로그·플레이스의 소개글과 사진, <span class="nw">기본 정보를</span> 보호자가 보는 순서로 정리하고, <strong class="hl">블로그 글 15편</strong>을 써 드려요. <span class="nw">시작 패키지로 진행해요.</span></p></li>
       <li><b class="svc-name">홈페이지 제작</b><p class="svc-price">25만 원</p><p>센터 소개, <span class="nw">비용·하루 일과·프로그램,</span> <span class="nw">오시는 길을</span> 담은 홈페이지를 만들어 <strong class="hl">플레이스에 연결</strong>해요.</p></li>
       <li><b class="svc-name">월간 관리</b><p class="svc-price"><span class="nw">월 18만 원</span> <span class="nw">또는 25만 원</span></p><p><strong class="hl">사진과 한 줄 설명만</strong> 주시면 <span class="nw">블로그 글과</span> <span class="nw">플레이스 소식으로</span> 올려요. <span class="nw">얼굴은 모자이크하고,</span> <span class="nw">센터에서 확인한 뒤 게시해요.</span> <strong class="hl">한 일은 매달 보고</strong>해 드려요.</p></li>
     </ul>
@@ -1202,7 +1237,10 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
         <a class="btn" href="https://pf.kakao.com/_rxeExeX/chat" target="_blank" rel="noopener">카톡으로 상담하기</a>
       </div>
     </details>
-    <p class="price-note"><strong>환불·해지와 사진 보관 같은 세부 조건은 계약 전에 문서로 안내해 드려요.</strong> <a class="tl nw" href="https://marketingjini.com/service/">A4 안내자료 보기</a></p>
+    <div class="price-note">
+      <p><strong>환불·해지와 사진 보관 같은 세부 조건은 계약 전에 문서로 안내해 드려요.</strong></p>
+      <a class="doc-btn" href="https://marketingjini.com/service/">A4 안내자료 보기<i class="doc-arrow" aria-hidden="true"></i></a>
+    </div>
     <!-- 진행 순서 · 약속 (2026-11-26 사용자 요청: 상품 안내지와 같은 내용을 가격 아래에 짧게) -->
     <div class="proc">
       <h3 class="proc-title">진행 순서</h3>
@@ -1684,6 +1722,20 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   if (calm || !('IntersectionObserver' in window)) return;
   root.classList.add('rv-on');
 
+  /* 맨 아래 상담 칸의 카톡 단추: 마우스가 가까이 오면 살짝 끌려옴 (마우스가 있는 컴퓨터만, 2026-11-28 사용자 요청 — 센터 제작기와 같은 방식) */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    each(root.querySelectorAll('#contact .btn[href*="pf.kakao.com"]'), function (el) {
+      el.classList.add('magnet');
+      var x = 0, y = 0, on = false;
+      window.addEventListener('mousemove', function (e) {
+        var r = el.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2 - x), dy = e.clientY - (r.top + r.height / 2 - y);
+        if (Math.abs(dx) < r.width / 2 + 70 && Math.abs(dy) < r.height / 2 + 45) {
+          x = dx * .3; y = dy * .4; on = true; el.classList.add('pull'); el.style.translate = x.toFixed(1) + 'px ' + y.toFixed(1) + 'px';
+        } else if (on) { x = 0; y = 0; on = false; el.classList.remove('pull'); el.style.translate = ''; }
+      }, { passive: true });
+    });
+  }
+
   /* 진행 순서: 화면에 들어온 칸까지 번호를 1부터 차례로 켬 (한 번만) */
   var flow = root.querySelector('.proc-steps');
   if (flow) {
@@ -1709,7 +1761,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  each(root.querySelectorAll('[data-rv], .hl, .years'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
+  each(root.querySelectorAll('[data-rv], .hl, .years, .doc-btn, .svc-rec'), function (el) { if (!el.classList.contains('shot')) io.observe(el); });
   /* 샘플 화면 (2026-11-26): 카드가 화면 아래 30% 선을 지나 충분히 보일 때, 그림을 다 받은 뒤 움직임.
      PC는 3장이 한 줄이라 줄 전체를 보고(오른쪽 밖으로 밀려난 카드는 화면에 안 잡히므로), 휴대폰은 한 장씩 */
   var pcRow = window.matchMedia('(min-width: 900px) and (orientation: landscape)');
