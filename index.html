@@ -301,9 +301,11 @@
 #jini .basics .rows { margin-top: 22px; }
 #jini .basics .rows li { position: relative; padding: 20px 0 20px 32px; font-size: 19px; font-weight: 700; line-height: 1.5; }
 #jini .basics .rows li::before { content: ""; position: absolute; left: 3px; top: calc(20px + .42em); width: 16px; height: 8px; border-left: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: rotate(-45deg); }
-#jini .sample-notes { margin-top: 32px; display: grid; gap: 16px; font-size: 18px; line-height: 1.7; }
-#jini .sample-notes .tl { font-size: 19px; }
+/* (2026-11-28 사용자 의견: 아래가 비어 보이고 샘플 링크가 잘 안 보임) 안내 글·보라 버튼·작은 설명을 가운데 상자 하나로, 칸 아래 여백은 줄임 */
+#jini .sample-notes { margin-top: 40px; display: grid; justify-items: center; gap: 22px; padding: 30px 22px 26px; border: 2px solid #1F1A3340; border-radius: 22px; text-align: center; font-size: 18px; line-height: 1.7; word-break: keep-all; }
+#jini .sample-notes .btn { margin-top: 0; min-height: 64px; font-size: 19px; }
 #jini .sample-notes .fine { font-size: 16px; }
+#jini #sample { padding-bottom: 56px; }
 /* ---------- ④ 가격 ---------- */
 /* 가격 상자 (2026-11-26 사용자 참고 이미지 방식): 노란 바탕 위 흰 상자 3개, 02 시작 패키지는 추천 — 보라 테두리·추천 표시·보라 버튼, PC에서 위아래로 조금 더 큼.
    이름 → 큰 가격 → 부가세 → 누구에게 맞는지 → 가는 선 → 무엇을 → 체크 목록 → 버튼 → 작은 안내. 흐린 글자·가는 선은 먹색을 반투명으로 */
@@ -662,6 +664,9 @@
   #jini .basics .rows li { font-size: 21px; }
   #jini .basics .rows li::before { top: 33px; }
   #jini .basics .h3 { font-size: 30px; }
+  #jini .sample-notes { margin-top: 56px; padding: 44px 40px 38px; }
+  #jini .sample-notes .btn { min-width: 440px; min-height: 72px; font-size: 22px; }
+  #jini #sample { padding-bottom: 72px; }
   /* PC 글자 한 단계 더 크게 (2026-11-25 '전체적으로 글자가 작아 보인다'는 의견) */
   #jini .lead { font-size: 19px; }
   #jini .fine { font-size: 16px; }
@@ -977,9 +982,9 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
   <div class="wrap">
     <h2 class="h2" id="sample-title">요양기관 홈페이지,<br>이렇게 만들어 드립니다.</h2>
     <div class="shots">
-      <figure class="shot" data-rv><img src="img/sample-home.webp?v=20261128zb" alt="샘플 센터 홈페이지 첫 화면: 큰 제목과 전화 상담 버튼, 비용 계산 버튼" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-program.webp?v=20261128zb" alt="샘플 센터 홈페이지 프로그램: 신체 활동과 여가·행사 사진" width="640" height="1385" loading="lazy"></figure>
-      <figure class="shot" data-rv><img src="img/sample-blog.webp?v=20261128zb" alt="샘플 센터 홈페이지 블로그 소식: 프로그램표·식단표 보기와 활동 사진 네 칸" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-home.webp?v=20261128zf" alt="샘플 센터 홈페이지 첫 화면: 큰 제목과 전화 상담 버튼, 비용 계산 버튼" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-program.webp?v=20261128zf" alt="샘플 센터 홈페이지 프로그램: 신체 활동과 여가·행사 사진" width="640" height="1385" loading="lazy"></figure>
+      <figure class="shot" data-rv><img src="img/sample-blog.webp?v=20261128zf" alt="샘플 센터 홈페이지 블로그 소식: 프로그램표·식단표 보기와 활동 사진 네 칸" width="640" height="1385" loading="lazy"></figure>
     </div>
     <div class="calc-try">
       <h3 class="h3">본인부담금 계산기,<br>직접 눌러 보세요</h3>
@@ -998,8 +1003,8 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.get
       </ul>
     </div>
     <div class="sample-notes">
-      <p>장기요양 수가·식비 변경(1년 1회)은 <strong class="hl"><span class="nw">홈페이지를 만든 날부터 2년 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong> <span class="nw">2년 뒤에는 별도 비용이에요.</span></p>
-      <p><a class="tl hl" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a></p>
+      <p><span class="nw">장기요양 수가·식비</span> <span class="nw">변경(1년 1회)은</span> <strong class="hl"><span class="nw">홈페이지를 만든 날부터 2년 동안</span> <span class="nw">무료로 수정해 드려요.</span></strong> <span class="nw">2년 뒤에는 별도 비용이에요.</span></p>
+      <a class="btn" href="https://marketingjini.com/sample/">샘플 홈페이지 직접 보기</a>
       <p class="fine">샘플 화면입니다. 가상의 센터이며 이름·전화·주소·비용은 예시이고, 샘플 페이지의 사진은 AI로 만든 그림으로 실제 인물이 아닙니다.</p>
     </div>
   </div>

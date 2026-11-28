@@ -192,15 +192,22 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%231E4D39%27%2F%3E%3Ctext%20x%3D%2716%27%20y%3D%2722.5%27%20font-family%3D%27sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20text-anchor%3D%27middle%27%20fill%3D%27%23fff%27%3E%EC%83%98%3C%2Ftext%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
 /* ===== 센터 홈페이지 디자인 B (4.0 · 2026-11-27) =====
      색: --main(대표색) · --on-main(대표색 위 글자) · --cta(대표색 위 버튼) · --deep(흰 바탕 버튼) · --soft(연한 바탕) · --ink(먹색) */
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: #fff; color: var(--ink); font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 20px; line-height: 1.75; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
-  h1, h2, h3, h4, .quote { margin: 0; font-family: "Noto Serif KR", serif; font-weight: 700; line-height: 1.35; text-wrap: balance; }
+  /* 글꼴 (2026-11-28 사용자 선택 1안): 모두 프리텐다드, 명조는 첫 화면 큰 제목과 인사말 큰 문장 2곳만. 번호는 Cormorant 기울임 */
+  :root { --sans: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; --serif: "Noto Serif KR", serif; }
+  body { margin: 0; background: #fff; color: var(--ink); font-family: var(--sans); font-size: 20px; line-height: 1.75; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, .quote { margin: 0; font-family: var(--sans); font-weight: 700; line-height: 1.35; text-wrap: balance; }
+  h1, h2 { font-weight: 800; }
+  h3, h4, .logo b { letter-spacing: -.015em; }
+  .hero h1, .greet .quote { font-family: var(--serif); font-weight: 700; }
   p, dl, dd, ul, ol, figure { margin: 0; padding: 0; }
   ul, ol { list-style: none; }
   p { text-wrap: pretty; }
@@ -241,7 +248,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .top .wrap { display: flex; align-items: center; gap: 28px; height: 84px; max-width: 1440px; }
   .logo { display: flex; align-items: center; gap: 12px; min-height: 48px; margin-right: auto; min-width: 0; text-decoration: none; }
   .logo svg, .logo .center-logo-image { flex: none; width: 48px; height: 48px; object-fit: contain; }
-  .logo b { font-family: "Noto Serif KR", serif; font-size: var(--logo-fs); line-height: 1.3; white-space: nowrap; }
+  .logo b { font-family: var(--sans); font-size: var(--logo-fs); line-height: 1.3; white-space: nowrap; }
   .top nav { display: flex; gap: 6px; font-size: 18px; font-weight: 700; }
   .top nav a { display: flex; align-items: center; min-height: 48px; padding: 0 10px; text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; }
   .top nav a:hover, .top nav a[aria-current="page"] { border-bottom-color: var(--deep); }
@@ -289,9 +296,14 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .photo-cats ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 0; list-style: none; }
   .photo-cats a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 84px; padding: 12px; border-radius: 14px; background: var(--soft); color: var(--ink); font-size: 18px; font-weight: 700; text-decoration: none; }
   .bg-soft .photo-cats a { background: #fff; }
+  /* 활동 사진 4칸: 테마마다 지정한 4색, 진한 색에서 밝은 색으로 (2026-11-28 사용자 선택 B-1). 글씨는 흰색·먹색 가운데 잘 보이는 쪽 */
+  .photo-cats li:nth-child(1) a { background: var(--photo-1); color: var(--photo-1-text); }
+  .photo-cats li:nth-child(2) a { background: var(--photo-2); color: var(--photo-2-text); }
+  .photo-cats li:nth-child(3) a { background: var(--photo-3); color: var(--photo-3-text); }
+  .photo-cats li:nth-child(4) a { background: var(--photo-4); color: var(--photo-4-text); }
   .more-cards a { display: block; height: 100%; padding: 24px; border-radius: 16px; background: #fff; color: var(--ink); text-decoration: none; box-shadow: 0 2px 12px rgba(31, 26, 51, .07); }
   .bg-white .more-cards a { background: var(--soft); box-shadow: none; }
-  .more-cards strong { display: block; font-family: "Noto Serif KR", serif; font-size: 22px; line-height: 1.45; }
+  .more-cards strong { display: block; font-family: var(--sans); font-size: 22px; line-height: 1.45; }
   .more-cards span { display: block; margin-top: 8px; font-size: 16px; }
 
   /* 사진 카드 */
@@ -311,7 +323,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .gal + .gal { margin-top: 28px; }
   .gal > h3 { margin-bottom: 20px; font-size: 26px; }
   .gal-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 22px; border-bottom: 2px solid var(--soft); }
-  .gal-tab { min-height: 56px; padding: 8px 4px; border: 0; border-radius: 10px 10px 0 0; background: transparent; color: var(--ink); font-family: "Noto Serif KR", serif; font-size: 22px; font-weight: 700; cursor: pointer; }
+  .gal-tab { min-height: 56px; padding: 8px 4px; border: 0; border-radius: 10px 10px 0 0; background: transparent; color: var(--ink); font-family: var(--sans); font-size: 22px; font-weight: 700; cursor: pointer; }
   .gal-tab[aria-selected="true"] { background: var(--ink); color: #fff; }
   .facility-carousel { position: relative; }
   .facility-zoom { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; overflow: hidden; border: 0; border-radius: 12px; background: var(--soft); cursor: zoom-in; }
@@ -332,7 +344,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .greet.solo { grid-template-columns: minmax(0, 1fr); }
   .greet .quote { margin-bottom: 26px; font-size: clamp(25px, 3.4vw, 44px); line-height: 1.5; }
   .greet .body p + p { margin-top: 16px; }
-  .greet .sign { margin-top: 26px; font-family: "Noto Serif KR", serif; font-size: 21px; font-weight: 700; }
+  .greet .sign { margin-top: 26px; font-family: var(--sans); font-size: 21px; font-weight: 700; }
   .greet .more { display: inline-flex; align-items: center; min-height: 48px; margin-top: 12px; font-weight: 700; text-underline-offset: 6px; }
   .greet-mark { display: grid; place-items: center; aspect-ratio: 1; border-radius: 18px; background: var(--soft); }
   .greet-mark svg, .greet-mark img { width: 62%; height: 62%; object-fit: contain; }
@@ -355,7 +367,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .cost div.head { margin-bottom: 30px; }
   .cost-sum { padding: 38px; border: 1px solid var(--line); border-radius: 18px; background: #fff; color: var(--ink); }
   .cost-sum small { display: block; font-size: 16px; font-weight: 700; }
-  .cost-sum strong { display: block; margin: 6px 0 18px; font-family: "Noto Serif KR", serif; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.3; }
+  .cost-sum strong { display: block; margin: 6px 0 18px; font-family: var(--sans); font-weight: 800; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.3; }
   .cost-sum li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-top: 1px solid var(--line); font-size: 18px; }
   .cost-sum li b { white-space: nowrap; }
   .cost-sum p { margin-top: 10px; font-size: 14px; }
@@ -382,7 +394,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .visit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: start; }
   .visit .addr { margin: 0 0 12px; font-size: 24px; font-weight: 700; line-height: 1.6; }
   .visit .btns { margin-top: 26px; }
-  .visit .tel { display: inline-flex; align-items: center; min-height: 56px; font-family: "Noto Serif KR", serif; font-size: 36px; font-weight: 700; text-decoration: none; }
+  .visit .tel { display: inline-flex; align-items: center; min-height: 56px; font-family: var(--sans); font-size: 36px; font-weight: 800; text-decoration: none; }
   .info { width: 100%; border-collapse: collapse; border-top: 1px solid var(--line); }
   .info th, .info td { padding: 15px 6px; border-bottom: 1px solid var(--line); font-size: 18px; text-align: left; vertical-align: top; }
   .info th { width: 40%; }
@@ -393,6 +405,23 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
     .hero-row { margin: 18px 0 22px; }
   }
   @media (min-width: 721px) and (max-width: 1400px) { .hero .wrap { padding: 0 104px; } }
+  /* 컴퓨터 가로 화면 (2026-11-28 사용자 요청): 첫 화면은 대표색 칸이 한 화면을 채워 아래 사진이 잘려 비치지 않게 하고,
+     첫 화면 큰 사진과 시설 사진은 머리를 뺀 한 화면을 가득 채운다 */
+  @media (min-width: 961px) and (orientation: landscape) {
+    .hero { padding-top: 0; }
+    .hero-top { display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 84px); min-height: calc(100svh - 84px); padding: 32px 0; }
+    .hero-row { margin-bottom: 0; }
+    .slider { aspect-ratio: auto; height: calc(100vh - 84px); height: calc(100svh - 84px); max-height: none; }
+    section:has(.gal) { overflow-x: clip; }
+    .gal { padding: 0; border-radius: 0; background: transparent; }
+    .gal + .gal { margin-top: 64px; }
+    .gal > h3 { font-size: 34px; }
+    .facility-carousel { width: 100vw; margin-inline: calc(50% - 50vw); }
+    .facility-zoom { aspect-ratio: auto; height: calc(100vh - 84px); height: calc(100svh - 84px); border-radius: 0; }
+    .facility-carousel-prev { left: 14px; } .facility-carousel-next { right: 14px; }
+    .facility-photo { object-position: 50% 30%; }   /* 위아래가 잘릴 때 얼굴 쪽을 더 남긴다 */
+    .facility-carousel .facility-zoom .facility-zoom-hint { right: 112px; bottom: 16px; }   /* 오른쪽 아래 카톡 버튼에 가려지지 않게 */
+  }
   @media (max-width: 980px) {
     #ltcCalcRoot .ltc-grid { display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
     #ltcCalcRoot .ltc-left, #ltcCalcRoot .ltc-result-col { display: contents; }
@@ -420,7 +449,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .box { padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: #fff; color: var(--ink); }
   .two + .box { margin-top: 24px; }
   .box > h3 { margin-bottom: 14px; font-size: 24px; }
-  .box > h3 small { display: block; margin-top: 4px; font-family: "Noto Sans KR", sans-serif; font-size: 15px; font-weight: 500; }
+  .box > h3 small { display: block; margin-top: 4px; font-family: var(--sans); font-size: 15px; font-weight: 500; }
   .rows li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 4px 16px; padding: 13px 0; border-top: 1px solid var(--line); font-size: 18px; }
   .rows .sub, .rows .asof, .rows small { display: block; font-size: 15px; }
   .fee-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -456,7 +485,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
 
   /* 바닥글 */
   footer { padding: 52px 0 60px; background: var(--ink); color: #fff; font-size: 17px; }
-  footer .wrap > strong { display: block; margin-bottom: 10px; color: var(--accent-on-ink); font-family: "Noto Serif KR", serif; font-size: 28px; line-height: 1.4; }
+  footer .wrap > strong { display: block; margin-bottom: 10px; color: var(--accent-on-ink); font-family: var(--sans); font-size: 28px; line-height: 1.4; }
   footer .wrap > span { display: block; }
   .foot-nav { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 22px 0 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .35); }
   .foot-nav a { display: inline-flex; align-items: center; justify-content: flex-start; min-width: 44px; min-height: 44px; font-weight: 700; text-decoration: none; }
@@ -554,7 +583,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   }
   .ltc-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px; box-shadow: 0 4px 16px rgba(40, 30, 20, .04); }
   .ltc-card + .ltc-card { margin-top: 16px; }
-  .ltc-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: "Noto Sans KR", sans-serif !important; }
+  .ltc-card h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: var(--sans) !important; }
   .ltc-card h3 small { font-size: 16.2px; font-weight: 500; color: var(--ink-faint); }
   .ltc-field + .ltc-field { margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line); }
   .ltc-label { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 18.6px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
@@ -606,7 +635,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .ltc-hero-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; background: var(--gold); color: #fff; font-size: 15.6px; font-weight: 700; }
   .ltc-hero-cond { font-size: 16.2px; color: rgba(255, 255, 255, .8); }
   .ltc-hero-label { font-size: 18px; color: rgba(255, 255, 255, .85); font-weight: 500; }
-  .ltc-hero-amount { font-size: clamp(40.8px, 4.8vw, 52.8px); font-weight: 800; color: var(--light-gold); letter-spacing: -1px; line-height: 1.2; margin: 4px 0 6px; font-family: "Noto Serif KR", serif; }
+  .ltc-hero-amount { font-size: clamp(40.8px, 4.8vw, 52.8px); font-weight: 800; color: var(--light-gold); letter-spacing: -1px; line-height: 1.2; margin: 4px 0 6px; font-family: var(--sans); }
   .ltc-hero-parts { font-size: 17.4px; color: rgba(255, 255, 255, .9); font-weight: 500; }
   .ltc-gauge { margin-top: 16px; background: rgba(0, 0, 0, .22); border-radius: 14px; padding: 12px 14px; }
   .ltc-gauge-track { height: 10px; border-radius: 999px; background: rgba(255, 255, 255, .18); overflow: hidden; margin-bottom: 8px; }
@@ -744,11 +773,11 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .ltc-money {min-width:0;max-width:100%;}
   .ltc-money input {min-width:0;max-width:100%;}
   }
-  .facility-zoom-hint {position:absolute;right:12px;bottom:12px;padding:5px 10px;border-radius:6px;background:rgba(0,0,0,.72);color:white;font:600 16px/1.5 sans-serif;}
+  .facility-zoom-hint {position:absolute;right:12px;bottom:12px;padding:5px 10px;border-radius:6px;background:rgba(0,0,0,.72);color:white;font:600 16px/1.5 var(--sans);}
   .facility-lightbox {width:min(1320px,94vw);max-width:94vw;max-height:94dvh;padding:16px;border:0;border-radius:14px;background:#fff;color:#222;box-shadow:0 20px 80px #0008;}
   .facility-lightbox::backdrop {background:rgba(0,0,0,.82);}
   .facility-lightbox-bar {display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px;font-size:20px;}
-  .facility-lightbox-close {padding:8px 18px;min-height:44px;border:1px solid #bbb;border-radius:8px;background:#fff;color:#222;font:700 18px/1.4 sans-serif;cursor:pointer;}
+  .facility-lightbox-close {padding:8px 18px;min-height:44px;border:1px solid #bbb;border-radius:8px;background:#fff;color:#222;font:700 18px/1.4 var(--sans);cursor:pointer;}
   .facility-lightbox-image {display:block;width:100%;max-height:calc(90dvh - 90px);object-fit:contain;}
   @media(max-width:600px) {
   .facility-lightbox {padding:10px;}
@@ -757,15 +786,15 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   .facility-gallery-nav {display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px;}
   .facility-gallery-nav[hidden] {display:none;}
   .facility-gallery-note {font-size:17px;line-height:1.6;color:var(--ink-soft);margin:0 0 20px;}
-  .facility-gallery-nav button {min-width:64px;min-height:44px;padding:8px 14px;background:#fff;color:#222;border:1px solid #bbb;border-radius:8px;font:600 18px/1.4 sans-serif;cursor:pointer;}
-  .facility-gallery-count {font:600 18px/1.4 sans-serif;}
+  .facility-gallery-nav button {min-width:64px;min-height:44px;padding:8px 14px;background:#fff;color:#222;border:1px solid #bbb;border-radius:8px;font:600 18px/1.4 var(--sans);cursor:pointer;}
+  .facility-gallery-count {font:600 18px/1.4 var(--sans);}
   .facility-lightbox-image {max-height:calc(90dvh - 155px);}
   .facility-carousel .facility-zoom-hint {top:10px;right:10px;bottom:auto;font-size:14px;pointer-events:none;}
-  .facility-zoom .facility-zoom-hint {position:absolute;top:auto;bottom:10px;right:10px;left:auto;display:inline-flex;align-items:center;gap:6px;width:auto;height:32px;padding:0 13px 0 10px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:rgba(255,255,255,.68);color:#2a2a2a;font:600 14px/1 "Noto Sans KR",sans-serif;text-shadow:none;box-shadow:none;white-space:nowrap;pointer-events:none;}
+  .facility-zoom .facility-zoom-hint {position:absolute;top:auto;bottom:10px;right:10px;left:auto;display:inline-flex;align-items:center;gap:6px;width:auto;height:32px;padding:0 13px 0 10px;border:1px solid rgba(0,0,0,.12);border-radius:8px;background:rgba(255,255,255,.68);color:#2a2a2a;font:600 14px/1 var(--sans);text-shadow:none;box-shadow:none;white-space:nowrap;pointer-events:none;}
   .facility-zoom .facility-zoom-hint::before {content:"";position:static;inset:auto;flex:none;width:16px;height:16px;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2a2a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E");filter:none;}
   .ltc-wrap { border: 1px solid var(--line); border-radius: 18px; }
   .ltc-card { border-radius: 14px; }
-:root{--bar-tel:rgba(20,50,37,.72);--main:#1E4D39;--on-main:#FFFFFF;--cta:#F0CF7E;--cta-text:#1F1A33;--deep:#1E4D39;--soft:#E7F0E6;--mark:#1E4D39;--accent-on-ink:#F0CF7E;--ink:#1F1A33;--line:#d8d5e2;--logo-fs:clamp(20px,6vw,27px);--gold:#1E4D39;--green:#1E4D39;--green-deep:#1E4D39;--light-gold:#F0CF7E;--gold-soft:#E7F0E6;--ink-soft:#423d57;--ink-faint:#5f5a73}
+:root{--bar-tel:rgba(20,50,37,.72);--main:#1E4D39;--on-main:#FFFFFF;--cta:#F0CF7E;--cta-text:#1F1A33;--photo-1:#1E4D39;--photo-1-text:#FFFFFF;--photo-2:#59714C;--photo-2-text:#FFFFFF;--photo-3:#BCAF6D;--photo-3-text:#1F1A33;--photo-4:#F0CF7E;--photo-4-text:#1F1A33;--deep:#1E4D39;--soft:#E7F0E6;--mark:#1E4D39;--accent-on-ink:#F0CF7E;--ink:#1F1A33;--line:#d8d5e2;--logo-fs:clamp(20px,6vw,27px);--gold:#1E4D39;--green:#1E4D39;--green-deep:#1E4D39;--light-gold:#F0CF7E;--gold-soft:#E7F0E6;--ink-soft:#423d57;--ink-faint:#5f5a73}
 </style>
 </head>
 <body>
@@ -811,7 +840,7 @@ window.CENTER = {"feeYear":2026,"rateSnapshot":{"day":[[41820,56060,69730],[3872
   </div>
 </section>
 <section class="bg-white" id="space">
-  <div class="wrap"><div class="head rv"><h2>센터 시설</h2><p>사진을 누르면 크게 볼 수 있습니다.</p></div><div class="gal facility-card rv"><h3>생활시설</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="생활시설 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 1 크게 보기"><img class="facility-photo" src="img/facility-1.webp" alt="샘플주야간보호센터 생활시설 1 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 2 크게 보기"><img class="facility-photo" src="img/facility-1-2.webp" alt="샘플주야간보호센터 생활시설 2 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 3 크게 보기"><img class="facility-photo" src="img/facility-1-3.webp" alt="샘플주야간보호센터 생활시설 3 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="생활시설 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="생활시설 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="생활시설 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="생활시설 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="생활시설 사진 3 보기 (AI 연출 예시)"></button></div></div></div><div class="gal facility-card rv"><h3>휴게시설</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="휴게시설 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 1 크게 보기"><img class="facility-photo" src="img/facility-2.webp" alt="샘플주야간보호센터 휴게시설 1 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 2 크게 보기"><img class="facility-photo" src="img/facility-2-2.webp" alt="샘플주야간보호센터 휴게시설 2 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 3 크게 보기"><img class="facility-photo" src="img/facility-2-3.webp" alt="샘플주야간보호센터 휴게시설 3 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="휴게시설 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="휴게시설 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="휴게시설 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="휴게시설 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="휴게시설 사진 3 보기 (AI 연출 예시)"></button></div></div></div><div class="gal facility-card rv"><h3>족욕·샤워</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="족욕·샤워 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 1 크게 보기"><img class="facility-photo" src="img/facility-3.webp" alt="샘플주야간보호센터 족욕·샤워 1 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 2 크게 보기"><img class="facility-photo" src="img/facility-3-2.webp" alt="샘플주야간보호센터 족욕·샤워 2 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 3 크게 보기"><img class="facility-photo" src="img/facility-3-3.webp" alt="샘플주야간보호센터 족욕·샤워 3 — AI 연출 예시" width="1200" height="675" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="족욕·샤워 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="족욕·샤워 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="족욕·샤워 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="족욕·샤워 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="족욕·샤워 사진 3 보기 (AI 연출 예시)"></button></div></div></div>
+  <div class="wrap"><div class="head rv"><h2>센터 시설</h2><p>사진을 누르면 크게 볼 수 있습니다.</p></div><div class="gal facility-card rv"><h3>생활시설</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="생활시설 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 1 크게 보기"><img class="facility-photo" src="img/facility-1.webp" alt="샘플주야간보호센터 생활시설 1 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 2 크게 보기"><img class="facility-photo" src="img/facility-1-2.webp" alt="샘플주야간보호센터 생활시설 2 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="생활시설 · AI 연출 예시" aria-label="생활시설 사진 3 크게 보기"><img class="facility-photo" src="img/facility-1-3.webp" alt="샘플주야간보호센터 생활시설 3 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="생활시설 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="생활시설 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="생활시설 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="생활시설 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="생활시설 사진 3 보기 (AI 연출 예시)"></button></div></div></div><div class="gal facility-card rv"><h3>휴게시설</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="휴게시설 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 1 크게 보기"><img class="facility-photo" src="img/facility-2.webp" alt="샘플주야간보호센터 휴게시설 1 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 2 크게 보기"><img class="facility-photo" src="img/facility-2-2.webp" alt="샘플주야간보호센터 휴게시설 2 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="휴게시설 · AI 연출 예시" aria-label="휴게시설 사진 3 크게 보기"><img class="facility-photo" src="img/facility-2-3.webp" alt="샘플주야간보호센터 휴게시설 3 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="휴게시설 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="휴게시설 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="휴게시설 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="휴게시설 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="휴게시설 사진 3 보기 (AI 연출 예시)"></button></div></div></div><div class="gal facility-card rv"><h3>족욕·샤워</h3><div class="facility-carousel" data-index="0" role="region" aria-roledescription="슬라이드" aria-label="족욕·샤워 사진"><button type="button" class="facility-zoom facility-slide" data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 1 크게 보기"><img class="facility-photo" src="img/facility-3.webp" alt="샘플주야간보호센터 족욕·샤워 1 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 2 크게 보기"><img class="facility-photo" src="img/facility-3-2.webp" alt="샘플주야간보호센터 족욕·샤워 2 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-zoom facility-slide" hidden data-gallery-title="족욕·샤워 · AI 연출 예시" aria-label="족욕·샤워 사진 3 크게 보기"><img class="facility-photo" src="img/facility-3-3.webp" alt="샘플주야간보호센터 족욕·샤워 3 — AI 연출 예시" width="1920" height="1080" decoding="async"><span class="facility-zoom-hint is-circle" aria-hidden="true"></span></button><button type="button" class="facility-carousel-arrow facility-carousel-prev" data-facility-step="-1" aria-label="족욕·샤워 이전 사진">‹</button><button type="button" class="facility-carousel-arrow facility-carousel-next" data-facility-step="1" aria-label="족욕·샤워 다음 사진">›</button><div class="s-dots fac-dots"><button type="button" data-facility-dot="0" aria-current="true" aria-label="족욕·샤워 사진 1 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="1" aria-current="false" aria-label="족욕·샤워 사진 2 보기 (AI 연출 예시)"></button><button type="button" data-facility-dot="2" aria-current="false" aria-label="족욕·샤워 사진 3 보기 (AI 연출 예시)"></button></div></div></div>
   </div>
 </section>
 <section class="bg-soft" id="day">
